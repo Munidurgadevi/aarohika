@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keyboard | Aarohika Music Academy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/keyboard.css">
+    <link rel="icon" type="image/png" href="../css/image/lightmode.png" media="(prefers-color-scheme: light)">
+    <link rel="icon" type="image/png" href="../css/image/darkmode.png" media="(prefers-color-scheme: dark)">
+    <script>try { var d = document.documentElement, t = localStorage.getItem("aarohika-theme"), r = localStorage.getItem("aarohika-dir"); if (t === "dark") d.classList.add("dark-mode"); if (r) d.dir = r } catch (e) { }</script>
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="header-container"><a class="brand " href="home1.html" aria-label="Aarohika home"><span
+                    class="brand-badge"><svg viewBox="0 0 48 48" aria-hidden="true">
+                        <rect width="48" height="48" rx="12" fill="var(--logo-bg)" />
+                        <path d="M20 32V14l13-3v18" stroke="var(--logo-stroke)" stroke-width="3" fill="none"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                        <circle cx="16" cy="32" r="5" fill="var(--logo-ball)" />
+                        <circle cx="29" cy="29" r="5" fill="var(--logo-ball)" />
+                    </svg></span><span class="brand-text"><span class="brand-title"><span
+                            class="aaroh">Aaroh</span><span class="ika">ika</span></span><span class="brand-sub">Music
+                        Academy</span></span></a>
+            <nav class="main-nav" id="mainNav" aria-label="Main navigation">
+                <div class="nav-dropdown"><button class="nav-dropdown-toggle" type="button" aria-expanded="false">Home<i
+                            data-lucide="chevron-down"></i></button>
+                    <div class="nav-dropdown-menu"><a class="dropdown-link" href="home1.html">Home 1<i
+                                data-lucide="check"></i></a><a class="dropdown-link" href="home2.html">Home 2<i
+                                data-lucide="check"></i></a></div>
+                </div><a class="nav-link" href="about.html">About</a>
+                <a class="nav-link" href="courses.html">Courses</a><a class="nav-link"
+                    href="instructors.html">Instructors</a><a class="nav-link" href="contact.html">Contact</a>
+                <a class="nav-link" href="pricing.html">Pricing</a><a class="nav-link"
+                    href="dashboard.html">Dashboard</a>
+                <div class="nav-auth-mobile"><a class="btn btn-outline" href="login.html">Login</a></div>
+            </nav>
+            <div class="header-actions"><button class="icon-btn" id="dirToggle" type="button"
+                    aria-label="Switch RTL / LTR"><i data-lucide="arrow-left-right"></i></button><button
+                    class="icon-btn" id="themeToggle" type="button" aria-label="Toggle theme"><i class="icon-moon"
+                        data-lucide="moon"></i><i class="icon-sun" data-lucide="sun"></i></button>
+                <div class="header-auth"><a class="btn btn-outline" href="login.html"><i
+                            data-lucide="log-in"></i>Login</a></div><button class="menu-toggle" id="menuToggle"
+                    type="button" aria-label="Open menu" aria-expanded="false"><i class="icon-menu"
+                        data-lucide="menu"></i><i class="icon-close" data-lucide="x"></i></button>
+            </div>
+        </div>
+    </header>
+    <main>
+        <!-- Keyboard hero -->
+        <section class="gt-hero" aria-labelledby="heroTitle">
+            <div class="gt-hero-inner">
+                <div class="gt-hero-copy">
+                    <div class="gt-eyebrow tagline"><span>Keyboard Classes</span></div>
+                    <h1 id="heroTitle">Discover the Joy of <span>Playing Keyboard</span></h1>
+                    <p class="gt-hero-desc">Learn keyboard and piano with expert guidance. Structured classes for kids
+                        and adults, from absolute beginners to advanced learners.</p>
+                    <div class="gt-hero-actions">
+                        <a class="btn gt-btn-primary gt-btn-arrow" href="pricing-kids.html">Explore Keyboard Classes</a>
+                        <a class="btn gt-btn-ghost" href="contact.html"><i data-lucide="calendar-days"></i>Book a Free
+                            Trial</a>
+                    </div>
+                    <ul class="gt-highlights">
+                        <li class="gt-highlight"><i data-lucide="users"></i>All Age Groups</li>
+                        <li class="gt-highlight"><i data-lucide="circle-check"></i>Learn at Your Pace</li>
+                        <li class="gt-highlight"><i data-lucide="user-check"></i>Expert Instructors</li>
+                        <li class="gt-highlight"><i data-lucide="mic-vocal"></i>Live Performances</li>
+                    </ul>
+                </div>
+                <div class="gt-hero-media">
+                    <div class="gt-circle">
+                        <span class="gt-circle-ring" aria-hidden="true"></span>
+                        <div class="gt-circle-disc"><img
+                                src="https://i.pinimg.com/736x/ec/6d/58/ec6d584f9de35fa821424c25c50e2e11.jpg"
+                                alt="Student playing keyboard" fetchpriority="high" referrerpolicy="no-referrer"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="gt-note" aria-hidden="true"><svg viewBox="0 0 120 80" fill="none" stroke="currentColor"
+                    stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M26 56V14l24-6v42" />
+                    <path d="M26 24l24-6" />
+                    <ellipse cx="19" cy="57" rx="8" ry="6" fill="currentColor" />
+                    <ellipse cx="43" cy="51" rx="8" ry="6" fill="currentColor" />
+                    <path d="M62 66c20-4 34-16 56-8" stroke-width="1.4" opacity=".55" />
+                    <path d="M66 72c20-4 30-12 50-6" stroke-width="1.2" opacity=".4" />
+                </svg></div>
+        </section>
+
+        <!-- 02 · Choose Your Path -->
+        <section class="gt-section" aria-labelledby="pathTitle">
+            <div class="container">
+                <div class="gt-section-head gt-head-center">
+                    <div class="gt-eyebrow tagline"><span>Keyboard Learning Experience</span></div>
+                    <h2 class="gt-title" id="pathTitle">Choose Your Keyboard <span>Path</span></h2>
+                    <p class="gt-subtitle">Explore different styles and find the one that suits your musical journey.
+                    </p>
+                </div>
+                <div class="gt-path-grid">
+                    <article class="gt-card gt-path-card"><img src="https://i.pinimg.com/736x/18/25/ed/1825edd6f3ceb141b4ccdd0af92ca8e5.jpg"
+                            alt="Student playing a keyboard" loading="lazy">
+                        <div class="gt-path-body">
+                            <div>
+                                <h3>Western Keyboard</h3>
+                                <p>Perfect for beginners and popular for pop, film and modern music.</p>
+                            </div><a class="gt-arrow-btn" href="contact.html"
+                                aria-label="Learn more about Western Keyboard"><i data-lucide="arrow-right"></i></a>
+                        </div>
+                    </article>
+                    <article class="gt-card gt-path-card"><img src="https://i.pinimg.com/736x/7f/d2/33/7fd23349bdda4432bcc9ecdd2659341d.jpg"
+                            alt="Hands playing classical piano" loading="lazy">
+                        <div class="gt-path-body">
+                            <div>
+                                <h3>Classical Piano</h3>
+                                <p>Build strong technique with classical pieces and music theory.</p>
+                            </div><a class="gt-arrow-btn" href="contact.html"
+                                aria-label="Learn more about Classical Piano"><i data-lucide="arrow-right"></i></a>
+                        </div>
+                    </article>
+                    <article class="gt-card gt-path-card"><img src="https://i.pinimg.com/736x/0b/2d/e1/0b2de1ac03e69d10cdb044420d0be423.jpg"
+                            alt="Student playing keyboard melodies" loading="lazy">
+                        <div class="gt-path-body">
+                            <div>
+                                <h3>Indian Light Music</h3>
+                                <p>Play devotional, film and light classical melodies with ease.</p>
+                            </div><a class="gt-arrow-btn" href="contact.html"
+                                aria-label="Learn more about Indian Light Music"><i data-lucide="arrow-right"></i></a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- 03 · Skills -->
+        <section class="gt-section" aria-labelledby="skillsTitle">
+            <div class="container gt-skills-split">
+                <div class="gt-section-head">
+                    <div class="gt-eyebrow tagline"><span>What You Will Learn</span></div>
+                    <h2 class="gt-title" id="skillsTitle">Skills You Will <span>Develop</span></h2>
+                    <p class="gt-subtitle">Build a strong musical foundation with practical and engaging lessons.</p>
+                </div>
+                <div class="gt-skills-grid">
+                    <article class="gt-card gt-skill-card"><span class="gt-icon-box"><i
+                                data-lucide="music-4"></i></span>
+                        <div>
+                            <h3>Keyboard Fundamentals</h3>
+                            <p>Posture, hand position, note reading and basic techniques.</p>
+                        </div>
+                    </article>
+                    <article class="gt-card gt-skill-card"><span class="gt-icon-box"><i
+                                data-lucide="music-2"></i></span>
+                        <div>
+                            <h3>Chords &amp; Scales</h3>
+                            <p>Learn essential chords, scales and harmony patterns.</p>
+                        </div>
+                    </article>
+                    <article class="gt-card gt-skill-card"><span class="gt-icon-box"><i
+                                data-lucide="audio-lines"></i></span>
+                        <div>
+                            <h3>Rhythm &amp; Timing</h3>
+                            <p>Develop steady timing, rhythm and hand coordination.</p>
+                        </div>
+                    </article>
+                    <article class="gt-card gt-skill-card"><span class="gt-icon-box"><i data-lucide="star"></i></span>
+                        <div>
+                            <h3>Songs &amp; Performance</h3>
+                            <p>Play your favourite songs and build stage confidence.</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- 04 · Learning Journey -->
+        <section class="gt-section" aria-labelledby="journeyTitle">
+            <div class="container">
+                <div class="gt-section-head gt-head-center">
+                    <div class="gt-eyebrow tagline"><span>Learning Journey</span></div>
+                    <h2 class="gt-title" id="journeyTitle">A Step-by-Step Learning <span>Journey</span></h2>
+                    <p class="gt-subtitle">Structured levels to help you progress with confidence.</p>
+                    <div class="gt-head-note" aria-hidden="true"><svg viewBox="0 0 120 80" fill="none"
+                            stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M26 56V14l24-6v42" />
+                            <path d="M26 24l24-6" />
+                            <ellipse cx="19" cy="57" rx="8" ry="6" fill="currentColor" />
+                            <ellipse cx="43" cy="51" rx="8" ry="6" fill="currentColor" />
+                            <path d="M62 66c20-4 34-16 56-8" stroke-width="1.4" opacity=".55" />
+                            <path d="M66 72c20-4 30-12 50-6" stroke-width="1.2" opacity=".4" />
+                        </svg></div>
+                </div>
+                <div class="gt-levels-grid">
+                    <article class="gt-card gt-level">
+                        <div class="gt-level-head"><span class="gt-level-num">01</span>
+                            <h3>Beginner</h3>
+                        </div>
+                        <ul class="gt-check-list">
+                            <li><i data-lucide="check"></i>Notes, keys and finger placement</li>
+                            <li><i data-lucide="check"></i>Simple songs and exercises</li>
+                            <li><i data-lucide="check"></i>Basic chords and rhythm</li>
+                            <li><i data-lucide="check"></i>Learn to read basic notation</li>
+                        </ul>
+                    </article>
+                    <article class="gt-card gt-level">
+                        <div class="gt-level-head"><span class="gt-level-num">02</span>
+                            <h3>Intermediate</h3>
+                        </div>
+                        <ul class="gt-check-list">
+                            <li><i data-lucide="check"></i>Advanced chords and scales</li>
+                            <li><i data-lucide="check"></i>Both-hand coordination</li>
+                            <li><i data-lucide="check"></i>Play a wide range of songs</li>
+                            <li><i data-lucide="check"></i>Improve speed and accuracy</li>
+                        </ul>
+                    </article>
+                    <article class="gt-card gt-level">
+                        <div class="gt-level-head"><span class="gt-level-num">03</span>
+                            <h3>Advanced</h3>
+                        </div>
+                        <ul class="gt-check-list">
+                            <li><i data-lucide="check"></i>Complex harmony and styles</li>
+                            <li><i data-lucide="check"></i>Music theory for keyboard</li>
+                            <li><i data-lucide="check"></i>Improvisation and accompaniment</li>
+                            <li><i data-lucide="check"></i>Prepare for performances</li>
+                        </ul>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- 05 · All Ages -->
+        <section class="gt-section" aria-labelledby="agesTitle">
+            <div class="container">
+                <div class="gt-section-head gt-head-center">
+                    <div class="gt-eyebrow tagline"><span>Learn Your Way</span></div>
+                    <h2 class="gt-title" id="agesTitle">Keyboard Classes for <span>All Ages</span></h2>
+                    <p class="gt-subtitle">Customized learning experiences for kids and adults.</p>
+                </div>
+                <div class="gt-ages-grid">
+                    <article class="gt-card gt-age-card">
+                        <div class="gt-age-media"><img src="https://i.pinimg.com/1200x/2f/f1/a9/2ff1a9ced50dd68f7f3722c8312438fb.jpg"
+                                alt="Girl smiling while learning keyboard" loading="lazy"></div>
+                        <div class="gt-age-body">
+                            <div class="gt-age-title"><span class="gt-icon-box"><i data-lucide="smile"></i></span>
+                                <h3>For Kids</h3>
+                            </div>
+                            <ul class="gt-check-list">
+                                <li><i data-lucide="check"></i>Engaging and fun lessons</li>
+                                <li><i data-lucide="check"></i>Age-appropriate techniques</li>
+                                <li><i data-lucide="check"></i>Build focus and confidence</li>
+                                <li><i data-lucide="check"></i>Regular parent communication</li>
+                            </ul><a class="btn gt-btn-primary gt-btn-small gt-btn-arrow"
+                                href="pricing-kids.html">Keyboard Classes for Kids</a>
+                        </div>
+                    </article>
+                    <article class="gt-card gt-age-card">
+                        <div class="gt-age-media"><img src="https://i.pinimg.com/736x/3b/5b/08/3b5b082732ce1a87988346dae76eac79.jpg"
+                                alt="Man enjoying a keyboard lesson" loading="lazy"></div>
+                        <div class="gt-age-body">
+                            <div class="gt-age-title"><span class="gt-icon-box"><i data-lucide="user-round"></i></span>
+                                <h3>For Adults</h3>
+                            </div>
+                            <ul class="gt-check-list">
+                                <li><i data-lucide="check"></i>Flexible learning schedules</li>
+                                <li><i data-lucide="check"></i>Beginner-friendly approach</li>
+                                <li><i data-lucide="check"></i>Learn your favourite songs</li>
+                                <li><i data-lucide="check"></i>Personalised guidance</li>
+                            </ul><a class="btn gt-btn-primary gt-btn-small gt-btn-arrow"
+                                href="pricing_adults.html">Keyboard Classes for Adults</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- 06 · Instructor -->
+        <section class="gt-section" aria-labelledby="instructorName">
+            <div class="container gt-instructor">
+                <div class="gt-instructor-media"><img src="https://i.pinimg.com/1200x/7a/61/8f/7a618f247fe88e16b52463359ba10bf5.jpg"
+                        alt="Kiran Kumar with a keyboard" loading="lazy"></div>
+                <div class="gt-instructor-body">
+                    <div class="gt-eyebrow tagline"><span>Meet Your Keyboard Instructor</span></div>
+                    <h3 id="instructorName">Kiran Kumar</h3>
+                    <p class="gt-role">Keyboard Instructor</p>
+                    <p class="gt-bio">Kiran is a passionate keyboardist and dedicated teacher who enjoys helping
+                        students of all ages build confidence through music. His teaching style focuses on simple
+                        explanations, practical exercises and learning through favourite songs.</p>
+                    <ul class="gt-facts">
+                        <li><i data-lucide="music-4"></i>Keyboard, Piano &amp; Music Theory</li>
+                        <li><i data-lucide="users"></i>Kids, Adults &amp; All Levels</li>
+                        <li><i data-lucide="music-2"></i>Pop, Film, Classical, Light Music</li>
+                        <li><i data-lucide="languages"></i>English, Hindi, Telugu</li>
+                    </ul>
+                    <a class="btn gt-btn-primary gt-btn-arrow" href="instructors.html">View Full Profile</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 07 · CTA -->
+        <section class="gt-section gt-cta-section" aria-labelledby="ctaTitle">
+            <div class="container">
+                <div class="gt-cta">
+                    <div class="gt-cta-copy">
+                        <div class="gt-eyebrow tagline"><span>Start Your Keyboard Journey Today</span></div>
+                        <h2 id="ctaTitle">Turn Your <span>Passion into Progress</span></h2>
+                        <p>Whether you're a complete beginner or looking to advance your skills, our keyboard classes
+                            are here to guide you.</p>
+                        <div class="gt-hero-actions">
+                            <a class="btn gt-btn-gold" href="contact.html"><i data-lucide="calendar-days"></i>Book a
+                                Free Trial</a>
+                            <a class="btn gt-btn-primary gt-btn-arrow" href="pricing-kids.html">Explore Available
+                                Batches</a>
+                        </div>
+                    </div>
+                    <div class="gt-cta-media"><img src="https://i.pinimg.com/736x/81/ba/cd/81bacd0a47c9f5f2eea298699ba51ec7.jpg" alt="Hands playing a keyboard"
+                            loading="lazy">
+                        <div class="gt-cta-script" aria-hidden="true">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="site-footer">
+        <div class="footer-main">
+            <div class="footer-grid">
+                <div class="footer-brand"><a class="brand " href="home1.html" aria-label="Aarohika home"><span
+                            class="brand-badge"><svg viewBox="0 0 48 48" aria-hidden="true">
+                                <rect width="48" height="48" rx="12" fill="var(--logo-bg)" />
+                                <path d="M20 32V14l13-3v18" stroke="var(--logo-stroke)" stroke-width="3" fill="none"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                                <circle cx="16" cy="32" r="5" fill="var(--logo-ball)" />
+                                <circle cx="29" cy="29" r="5" fill="var(--logo-ball)" />
+                            </svg></span><span class="brand-text"><span class="brand-title"><span
+                                    class="aaroh">Aaroh</span><span class="ika">ika</span></span><span
+                                class="brand-sub">Music
+                                Academy</span></span></a>
+                    <p>Lively music classes for kids and adults. Learn guitar, keyboard, vocals and drums with
+                        passionate instructors and perform on stage with confidence.</p>
+                    <div class="footer-socials"><a href="#" aria-label="Facebook"><i data-lucide="facebook"></i></a><a
+                            href="#" aria-label="Instagram"><i data-lucide="instagram"></i></a><a href="#"
+                            aria-label="YouTube"><i data-lucide="youtube"></i></a><a href="#" aria-label="Twitter"><i
+                                data-lucide="twitter"></i></a></div>
+                </div>
+                <div class="footer-column">
+                    <h3>Explore</h3>
+                    <ul class="footer-links">
+                        <li><a href="home1.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="instructors.html">Instructors</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="dashboard.html">Dashboard</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Courses</h3>
+                    <ul class="footer-links">
+                        <li><a href="courses.html">All Courses</a></li>
+                        <li><a href="guitar.html"></i>Guitar</a></li>
+                        <li><a href="keyboard.html"></i>Keyboard</a></li>
+                        <li><a href="vocals.html"></i>Vocals</a></li>
+                        <li><a href="drums.html"></i>Drums</a></li>
+                        <li><a href="404.html">404 Error</a></li>
+                        <li><a href="coming.html">Coming Soon</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Get In Touch</h3>
+                    <div class="footer-contact-item"><span>12 Harmony Street, Music
+                            District</span></div>
+                    <div class="footer-contact-item"><a href="tel:+91 9756367510">+91 9756367510</a></div>
+                    <div class="footer-contact-item"><a href="mailto:hello@aarohika.com">hello@aarohika.com</a></div>
+                    <div class="footer-contact-item"><span>Mon–Sat: 9 AM – 8 PM</span></div>
+                    <div class="newsletter">
+                        <p>Batch updates &amp; event invites:</p>
+                        <form class="newsletter-form" id="newsletterForm"><input type="email"
+                                placeholder="your@email.com" aria-label="Email address" required><button type="submit"
+                                aria-label="Subscribe"><i data-lucide="send"></i></button></form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="footer-bottom-content">
+                <p>© 2026 <strong>Aarohika</strong> Music Academy. All rights reserved.</p>
+                <div class="footer-legal"><a href="privacy-policy.html">Privacy
+                        Policy</a><a href="terms-and-conditions.html">Terms and Conditions</a></div>
+            </div>
+        </div>
+    </footer><button class="back-to-top" id="backToTop" type="button" aria-label="Back to top"><i
+            data-lucide="arrow-up"></i></button>
+    <script src="https://cdn.jsdelivr.net/npm/lucide@0.460.0/dist/umd/lucide.min.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+
+</html>

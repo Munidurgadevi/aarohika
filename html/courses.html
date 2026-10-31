@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses | Aarohika Music Academy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/courses.css">
+    <link rel="icon" type="image/png" href="../css/image/lightmode.png" media="(prefers-color-scheme: light)">
+    <link rel="icon" type="image/png" href="../css/image/darkmode.png" media="(prefers-color-scheme: dark)">
+    <script>try { var d = document.documentElement, t = localStorage.getItem("aarohika-theme"), r = localStorage.getItem("aarohika-dir"); if (t === "dark") d.classList.add("dark-mode"); if (r) d.dir = r } catch (e) { }</script>
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="header-container"><a class="brand " href="home1.html" aria-label="Aarohika home"><span
+                    class="brand-badge"><svg viewBox="0 0 48 48" aria-hidden="true">
+                        <rect width="48" height="48" rx="12" fill="var(--logo-bg)" />
+                        <path d="M20 32V14l13-3v18" stroke="var(--logo-stroke)" stroke-width="3" fill="none"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                        <circle cx="16" cy="32" r="5" fill="var(--logo-ball)" />
+                        <circle cx="29" cy="29" r="5" fill="var(--logo-ball)" />
+                    </svg></span><span class="brand-text"><span class="brand-title"><span
+                            class="aaroh">Aaroh</span><span class="ika">ika</span></span><span class="brand-sub">Music
+                        Academy</span></span></a>
+            <nav class="main-nav" id="mainNav" aria-label="Main navigation">
+                <div class="nav-dropdown"><button class="nav-dropdown-toggle" type="button" aria-expanded="false">Home<i
+                            data-lucide="chevron-down"></i></button>
+                    <div class="nav-dropdown-menu"><a class="dropdown-link" href="home1.html">Home 1<i
+                                data-lucide="check"></i></a><a class="dropdown-link" href="home2.html">Home 2<i
+                                data-lucide="check"></i></a></div>
+                </div><a class="nav-link" href="about.html">About</a>
+                <a class="nav-link" href="courses.html">Courses</a><a class="nav-link"
+                    href="instructors.html">Instructors</a><a class="nav-link" href="contact.html">Contact</a>
+                <a class="nav-link" href="pricing.html">Pricing</a><a class="nav-link"
+                    href="dashboard.html">Dashboard</a>
+                <div class="nav-auth-mobile"><a class="btn btn-outline" href="login.html">Login</a></div>
+            </nav>
+            <div class="header-actions"><button class="icon-btn" id="dirToggle" type="button"
+                    aria-label="Switch RTL / LTR"><i data-lucide="arrow-left-right"></i></button><button
+                    class="icon-btn" id="themeToggle" type="button" aria-label="Toggle theme"><i class="icon-moon"
+                        data-lucide="moon"></i><i class="icon-sun" data-lucide="sun"></i></button>
+                <div class="header-auth"><a class="btn btn-outline" href="login.html"><i
+                            data-lucide="log-in"></i>Login</a></div><button class="menu-toggle" id="menuToggle"
+                    type="button" aria-label="Open menu" aria-expanded="false"><i class="icon-menu"
+                        data-lucide="menu"></i><i class="icon-close" data-lucide="x"></i></button>
+            </div>
+        </div>
+    </header>
+    <main>
+        <!-- Courses hero -->
+        <section class="cr-hero" aria-labelledby="coursesHeroTitle">
+            <div class="cr-hero-inner">
+                <div class="cr-hero-copy">
+                    <span class="cr-eyebrow tagline"><span>Our Courses</span></span>
+                    <h1 id="coursesHeroTitle">Explore Our <span>Music Courses</span></h1>
+                    <p class="cr-hero-desc">Guitar, keyboard, vocals and drums, all under one roof. Structured classes
+                        for kids and adults, from absolute beginners to advanced learners.</p>
+                    <div class="cr-hero-actions">
+                        <a class="btn cr-btn-primary cr-btn-arrow" href="#courseList">Browse Courses</a>
+                        <a class="btn cr-btn-ghost" href="contact.html"><i data-lucide="calendar-days"></i>Book a Free
+                            Trial</a>
+                    </div>
+                    <ul class="cr-hero-chips" aria-label="Jump to a course">
+                        <li><a href="#course-guitar"><i data-lucide="music-4"></i>Guitar</a></li>
+                        <li><a href="#course-keyboard"><i data-lucide="music-2"></i>Keyboard</a></li>
+                        <li><a href="#course-vocals"><i data-lucide="mic-vocal"></i>Vocals</a></li>
+                        <li><a href="#course-drums"><i data-lucide="audio-lines"></i>Drums</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="cr-hero-note" aria-hidden="true"><svg viewBox="0 0 120 80" fill="none" stroke="currentColor"
+                    stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M26 56V14l24-6v42" />
+                    <path d="M26 24l24-6" />
+                    <ellipse cx="19" cy="57" rx="8" ry="6" fill="currentColor" />
+                    <ellipse cx="43" cy="51" rx="8" ry="6" fill="currentColor" />
+                    <path d="M62 66c20-4 34-16 56-8" stroke-width="1.4" opacity=".55" />
+                    <path d="M66 72c20-4 30-12 50-6" stroke-width="1.2" opacity=".4" />
+                </svg></div>
+            <div class="cr-hero-media">
+                <div class="cr-slides" aria-label="Our music courses">
+                    <img class="cr-slide" src="https://i.pinimg.com/1200x/7c/43/8c/7c438c0a3e34fe4a02bc6309a01ecdbd.jpg"
+                        alt="Student learning guitar" fetchpriority="high" referrerpolicy="no-referrer">
+                    <img class="cr-slide" src="https://i.pinimg.com/736x/48/88/02/488802b2d7e8b29e8bd5eca7a46a3405.jpg"
+                        alt="Student learning keyboard" referrerpolicy="no-referrer">
+                    <img class="cr-slide" src="https://i.pinimg.com/736x/29/ed/69/29ed6952d2ba15e8d14e3469bfc09a9d.jpg"
+                        alt="Student learning vocals" referrerpolicy="no-referrer">
+                    <img class="cr-slide" src="https://i.pinimg.com/736x/d6/3a/53/d63a5302e5e95cf96ede330fb3fdf955.jpg"
+                        alt="Student learning drums" referrerpolicy="no-referrer">
+                </div>
+            </div>
+        </section>
+        <!-- Courses slider -->
+        <section class="cr-section" id="courseList" aria-labelledby="coursesTitle">
+            <div class="container">
+                <div class="cr-head">
+                    <span class="cr-eyebrow tagline"><span>Our Courses</span></span>
+                    <h2 class="cr-title" id="coursesTitle">Pick Your <span>Instrument</span></h2>
+                    <p class="cr-subtitle">Four instruments, one academy. Explore each course and see what you will
+                        learn.</p>
+                </div>
+                <div class="cr-rows">
+                    <article id="course-guitar" class="cr-row">
+                        <div class="cr-row-media">
+                            <img src="https://i.pinimg.com/1200x/59/34/71/593471666359a87c24f4665294cea552.jpg" alt="Student learning guitar" loading="lazy">
+                            <span class="cr-row-num">01</span>
+                        </div>
+                        <div class="cr-row-copy">
+                            <span class="cr-eyebrow tagline"><span>Guitar Classes</span></span>
+                            <h2 class="cr-slide-title">Guitar <span>Course</span></h2>
+                            <p class="cr-slide-lead">Learn acoustic, electric or classical guitar with expert guidance,
+                                from your first chord to confident performances.</p>
+                            <ul class="cr-points">
+                                <li><i data-lucide="check-circle-2"></i>Acoustic, Electric &amp; Classical styles</li>
+                                <li><i data-lucide="check-circle-2"></i>Chords, strumming, fingerstyle and tabs</li>
+                                <li><i data-lucide="check-circle-2"></i>Beginner to advanced levels</li>
+                            </ul>
+                            <div class="cr-slide-actions">
+                                <a class="btn cr-btn-primary cr-btn-arrow" href="guitar.html">Explore Guitar</a>
+                                <a class="btn cr-btn-ghost" href="contact.html"><i data-lucide="calendar-days"></i>Book
+                                    a Free Trial</a>
+                            </div>
+                        </div>
+                    </article>
+                    <article id="course-keyboard" class="cr-row is-reverse">
+                        <div class="cr-row-media">
+                            <img src="https://i.pinimg.com/1200x/fc/3a/e5/fc3ae51bc046a32f46551a1954f5ab84.jpg" alt="Student learning keyboard" loading="lazy">
+                            <span class="cr-row-num">02</span>
+                        </div>
+                        <div class="cr-row-copy">
+                            <span class="cr-eyebrow tagline"><span>Keyboard Classes</span></span>
+                            <h2 class="cr-slide-title">Keyboard <span>Course</span></h2>
+                            <p class="cr-slide-lead">Learn keyboard and piano with structured lessons that build
+                                reading, chords and confidence step by step.</p>
+                            <ul class="cr-points">
+                                <li><i data-lucide="check-circle-2"></i>Western, Classical &amp; Indian light music</li>
+                                <li><i data-lucide="check-circle-2"></i>Notes, chords, scales and theory</li>
+                                <li><i data-lucide="check-circle-2"></i>Beginner to advanced levels</li>
+                            </ul>
+                            <div class="cr-slide-actions">
+                                <a class="btn cr-btn-primary cr-btn-arrow" href="keyboard.html">Explore Keyboard</a>
+                                <a class="btn cr-btn-ghost" href="contact.html"><i data-lucide="calendar-days"></i>Book
+                                    a Free Trial</a>
+                            </div>
+                        </div>
+                    </article>
+                    <article id="course-vocals" class="cr-row">
+                        <div class="cr-row-media">
+                            <img src="https://i.pinimg.com/1200x/a8/18/42/a818426ea37b21eea2f6944c1564b5e8.jpg" alt="Student learning vocals" loading="lazy">
+                            <span class="cr-row-num">03</span>
+                        </div>
+                        <div class="cr-row-copy">
+                            <span class="cr-eyebrow tagline"><span>Vocals Classes</span></span>
+                            <h2 class="cr-slide-title">Vocals <span>Course</span></h2>
+                            <p class="cr-slide-lead">Find your voice with breath control, pitch training and stage
+                                confidence in a supportive setting.</p>
+                            <ul class="cr-points">
+                                <li><i data-lucide="check-circle-2"></i>Western, Indian classical &amp; film music</li>
+                                <li><i data-lucide="check-circle-2"></i>Breathing, pitch, tone and expression</li>
+                                <li><i data-lucide="check-circle-2"></i>Warm-ups to live performance</li>
+                            </ul>
+                            <div class="cr-slide-actions">
+                                <a class="btn cr-btn-primary cr-btn-arrow" href="vocals.html">Explore Vocals</a>
+                                <a class="btn cr-btn-ghost" href="contact.html"><i data-lucide="calendar-days"></i>Book
+                                    a Free Trial</a>
+                            </div>
+                        </div>
+                    </article>
+                    <article id="course-drums" class="cr-row is-reverse">
+                        <div class="cr-row-media">
+                            <img src="https://i.pinimg.com/736x/2f/2d/71/2f2d71586f345c02b49145ee338ccfbc.jpg" alt="Student learning drums" loading="lazy">
+                            <span class="cr-row-num">04</span>
+                        </div>
+                        <div class="cr-row-copy">
+                            <span class="cr-eyebrow tagline"><span>Drums Classes</span></span>
+                            <h2 class="cr-slide-title">Drums <span>Course</span></h2>
+                            <p class="cr-slide-lead">Build rhythm, coordination and groove on acoustic and electronic
+                                kits with hands-on practice.</p>
+                            <ul class="cr-points">
+                                <li><i data-lucide="check-circle-2"></i>Acoustic, electronic &amp; percussion</li>
+                                <li><i data-lucide="check-circle-2"></i>Rudiments, fills and timing</li>
+                                <li><i data-lucide="check-circle-2"></i>Solo grooves to playing with a band</li>
+                            </ul>
+                            <div class="cr-slide-actions">
+                                <a class="btn cr-btn-primary cr-btn-arrow" href="drums.html">Explore Drums</a>
+                                <a class="btn cr-btn-ghost" href="contact.html"><i data-lucide="calendar-days"></i>Book
+                                    a Free Trial</a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Music for Every Age -->
+        <section class="cr-section" aria-labelledby="ageTitle">
+            <div class="container">
+                <div class="cr-head">
+                    <span class="cr-eyebrow tagline"><span>Learn Your Way</span></span>
+                    <h2 class="cr-title" id="ageTitle">Music for Every Age, <span>Inspiration for Every Soul</span></h2>
+                    <p class="cr-subtitle">Whatever your age or experience, there is a class and a batch made for you.
+                    </p>
+                </div>
+                <div class="cr-cards">
+                    <article class="cr-card" data-num="01"><span class="cr-card-icon"><i data-lucide="smile"></i></span>
+                        <h3>Little Learners</h3>
+                        <p>Playful lessons that build rhythm, focus and confidence early.</p><a
+                            class="cr-card-link" href="pricing-kids.html">Kids classes</a>
+                    </article>
+                    <article class="cr-card" data-num="02"><span class="cr-card-icon"><i
+                                data-lucide="headphones"></i></span>
+                        <h3>Teens</h3>
+                        <p>Learn the songs you love, build skills fast and discover your own sound.</p><a
+                            class="cr-card-link" href="contact.html">Join a batch</a>
+                    </article>
+                    <article class="cr-card" data-num="03"><span class="cr-card-icon"><i
+                                data-lucide="user-round"></i></span>
+                        <h3>Adults</h3>
+                        <p>Flexible batches that fit work and life, whatever your starting point.</p><a
+                            class="cr-card-link" href="pricing_adults.html">Adult classes</a>
+                    </article>
+                    <article class="cr-card" data-num="04"><span class="cr-card-icon"><i data-lucide="heart"></i></span>
+                        <h3>Lifelong Learners</h3>
+                        <p>Relaxed, no-pressure classes to enjoy music at any stage of life.</p><a class="cr-card-link"
+                            href="contact.html">Talk to us</a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="cr-section cr-cta-section" aria-labelledby="ctaTitle">
+            <div class="container">
+                <div class="cr-cta">
+                    <div class="cr-cta-copy">
+                        <span class="cr-eyebrow tagline"><span>Start Your Journey</span></span>
+                        <h2 id="ctaTitle">Your Musical Journey <span>Starts Here</span></h2>
+                        <p>Pick an instrument, meet our instructors and book a free trial class. We will help you find
+                            the right batch.</p>
+                        <div class="cr-slide-actions">
+                            <a class="btn btn-gold" href="contact.html"><i data-lucide="calendar-days"></i>Book a Free
+                                Trial</a>
+                            <a class="btn btn-line cr-btn-arrow" href="pricing-kids.html">View Pricing</a>
+                        </div>
+                    </div>
+                    <div class="cr-cta-media"><img src="https://i.pinimg.com/736x/e5/85/f9/e585f9c79a0b481cd9658f2da6323057.jpg"
+                            alt="Students enjoying a music class" loading="lazy">
+                        <div class="cr-cta-script" aria-hidden="true">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="site-footer">
+        <div class="footer-main">
+            <div class="footer-grid">
+                <div class="footer-brand"><a class="brand " href="home1.html" aria-label="Aarohika home"><span
+                            class="brand-badge"><svg viewBox="0 0 48 48" aria-hidden="true">
+                                <rect width="48" height="48" rx="12" fill="var(--logo-bg)" />
+                                <path d="M20 32V14l13-3v18" stroke="var(--logo-stroke)" stroke-width="3" fill="none"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                                <circle cx="16" cy="32" r="5" fill="var(--logo-ball)" />
+                                <circle cx="29" cy="29" r="5" fill="var(--logo-ball)" />
+                            </svg></span><span class="brand-text"><span class="brand-title"><span
+                                    class="aaroh">Aaroh</span><span class="ika">ika</span></span><span
+                                class="brand-sub">Music
+                                Academy</span></span></a>
+                    <p>Lively music classes for kids and adults. Learn guitar, keyboard, vocals and drums with
+                        passionate instructors and perform on stage with confidence.</p>
+                    <div class="footer-socials"><a href="#" aria-label="Facebook"><i data-lucide="facebook"></i></a><a
+                            href="#" aria-label="Instagram"><i data-lucide="instagram"></i></a><a href="#"
+                            aria-label="YouTube"><i data-lucide="youtube"></i></a><a href="#" aria-label="Twitter"><i
+                                data-lucide="twitter"></i></a></div>
+                </div>
+                <div class="footer-column">
+                    <h3>Explore</h3>
+                    <ul class="footer-links">
+                        <li><a href="home1.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="instructors.html">Instructors</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="dashboard.html">Dashboard</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Courses</h3>
+                    <ul class="footer-links">
+                        <li><a href="courses.html">All Courses</a></li>
+                        <li><a href="guitar.html">Guitar</a></li>
+                        <li><a href="keyboard.html">Keyboard</a></li>
+                        <li><a href="vocals.html">Vocals</a></li>
+                        <li><a href="drums.html">Drums</a></li>
+                        <li><a href="404.html">404 Error</a></li>
+                        <li><a href="coming.html">Coming Soon</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Get In Touch</h3>
+                    <div class="footer-contact-item"><span>12 Harmony Street, Music
+                            District</span></div>
+                    <div class="footer-contact-item"><a href="tel:+91 9756367510">+91 9756367510</a></div>
+                    <div class="footer-contact-item"><a href="mailto:hello@aarohika.com">hello@aarohika.com</a></div>
+                    <div class="footer-contact-item"><span>Mon–Sat: 9 AM – 8 PM</span></div>
+                    <div class="newsletter">
+                        <p>Batch updates &amp; event invites:</p>
+                        <form class="newsletter-form" id="newsletterForm"><input type="email"
+                                placeholder="your@email.com" aria-label="Email address" required><button type="submit"
+                                aria-label="Subscribe"><i data-lucide="send"></i></button></form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="footer-bottom-content">
+                <p>© 2026 <strong>Aarohika</strong> Music Academy. All rights reserved.</p>
+                <div class="footer-legal"><a href="privacy-policy.html">Privacy
+                        Policy</a><a href="terms-and-conditions.html">Terms and Conditions</a></div>
+            </div>
+        </div>
+    </footer><button class="back-to-top" id="backToTop" type="button" aria-label="Back to top"><i
+            data-lucide="arrow-up"></i></button>
+    <script src="https://cdn.jsdelivr.net/npm/lucide@0.460.0/dist/umd/lucide.min.js"></script>
+    <script src="../js/main.js"></script>
+</body>
+
+</html>

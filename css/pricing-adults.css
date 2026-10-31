@@ -1,0 +1,189 @@
+/* =====================================================================
+   Aarohika Music Academy: Adults pricing extras
+   Load AFTER global.css and pricing.css.
+   ===================================================================== */
+
+/* quieter, more compact look for the adults page */
+.pr-adults .pr-plan {
+    border-radius: 14px;
+}
+
+.pr-adults .pr-hero::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+    background: repeating-linear-gradient(0deg, transparent 0 34px, rgba(250, 246, 236, .05) 34px 35px);
+    pointer-events: none;
+}
+
+/* learning levels */
+.pr-levels {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+    counter-reset: level;
+}
+
+.pr-level {
+    position: relative;
+    padding: 30px 28px 28px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    box-shadow: var(--shadow);
+}
+
+.pr-level:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    inset-block-start: 51px;
+    inset-inline-start: calc(100% + 1px);
+    width: 20px;
+    height: 2px;
+    background: var(--secondary);
+}
+
+.pr-level-step {
+    width: 42px;
+    height: 42px;
+    display: grid;
+    place-items: center;
+    margin-bottom: 18px;
+    border-radius: 50%;
+    background: var(--primary);
+    color: var(--btn-fg);
+    font-family: var(--font-family);
+    font-size: 18px;
+    font-weight: 800;
+}
+
+.pr-level h3 {
+    margin-bottom: 8px;
+    color: var(--primary-color);
+    font-family: var(--font-family);
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.pr-level p {
+    font-size: 14px;
+    line-height: 1.65;
+}
+
+.pr-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 18px;
+}
+
+.pr-chips li {
+    padding: 6px 12px;
+    border: 1px solid color-mix(in srgb, var(--secondary) 45%, transparent);
+    border-radius: 999px;
+    background: var(--secondary-light);
+    color: var(--text);
+    font-size: 12px;
+    font-weight: 700;
+}
+
+@media (max-width: 700px) {
+    .pr-levels {
+        grid-template-columns: minmax(0, 1fr);
+        max-width: 520px;
+        margin-inline: auto;
+    }
+
+    .pr-level:not(:last-child)::after {
+        display: none;
+    }
+}
+
+/* ---------- hero: text left, two staggered arch photos right ---------- */
+.pr-adults-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr);
+    align-items: center;
+    gap: clamp(32px, 6vw, 80px);
+}
+
+.pr-adults-arches {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+    align-items: start;
+    width: min(100%, 460px);
+    margin-inline: auto;
+}
+
+.pr-adults-arches .ar {
+    margin: 0;
+    overflow: hidden;
+    aspect-ratio: 3 / 4.4;
+    border-radius: 999px 999px 18px 18px;
+    border: 2px solid color-mix(in srgb, var(--gold-light) 70%, transparent);
+    box-shadow: 0 24px 50px rgba(0, 0, 0, .32);
+    background: var(--court);
+}
+
+.pr-adults-arches .ar2 {
+    margin-top: 56px;
+    border-radius: 18px 18px 999px 999px;
+}
+
+.pr-adults-arches .ar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+@media (max-width: 700px) {
+    .pr-adults-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .pr-adults-arches {
+        width: min(100%, 340px);
+    }
+}
+
+
+/* hero on normal background: soft music-staff lines + arch frames */
+.pr-adults .pr-hero::before {
+    background: repeating-linear-gradient(0deg, transparent 0 34px, var(--primary-light) 34px 35px);
+}
+
+.pr-adults-arches .ar {
+    border-color: color-mix(in srgb, var(--secondary-color) 70%, transparent);
+    box-shadow: var(--shadow);
+}
+
+
+/* compact adults hero arches */
+.pr-adults-arches .ar {
+    aspect-ratio: 3 / 3.9;
+}
+
+.pr-adults-arches .ar2 {
+    margin-top: 36px;
+}
+
+@media (min-width: 901px) {
+    .pr-adults-arches {
+        gap: 14px;
+        width: min(100%, 400px, max(240px, calc((100vh - var(--header-height) - 190px) * 1.1)));
+    }
+}
+
+@media (max-width: 900px) {
+    .pr-adults-arches {
+        width: min(100%, 280px);
+        gap: 12px;
+    }
+
+    .pr-adults-arches .ar2 {
+        margin-top: 24px;
+    }
+}

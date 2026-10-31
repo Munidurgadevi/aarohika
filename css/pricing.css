@@ -1,0 +1,1144 @@
+/* =====================================================================
+   Aarohika Music Academy: Pricing (shared by pricing, pricing-kids,
+   pricing-adults). Load AFTER global.css.
+   ===================================================================== */
+
+/* ---------- buttons ---------- */
+.pr-btn {
+    min-height: 46px;
+    padding-inline: 24px;
+    cursor: pointer;
+}
+
+.pr-btn svg {
+    width: 16px;
+    height: 16px;
+}
+
+.pr-btn-primary {
+    background: var(--primary);
+    color: var(--btn-fg);
+    border-color: var(--primary);
+}
+
+.pr-btn-primary:hover {
+    background: var(--secondary);
+    color: var(--secondary-contrast);
+    border-color: var(--secondary);
+    transform: translateY(-1px);
+}
+
+.pr-btn-outline {
+    background: transparent;
+    color: var(--primary);
+    border-color: var(--primary);
+}
+
+.pr-btn-outline:hover {
+    background: var(--primary);
+    color: var(--btn-fg);
+    transform: translateY(-1px);
+}
+
+.pr-btn-gold {
+    background: var(--gold-light);
+    border-color: var(--gold-light);
+    color: #153427;
+}
+
+.pr-btn-gold:hover {
+    background: var(--ivory);
+    border-color: var(--ivory);
+    transform: translateY(-1px);
+}
+
+.pr-btn-line {
+    background: transparent;
+    border-color: rgba(250, 246, 236, .5);
+    color: var(--ivory);
+}
+
+.pr-btn-line:hover {
+    background: var(--ivory);
+    border-color: var(--ivory);
+    color: #153427;
+    transform: translateY(-1px);
+}
+
+.pr-btn:focus-visible,
+.pr-link:focus-visible,
+.pr-faq summary:focus-visible,
+.pr-switch a:focus-visible {
+    outline: 2px solid var(--secondary);
+    outline-offset: 3px;
+}
+
+.pr-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--primary);
+    font-size: 13px;
+    font-weight: 800;
+    transition: color .25s ease;
+}
+
+.pr-link svg {
+    width: 15px;
+    height: 15px;
+}
+
+.pr-link:hover {
+    color: var(--secondary);
+}
+
+html[dir="rtl"] .pr-link svg,
+html[dir="rtl"] .pr-btn svg[data-lucide="arrow-right"] {
+    transform: scaleX(-1);
+}
+
+.pr-sr {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+}
+
+/* ---------- hero (builds on .page-hero from global.css) ---------- */
+.pr-hero {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    padding: clamp(64px, 8vw, 104px) 0 clamp(52px, 6vw, 80px);
+}
+
+.pr-hero::after {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    inset-block-start: -180px;
+    inset-inline-end: -120px;
+    width: 520px;
+    height: 520px;
+    border-radius: 50%;
+    background: radial-gradient(closest-side, rgba(227, 188, 110, .22), transparent);
+    pointer-events: none;
+}
+
+.pr-hero .eyebrow {
+    gap: 8px;
+}
+
+.pr-hero .eyebrow svg {
+    width: 15px;
+    height: 15px;
+}
+
+.pr-hero h1 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    letter-spacing: -.03em;
+}
+
+.pr-hero h1 span {
+    display: block;
+    color: var(--gold-light);
+}
+
+.pr-hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-top: 30px;
+}
+
+.pr-hero-points {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 26px;
+    margin-top: 26px;
+    color: var(--court-text);
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.pr-hero-points li {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.pr-hero-points svg {
+    width: 17px;
+    height: 17px;
+    color: var(--gold-light);
+}
+
+.pr-hero .crumbs svg {
+    width: 14px;
+    height: 14px;
+}
+
+/* ---------- hero split: image left (blob shape), text right ---------- */
+.pr-hero-grid {
+    display: grid;
+    grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr);
+    align-items: center;
+    gap: clamp(32px, 6vw, 88px);
+}
+
+.pr-hero-media {
+    position: relative;
+    width: min(100%, 440px);
+    aspect-ratio: 1 / 1.05;
+    margin-inline: auto;
+}
+
+/* gold outline blob behind the photo */
+.pr-hero-media::before {
+    content: "";
+    position: absolute;
+    inset: -14px;
+    border: 2px solid var(--gold-light);
+    border-radius: 42% 58% 62% 38% / 45% 38% 62% 55%;
+    opacity: .7;
+    transform: rotate(-6deg);
+    pointer-events: none;
+}
+
+html[dir="rtl"] .pr-hero-media::before {
+    transform: rotate(6deg);
+}
+
+/* organic, softly morphing shape instead of a rectangle */
+.pr-hero-shape {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    border-radius: 58% 42% 38% 62% / 50% 40% 60% 50%;
+    background: var(--court);
+    box-shadow: 0 30px 70px rgba(0, 0, 0, .35);
+    animation: prBlob 14s ease-in-out infinite alternate;
+}
+
+.pr-hero-shape img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+@keyframes prBlob {
+    to {
+        border-radius: 42% 58% 55% 45% / 58% 46% 54% 42%;
+    }
+}
+
+.pr-hero-badge {
+    position: absolute;
+    inset-block-end: 6%;
+    inset-inline-end: -4%;
+    width: 92px;
+    height: 92px;
+    display: grid;
+    place-content: center;
+    justify-items: center;
+    gap: 2px;
+    border-radius: 50%;
+    background: var(--gold-light);
+    color: #153427;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, .3);
+    font-size: 12px;
+    font-weight: 800;
+    line-height: 1.1;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: .06em;
+}
+
+.pr-hero-badge svg {
+    width: 22px;
+    height: 22px;
+}
+
+.pr-hero-copy .eyebrow {
+    margin-bottom: 18px;
+}
+
+@media (max-width: 900px) {
+    .pr-hero-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .pr-hero-media {
+        width: min(100%, 320px);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .pr-hero-shape {
+        animation: none;
+    }
+}
+
+.pr-switch {
+    display: inline-flex;
+    gap: 4px;
+    margin-top: 28px;
+    padding: 4px;
+    border: 1px solid rgba(250, 246, 236, .28);
+    border-radius: var(--btn-radius);
+    background: rgba(0, 0, 0, .18);
+}
+
+.pr-switch a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    min-height: 40px;
+    padding-inline: 22px;
+    border-radius: var(--btn-radius);
+    color: var(--court-text);
+    font-size: 13px;
+    font-weight: 800;
+    transition: background-color .25s ease, color .25s ease;
+}
+
+.pr-switch a svg {
+    width: 16px;
+    height: 16px;
+}
+
+.pr-switch a:hover {
+    background: rgba(250, 246, 236, .14);
+}
+
+.pr-switch a.active {
+    background: var(--gold-light);
+    color: #153427;
+}
+
+/* ---------- section scaffolding ---------- */
+.pr-section {
+    width: min(var(--container-width), calc(100% - (var(--page-padding) * 2)));
+    margin-inline: auto;
+    padding-block: clamp(48px, 6vw, 80px) 0;
+}
+
+.pr-head {
+    max-width: 720px;
+    margin: 0 auto clamp(28px, 4vw, 44px);
+    text-align: center;
+}
+
+.pr-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 14px;
+    color: var(--secondary);
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+}
+
+.pr-eyebrow svg {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+}
+
+.pr-eyebrow .eyebrow-line {
+    width: 40px;
+    margin: 0;
+}
+
+.pr-title {
+    margin-bottom: 12px;
+    color: var(--primary-color);
+    font-family: var(--font-heading);
+    font-size: clamp(34px, 4.6vw, 56px);
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -.01em;
+}
+
+.pr-title span {
+    color: var(--secondary);
+}
+
+.pr-subtitle {
+    color: var(--text-soft);
+    font-size: clamp(15px, 1.3vw, 17px);
+    line-height: 1.7;
+}
+
+/* ---------- offers ---------- */
+.pr-offers {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.pr-offer {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+    padding: 26px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-top: 3px solid var(--secondary);
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+}
+
+.pr-offer-icon {
+    width: 46px;
+    height: 46px;
+    display: grid;
+    place-items: center;
+    margin-bottom: 8px;
+    border-radius: 50%;
+    background: var(--secondary-light);
+    color: var(--secondary);
+}
+
+.pr-offer-icon svg {
+    width: 20px;
+    height: 20px;
+}
+
+.pr-offer .pr-offer-value {
+    color: var(--secondary);
+    font-family: var(--font-heading);
+    font-size: 30px;
+    font-weight: 800;
+    line-height: 1.1;
+}
+
+.pr-offer h3 {
+    color: var(--primary-color);
+    font-family: var(--font-heading);
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.pr-offer p {
+    font-size: 14px;
+    line-height: 1.65;
+}
+
+.pr-offer .pr-link {
+    margin-top: auto;
+    padding-top: 12px;
+}
+
+/* ---------- kids / adults tracks ---------- */
+.pr-tracks {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.pr-track {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: clamp(26px, 3.4vw, 40px);
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 22px;
+    box-shadow: var(--shadow);
+}
+
+.pr-track-kids {
+    border-top: 4px solid var(--secondary);
+}
+
+.pr-track-adults {
+    border-top: 4px solid var(--primary);
+}
+
+.pr-track-top {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.pr-track-icon {
+    width: 56px;
+    height: 56px;
+    flex: 0 0 56px;
+    display: grid;
+    place-items: center;
+    border-radius: 16px;
+}
+
+.pr-track-icon svg {
+    width: 26px;
+    height: 26px;
+}
+
+.pr-track-kids .pr-track-icon {
+    background: var(--secondary-light);
+    color: var(--secondary);
+}
+
+.pr-track-adults .pr-track-icon {
+    background: var(--primary-light);
+    color: var(--primary);
+}
+
+.pr-track h3 {
+    color: var(--primary-color);
+    font-family: var(--font-heading);
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+.pr-track-top p {
+    margin-top: 4px;
+    font-size: 14px;
+}
+
+.pr-track-price,
+.pr-price {
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+    color: var(--text-soft);
+}
+
+.pr-track-price small,
+.pr-price small {
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.pr-track-price strong,
+.pr-price strong {
+    color: var(--text);
+    font-family: var(--font-body);
+    font-size: clamp(34px, 4vw, 44px);
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: -.02em;
+}
+
+.pr-track-price span,
+.pr-price span {
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.pr-list {
+    display: flex;
+    flex-direction: column;
+    gap: 11px;
+}
+
+.pr-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    color: var(--text);
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.pr-list svg {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+    margin-top: 1px;
+    color: var(--primary);
+}
+
+.pr-track .btn {
+    align-self: flex-start;
+    margin-top: auto;
+}
+
+/* ---------- included features ---------- */
+.pr-features {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.pr-feature {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 22px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+}
+
+.pr-feature-icon {
+    width: 46px;
+    height: 46px;
+    flex: 0 0 46px;
+    display: grid;
+    place-items: center;
+    border-radius: 12px;
+    background: var(--primary-light);
+    color: var(--primary);
+}
+
+.pr-feature-icon svg {
+    width: 21px;
+    height: 21px;
+}
+
+.pr-feature h3 {
+    margin-bottom: 4px;
+    color: var(--text);
+    font-family: var(--font-body);
+    font-size: 16px;
+    font-weight: 800;
+}
+
+.pr-feature p {
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* ---------- table ---------- */
+.pr-table-wrap {
+    position: relative;
+    overflow-x: auto;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+}
+
+.pr-table {
+    width: 100%;
+    min-width: 560px;
+    border-collapse: collapse;
+    text-align: start;
+}
+
+.pr-table th,
+.pr-table td {
+    padding: 18px 24px;
+    border-bottom: 1px solid var(--border);
+    text-align: start;
+    font-size: 15px;
+}
+
+.pr-table thead th {
+    background: var(--primary-light);
+    color: var(--primary);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+}
+
+.pr-table tbody tr:last-child th,
+.pr-table tbody tr:last-child td {
+    border-bottom: 0;
+}
+
+.pr-table tbody tr:hover {
+    background: color-mix(in srgb, var(--secondary) 7%, transparent);
+}
+
+.pr-table td {
+    color: var(--text);
+    font-weight: 700;
+}
+
+.pr-course {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--primary-color);
+    font-family: var(--font-heading);
+    font-size: 17px;
+    font-weight: 700;
+}
+
+.pr-course svg {
+    width: 20px;
+    height: 20px;
+    color: var(--secondary);
+}
+
+/* ---------- plans ---------- */
+.pr-plans {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+    align-items: stretch;
+}
+
+.pr-plan {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    padding: 32px 28px 28px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    box-shadow: var(--shadow);
+}
+
+.pr-plan.featured {
+    border: 2px solid var(--primary);
+}
+
+.pr-ribbon {
+    position: absolute;
+    inset-block-start: -14px;
+    inset-inline-start: 28px;
+    padding: 6px 14px;
+    border-radius: 999px;
+    background: var(--secondary);
+    color: var(--white);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+}
+
+.dark-mode .pr-ribbon {
+    color: #0b1510;
+}
+
+.pr-plan h3 {
+    color: var(--primary-color);
+    font-family: var(--font-heading);
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 1.15;
+}
+
+.pr-plan-for {
+    margin-top: -12px;
+    font-size: 14px;
+}
+
+.pr-plan .pr-list {
+    flex: 1;
+}
+
+.pr-plan .btn {
+    width: 100%;
+}
+
+.pr-banner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 28px;
+    padding: 16px 22px;
+    border: 1px dashed color-mix(in srgb, var(--secondary) 60%, transparent);
+    border-radius: 14px;
+    background: var(--secondary-light);
+    color: var(--text);
+    font-size: 14px;
+    text-align: center;
+}
+
+.pr-banner svg {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+    color: var(--secondary);
+}
+
+.pr-banner strong {
+    font-weight: 800;
+}
+
+/* ---------- FAQ ---------- */
+.pr-faq {
+    max-width: 860px;
+    margin-inline: auto;
+    display: grid;
+    gap: 10px;
+}
+
+.pr-faq details {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    transition: border-color .25s ease;
+}
+
+.pr-faq details[open],
+.pr-faq details:hover {
+    border-color: color-mix(in srgb, var(--secondary) 55%, transparent);
+}
+
+.pr-faq summary {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 18px 22px;
+    cursor: pointer;
+    list-style: none;
+    color: var(--primary-color);
+    font-family: var(--font-heading);
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.35;
+}
+
+.pr-faq summary::-webkit-details-marker {
+    display: none;
+}
+
+.pr-faq summary::after {
+    content: "+";
+    flex-shrink: 0;
+    color: var(--secondary);
+    font: 400 26px/1 var(--font-body);
+    transition: transform .25s ease;
+}
+
+.pr-faq details[open] summary::after {
+    transform: rotate(45deg);
+}
+
+.pr-faq details p {
+    margin: 0 22px 20px;
+    padding: 14px 16px;
+    border-radius: 10px;
+    background: var(--primary-light);
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+/* ---------- CTA ---------- */
+.pr-cta {
+    width: min(var(--container-width), calc(100% - (var(--page-padding) * 2)));
+    margin-inline: auto;
+    padding-block: clamp(48px, 6vw, 80px) 72px;
+}
+
+.pr-cta-card {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    padding: clamp(40px, 6vw, 72px) clamp(22px, 5vw, 72px);
+    border-radius: 28px;
+    background: var(--dark-bg);
+    color: var(--ivory);
+    box-shadow: var(--shadow);
+    text-align: center;
+}
+
+.pr-cta-card::before {
+    content: "";
+    position: absolute;
+    inset-block-start: -140px;
+    inset-inline-start: 50%;
+    z-index: -1;
+    width: 560px;
+    height: 320px;
+    transform: translateX(-50%);
+    border-radius: 50%;
+    background: radial-gradient(closest-side, rgba(98, 181, 140, .26), transparent);
+    pointer-events: none;
+}
+
+.pr-cta-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+    color: var(--gold-light);
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+}
+
+.pr-cta-eyebrow svg {
+    width: 18px;
+    height: 18px;
+}
+
+.pr-cta-eyebrow .eyebrow-line {
+    width: 40px;
+    margin: 0;
+    background: var(--gold-light);
+}
+
+.pr-cta-card h2 {
+    max-width: 760px;
+    margin: 0 auto;
+    color: var(--ivory);
+    font-family: var(--font-heading);
+    font-size: clamp(32px, 4.4vw, 54px);
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -.02em;
+}
+
+.pr-cta-card h2 span {
+    color: var(--gold-light);
+}
+
+.pr-cta-text {
+    max-width: 580px;
+    margin: 18px auto 0;
+    color: rgba(250, 246, 236, .78);
+    font-size: 16px;
+    line-height: 1.75;
+}
+
+.pr-cta-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 14px;
+    margin-top: 30px;
+}
+
+/* ---------- responsive ---------- */
+@media (max-width: 1100px) {
+    .pr-offers {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 960px) {
+    .pr-features {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (min-width: 701px) and (max-width: 960px) {
+    .pr-plans {
+        gap: 14px;
+    }
+
+    .pr-plan {
+        padding: 26px 16px 20px;
+    }
+}
+
+@media (max-width: 700px) {
+    .pr-plans {
+        grid-template-columns: minmax(0, 1fr);
+        max-width: 520px;
+        margin-inline: auto;
+    }
+}
+
+@media (max-width: 760px) {
+    .pr-tracks {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
+
+@media (max-width: 560px) {
+    .pr-offers,
+    .pr-features {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .pr-hero-actions .btn,
+    .pr-cta-actions .btn,
+    .pr-track .btn {
+        width: 100%;
+    }
+
+    .pr-eyebrow,
+    .pr-cta-eyebrow {
+        font-size: 12px;
+        letter-spacing: .12em;
+    }
+
+    .pr-eyebrow .eyebrow-line,
+    .pr-cta-eyebrow .eyebrow-line {
+        width: 22px;
+    }
+
+    .pr-table th,
+    .pr-table td {
+        padding: 14px 16px;
+    }
+
+    .pr-banner {
+        flex-direction: column;
+    }
+}
+
+/* =====================================================================
+   Hero on the normal page background (same look as the home hero):
+   light --bg, primary headings, gold accent. Works in dark mode too.
+   ===================================================================== */
+.page-hero.pr-hero {
+    --secondary: var(--secondary-color);
+    background: var(--bg);
+    color: var(--text);
+    border-bottom: 1px solid var(--border);
+}
+
+.page-hero.pr-hero::after {
+    background: radial-gradient(closest-side, var(--secondary-light), transparent);
+}
+
+.page-hero.pr-hero .eyebrow {
+    border-color: color-mix(in srgb, var(--secondary-color) 45%, transparent);
+    background: var(--secondary-light);
+    color: var(--secondary-color);
+}
+
+.page-hero.pr-hero h1 {
+    color: var(--primary-color);
+}
+
+.page-hero.pr-hero h1 span {
+    color: var(--secondary-color);
+}
+
+.page-hero.pr-hero p {
+    color: var(--text-soft);
+    opacity: 1;
+}
+
+.page-hero.pr-hero .crumbs,
+.page-hero.pr-hero .crumbs span {
+    color: var(--text-soft);
+}
+
+.page-hero.pr-hero .crumbs a:hover {
+    color: var(--secondary-color);
+}
+
+.pr-hero .pr-hero-points {
+    color: var(--text);
+}
+
+.pr-hero .pr-hero-points svg {
+    color: var(--secondary-color);
+}
+
+/* hero buttons = same as navbar Login (filled primary, gold on hover) / outline */
+.pr-hero .pr-btn-gold {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: var(--btn-fg);
+}
+
+.pr-hero .pr-btn-gold:hover {
+    background: var(--secondary-color);
+    border-color: var(--secondary-color);
+    color: var(--secondary-contrast);
+}
+
+.pr-hero .pr-btn-line {
+    background: transparent;
+    border-color: var(--primary);
+    color: var(--primary);
+}
+
+.pr-hero .pr-btn-line:hover {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: var(--btn-fg);
+}
+
+/* Kids / Adults switch */
+.pr-hero .pr-switch {
+    border-color: var(--border);
+    background: var(--surface);
+}
+
+.pr-hero .pr-switch a {
+    color: var(--text);
+}
+
+.pr-hero .pr-switch a:hover {
+    background: var(--primary-light);
+}
+
+.pr-hero .pr-switch a.active {
+    background: var(--primary);
+    color: var(--btn-fg);
+}
+
+/* image frames */
+.pr-hero .pr-hero-media::before {
+    border-color: var(--secondary-color);
+}
+
+.pr-hero .pr-hero-shape {
+    box-shadow: var(--shadow);
+}
+
+.pr-hero .pr-hero-badge {
+    background: var(--secondary-color);
+    color: var(--secondary-contrast);
+}
+
+
+/* =====================================================================
+   Compact hero: whole hero fits within one screen
+   ===================================================================== */
+.page-hero.pr-hero {
+    padding: clamp(28px, 4vw, 52px) 0 clamp(28px, 4vw, 52px);
+}
+
+.page-hero.pr-hero h1 {
+    font-size: clamp(32px, 3.8vw, 50px);
+}
+
+.page-hero.pr-hero p {
+    margin-top: 14px;
+    font-size: 16px;
+    line-height: 1.65;
+}
+
+.pr-hero .eyebrow,
+.pr-hero-copy .eyebrow {
+    margin-bottom: 14px;
+}
+
+.pr-hero .pr-hero-actions {
+    margin-top: 22px;
+}
+
+.pr-hero .pr-hero-points {
+    margin-top: 18px;
+}
+
+.pr-hero .pr-switch {
+    margin-top: 20px;
+}
+
+.pr-hero .crumbs {
+    margin-top: 18px;
+}
+
+@media (min-width: 901px) {
+    /* image size follows the available screen height */
+    .pr-hero .pr-hero-media {
+        width: min(100%, 380px, max(240px, calc((100vh - var(--header-height) - 150px) * .95)));
+    }
+}
+
+@media (max-width: 900px) {
+    .pr-hero .pr-hero-media {
+        width: min(100%, 260px);
+    }
+}

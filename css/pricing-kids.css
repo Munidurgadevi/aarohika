@@ -1,0 +1,176 @@
+/* =====================================================================
+   Aarohika Music Academy: Kids pricing extras
+   Load AFTER global.css and pricing.css.
+   ===================================================================== */
+
+/* soft floating notes in the hero, like the home page */
+.pr-kids .pr-hero-note {
+    position: absolute;
+    z-index: -1;
+    color: var(--gold-light);
+    font-family: var(--font-family);
+    line-height: 1;
+    opacity: .5;
+    pointer-events: none;
+}
+
+.pr-kids .pr-hero-note.n1 {
+    inset-block-start: 16%;
+    inset-inline-end: 12%;
+    font-size: 72px;
+    transform: rotate(-12deg);
+}
+
+.pr-kids .pr-hero-note.n2 {
+    inset-block-end: 14%;
+    inset-inline-end: 26%;
+    font-size: 48px;
+    transform: rotate(10deg);
+}
+
+.pr-kids .pr-hero-note.n3 {
+    inset-block-start: 30%;
+    inset-inline-end: 30%;
+    font-size: 36px;
+    transform: rotate(-6deg);
+}
+
+/* friendlier, rounder cards for the kids page */
+.pr-kids .pr-plan {
+    border-radius: 24px;
+}
+
+.pr-kids .pr-plan.featured {
+    border-color: var(--secondary);
+}
+
+.pr-kids .pr-plan.featured .pr-list svg {
+    color: var(--secondary);
+}
+
+.pr-kids .pr-feature {
+    border-radius: 20px;
+}
+
+.pr-kids .pr-feature-icon {
+    border-radius: 50%;
+    background: var(--secondary-light);
+    color: var(--secondary);
+}
+
+.pr-kids .pr-features {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.pr-kids .pr-feature {
+    flex-direction: column;
+}
+
+@media (max-width: 1100px) {
+    .pr-kids .pr-features {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 560px) {
+    .pr-kids .pr-features {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .pr-kids .pr-hero-note {
+        display: none;
+    }
+}
+
+/* ---------- hero: text left, 2x2 playful photo collage right ---------- */
+.pr-kids-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr);
+    align-items: center;
+    gap: clamp(32px, 6vw, 80px);
+}
+
+.pr-kids-collage {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+    width: min(100%, 480px);
+    margin-inline: auto;
+}
+
+.pr-kids-collage .kc {
+    margin: 0;
+    overflow: hidden;
+    aspect-ratio: 1 / 1.1;
+    border: 3px solid var(--gold-light);
+    box-shadow: 0 18px 40px rgba(0, 0, 0, .3);
+    background: var(--court);
+}
+
+.pr-kids-collage .kc img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.pr-kids-collage .kc1 { border-radius: 28px 28px 28px 80px; transform: rotate(-3deg); }
+.pr-kids-collage .kc2 { border-radius: 28px 80px 28px 28px; transform: translateY(24px) rotate(2deg); }
+.pr-kids-collage .kc3 { border-radius: 28px 28px 80px 28px; transform: translateY(-8px) rotate(2deg); }
+.pr-kids-collage .kc4 { border-radius: 80px 28px 28px 28px; transform: translateY(16px) rotate(-2deg); }
+
+@media (max-width: 700px) {
+    .pr-kids-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .pr-kids-collage {
+        width: min(100%, 380px);
+        margin-bottom: 24px;
+    }
+}
+
+
+/* hero on normal background: recolour notes + collage frames */
+.pr-kids .pr-hero-note {
+    color: var(--secondary-color);
+    opacity: .4;
+}
+
+.pr-kids-collage .kc {
+    border-color: var(--secondary-color);
+    box-shadow: var(--shadow);
+}
+
+
+/* compact kids hero collage */
+.pr-kids-collage .kc {
+    aspect-ratio: 1 / .92;
+}
+
+@media (min-width: 901px) {
+    .pr-kids-collage {
+        gap: 12px;
+        width: min(100%, 400px, max(260px, calc(100vh - var(--header-height) - 170px)));
+    }
+
+    .pr-kids-collage .kc2 {
+        transform: translateY(16px) rotate(2deg);
+    }
+
+    .pr-kids-collage .kc4 {
+        transform: translateY(10px) rotate(-2deg);
+    }
+
+    .pr-kids-collage .kc3 {
+        transform: translateY(-4px) rotate(2deg);
+    }
+}
+
+@media (max-width: 900px) {
+    .pr-kids-collage {
+        width: min(100%, 300px);
+        gap: 10px;
+        margin-bottom: 14px;
+    }
+}

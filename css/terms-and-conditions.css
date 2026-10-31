@@ -1,0 +1,472 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body.pg {
+    margin: 0;
+    position: relative;
+    min-height: 100vh;
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-body);
+}
+
+.pg-tools {
+    position: absolute;
+    z-index: 10;
+    top: 20px;
+    inset-inline-end: 24px;
+    display: flex;
+    gap: 12px;
+}
+
+.pg-brand {
+    display: flex;
+    justify-content: center;
+}
+
+.pg-brand .brand-sub {
+    display: block;
+}
+
+.pg-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 14px 26px;
+    border: 1.5px solid var(--primary);
+    border-radius: 12px;
+    background: var(--primary);
+    color: var(--btn-fg);
+    font: inherit;
+    font-size: 14px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: background-color .25s ease, color .25s ease, border-color .25s ease, transform .25s ease;
+}
+
+.pg-btn:hover {
+    background: var(--secondary);
+    border-color: var(--secondary);
+    color: var(--secondary-contrast);
+    transform: translateY(-1px);
+}
+
+.pg-btn svg {
+    width: 18px;
+    height: 18px;
+    flex: 0 0 18px;
+}
+
+.pg-btn.is-ghost {
+    background: transparent;
+    border-color: var(--secondary);
+    color: var(--text);
+}
+
+.pg-btn.is-ghost:hover {
+    background: var(--secondary-light);
+    border-color: var(--secondary);
+    color: var(--text);
+}
+
+.pg-btn.is-gold {
+    background: var(--secondary);
+    border-color: var(--secondary);
+    color: var(--secondary-contrast);
+}
+
+.pg-btn.is-gold:hover {
+    background: var(--surface);
+    border-color: var(--surface);
+    color: var(--text);
+}
+
+@media (max-width: 560px) {
+    .pg-tools {
+        top: 12px;
+        inset-inline-end: 12px;
+        gap: 8px;
+    }
+}
+
+.lg-page {
+    width: min(1240px, 100% - 48px);
+    margin: 0 auto;
+    padding: 76px 0 72px;
+}
+
+.lg-head {
+    max-width: 720px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.lg-head .pg-brand {
+    margin-bottom: 28px;
+}
+
+.lg-eyebrow {
+    margin: 0 0 10px;
+    color: var(--secondary);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+}
+
+.lg-head h1 {
+    margin: 0;
+    color: var(--primary);
+    font-family: var(--font-family);
+    font-size: clamp(34px, 5vw, 56px);
+    font-weight: 700;
+    line-height: 1.08;
+    letter-spacing: -.02em;
+}
+
+.lg-intro {
+    margin: 16px 0 0;
+    color: var(--text-soft);
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+.lg-updated {
+    margin: 12px 0 0;
+    color: var(--secondary);
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.lg-layout {
+    display: grid;
+    grid-template-columns: 250px minmax(0, 1fr);
+    gap: clamp(28px, 3.4vw, 56px);
+    align-items: start;
+    margin-top: 48px;
+}
+
+.lg-sidebar {
+    min-width: 0;
+}
+
+.lg-sidebar-title {
+    margin: 0 0 12px;
+    padding-inline-start: 14px;
+    color: var(--secondary);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .22em;
+    text-transform: uppercase;
+}
+
+.lg-nav {
+    display: grid;
+    gap: 2px;
+}
+
+.lg-nav a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 14px;
+    border-radius: 12px;
+    color: var(--text-soft);
+    font-size: 14px;
+    font-weight: 500;
+    transition: color .2s, background-color .2s;
+}
+
+.lg-nav a b {
+    flex: 0 0 24px;
+    color: var(--secondary);
+    font-family: var(--font-family);
+    font-size: 17px;
+    font-weight: 700;
+}
+
+.lg-nav a:hover {
+    background: var(--primary-light);
+    color: var(--text);
+}
+
+.lg-nav a:focus-visible {
+    outline: 2px solid var(--secondary);
+    outline-offset: 2px;
+}
+
+.lg-content {
+    min-width: 0;
+}
+
+.lg-card {
+    margin-bottom: 20px;
+    padding: clamp(24px, 3vw, 38px);
+    border: 1px solid var(--border);
+    border-radius: 22px;
+    background: var(--surface);
+    box-shadow: var(--shadow);
+    scroll-margin-top: 24px;
+}
+
+.lg-card h2 {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin: 0 0 16px;
+    color: var(--text);
+    font-family: var(--font-family);
+    font-size: clamp(24px, 2.6vw, 32px);
+    line-height: 1.2;
+}
+
+.lg-num {
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+    min-width: 38px;
+    height: 38px;
+    padding: 0 6px;
+    border: 1px solid var(--secondary);
+    border-radius: 10px;
+    color: var(--secondary);
+    font-family: var(--font-body);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: .08em;
+}
+
+.lg-card p,
+.lg-card li {
+    color: var(--text-soft);
+    font-size: clamp(15px, .9vw + 2px, 16px);
+    line-height: 1.8;
+}
+
+.lg-card p {
+    margin: 0 0 14px;
+}
+
+.lg-card p:last-child {
+    margin-bottom: 0;
+}
+
+.lg-card ul {
+    margin: 4px 0 16px;
+    padding-inline-start: 22px;
+}
+
+.lg-card li {
+    margin-bottom: 6px;
+}
+
+.lg-card li::marker {
+    color: var(--secondary);
+}
+
+.lg-card strong {
+    color: var(--text);
+}
+
+.lg-link {
+    color: var(--primary);
+    font-weight: 700;
+    text-decoration: underline;
+}
+
+.lg-link:hover {
+    color: var(--secondary);
+}
+
+.lg-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+    margin-top: 22px;
+}
+
+.lg-item {
+    min-width: 0;
+    padding: 20px;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    background: var(--bg);
+}
+
+.lg-item-mark {
+    display: block;
+    margin-bottom: 10px;
+    color: var(--secondary);
+    font-family: var(--font-family);
+    font-size: 24px;
+    line-height: 1;
+}
+
+.lg-item h3 {
+    margin: 0 0 6px;
+    color: var(--text);
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.lg-card .lg-item p {
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.lg-note {
+    margin-top: 20px;
+    padding: 16px 20px;
+    border: 1px solid var(--secondary);
+    border-radius: 14px;
+    background: var(--secondary-light);
+}
+
+.lg-card .lg-note p {
+    color: var(--text);
+}
+
+.lg-card--contact {
+    padding: 0;
+    border: 0;
+    background: none;
+    box-shadow: none;
+}
+
+.lg-contact {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    padding: clamp(24px, 3vw, 36px);
+    border-radius: 22px;
+    background: var(--primary);
+}
+
+.lg-contact h3 {
+    margin: 0 0 6px;
+    color: var(--btn-fg);
+    font-family: var(--font-family);
+    font-size: clamp(22px, 2.4vw, 28px);
+    line-height: 1.2;
+}
+
+.lg-card .lg-contact p {
+    margin: 0;
+    color: var(--btn-fg);
+    opacity: .85;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+.lg-contact .pg-btn {
+    flex-shrink: 0;
+}
+
+@media (min-width: 901px) {
+    .lg-sidebar {
+        position: sticky;
+        top: 24px;
+        max-height: calc(100vh - 48px);
+        overflow-y: auto;
+    }
+}
+
+@media (max-width: 1200px) {
+    .lg-layout {
+        grid-template-columns: 220px minmax(0, 1fr);
+    }
+}
+
+@media (max-width: 1024px) {
+    .lg-page {
+        width: calc(100% - 40px);
+    }
+
+    .lg-layout {
+        grid-template-columns: 200px minmax(0, 1fr);
+        gap: 28px;
+    }
+
+    .lg-nav a {
+        padding: 9px 10px;
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 900px) {
+    .lg-layout {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 24px;
+        margin-top: 40px;
+    }
+
+    .lg-sidebar-title {
+        padding-inline-start: 0;
+    }
+
+    .lg-nav {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 8px;
+    }
+
+    .lg-nav a {
+        padding: 11px 14px;
+        border: 1px solid var(--border);
+        background: var(--surface);
+    }
+}
+
+@media (max-width: 600px) {
+    .lg-page {
+        width: calc(100% - 32px);
+        padding-top: 64px;
+    }
+
+    .lg-nav {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .lg-card {
+        margin-bottom: 16px;
+        border-radius: 18px;
+    }
+
+    .lg-card h2 {
+        gap: 12px;
+    }
+
+    .lg-num {
+        min-width: 34px;
+        height: 34px;
+    }
+
+    .lg-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .lg-contact {
+        flex-direction: column;
+        align-items: flex-start;
+        border-radius: 18px;
+    }
+
+    .lg-contact .pg-btn {
+        width: 100%;
+    }
+}
+
+@media (max-width: 350px) {
+    .lg-nav {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}

@@ -1,0 +1,1123 @@
+/* ==========================================================
+   keyboard.css  —  Keyboard page styles
+   Base: ../css/global.css (variables, .btn, .container, dark-mode)
+   Load order:  global.css  ->  keyboard.css
+   Prefix "gt-" use chesanu, so global classes tho clash avvadu.
+   ========================================================== */
+
+/* ---------- Hero section ---------- */
+.gt-hero {
+    position: relative;
+    overflow: hidden;
+    background: var(--bg);
+    color: var(--text);
+    isolation: isolate;
+}
+
+.gt-hero-inner {
+    position: relative;
+    z-index: 2;
+    width: min(var(--container-width), calc(100% - (var(--page-padding) * 2)));
+    min-height: 520px;
+    margin-inline: auto;
+    display: flex;
+    align-items: center;
+    padding-block: 44px 56px;
+}
+
+/* ---------- Copy (left) ---------- */
+.gt-hero-copy {
+    width: min(100%, 560px);
+}
+
+.gt-eyebrow {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 18px;
+    color: var(--secondary);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+}
+
+.gt-eyebrow svg {
+    width: 16px;
+    height: 16px;
+}
+
+.gt-eyebrow-line {
+    width: 44px;
+    height: 1px;
+    background: var(--secondary);
+}
+
+.gt-hero h1 {
+    margin-bottom: 18px;
+    color: var(--primary);
+    font-family: var(--font-family);
+    font-size: clamp(38px, 4.6vw, 62px);
+    font-weight: 700;
+    line-height: 1.05;
+    letter-spacing: -.035em;
+}
+
+.gt-hero h1 span {
+    display: block;
+    color: var(--secondary);
+}
+
+.gt-hero-desc {
+    max-width: 520px;
+    margin-bottom: 28px;
+    color: var(--text-soft);
+    font-size: clamp(15px, 1.25vw, 17px);
+    line-height: 1.7;
+}
+
+/* ---------- Buttons ---------- */
+.gt-hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-bottom: 30px;
+}
+
+.gt-hero-actions .btn {
+    min-height: 48px;
+    padding-inline: 24px;
+}
+
+/* Primary: navbar Login button tho same (green -> hover gold) */
+.gt-btn-primary {
+    background: var(--primary);
+    color: var(--btn-fg);
+    border-color: var(--primary);
+}
+
+.gt-btn-primary:hover {
+    background: var(--secondary);
+    color: var(--secondary-contrast);
+    border-color: var(--secondary);
+    transform: translateY(-1px);
+}
+
+/* Secondary: gold outline */
+.gt-btn-ghost {
+    background: var(--surface);
+    color: var(--primary);
+    border-color: var(--secondary);
+}
+
+.gt-btn-ghost svg {
+    color: var(--secondary);
+}
+
+.gt-btn-ghost:hover {
+    background: var(--secondary-light);
+    transform: translateY(-1px);
+}
+
+.gt-btn-primary svg,
+html[dir="rtl"] .gt-btn-primary svg {
+    transition: transform var(--transition-normal);
+}
+
+.gt-btn-primary:hover svg {
+    transform: translateX(3px);
+}
+
+html[dir="rtl"] .gt-btn-primary svg {
+    transform: scaleX(-1);
+}
+
+html[dir="rtl"] .gt-btn-primary:hover svg {
+    transform: scaleX(-1) translateX(3px);
+}
+
+/* ---------- Feature highlights ---------- */
+.gt-highlights {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px 26px;
+}
+
+.gt-highlight {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text);
+    font-size: 12.5px;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.gt-highlight svg {
+    width: 19px;
+    height: 19px;
+    flex: none;
+    color: var(--secondary);
+}
+
+/* ---------- Media (right) ---------- */
+.gt-hero-media {
+    position: absolute;
+    inset-block: 0;
+    inset-inline-end: 0;
+    z-index: 1;
+    width: 54%;
+}
+
+.gt-hero-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center right;
+    display: block;
+}
+
+/* Image left edge ni background loki fade chese overlay */
+.gt-hero-media::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right,
+            var(--bg) 0%,
+            color-mix(in srgb, var(--bg) 85%, transparent) 14%,
+            color-mix(in srgb, var(--bg) 40%, transparent) 32%,
+            transparent 55%);
+    pointer-events: none;
+}
+
+html[dir="rtl"] .gt-hero-media::after {
+    background: linear-gradient(to left,
+            var(--bg) 0%,
+            color-mix(in srgb, var(--bg) 85%, transparent) 14%,
+            color-mix(in srgb, var(--bg) 40%, transparent) 32%,
+            transparent 55%);
+}
+
+html[dir="rtl"] .gt-hero-media img {
+    transform: scaleX(-1);
+}
+
+/* Dark mode lo photo konchem dim */
+.dark-mode .gt-hero-media img {
+    filter: brightness(.82) contrast(1.05);
+}
+
+/* Floating music note decoration */
+.gt-note {
+    position: absolute;
+    z-index: 3;
+    top: 22%;
+    inset-inline-start: 47%;
+    width: 120px;
+    color: var(--secondary);
+    opacity: .9;
+    pointer-events: none;
+}
+
+.gt-note svg {
+    width: 100%;
+    height: auto;
+    overflow: visible;
+}
+
+html[dir="rtl"] .gt-note svg {
+    transform: scaleX(-1);
+}
+
+/* ---------- Tablet ---------- */
+@media (max-width: 1100px) {
+    .gt-hero-media {
+        width: 46%;
+    }
+
+    .gt-hero-copy {
+        width: min(54%, 520px);
+    }
+
+    .gt-note {
+        inset-inline-start: 44%;
+        width: 96px;
+    }
+}
+
+/* ---------- Mobile: copy paina, image kinda ---------- */
+@media (max-width: 860px) {
+    .gt-hero-copy {
+        width: 100%;
+    }
+
+    .gt-hero-inner {
+        min-height: 0;
+        padding-block: 40px 28px;
+    }
+
+    .gt-hero-copy {
+        width: 100%;
+    }
+
+    .gt-hero-media {
+        position: relative;
+        inset: auto;
+        width: 100%;
+        height: 320px;
+    }
+
+    .gt-hero-media::after,
+    html[dir="rtl"] .gt-hero-media::after {
+        background: linear-gradient(to bottom,
+                var(--bg) 0%,
+                color-mix(in srgb, var(--bg) 60%, transparent) 25%,
+                transparent 60%);
+    }
+
+    .gt-hero-media img {
+        object-position: center 30%;
+    }
+
+    .gt-note {
+        display: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .gt-hero-actions {
+        flex-direction: column;
+    }
+
+    .gt-hero-actions .btn {
+        width: 100%;
+    }
+
+    .gt-highlights {
+        gap: 12px 18px;
+    }
+
+    .gt-hero-media {
+        height: 260px;
+    }
+}
+
+
+/* ==========================================================
+   Common section styles (home page style.css laage)
+   Spacing: top 36px / bottom 76px  (courses, why, cta sections tho match)
+   ========================================================== */
+.gt-section {
+    position: relative;
+    padding-block: 36px 76px;
+    background: var(--bg);
+    color: var(--text);
+}
+
+/* Heading — centered (style.css .courses-head laage) */
+.gt-section-head {
+    position: relative;
+    margin-bottom: 40px;
+}
+
+.gt-head-center {
+    max-width: 720px;
+    margin-inline: auto;
+    text-align: center;
+}
+
+.gt-head-center .gt-eyebrow {
+    justify-content: center;
+}
+
+.gt-head-center .gt-subtitle {
+    margin-inline: auto;
+}
+
+.gt-section-head .gt-eyebrow {
+    margin-bottom: 12px;
+}
+
+.gt-title {
+    margin-bottom: 12px;
+    color: var(--primary);
+    font-family: var(--font-family);
+    font-size: clamp(32px, 4.2vw, 52px);
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -.03em;
+}
+
+.gt-title span {
+    color: var(--secondary);
+}
+
+.gt-subtitle {
+    max-width: 560px;
+    color: var(--text-soft);
+    font-size: clamp(15px, 1.3vw, 17px);
+    line-height: 1.7;
+}
+
+.gt-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    box-shadow: var(--shadow);
+    transition: transform var(--transition-normal), border-color var(--transition-normal);
+}
+
+.gt-card:hover {
+    transform: translateY(-3px);
+    border-color: color-mix(in srgb, var(--secondary) 55%, var(--border));
+}
+
+.gt-arrow-btn {
+    width: 38px;
+    height: 38px;
+    flex: none;
+    display: inline-grid;
+    place-items: center;
+    border-radius: 50%;
+    background: var(--secondary);
+    color: var(--secondary-contrast);
+    transition: background-color var(--transition-normal), transform var(--transition-normal);
+}
+
+.gt-arrow-btn svg {
+    width: 17px;
+    height: 17px;
+}
+
+.gt-arrow-btn:hover {
+    background: var(--primary);
+    color: var(--btn-fg);
+    transform: translateX(2px);
+}
+
+html[dir="rtl"] .gt-arrow-btn svg,
+html[dir="rtl"] .gt-btn-arrow svg {
+    transform: scaleX(-1);
+}
+
+.gt-head-note {
+    position: absolute;
+    inset-block-start: 0;
+    inset-inline-end: -90px;
+    width: 90px;
+    color: var(--secondary);
+    opacity: .85;
+    pointer-events: none;
+}
+
+.gt-btn-small {
+    min-height: 44px;
+}
+
+.gt-icon-box {
+    width: 60px;
+    height: 60px;
+    flex: none;
+    display: grid;
+    place-items: center;
+    border-radius: 14px;
+    background: var(--secondary-light);
+    color: var(--secondary);
+}
+
+.gt-icon-box svg {
+    width: 28px;
+    height: 28px;
+}
+
+.gt-check-list {
+    display: grid;
+    gap: 12px;
+}
+
+.gt-check-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    color: var(--text-soft);
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.gt-check-list svg {
+    width: 17px;
+    height: 17px;
+    flex: none;
+    margin-top: 2px;
+    color: var(--secondary);
+}
+
+/* ---------- 02 · Choose Your Guitar Path (centered head + 3 cards) ---------- */
+.gt-path-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.gt-path-card {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.gt-path-card img {
+    width: 100%;
+    height: clamp(180px, 17vw, 240px);
+    object-fit: cover;
+    display: block;
+}
+
+.gt-path-body {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 14px;
+    padding: 18px 20px 20px;
+}
+
+.gt-path-body h3,
+.gt-skill-card h3,
+.gt-level h3 {
+    margin-bottom: 4px;
+    color: var(--text);
+    font-size: 17px;
+    font-weight: 800;
+}
+
+.gt-path-body p,
+.gt-skill-card p {
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+/* ---------- 03 · Skills (SPLIT: left heading, right 2x2 cards) ---------- */
+.gt-skills-split {
+    display: grid;
+    grid-template-columns: minmax(0, .8fr) minmax(0, 1.2fr);
+    align-items: center;
+    gap: clamp(32px, 5vw, 72px);
+}
+
+.gt-skills-split .gt-section-head {
+    margin-bottom: 0;
+}
+
+.gt-skills-split .gt-subtitle {
+    margin-bottom: 0;
+}
+
+.gt-skills-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.gt-skill-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 24px;
+}
+
+/* ---------- 04 · Learning Journey (centered head + 3 level cards) ---------- */
+.gt-levels-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.gt-level {
+    padding: 26px;
+}
+
+.gt-level-head {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 18px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--border);
+}
+
+.gt-level-num {
+    width: 42px;
+    height: 42px;
+    flex: none;
+    display: grid;
+    place-items: center;
+    border-radius: 10px;
+    background: var(--secondary-light);
+    color: var(--secondary);
+    font-size: 15px;
+    font-weight: 800;
+}
+
+.gt-level-head h3 {
+    margin: 0;
+    font-size: 19px;
+}
+
+/* ---------- 05 · All Ages (centered head + 2 cards) ---------- */
+.gt-ages-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.gt-age-card {
+    display: grid;
+    grid-template-columns: .85fr 1.15fr;
+    overflow: hidden;
+}
+
+.gt-age-media {
+    position: relative;
+    min-height: 280px;
+}
+
+.gt-age-media img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.gt-age-media::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, transparent 55%, var(--surface) 100%);
+}
+
+html[dir="rtl"] .gt-age-media::after {
+    background: linear-gradient(to left, transparent 55%, var(--surface) 100%);
+}
+
+.gt-age-body {
+    padding: 24px 22px;
+}
+
+.gt-age-title {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+}
+
+.gt-age-title .gt-icon-box {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--primary-light);
+    color: var(--primary);
+}
+
+.gt-age-title .gt-icon-box svg {
+    width: 22px;
+    height: 22px;
+}
+
+.gt-age-title h3 {
+    margin: 0;
+    color: var(--text);
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.gt-age-body .gt-check-list {
+    margin-bottom: 22px;
+}
+
+/* ---------- 06 · Instructor (SPLIT: photo left, text right, no card) ---------- */
+.gt-instructor {
+    display: grid;
+    grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
+    align-items: center;
+    gap: clamp(32px, 5vw, 72px);
+}
+
+.gt-instructor-media {
+    position: relative;
+    height: clamp(320px, 36vw, 460px);
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+.gt-instructor-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.gt-instructor-body {
+    min-width: 0;
+}
+
+.gt-instructor-body h3 {
+    margin-bottom: 2px;
+    color: var(--primary);
+    font-family: var(--font-family);
+    font-size: clamp(30px, 3.4vw, 42px);
+    font-weight: 700;
+    letter-spacing: -.02em;
+}
+
+.gt-role {
+    margin-bottom: 14px;
+    color: var(--secondary);
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+}
+
+.gt-bio {
+    max-width: 560px;
+    margin-bottom: 22px;
+    font-size: 15px;
+}
+
+.gt-facts {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    margin-bottom: 26px;
+}
+
+.gt-facts li {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 14px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: var(--surface);
+    color: var(--text);
+    font-size: 13.5px;
+    font-weight: 600;
+}
+
+.gt-facts svg {
+    width: 19px;
+    height: 19px;
+    flex: none;
+    color: var(--secondary);
+}
+
+/* ---------- 07 · CTA (dark banner, home page .cta-inner laage) ---------- */
+.gt-cta-section {
+    padding-block: 24px 72px;
+}
+
+.gt-cta {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+    min-height: 340px;
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr);
+    align-items: center;
+    border-radius: 28px;
+    background: var(--dark-bg);
+    color: var(--ivory);
+    box-shadow: var(--shadow);
+}
+
+.gt-cta-copy {
+    position: relative;
+    z-index: 2;
+    padding: clamp(28px, 4vw, 52px);
+}
+
+.gt-cta-copy .gt-eyebrow {
+    margin-bottom: 14px;
+    color: var(--gold-light);
+}
+
+.gt-cta-copy .gt-eyebrow-line {
+    background: var(--gold-light);
+}
+
+.gt-cta-copy h2 {
+    margin-bottom: 12px;
+    color: var(--ivory);
+    font-family: var(--font-family);
+    font-size: clamp(30px, 3.6vw, 46px);
+    line-height: 1.08;
+    letter-spacing: -.03em;
+}
+
+.gt-cta-copy h2 span {
+    display: block;
+    color: var(--gold-light);
+}
+
+.gt-cta-copy p {
+    max-width: 460px;
+    margin-bottom: 26px;
+    color: rgba(250, 246, 236, .78);
+    font-size: 15px;
+}
+
+.gt-cta .gt-hero-actions {
+    margin-bottom: 0;
+}
+
+.gt-cta .gt-btn-gold {
+    background: var(--gold-light);
+    color: #153427;
+    border-color: var(--gold-light);
+}
+
+.gt-cta .gt-btn-gold:hover {
+    background: var(--ivory);
+    border-color: var(--ivory);
+}
+
+.gt-cta .gt-btn-primary {
+    background: transparent;
+    color: var(--ivory);
+    border-color: rgba(250, 246, 236, .5);
+}
+
+.gt-cta .gt-btn-primary:hover {
+    background: var(--ivory);
+    color: #153427;
+    border-color: var(--ivory);
+}
+
+.gt-cta-media {
+    position: relative;
+    align-self: stretch;
+    min-height: 260px;
+}
+
+.gt-cta-media img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.gt-cta-media::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: linear-gradient(to right, var(--dark-bg) 0%, color-mix(in srgb, var(--dark-bg) 40%, transparent) 40%, transparent 80%);
+}
+
+html[dir="rtl"] .gt-cta-media::before {
+    background: linear-gradient(to left, var(--dark-bg) 0%, color-mix(in srgb, var(--dark-bg) 40%, transparent) 40%, transparent 80%);
+}
+
+.gt-cta-script {
+    position: absolute;
+    z-index: 2;
+    inset-inline-end: 8%;
+    bottom: 12%;
+    display: grid;
+    gap: 2px;
+    color: var(--gold-light);
+    font-family: var(--font-family);
+    font-size: clamp(20px, 2.2vw, 28px);
+    line-height: 1.15;
+    text-align: center;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, .5);
+}
+
+.dark-mode .gt-path-card img,
+.dark-mode .gt-age-media img,
+.dark-mode .gt-instructor-media img,
+.dark-mode .gt-cta-media img {
+    filter: brightness(.85);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 1100px) {
+    .gt-head-note {
+        display: none;
+    }
+
+    .gt-ages-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 900px) {
+    .gt-skills-split,
+    .gt-instructor,
+    .gt-cta {
+        grid-template-columns: 1fr;
+    }
+
+    .gt-skills-split .gt-section-head {
+        text-align: center;
+        max-width: 640px;
+        margin-inline: auto;
+    }
+
+    .gt-skills-split .gt-eyebrow {
+        justify-content: center;
+    }
+
+    .gt-skills-split .gt-subtitle {
+        margin-inline: auto;
+    }
+
+    .gt-levels-grid {
+        grid-template-columns: 1fr;
+        max-width: 560px;
+        margin-inline: auto;
+    }
+
+    .gt-instructor-media {
+        height: 340px;
+    }
+
+    .gt-cta-media {
+        min-height: 240px;
+    }
+
+    .gt-cta-media::before,
+    html[dir="rtl"] .gt-cta-media::before {
+        background: linear-gradient(to bottom, var(--dark-bg) 0%, transparent 60%);
+    }
+}
+
+@media (max-width: 760px) {
+    .gt-section {
+        padding-block: 28px 56px;
+    }
+
+    .gt-section-head {
+        margin-bottom: 28px;
+    }
+
+    .gt-path-grid {
+        grid-template-columns: 1fr;
+        max-width: 480px;
+        margin-inline: auto;
+    }
+
+    .gt-age-card {
+        grid-template-columns: 1fr;
+    }
+
+    .gt-age-media {
+        min-height: 0;
+        height: 210px;
+    }
+
+    .gt-age-media::after,
+    html[dir="rtl"] .gt-age-media::after {
+        background: linear-gradient(to bottom, transparent 55%, var(--surface) 100%);
+    }
+
+    .gt-facts {
+        grid-template-columns: 1fr;
+    }
+
+    .gt-cta-section {
+        padding-block: 16px 56px;
+    }
+
+    .gt-cta {
+        border-radius: 22px;
+    }
+}
+
+@media (max-width: 480px) {
+    .gt-skills-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .gt-cta .gt-hero-actions .btn {
+        width: 100%;
+    }
+}
+
+
+/* ==========================================================
+   Hero image: secondary-colour circle + animation
+   (image right by default, .gt-hero--left puts it on the left)
+   ========================================================== */
+.gt-hero .gt-hero-inner {
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr);
+    align-items: center;
+    gap: clamp(28px, 5vw, 72px);
+    min-height: 0;
+    padding-block: clamp(28px, 4vw, 52px);
+}
+
+.gt-hero.gt-hero--left .gt-hero-inner {
+    grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr);
+}
+
+.gt-hero.gt-hero--left .gt-hero-media {
+    order: -1;
+}
+
+.gt-hero .gt-hero-copy {
+    width: 100%;
+    max-width: 560px;
+}
+
+.gt-hero .gt-hero-media {
+    position: relative;
+    inset: auto;
+    width: 100%;
+    height: auto;
+    display: grid;
+    place-items: center;
+}
+
+.gt-hero .gt-hero-media::after {
+    display: none;
+}
+
+.gt-circle {
+    position: relative;
+    width: min(100%, 420px, max(240px, calc(100vh - var(--header-height) - 150px)));
+    aspect-ratio: 1;
+    animation: gtFloat 5s ease-in-out infinite;
+}
+
+.gt-circle-disc {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    overflow: hidden;
+    background: var(--secondary);
+    box-shadow: var(--shadow);
+}
+
+.gt-circle-disc img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+    animation: gtZoom 7s ease-in-out infinite alternate;
+}
+
+.gt-circle-ring {
+    position: absolute;
+    inset: -14px;
+    border: 2px dashed var(--secondary);
+    border-radius: 50%;
+    opacity: .7;
+    animation: gtSpin 28s linear infinite;
+}
+
+@keyframes gtFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
+}
+
+@keyframes gtZoom {
+    from { transform: scale(1); }
+    to { transform: scale(1.08); }
+}
+
+@keyframes gtSpin {
+    to { transform: rotate(360deg); }
+}
+
+.gt-hero.gt-hero--left .gt-note {
+    inset-inline-start: auto;
+    inset-inline-end: 47%;
+}
+
+@media (max-width: 860px) {
+    .gt-hero .gt-hero-inner,
+    .gt-hero.gt-hero--left .gt-hero-inner {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .gt-hero.gt-hero--left .gt-hero-media {
+        order: 0;
+    }
+
+    .gt-hero .gt-hero-media {
+        height: auto;
+        padding-block: 12px 4px;
+    }
+
+    .gt-circle {
+        width: min(100%, 280px);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .gt-circle,
+    .gt-circle-disc img,
+    .gt-circle-ring {
+        animation: none;
+    }
+}
+/* ===== Tablet (iPad Mini 768px): level cards in one row + instructor photo shown properly ===== */
+@media (min-width: 601px) and (max-width: 900px) {
+
+    /* Learning Journey: 3 level cards in a single row */
+    .gt-levels-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        max-width: none;
+        gap: 14px;
+    }
+
+    .gt-level {
+        padding: 20px 16px;
+    }
+
+    .gt-level-head {
+        gap: 10px;
+        margin-bottom: 14px;
+        padding-bottom: 14px;
+    }
+
+    .gt-level-num {
+        width: 36px;
+        height: 36px;
+        font-size: 13px;
+    }
+
+    .gt-level-head h3 {
+        font-size: 16px;
+    }
+
+    .gt-level .gt-check-list li {
+        font-size: 13px;
+    }
+
+    /* Instructor: photo on one side, text on the other (full face visible) */
+    .gt-instructor {
+        grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr);
+        align-items: center;
+        gap: 28px;
+    }
+
+    .gt-instructor-media {
+        height: 460px;
+    }
+
+    .gt-instructor-media img {
+        object-position: center 20%;
+    }
+
+    .gt-facts {
+        grid-template-columns: 1fr;
+    }
+}

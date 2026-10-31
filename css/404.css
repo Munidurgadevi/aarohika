@@ -1,0 +1,201 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body.pg {
+    margin: 0;
+    position: relative;
+    min-height: 100vh;
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-body);
+}
+
+.pg-tools {
+    position: absolute;
+    z-index: 10;
+    top: 20px;
+    inset-inline-end: 24px;
+    display: flex;
+    gap: 12px;
+}
+
+.pg-brand {
+    display: flex;
+    justify-content: center;
+}
+
+.pg-brand .brand-sub {
+    display: block;
+}
+
+.pg-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 14px 26px;
+    border: 1.5px solid var(--primary);
+    border-radius: 12px;
+    background: var(--primary);
+    color: var(--btn-fg);
+    font: inherit;
+    font-size: 14px;
+    font-weight: 800;
+    cursor: pointer;
+    transition: background-color .25s ease, color .25s ease, border-color .25s ease, transform .25s ease;
+}
+
+.pg-btn:hover {
+    background: var(--secondary);
+    border-color: var(--secondary);
+    color: var(--secondary-contrast);
+    transform: translateY(-1px);
+}
+
+.pg-btn svg {
+    width: 18px;
+    height: 18px;
+    flex: 0 0 18px;
+}
+
+.pg-btn.is-ghost {
+    background: transparent;
+    border-color: var(--secondary);
+    color: var(--text);
+}
+
+.pg-btn.is-ghost:hover {
+    background: var(--secondary-light);
+    border-color: var(--secondary);
+    color: var(--text);
+}
+
+.pg-btn.is-gold {
+    background: var(--secondary);
+    border-color: var(--secondary);
+    color: var(--secondary-contrast);
+}
+
+.pg-btn.is-gold:hover {
+    background: var(--surface);
+    border-color: var(--surface);
+    color: var(--text);
+}
+
+@media (max-width: 560px) {
+    .pg-tools {
+        top: 12px;
+        inset-inline-end: 12px;
+        gap: 8px;
+    }
+}
+
+body.nf {
+    height: 100dvh;
+    display: grid;
+    place-items: center;
+    overflow: hidden;
+}
+
+.nf-glow {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background:
+        radial-gradient(closest-side at 50% 44%, var(--primary-light), transparent 70%),
+        radial-gradient(520px 420px at 96% 100%, var(--secondary-light), transparent 70%);
+}
+
+.nf-note {
+    position: absolute;
+    color: var(--secondary);
+    font-family: var(--font-family);
+    line-height: 1;
+    opacity: .35;
+    pointer-events: none;
+}
+
+.nf-note.n1 {
+    top: 22%;
+    inset-inline-start: 16%;
+    font-size: 44px;
+    transform: rotate(-12deg);
+}
+
+.nf-note.n2 {
+    bottom: 20%;
+    inset-inline-end: 16%;
+    font-size: 52px;
+    transform: rotate(10deg);
+}
+
+.nf-main {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 720px;
+    padding: 0 24px;
+    text-align: center;
+}
+
+.nf-main .pg-brand {
+    margin-bottom: clamp(12px, 3vh, 28px);
+}
+
+.nf-code {
+    margin: 0;
+    direction: ltr;
+    color: var(--primary);
+    font-family: var(--font-family);
+    font-size: clamp(90px, min(30vw, 24vh), 260px);
+    font-weight: 700;
+    line-height: .85;
+    letter-spacing: .02em;
+    text-shadow: 0 0 60px color-mix(in srgb, var(--primary) 40%, transparent);
+    user-select: none;
+}
+
+.nf-main h1 {
+    margin: clamp(10px, 2.5vh, 22px) 0 clamp(8px, 1.5vh, 14px);
+    color: var(--text);
+    font-family: var(--font-family);
+    font-size: clamp(28px, min(5.4vw, 6.5vh), 54px);
+    line-height: 1.1;
+}
+
+.nf-lead {
+    max-width: 500px;
+    margin: 0 auto clamp(14px, 3vh, 30px);
+    color: var(--text-soft);
+    font-size: 17px;
+    line-height: 1.6;
+}
+
+.nf-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 14px;
+}
+
+@media (max-height: 560px) {
+    body.nf {
+        height: auto;
+        min-height: 100dvh;
+        overflow: auto;
+        padding: 72px 0 32px;
+    }
+}
+
+@media (max-width: 560px) {
+    .nf-lead {
+        font-size: 16px;
+    }
+}

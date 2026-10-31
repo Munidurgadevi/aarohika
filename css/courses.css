@@ -1,0 +1,867 @@
+/* ==========================================================
+   courses.css  —  Courses page styles
+   Base: ../css/global.css (variables, .btn, .container, dark-mode)
+   Load order:  global.css  ->  courses.css
+   Classes "cr-" prefix tho, anni pages tho clash avvadu.
+   ========================================================== */
+
+.cr-section {
+    position: relative;
+    padding-block: 36px 76px;
+    background: var(--bg);
+    color: var(--text);
+}
+
+/* ---------- Shared: eyebrow / titles ---------- */
+.cr-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 14px;
+    color: var(--secondary);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+}
+
+.cr-eyebrow svg {
+    width: 16px;
+    height: 16px;
+}
+
+.cr-eyebrow-line {
+    width: 44px;
+    height: 1px;
+    background: var(--secondary);
+}
+
+.cr-head {
+    max-width: 720px;
+    margin: 0 auto 40px;
+    text-align: center;
+}
+
+.cr-title {
+    margin-bottom: 12px;
+    color: var(--primary);
+    font-family: var(--font-heading);
+    font-size: clamp(32px, 4.4vw, 56px);
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: -.03em;
+}
+
+.cr-title span {
+    color: var(--secondary);
+}
+
+.cr-subtitle {
+    margin-inline: auto;
+    max-width: 560px;
+    color: var(--text-soft);
+    font-size: clamp(15px, 1.3vw, 17px);
+    line-height: 1.7;
+}
+
+/* ---------- Buttons ---------- */
+.cr-btn-primary {
+    background: var(--primary);
+    color: var(--btn-fg);
+    border-color: var(--primary);
+}
+
+.cr-btn-primary:hover {
+    background: var(--secondary);
+    color: var(--secondary-contrast);
+    border-color: var(--secondary);
+    transform: translateY(-1px);
+}
+
+.cr-btn-ghost {
+    background: var(--surface);
+    color: var(--primary);
+    border-color: var(--secondary);
+}
+
+.cr-btn-ghost svg {
+    color: var(--secondary);
+}
+
+.cr-btn-ghost:hover {
+    background: var(--secondary-light);
+    transform: translateY(-1px);
+}
+
+html[dir="rtl"] .cr-btn-arrow svg {
+    transform: scaleX(-1);
+}
+
+/* ==========================================================
+   0 · Hero (image right, text left, guitar page hero laage)
+   ========================================================== */
+.cr-hero {
+    position: relative;
+    overflow: hidden;
+    background: var(--bg);
+    color: var(--text);
+    isolation: isolate;
+}
+
+.cr-hero-inner {
+    position: relative;
+    z-index: 2;
+    width: min(var(--container-width), calc(100% - (var(--page-padding) * 2)));
+    min-height: 520px;
+    margin-inline: auto;
+    display: flex;
+    align-items: center;
+    padding-block: 44px 56px;
+}
+
+.cr-hero-copy {
+    width: min(100%, 560px);
+}
+
+.cr-hero-copy .cr-eyebrow {
+    margin-bottom: 18px;
+}
+
+.cr-hero h1 {
+    margin-bottom: 18px;
+    color: var(--primary);
+    font-family: var(--font-heading);
+    font-size: clamp(38px, 4.8vw, 64px);
+    font-weight: 700;
+    line-height: 1.05;
+    letter-spacing: -.035em;
+}
+
+.cr-hero h1 span {
+    display: block;
+    color: var(--secondary);
+}
+
+.cr-hero-desc {
+    max-width: 520px;
+    margin-bottom: 28px;
+    color: var(--text-soft);
+    font-size: clamp(15px, 1.25vw, 17px);
+    line-height: 1.7;
+}
+
+.cr-hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    margin-bottom: 30px;
+}
+
+.cr-hero-actions .btn {
+    min-height: 48px;
+    padding-inline: 24px;
+}
+
+.cr-hero-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.cr-hero-chips a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    min-height: 44px;
+    padding: 0 20px;
+    border: 1.5px solid var(--border);
+    border-radius: 10px;
+    background: var(--surface);
+    color: var(--text);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: .06em;
+    line-height: 1.2;
+    text-transform: uppercase;
+    transition: border-color var(--transition-normal), background-color var(--transition-normal), transform var(--transition-normal);
+}
+
+.cr-hero-chips svg {
+    width: 17px;
+    height: 17px;
+    color: var(--secondary);
+}
+
+[dir="rtl"] .cr-hero-chips a {
+    letter-spacing: 0;
+}
+
+.cr-hero-chips a:hover {
+    border-color: var(--secondary);
+    background: var(--secondary-light);
+    transform: translateY(-1px);
+}
+
+.cr-hero-media {
+    position: absolute;
+    inset-block: 0;
+    inset-inline-end: 0;
+    z-index: 1;
+    width: 54%;
+}
+
+.cr-hero-media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center right;
+    display: block;
+}
+
+.cr-hero-media::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right,
+            var(--bg) 0%,
+            color-mix(in srgb, var(--bg) 85%, transparent) 14%,
+            color-mix(in srgb, var(--bg) 40%, transparent) 32%,
+            transparent 55%);
+    pointer-events: none;
+}
+
+html[dir="rtl"] .cr-hero-media::after {
+    background: linear-gradient(to left,
+            var(--bg) 0%,
+            color-mix(in srgb, var(--bg) 85%, transparent) 14%,
+            color-mix(in srgb, var(--bg) 40%, transparent) 32%,
+            transparent 55%);
+}
+
+html[dir="rtl"] .cr-hero-media img {
+    transform: scaleX(-1);
+}
+
+.dark-mode .cr-hero-media img {
+    filter: brightness(.82) contrast(1.05);
+}
+
+.cr-hero-note {
+    position: absolute;
+    z-index: 3;
+    top: 22%;
+    inset-inline-start: 47%;
+    width: 110px;
+    color: var(--secondary);
+    opacity: .9;
+    pointer-events: none;
+}
+
+.cr-hero-note svg {
+    width: 100%;
+    height: auto;
+    overflow: visible;
+}
+
+html[dir="rtl"] .cr-hero-note svg {
+    transform: scaleX(-1);
+}
+
+/* course rows: jump links ki header kinda padau avvakunda */
+.cr-row {
+    scroll-margin-top: 100px;
+}
+
+#courseList {
+    scroll-margin-top: 80px;
+}
+
+/* ==========================================================
+   1 · Course rows (zigzag: image left/text right, then image right/text left)
+   ========================================================== */
+.cr-rows {
+    display: grid;
+    gap: 32px;
+}
+
+.cr-row {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    align-items: stretch;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    border-radius: 26px;
+    background: var(--surface);
+    box-shadow: var(--shadow);
+    transition: border-color var(--transition-normal), transform var(--transition-normal);
+}
+
+.cr-row:hover {
+    border-color: color-mix(in srgb, var(--secondary) 55%, var(--border));
+    transform: translateY(-3px);
+}
+
+/* Image side */
+.cr-row-media {
+    position: relative;
+    min-height: 380px;
+}
+
+.cr-row-media img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* image edge text loki fade avtundi */
+.cr-row-media::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, transparent 55%, var(--surface) 100%);
+}
+
+.cr-row-num {
+    position: absolute;
+    z-index: 2;
+    inset-block-start: 18px;
+    inset-inline-start: 20px;
+    padding: 6px 14px;
+    border-radius: var(--radius-pill);
+    background: color-mix(in srgb, var(--dark-bg) 78%, transparent);
+    color: var(--gold-light);
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: .08em;
+}
+
+/* Text side */
+.cr-row-copy {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: clamp(26px, 4vw, 56px);
+}
+
+.cr-slide-title {
+    margin-bottom: 14px;
+    color: var(--primary);
+    font-family: var(--font-heading);
+    font-size: clamp(34px, 4vw, 54px);
+    font-weight: 700;
+    line-height: 1.02;
+    letter-spacing: -.04em;
+}
+
+.cr-slide-title span {
+    color: var(--secondary);
+}
+
+.cr-slide-lead {
+    max-width: 480px;
+    margin-bottom: 20px;
+    font-size: clamp(15px, 1.25vw, 17px);
+    line-height: 1.7;
+}
+
+.cr-points {
+    display: grid;
+    gap: 12px;
+    margin-bottom: 26px;
+}
+
+.cr-points li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    color: var(--text);
+    font-size: 14.5px;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+.cr-points svg {
+    width: 18px;
+    height: 18px;
+    flex: none;
+    margin-top: 2px;
+    color: var(--secondary);
+}
+
+.cr-slide-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+}
+
+.cr-slide-actions .btn {
+    min-height: 48px;
+    padding-inline: 22px;
+}
+
+/* Zigzag: even rows lo image right side, text left side */
+.cr-row.is-reverse .cr-row-media {
+    order: 2;
+}
+
+.cr-row.is-reverse .cr-row-media::after {
+    background: linear-gradient(to left, transparent 55%, var(--surface) 100%);
+}
+
+.cr-row.is-reverse .cr-row-num {
+    inset-inline-start: auto;
+    inset-inline-end: 20px;
+}
+
+/* RTL lo fade direction flip */
+html[dir="rtl"] .cr-row-media::after {
+    background: linear-gradient(to left, transparent 55%, var(--surface) 100%);
+}
+
+html[dir="rtl"] .cr-row.is-reverse .cr-row-media::after {
+    background: linear-gradient(to right, transparent 55%, var(--surface) 100%);
+}
+
+.dark-mode .cr-row-media img {
+    filter: brightness(.85);
+}
+
+/* ==========================================================
+   2 · Music for Every Age, Inspiration for Every Soul
+   ========================================================== */
+.cr-cards {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.cr-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    padding: 28px 24px 24px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    box-shadow: var(--shadow);
+    transition: transform var(--transition-normal), border-color var(--transition-normal);
+}
+
+.cr-card:hover {
+    transform: translateY(-4px);
+    border-color: color-mix(in srgb, var(--secondary) 55%, var(--border));
+}
+
+/* big faded number */
+.cr-card::after {
+    content: attr(data-num);
+    position: absolute;
+    inset-block-start: 10px;
+    inset-inline-end: 18px;
+    color: var(--secondary-light);
+    font-family: var(--font-heading);
+    font-size: 64px;
+    font-weight: 700;
+    line-height: 1;
+    pointer-events: none;
+}
+
+.cr-card-icon {
+    width: 58px;
+    height: 58px;
+    display: grid;
+    place-items: center;
+    margin-bottom: 20px;
+    border-radius: 16px;
+    background: var(--secondary-light);
+    color: var(--secondary);
+}
+
+.cr-card-icon svg {
+    width: 28px;
+    height: 28px;
+}
+
+.cr-card h3 {
+    margin-bottom: 8px;
+    color: var(--text);
+    font-size: 19px;
+    font-weight: 800;
+}
+
+.cr-card p {
+    flex: 1;
+    margin-bottom: 20px;
+    font-size: 14px;
+    line-height: 1.65;
+}
+
+.cr-card-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--primary);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: .08em;
+    text-transform: uppercase;
+}
+
+.cr-card-link svg {
+    width: 16px;
+    height: 16px;
+    transition: transform var(--transition-normal);
+}
+
+.cr-card-link:hover {
+    color: var(--secondary);
+}
+
+.cr-card-link:hover svg {
+    transform: translateX(4px);
+}
+
+html[dir="rtl"] .cr-card-link svg {
+    transform: scaleX(-1);
+}
+
+html[dir="rtl"] .cr-card-link:hover svg {
+    transform: scaleX(-1) translateX(4px);
+}
+
+/* ==========================================================
+   3 · CTA (dark banner)
+   ========================================================== */
+.cr-cta-section {
+    padding-block: 24px 72px;
+}
+
+.cr-cta {
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+    min-height: 340px;
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr);
+    align-items: center;
+    border-radius: 28px;
+    background: var(--dark-bg);
+    color: var(--ivory);
+    box-shadow: var(--shadow);
+}
+
+.cr-cta-copy {
+    position: relative;
+    z-index: 2;
+    padding: clamp(28px, 4vw, 52px);
+}
+
+.cr-cta-copy .cr-eyebrow {
+    color: var(--gold-light);
+}
+
+.cr-cta-copy .cr-eyebrow-line {
+    background: var(--gold-light);
+}
+
+.cr-cta-copy h2 {
+    margin-bottom: 12px;
+    color: var(--ivory);
+    font-family: var(--font-heading);
+    font-size: clamp(30px, 3.6vw, 46px);
+    line-height: 1.08;
+    letter-spacing: -.03em;
+}
+
+.cr-cta-copy h2 span {
+    display: block;
+    color: var(--gold-light);
+}
+
+.cr-cta-copy p {
+    max-width: 460px;
+    margin-bottom: 26px;
+    color: rgba(250, 246, 236, .78);
+    font-size: 15px;
+}
+
+.cr-cta .cr-slide-actions .btn-gold {
+    background: var(--gold-light);
+    color: #153427;
+    border-color: var(--gold-light);
+}
+
+.cr-cta .cr-slide-actions .btn-gold:hover {
+    background: var(--ivory);
+    border-color: var(--ivory);
+    transform: translateY(-1px);
+}
+
+.cr-cta .cr-slide-actions .btn-line {
+    background: transparent;
+    color: var(--ivory);
+    border-color: rgba(250, 246, 236, .5);
+}
+
+.cr-cta .cr-slide-actions .btn-line:hover {
+    background: var(--ivory);
+    color: #153427;
+    border-color: var(--ivory);
+    transform: translateY(-1px);
+}
+
+.cr-cta-media {
+    position: relative;
+    align-self: stretch;
+    min-height: 260px;
+}
+
+.cr-cta-media img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.cr-cta-media::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: linear-gradient(to right, var(--dark-bg) 0%, color-mix(in srgb, var(--dark-bg) 40%, transparent) 40%, transparent 80%);
+}
+
+html[dir="rtl"] .cr-cta-media::before {
+    background: linear-gradient(to left, var(--dark-bg) 0%, color-mix(in srgb, var(--dark-bg) 40%, transparent) 40%, transparent 80%);
+}
+
+.cr-cta-script {
+    position: absolute;
+    z-index: 2;
+    inset-inline-end: 8%;
+    bottom: 12%;
+    display: grid;
+    gap: 2px;
+    color: var(--gold-light);
+    font-family: var(--font-heading);
+    font-size: clamp(20px, 2.2vw, 28px);
+    line-height: 1.15;
+    text-align: center;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, .5);
+}
+
+.dark-mode .cr-cta-media img {
+    filter: brightness(.85);
+}
+
+/* ==========================================================
+   Responsive
+   ========================================================== */
+@media (max-width: 1100px) {
+    .cr-cards {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .cr-hero-media {
+        width: 46%;
+    }
+
+    .cr-hero-copy {
+        width: min(54%, 520px);
+    }
+
+    .cr-hero-note {
+        inset-inline-start: 44%;
+        width: 90px;
+    }
+}
+
+@media (max-width: 860px) {
+    .cr-hero-inner {
+        min-height: 0;
+        padding-block: 40px 28px;
+    }
+
+    .cr-hero-copy {
+        width: 100%;
+    }
+
+    .cr-hero-media {
+        position: relative;
+        inset: auto;
+        width: 100%;
+        height: 300px;
+    }
+
+    .cr-hero-media::after,
+    html[dir="rtl"] .cr-hero-media::after {
+        background: linear-gradient(to bottom,
+                var(--bg) 0%,
+                color-mix(in srgb, var(--bg) 60%, transparent) 25%,
+                transparent 60%);
+    }
+
+    .cr-hero-media img {
+        object-position: center 30%;
+    }
+
+    .cr-hero-note {
+        display: none;
+    }
+}
+
+@media (max-width: 900px) {
+    /* rows: image paina, text kinda (zigzag off) */
+    .cr-row,
+    .cr-row.is-reverse {
+        grid-template-columns: 1fr;
+    }
+
+    .cr-row-media,
+    .cr-row.is-reverse .cr-row-media {
+        order: -1;
+        min-height: 0;
+        height: 260px;
+    }
+
+    .cr-row-media::after,
+    .cr-row.is-reverse .cr-row-media::after,
+    html[dir="rtl"] .cr-row-media::after,
+    html[dir="rtl"] .cr-row.is-reverse .cr-row-media::after {
+        background: linear-gradient(to bottom, transparent 55%, var(--surface) 100%);
+    }
+
+    .cr-row.is-reverse .cr-row-num {
+        inset-inline-start: 20px;
+        inset-inline-end: auto;
+    }
+
+    .cr-row-copy {
+        padding: 22px clamp(20px, 5vw, 36px) 32px;
+    }
+
+    .cr-cta {
+        grid-template-columns: 1fr;
+    }
+
+    .cr-cta-media {
+        min-height: 240px;
+    }
+
+    .cr-cta-media::before,
+    html[dir="rtl"] .cr-cta-media::before {
+        background: linear-gradient(to bottom, var(--dark-bg) 0%, transparent 60%);
+    }
+}
+
+@media (max-width: 760px) {
+    .cr-section {
+        padding-block: 28px 56px;
+    }
+
+    .cr-head {
+        margin-bottom: 28px;
+    }
+
+    .cr-rows {
+        gap: 22px;
+    }
+
+    .cr-row {
+        border-radius: 22px;
+    }
+
+    .cr-cards {
+        grid-template-columns: 1fr;
+        max-width: 480px;
+        margin-inline: auto;
+    }
+
+    .cr-cta-section {
+        padding-block: 16px 56px;
+    }
+
+    .cr-cta {
+        border-radius: 22px;
+    }
+}
+
+@media (max-width: 480px) {
+    .cr-hero-actions {
+        flex-direction: column;
+    }
+
+    .cr-hero-actions .btn {
+        width: 100%;
+    }
+
+    .cr-hero-media {
+        height: 240px;
+    }
+
+    .cr-row-media,
+    .cr-row.is-reverse .cr-row-media {
+        height: 220px;
+    }
+
+    .cr-slide-actions .btn,
+    .cr-cta .cr-slide-actions .btn {
+        width: 100%;
+    }
+}
+
+/* ==========================================================
+   Hero slideshow: 4 images, 3s each, zoom motion, auto change
+   (pure CSS, 12s loop = 4 x 3s)
+   ========================================================== */
+.cr-slides {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+}
+
+.cr-hero-media .cr-slide {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transform: scale(1);
+    transform-origin: center;
+    animation: crSlide 12s linear infinite;
+    will-change: transform, opacity;
+}
+
+.cr-hero-media .cr-slide:nth-child(1) { animation-delay: 0s; }
+.cr-hero-media .cr-slide:nth-child(2) { animation-delay: 3s; }
+.cr-hero-media .cr-slide:nth-child(3) { animation-delay: 6s; }
+.cr-hero-media .cr-slide:nth-child(4) { animation-delay: 9s; }
+
+@keyframes crSlide {
+    0%   { opacity: 0; transform: scale(1); }
+    4%   { opacity: 1; }
+    25%  { opacity: 1; }
+    29%  { opacity: 0; transform: scale(1.12); }
+    100% { opacity: 0; transform: scale(1.12); }
+}
+
+/* RTL: flip the whole slideshow instead of each image (keeps zoom working) */
+html[dir="rtl"] .cr-slides {
+    transform: scaleX(-1);
+}
+
+html[dir="rtl"] .cr-hero-media .cr-slide {
+    transform: scale(1);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .cr-hero-media .cr-slide {
+        animation: none;
+    }
+
+    .cr-hero-media .cr-slide:first-child {
+        opacity: 1;
+    }
+}

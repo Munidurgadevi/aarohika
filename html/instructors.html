@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instructors | Aarohika Music Academy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/instructors.css">
+
+    <link rel="icon" type="image/png" href="../css/image/lightmode.png" media="(prefers-color-scheme: light)">
+    <link rel="icon" type="image/png" href="../css/image/darkmode.png" media="(prefers-color-scheme: dark)">
+    <script>try {var d = document.documentElement, t = localStorage.getItem("aarohika-theme"), r = localStorage.getItem("aarohika-dir"); if (t === "dark") d.classList.add("dark-mode"); if (r) d.dir = r} catch (e) { }</script>
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="header-container"><a class="brand " href="home1.html" aria-label="Aarohika home"><span
+                    class="brand-badge"><svg viewBox="0 0 48 48" aria-hidden="true">
+                        <rect width="48" height="48" rx="12" fill="var(--logo-bg)" />
+                        <path d="M20 32V14l13-3v18" stroke="var(--logo-stroke)" stroke-width="3" fill="none"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                        <circle cx="16" cy="32" r="5" fill="var(--logo-ball)" />
+                        <circle cx="29" cy="29" r="5" fill="var(--logo-ball)" />
+                    </svg></span><span class="brand-text"><span class="brand-title"><span
+                            class="aaroh">Aaroh</span><span class="ika">ika</span></span><span class="brand-sub">Music
+                        Academy</span></span></a>
+            <nav class="main-nav" id="mainNav" aria-label="Main navigation">
+                <div class="nav-dropdown"><button class="nav-dropdown-toggle" type="button" aria-expanded="false">Home<i
+                            data-lucide="chevron-down"></i></button>
+                    <div class="nav-dropdown-menu"><a class="dropdown-link" href="home1.html">Home 1<i
+                                data-lucide="check"></i></a><a class="dropdown-link" href="home2.html">Home 2<i
+                                data-lucide="check"></i></a></div>
+                </div><a class="nav-link" href="about.html">About</a>
+                <a class="nav-link" href="courses.html">Courses</a><a class="nav-link" href="instructors.html">Instructors</a><a class="nav-link"
+                    href="contact.html">Contact</a>
+                <a class="nav-link" href="pricing.html">Pricing</a><a class="nav-link"
+                    href="dashboard.html">Dashboard</a>
+                <div class="nav-auth-mobile"><a class="btn btn-outline" href="login.html">Login</a></div>
+            </nav>
+            <div class="header-actions"><button class="icon-btn" id="dirToggle" type="button"
+                    aria-label="Switch RTL / LTR"><i data-lucide="arrow-left-right"></i></button><button
+                    class="icon-btn" id="themeToggle" type="button" aria-label="Toggle theme"><i class="icon-moon"
+                        data-lucide="moon"></i><i class="icon-sun" data-lucide="sun"></i></button>
+                <div class="header-auth"><a class="btn btn-outline" href="login.html"><i
+                            data-lucide="log-in"></i>Login</a></div><button class="menu-toggle" id="menuToggle"
+                    type="button" aria-label="Open menu" aria-expanded="false"><i class="icon-menu"
+                        data-lucide="menu"></i><i class="icon-close" data-lucide="x"></i></button>
+            </div>
+        </div>
+    </header>
+    <main>
+        <section class="home-hero">
+            <div class="home-hero-inner">
+                <div class="hero-copy">
+                    <div class="hero-eyebrow tagline"><span>Guided by passion</span><span
+                            class="eyebrow-line"></span></div>
+                    <h1>The People Behind<br><span>Your Musical Progress.</span></h1>
+                    <p class="hero-description">Meet the instructors guiding kids and adults through guitar, keyboard,
+                        vocals and drums.</p>
+                    <div class="hero-actions">
+                        <a class="btn btn-solid hero-button" href="#instructors">Explore Our Instructors</a>
+                        <a class="btn btn-solid hero-button" href="contact.html">Book a Free Trial</a>
+                    </div>
+                    <div class="hero-highlights">
+                        <div class="hero-highlight"><span class="highlight-icon"><i data-lucide="users"></i></span>
+                            <div><strong>Kids &amp; Adults</strong><small>For all age groups</small></div>
+                        </div>
+                        <div class="hero-highlight"><span class="highlight-icon"><i
+                                    data-lucide="graduation-cap"></i></span>
+                            <div><strong>Expert Instructors</strong><small>Learn from professionals</small></div>
+                        </div>
+                        <div class="hero-highlight"><span class="highlight-icon"><i
+                                    data-lucide="bar-chart-2"></i></span>
+                            <div><strong>Live Performances</strong><small>Showcase your talent</small></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="showcase-stage" id="showcaseStage">
+                        <div class="showcase-persp">
+                            <div class="cluster">
+                                <div class="sc sc-main">
+                                    <span class="showcase-stack stack-far" aria-hidden="true"></span>
+                                    <span class="showcase-stack stack-near" aria-hidden="true"></span>
+                                    <div class="sc-media"><img src="https://i.pinimg.com/1200x/db/34/cd/db34cde6864d3fe193fd0e347da6fc40.jpg" alt="Aarohika music instructors"></div>
+                                    <div class="showcase-chips">
+                                        <span class="showcase-chip chip-tag"><i data-lucide="graduation-cap"></i><span>Expert<br>Instructors</span></span>
+                                        <span class="showcase-chip chip-rate"><i data-lucide="users"></i><span>Kids &amp;<br>Adults</span></span>
+                                    </div>
+                                    <div class="showcase-panel">
+                                        <p class="panel-kicker">Learn. Practice. Perform.</p>
+                                        <h2>Your <span>musical journey</span> starts here</h2>
+                                        <div class="panel-foot">
+                                            <div class="panel-author">
+                                                <span class="panel-icon"><i data-lucide="music"></i></span>
+                                                <div><strong>Live Performances</strong><small>Showcase your talent</small></div>
+                                            </div>
+                                            <a class="panel-btn" href="#instructors">Explore</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <section class="find-instructor" id="instructors">
+        <div class="container">
+            <div class="sec-head">
+                <div class="tagline"><span>Our Instructors</span></div>
+                <h2>Find Your <span>Instructor</span></h2>
+                <p>Search and filter to find the right instructor for your musical journey.</p>
+            </div>
+            <form class="find-filters" id="instructorFilters">
+                <label class="find-search">
+                    <i data-lucide="search"></i>
+                    <input type="search" id="instructorSearch" placeholder="Search instructor name..."
+                        aria-label="Search instructor name">
+                </label>
+                <div class="find-select" data-select>
+                    <button class="find-select-btn" type="button" aria-haspopup="listbox" aria-expanded="false">
+                        <i class="find-icon" data-lucide="guitar"></i>
+                        <span class="find-select-body"><span>Instrument</span><strong
+                                class="find-value">All</strong></span>
+                        <i class="find-chevron" data-lucide="chevron-down"></i>
+                    </button>
+                    <ul class="find-menu" role="listbox">
+                        <li role="option" data-value="all" class="is-selected">All</li>
+                        <li role="option" data-value="guitar">Guitar</li>
+                        <li role="option" data-value="keyboard">Keyboard</li>
+                        <li role="option" data-value="vocals">Vocals</li>
+                        <li role="option" data-value="drums">Drums</li>
+                    </ul>
+                    <input type="hidden" id="filterInstrument" value="all">
+                </div>
+                <div class="find-select" data-select>
+                    <button class="find-select-btn" type="button" aria-haspopup="listbox" aria-expanded="false">
+                        <i class="find-icon" data-lucide="users"></i>
+                        <span class="find-select-body"><span>Student Group</span><strong
+                                class="find-value">All</strong></span>
+                        <i class="find-chevron" data-lucide="chevron-down"></i>
+                    </button>
+                    <ul class="find-menu" role="listbox">
+                        <li role="option" data-value="all" class="is-selected">All</li>
+                        <li role="option" data-value="kids">Kids</li>
+                        <li role="option" data-value="adults">Adults</li>
+                    </ul>
+                    <input type="hidden" id="filterGroup" value="all">
+                </div>
+                <div class="find-select" data-select>
+                    <button class="find-select-btn" type="button" aria-haspopup="listbox" aria-expanded="false">
+                        <i class="find-icon" data-lucide="bar-chart-2"></i>
+                        <span class="find-select-body"><span>Learning Level</span><strong
+                                class="find-value">All</strong></span>
+                        <i class="find-chevron" data-lucide="chevron-down"></i>
+                    </button>
+                    <ul class="find-menu" role="listbox">
+                        <li role="option" data-value="all" class="is-selected">All</li>
+                        <li role="option" data-value="beginner">Beginner</li>
+                        <li role="option" data-value="intermediate">Intermediate</li>
+                        <li role="option" data-value="advanced">Advanced</li>
+                    </ul>
+                    <input type="hidden" id="filterLevel" value="all">
+                </div>
+                <div class="find-select" data-select>
+                    <button class="find-select-btn" type="button" aria-haspopup="listbox" aria-expanded="false">
+                        <i class="find-icon" data-lucide="users-round"></i>
+                        <span class="find-select-body"><span>Class Format</span><strong
+                                class="find-value">All</strong></span>
+                        <i class="find-chevron" data-lucide="chevron-down"></i>
+                    </button>
+                    <ul class="find-menu" role="listbox">
+                        <li role="option" data-value="all" class="is-selected">All</li>
+                        <li role="option" data-value="one-to-one">One-to-one</li>
+                        <li role="option" data-value="group">Group</li>
+                        <li role="option" data-value="online">Online</li>
+                    </ul>
+                    <input type="hidden" id="filterFormat" value="all">
+                </div>
+                <button class="find-clear" type="reset"><i data-lucide="refresh-cw"></i>Clear Filters</button>
+            </form>
+            <p class="find-count"><strong id="instructorCount">4</strong> instructors found</p>
+        </div>
+    </section>
+    <section class="instructor-list">
+        <div class="container">
+            <div class="instructor-grid" id="instructorGrid">
+                <article class="instructor-card" data-id="arjun" data-name="Arjun Rao" data-instrument="guitar"
+                    data-group="kids adults" data-level="beginner intermediate" data-format="one-to-one group">
+                    <img src="https://i.pinimg.com/736x/7f/2a/31/7f2a31a3a59b809f81eeccb8d513e21b.jpg" alt="Arjun Rao">
+                    <h3>Arjun Rao</h3>
+                    <p class="instructor-role">Guitar Instructor</p>
+                    <ul class="instructor-meta">
+                        <li><i data-lucide="clock"></i>5+ years (example)</li>
+                        <li><i data-lucide="users"></i>Kids &amp; Adults</li>
+                        <li><i data-lucide="bar-chart-2"></i>Beginner • Intermediate</li>
+                    </ul>
+                    <p class="instructor-desc">Makes guitar learning fun and practical with a focus on real songs.</p>
+                    <div class="instructor-actions">
+                        <button class="btn btn-solid" type="button" data-profile="arjun"><i data-lucide="eye"></i>View
+                            Profile</button>
+                        <a class="btn btn-gold-outline" href="contact.html"><i data-lucide="calendar"></i>Check
+                            Batches</a>
+                    </div>
+                </article>
+
+                <article class="instructor-card" data-id="meera" data-name="Meera Iyer" data-instrument="keyboard"
+                    data-group="kids adults" data-level="beginner intermediate advanced"
+                    data-format="one-to-one group online">
+                    <img src="https://i.pinimg.com/736x/3b/8e/f9/3b8ef977e586c28345d63ee25816b01e.jpg" alt="Meera Iyer">
+                    <h3>Meera Iyer</h3>
+                    <p class="instructor-role">Keyboard Instructor</p>
+                    <ul class="instructor-meta">
+                        <li><i data-lucide="clock"></i>5+ years (example)</li>
+                        <li><i data-lucide="users"></i>Kids &amp; Adults</li>
+                        <li><i data-lucide="bar-chart-2"></i>Beginner • Intermediate • Advanced</li>
+                    </ul>
+                    <p class="instructor-desc">Helps students build a musical foundation with clear guidance.</p>
+                    <div class="instructor-actions">
+                        <button class="btn btn-solid" type="button" data-profile="meera"><i data-lucide="eye"></i>View
+                            Profile</button>
+                        <a class="btn btn-gold-outline" href="contact.html"><i data-lucide="calendar"></i>Check
+                            Batches</a>
+                    </div>
+                </article>
+
+                <article class="instructor-card" data-id="sahana" data-name="Sahana Verma" data-instrument="vocals"
+                    data-group="kids adults" data-level="beginner intermediate advanced"
+                    data-format="one-to-one group online">
+                    <img src="https://i.pinimg.com/736x/7f/72/8b/7f728be9bc0686854fea45e14d7ea3bf.jpg" alt="Sahana Verma">
+                    <h3>Sahana Verma</h3>
+                    <p class="instructor-role">Vocals Instructor</p>
+                    <ul class="instructor-meta">
+                        <li><i data-lucide="clock"></i>4+ years (example)</li>
+                        <li><i data-lucide="users"></i>Kids &amp; Adults</li>
+                        <li><i data-lucide="bar-chart-2"></i>Beginner • Intermediate • Advanced</li>
+                    </ul>
+                    <p class="instructor-desc">Focuses on healthy vocal techniques and expressive singing for all ages.
+                    </p>
+                    <div class="instructor-actions">
+                        <button class="btn btn-solid" type="button" data-profile="sahana"><i data-lucide="eye"></i>View
+                            Profile</button>
+                        <a class="btn btn-gold-outline" href="contact.html"><i data-lucide="calendar"></i>Check
+                            Batches</a>
+                    </div>
+                </article>
+
+                <article class="instructor-card" data-id="rohit" data-name="Rohit Menon" data-instrument="drums"
+                    data-group="kids adults" data-level="beginner intermediate advanced" data-format="one-to-one group">
+                    <img src="https://i.pinimg.com/736x/39/dc/90/39dc90c605bde0a92147443c1c073e5d.jpg" alt="Rohit Menon">
+                    <h3>Rohit Menon</h3>
+                    <p class="instructor-role">Drums Instructor</p>
+                    <ul class="instructor-meta">
+                        <li><i data-lucide="clock"></i>6+ years (example)</li>
+                        <li><i data-lucide="users"></i>Kids &amp; Adults</li>
+                        <li><i data-lucide="bar-chart-2"></i>Beginner • Intermediate • Advanced</li>
+                    </ul>
+                    <p class="instructor-desc">Teaches rhythm and drum skills through engaging and structured lessons.
+                    </p>
+                    <div class="instructor-actions">
+                        <button class="btn btn-solid" type="button" data-profile="rohit"><i data-lucide="eye"></i>View
+                            Profile</button>
+                        <a class="btn btn-gold-outline" href="contact.html"><i data-lucide="calendar"></i>Check
+                            Batches</a>
+                    </div>
+                </article>
+            </div>
+            <p class="instructor-empty" id="instructorEmpty" hidden>No instructors match your filters.</p>
+        </div>
+    </section>
+    <section class="batches" id="batches">
+        <div class="container">
+            <div class="sec-head">
+                <div class="tagline"><span>Availability &amp; Batches</span></div>
+                <h2>Upcoming <span>Batches</span></h2>
+                <p>Explore upcoming batches with our instructors and send an enquiry.</p>
+            </div>
+            <div class="batches-card">
+                <div class="batches-toolbar">
+                    <div class="find-select batch-filter" data-select>
+                        <button class="find-select-btn" type="button" aria-haspopup="listbox" aria-expanded="false">
+                            <span class="find-select-body"><strong class="find-value">All Instructors</strong></span>
+                            <i class="find-chevron" data-lucide="chevron-down"></i>
+                        </button>
+                        <ul class="find-menu" role="listbox">
+                            <li role="option" data-value="all" class="is-selected">All Instructors</li>
+                            <li role="option" data-value="arjun">Arjun Rao</li>
+                            <li role="option" data-value="meera">Meera Iyer</li>
+                            <li role="option" data-value="sahana">Sahana Verma</li>
+                            <li role="option" data-value="rohit">Rohit Menon</li>
+                        </ul>
+                        <input type="hidden" id="batchFilter" value="all">
+                    </div>
+                </div>
+
+                <div class="batches-table-wrap">
+                    <table class="batches-table">
+                        <thead>
+                            <tr>
+                                <th>Instructor</th>
+                                <th>Course</th>
+                                <th>Student Group</th>
+                                <th>Day &amp; Time</th>
+                                <th>Class Format</th>
+                                <th>Availability</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr data-batch="arjun">
+                                <td><span class="batch-person"><img src="https://i.pinimg.com/1200x/7a/61/8f/7a618f247fe88e16b52463359ba10bf5.jpg" alt="">Arjun
+                                        Rao</span></td>
+                                <td>Guitar</td>
+                                <td>Kids &amp; Adults</td>
+                                <td>Mon, 5:00 PM</td>
+                                <td>Group</td>
+                                <td><span class="batch-status is-open">Open</span></td>
+                                <td><a class="batch-btn" href="dashboard.html#join-batch">View Batch</a></td>
+                            </tr>
+                            <tr data-batch="meera">
+                                <td><span class="batch-person"><img src="https://i.pinimg.com/1200x/8c/13/56/8c135602eff2b56887857b505b7b06d9.jpg" alt="">Meera
+                                        Iyer</span></td>
+                                <td>Keyboard</td>
+                                <td>Kids (6–12)</td>
+                                <td>Tue, 4:00 PM</td>
+                                <td>Group</td>
+                                <td><span class="batch-status is-open">Open</span></td>
+                                <td><a class="batch-btn" href="dashboard.html#join-batch">View Batch</a></td>
+                            </tr>
+                            <tr data-batch="sahana">
+                                <td><span class="batch-person"><img src="https://i.pinimg.com/1200x/97/98/9e/97989e33eae956bb331c9d9b5a402c6c.jpg" alt="">Sahana
+                                        Verma</span></td>
+                                <td>Vocals</td>
+                                <td>Adults</td>
+                                <td>Wed, 6:00 PM</td>
+                                <td>Private</td>
+                                <td><span class="batch-status is-limited">Limited</span></td>
+                                <td><a class="batch-btn" href="dashboard.html#join-batch">View Batch</a></td>
+                            </tr>
+                            <tr data-batch="rohit">
+                                <td><span class="batch-person"><img src="https://i.pinimg.com/736x/b7/6f/c0/b76fc0f94eb98dbeb5971a1dac85f3bd.jpg" alt="">Rohit
+                                        Menon</span></td>
+                                <td>Drums</td>
+                                <td>Kids &amp; Adults</td>
+                                <td>Sat, 11:00 AM</td>
+                                <td>Group</td>
+                                <td><span class="batch-status is-open">Open</span></td>
+                                <td><a class="batch-btn" href="dashboard.html#join-batch">View Batch</a></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="profile-modal" id="profileModal" role="dialog" aria-modal="true" aria-labelledby="pmName" hidden>
+        <div class="profile-dialog">
+            <aside class="pm-feature">
+                <img id="pmImage" src="" alt="">
+                <span class="pm-note"><i data-lucide="music"></i></span>
+                <div class="pm-feature-text">
+                    <small>Featured Instructor</small>
+                    <h3 id="pmName"></h3>
+                    <p class="pm-role" id="pmRole"></p>
+                    <p class="pm-tagline" id="pmTagline"></p>
+                </div>
+            </aside>
+            <div class="pm-details">
+                <div class="pm-head">
+                    <img id="pmThumb" src="" alt="">
+                    <div>
+                        <h4 id="pmHeadName"></h4>
+                        <p id="pmHeadRole"></p>
+                    </div>
+                    <button class="pm-close" id="pmClose" type="button" aria-label="Close"><i
+                            data-lucide="x"></i></button>
+                </div>
+                <dl class="pm-list">
+                    <div>
+                        <dt><i data-lucide="book-open"></i>Biography</dt>
+                        <dd id="pmBio"></dd>
+                    </div>
+                    <div>
+                        <dt><i data-lucide="award"></i>Qualifications</dt>
+                        <dd id="pmQual"></dd>
+                    </div>
+                    <div>
+                        <dt><i data-lucide="music"></i>Musical Styles</dt>
+                        <dd id="pmStyles"></dd>
+                    </div>
+                    <div>
+                        <dt><i data-lucide="smile"></i>Approach with Kids</dt>
+                        <dd id="pmKids"></dd>
+                    </div>
+                    <div>
+                        <dt><i data-lucide="users"></i>Approach with Adults</dt>
+                        <dd id="pmAdults"></dd>
+                    </div>
+                    <div>
+                        <dt><i data-lucide="languages"></i>Languages Spoken</dt>
+                        <dd id="pmLang"></dd>
+                    </div>
+                    <div>
+                        <dt><i data-lucide="bar-chart-2"></i>Musical Background</dt>
+                        <dd id="pmBg"></dd>
+                    </div>
+                </dl>
+                <a class="btn btn-solid pm-cta" id="pmCta" href="contact.html"></a>
+            </div>
+        </div>
+    </div>
+    <section class="learn-for">
+        <div class="container">
+            <div class="sec-head">
+                <div class="tagline"><span>Learning For Everyone</span></div>
+                <h2>Made for <span>Kids &amp; Adults</span></h2>
+                <p>Supportive, flexible lessons designed around every learner’s age and goals.</p>
+            </div>
+            <div class="learn-for-grid">
+            <article class="learn-card">
+                <div class="learn-card-img">
+                    <img src="https://i.pinimg.com/1200x/df/3c/76/df3c76c20008e4dc827715c033447879.jpg" alt="Kids learning guitar with a parent">
+                </div>
+                <div class="learn-card-body">
+                    <div class="learn-card-head">
+                        <span class="learn-card-icon"><i data-lucide="baby"></i></span>
+                        <div>
+                            <h3>For Kids</h3>
+                            <p>A supportive and engaging learning experience.</p>
+                        </div>
+                    </div>
+                    <ul class="learn-list">
+                        <li><i data-lucide="circle-check"></i>Age-appropriate learning activities</li>
+                        <li><i data-lucide="circle-check"></i>Beginner-friendly explanations</li>
+                        <li><i data-lucide="circle-check"></i>Regular parent communication</li>
+                        <li><i data-lucide="circle-check"></i>Practical practice guidance</li>
+                        <li><i data-lucide="circle-check"></i>Support for different learning paces</li>
+                    </ul>
+                </div>
+            </article>
+
+            <article class="learn-card">
+                <div class="learn-card-img">
+                    <img src="https://i.pinimg.com/1200x/3e/9b/08/3e9b08f46bb9fae0712972f0c8fbd680.jpg" alt="Adult learning keyboard">
+                </div>
+                <div class="learn-card-body">
+                    <div class="learn-card-head">
+                        <span class="learn-card-icon"><i data-lucide="user"></i></span>
+                        <div>
+                            <h3>For Adults</h3>
+                            <p>Flexible learning for your musical goals.</p>
+                        </div>
+                    </div>
+                    <ul class="learn-list">
+                        <li><i data-lucide="circle-check"></i>Learn at your own pace</li>
+                        <li><i data-lucide="circle-check"></i>Support for beginners and returning learners</li>
+                        <li><i data-lucide="circle-check"></i>Your preferred songs and styles</li>
+                        <li><i data-lucide="circle-check"></i>Practical practice planning</li>
+                        <li><i data-lucide="circle-check"></i>Individual feedback and guidance</li>
+                    </ul>
+                </div>
+            </article>
+            </div>
+        </div>
+    </section>
+    <section class="mentor-cta">
+        <div class="container">
+            <div class="sec-head">
+                <div class="tagline"><span>Start Your Journey</span></div>
+                <h2>Find the Right Mentor <span>for Your Musical Goals.</span></h2>
+                <p>Explore a suitable instructor and batch for your child or for yourself.</p>
+            </div>
+            <div class="mentor-cta-card">
+                <div class="mentor-cta-visual">
+                    <img src="https://i.pinimg.com/1200x/73/ec/5e/73ec5e9f973ae20a07ca8f2211c461ec.jpg" alt="Parent and child learning guitar together">
+                </div>
+                <div class="mentor-cta-actions">
+                    <a class="mentor-btn is-gold" href="contact.html"><i data-lucide="calendar"></i>Request a Trial
+                        Class<i data-lucide="chevron-right"></i></a>
+                    <a class="mentor-btn is-outline" href="contact.html"><i data-lucide="message-circle"></i>Help Me
+                        Choose an Instructor<i data-lucide="chevron-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer class="site-footer">
+        <div class="footer-main">
+            <div class="footer-grid">
+                <div class="footer-brand"><a class="brand " href="home1.html" aria-label="Aarohika home"><span
+                            class="brand-badge"><svg viewBox="0 0 48 48" aria-hidden="true">
+                                <rect width="48" height="48" rx="12" fill="var(--logo-bg)" />
+                                <path d="M20 32V14l13-3v18" stroke="var(--logo-stroke)" stroke-width="3" fill="none"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                                <circle cx="16" cy="32" r="5" fill="var(--logo-ball)" />
+                                <circle cx="29" cy="29" r="5" fill="var(--logo-ball)" />
+                            </svg></span><span class="brand-text"><span class="brand-title"><span
+                                    class="aaroh">Aaroh</span><span class="ika">ika</span></span><span
+                                class="brand-sub">Music
+                                Academy</span></span></a>
+                    <p>Lively music classes for kids and adults. Learn guitar, keyboard, vocals and drums with
+                        passionate instructors and perform on stage with confidence.</p>
+                    <div class="footer-socials"><a href="#" aria-label="Facebook"><i data-lucide="facebook"></i></a><a
+                            href="#" aria-label="Instagram"><i data-lucide="instagram"></i></a><a href="#"
+                            aria-label="YouTube"><i data-lucide="youtube"></i></a><a href="#" aria-label="Twitter"><i
+                                data-lucide="twitter"></i></a></div>
+                </div>
+                <div class="footer-column">
+                    <h3>Explore</h3>
+                    <ul class="footer-links">
+                        <li><a href="home1.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="instructors.html">Instructors</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="dashboard.html">Dashboard</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Courses</h3>
+                    <ul class="footer-links">
+                        <li><a href="courses.html">All Courses</a></li>
+                        <li><a href="guitar.html"></i>Guitar</a></li>
+                        <li><a href="keyboard.html"></i>Keyboard</a></li>
+                        <li><a href="vocals.html"></i>Vocals</a></li>
+                        <li><a href="drums.html"></i>Drums</a></li>
+                        <li><a href="404.html">404 Error</a></li>
+                        <li><a href="coming.html">Coming Soon</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Get In Touch</h3>
+                    <div class="footer-contact-item"><span>12 Harmony Street, Music
+                            District</span></div>
+                    <div class="footer-contact-item"><a href="tel:+91 9756367510">+91 9756367510</a></div>
+                    <div class="footer-contact-item"><a href="mailto:hello@aarohika.com">hello@aarohika.com</a></div>
+                    <div class="footer-contact-item"><span>Mon–Sat: 9 AM – 8 PM</span></div>
+                    <div class="newsletter">
+                        <p>Batch updates &amp; event invites:</p>
+                        <form class="newsletter-form" id="newsletterForm"><input type="email"
+                                placeholder="your@email.com" aria-label="Email address" required><button type="submit"
+                                aria-label="Subscribe"><i data-lucide="send"></i></button></form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="footer-bottom-content">
+                <p>© 2026 <strong>Aarohika</strong> Music Academy. All rights reserved.</p>
+                <div class="footer-legal"><a href="404.html">404 Error</a><a href="privacy-policy.html">Privacy
+                        Policy</a><a href="terms-and-conditions.html">Terms and Conditions</a></div>
+            </div>
+        </div>
+    </footer><button class="back-to-top" id="backToTop" type="button" aria-label="Back to top"><i
+            data-lucide="arrow-up"></i></button>
+    <script src="https://cdn.jsdelivr.net/npm/lucide@0.460.0/dist/umd/lucide.min.js"></script>
+    <script src="../js/main.js"></script>
+    <script>
+    (function () {
+        var hero = document.querySelector(".home-hero"), stage = document.getElementById("showcaseStage");
+        if (!hero || !stage) return;
+        if (!window.matchMedia("(hover: hover) and (pointer: fine)").matches) return;
+        if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+        var max = 8, raf = 0, px = 0, py = 0;
+        function apply() {
+            raf = 0;
+            stage.style.setProperty("--px", px.toFixed(3));
+            stage.style.setProperty("--py", py.toFixed(3));
+            stage.style.setProperty("--rx", (-py * max).toFixed(2) + "deg");
+            stage.style.setProperty("--ry", (px * max).toFixed(2) + "deg");
+        }
+        hero.addEventListener("pointermove", function (e) {
+            var r = hero.getBoundingClientRect();
+            px = ((e.clientX - r.left) / r.width - .5) * 2;
+            py = ((e.clientY - r.top) / r.height - .5) * 2;
+            if (!raf) raf = requestAnimationFrame(apply);
+        });
+        hero.addEventListener("pointerleave", function () { px = 0; py = 0; if (!raf) raf = requestAnimationFrame(apply); });
+    })();
+    </script>
+
+</body>
+
+</html>
