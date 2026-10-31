@@ -274,7 +274,11 @@ document.addEventListener('DOMContentLoaded', () => {
   });
   dirBtn?.addEventListener('click', () => {
     const dir = root.dir === 'rtl' ? 'ltr' : 'rtl';
+    // stop the closed sidebar from sliding across the screen while direction changes
+    root.classList.add('dir-switching');
     root.dir = dir;
+    void root.offsetWidth;
+    setTimeout(() => root.classList.remove('dir-switching'), 60);
     try { localStorage.setItem('aarohika-dir', dir); } catch (e) { }
     syncDirBtn();
   });

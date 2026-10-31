@@ -39,7 +39,7 @@
             menuBtn.setAttribute("aria-expanded", "false");
         }
 
-        var page = clean(location.pathname.split("/").pop()) || "home1";
+        var page = clean(location.pathname.replace(/\/+$/, "").split("/").pop()).toLowerCase() || "home1";
         var sectionOf = {
             guitar: "courses", keyboard: "courses", vocals: "courses", drums: "courses",
             "pricing-kids": "pricing", "pricing_adults": "pricing"
@@ -48,6 +48,7 @@
         nav.querySelectorAll("a[href]").forEach(function (link) {
             if (clean(link.getAttribute("href")) === activePage) {
                 link.classList.add("active");
+                link.setAttribute("aria-current", "page");
                 var parent = link.closest(".nav-dropdown");
                 if (parent) {
                     parent.querySelector(".nav-dropdown-toggle").classList.add("active");

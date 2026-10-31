@@ -1882,7 +1882,11 @@ html.dark-mode .recording-thumb {
     }
 
     .dash-topbar .brand-sub {
-        display: none;
+        display: block;
+        font-size: 8px;
+        letter-spacing: .14em;
+        white-space: nowrap;
+        line-height: 1.2;
     }
 }
 
@@ -4879,4 +4883,35 @@ html body .dash-page-head .eyebrow::after {
 .bl-main > .card:last-child,
 .bl-side > .card:last-child {
     flex: 1;
+}
+
+/* Mobile (Galaxy S8+ 360px etc.): keep "Music Academy" tagline under the logo title */
+@media (max-width:480px) {
+    html body .dash-topbar .brand-text {
+        gap: 1px;
+    }
+    html body .dash-topbar .brand-sub {
+        display: block !important;
+        font-size: 7.5px;
+        letter-spacing: .12em;
+        line-height: 1.2;
+    }
+}
+
+
+/* LTR <-> RTL switch: no sliding animation, and a closed sidebar stays hidden */
+html.dir-switching .dash-sidebar,
+html.dir-switching .sidebar-scrim {
+    transition: none !important;
+}
+
+@media (max-width: 900px) {
+    .dash-sidebar:not(.open) {
+        visibility: hidden;
+        transition: transform .22s ease, visibility 0s linear .22s;
+    }
+    .dash-sidebar.open {
+        visibility: visible;
+        transition: transform .22s ease, visibility 0s;
+    }
 }
