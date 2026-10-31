@@ -1868,3 +1868,188 @@ body {
         height: 24px;
     }
 }
+/* ===== Hero background image (25% opacity, follows light / dark mode) ===== */
+.home-hero {
+    --hero-bg-image: url("https://i.pinimg.com/1200x/3c/5c/f4/3c5cf45790df7a19791d2de0e6262dab.jpg");
+    --hero-bg-opacity: .25;
+    position: relative;
+    isolation: isolate;
+}
+
+.home-hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+    background: var(--hero-bg-image) center / cover no-repeat;
+    opacity: var(--hero-bg-opacity);
+    pointer-events: none;
+}
+
+/* soft fade into the page colour at the bottom edge (uses the theme background) */
+.home-hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    background: linear-gradient(to bottom, transparent 70%, var(--bg) 100%);
+    pointer-events: none;
+}
+
+/* dark mode: same 25%, image slightly dimmed so it sits on the dark background */
+.dark-mode .home-hero::before {
+    opacity: var(--hero-bg-opacity);
+    filter: brightness(.75) saturate(.9);
+}
+/* ===== Mentor CTA card: full background image (zoom in / out), text above buttons, 4cm high ===== */
+.mentor-cta-card {
+    --cta-card-height: 4cm;
+    position: relative;
+    isolation: isolate;
+    display: grid;
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+    align-items: center;
+    gap: 24px;
+    min-height: var(--cta-card-height);
+    padding: 20px 36px;
+    overflow: hidden;
+}
+
+/* image fills the whole card, sits behind the text */
+.mentor-cta-visual {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    width: auto;
+    height: auto;
+    min-height: 0;
+    overflow: hidden;
+}
+
+.mentor-cta-visual img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 30%;
+    transform-origin: center;
+    animation: ctaZoom 14s ease-in-out infinite alternate;
+    will-change: transform;
+}
+
+/* dark wash: strongest behind the text (start side), lighter towards the end */
+.mentor-cta-visual::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: linear-gradient(to right, rgba(21, 52, 39, .94) 0%, rgba(21, 52, 39, .78) 50%, rgba(21, 52, 39, .5) 100%);
+}
+
+html[dir="rtl"] .mentor-cta-visual::before {
+    background: linear-gradient(to left, rgba(21, 52, 39, .94) 0%, rgba(21, 52, 39, .78) 50%, rgba(21, 52, 39, .5) 100%);
+}
+
+.dark-mode .mentor-cta-visual::before {
+    background: linear-gradient(to right, rgba(8, 16, 12, .95) 0%, rgba(8, 16, 12, .8) 50%, rgba(8, 16, 12, .55) 100%);
+}
+
+html[dir="rtl"].dark-mode .mentor-cta-visual::before {
+    background: linear-gradient(to left, rgba(8, 16, 12, .95) 0%, rgba(8, 16, 12, .8) 50%, rgba(8, 16, 12, .55) 100%);
+}
+
+@keyframes ctaZoom {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.14);
+    }
+}
+
+/* text above the buttons */
+.mentor-cta-copy {
+    grid-column: 1;
+    position: relative;
+    z-index: 2;
+    padding-inline: 0;
+}
+
+.mentor-cta-copy h3 {
+    margin: 0 0 6px;
+    color: #faf6ec;
+    font-family: var(--font-family);
+    font-size: clamp(20px, 2.4vw, 26px);
+    font-weight: 700;
+    line-height: 1.15;
+}
+
+.mentor-cta-copy h3 span {
+    color: var(--gold-light);
+}
+
+.mentor-cta-copy p {
+    max-width: 440px;
+    margin: 0;
+    color: rgba(250, 246, 236, .86);
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+.mentor-cta-actions {
+    grid-column: 2;
+    align-content: center;
+    min-width: 0;
+    padding: 0;
+    gap: 12px;
+}
+
+/* chevron points the right way in RTL */
+html[dir="rtl"] .mentor-btn svg:last-child {
+    transform: scaleX(-1);
+}
+
+@media (max-width: 700px) {
+    .mentor-cta-card {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        padding: 24px 20px;
+    }
+
+    .mentor-cta-copy,
+    .mentor-cta-actions {
+        grid-column: 1;
+    }
+
+    .mentor-cta-visual {
+        height: auto;
+    }
+
+    /* stacked layout: even wash over the whole image so the text stays readable */
+    .mentor-cta-visual::before,
+    html[dir="rtl"] .mentor-cta-visual::before {
+        background: linear-gradient(180deg, rgba(21, 52, 39, .9), rgba(21, 52, 39, .78));
+    }
+
+    .dark-mode .mentor-cta-visual::before,
+    html[dir="rtl"].dark-mode .mentor-cta-visual::before {
+        background: linear-gradient(180deg, rgba(8, 16, 12, .92), rgba(8, 16, 12, .8));
+    }
+
+    /* buttons stay inside the card: long labels wrap instead of overflowing */
+    html body .mentor-cta-actions .mentor-btn {
+        width: 100%;
+        min-width: 0;
+        white-space: normal;
+        text-align: center;
+        padding-block: 10px;
+        height: auto;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .mentor-cta-visual img {
+        animation: none;
+    }
+}

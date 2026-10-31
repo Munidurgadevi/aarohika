@@ -163,6 +163,7 @@ p {
     -webkit-backdrop-filter: blur(12px);
     backdrop-filter: blur(12px);
     transition: background-color .3s ease;
+    border-bottom: 1px solid var(--border);
 }
 
 .header-container {
@@ -579,6 +580,7 @@ html.dark-mode .icon-moon {
 }
 
 .site-footer {
+    border-top: 1px solid var(--border);
     --court: var(--bg);
     --court-text: var(--text);
     --court-soft: var(--text-soft);
@@ -632,12 +634,18 @@ html.dark-mode .icon-moon {
 }
 
 .footer-socials a:hover {
-    background: var(--secondary);
-    color: var(--primary-color);
-    border-color: var(--secondary);
-    transform: translateY(-2px);
+    background: linear-gradient(135deg, #e6c27a, #b88a2e);
+    color: var(--dark-bg);
+    border-color: #e6c27a;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(214, 174, 98, 0.35);
 }
 
+.footer-socials a:hover svg,
+.footer-socials a:hover svg * {
+    color: var(--dark-bg);
+    stroke: var(--dark-bg);
+}
 .footer-socials svg {
     width: 17px;
     height: 17px;
@@ -705,7 +713,7 @@ html.dark-mode .icon-moon {
 }
 
 .newsletter {
-    margin-top: 22px;
+    margin-top: 0px;
 }
 
 .newsletter p {
@@ -2020,4 +2028,8 @@ html body :is(.ab-value, .ct-card, .cx-tile, .ct-faq details, .ct-cta-info li,
     translate: 0 -6px;
     border-color: var(--secondary-color) !important;
     box-shadow: 0 18px 38px rgba(0, 0, 0, .14), 0 0 0 1px var(--secondary-color);
+}
+/* Reduce bottom space of CTA sections on all pages */
+html body :is(.cta-section, .h2x-section, .ab-cta, .ct-cta, .cr-cta-section, .gt-cta-section, .mentor-cta, .pr-cta) {
+    padding-bottom: 24px;
 }

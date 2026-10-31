@@ -1832,7 +1832,7 @@ html.dark-mode .recording-thumb {
 }
 
 .dash-topbar .brand-title {
-    font-size: 23px;
+    font-size: 27px;
 }
 
 .dash-topbar .brand-sub {
@@ -4914,4 +4914,18 @@ html.dir-switching .sidebar-scrim {
         visibility: visible;
         transition: transform .22s ease, visibility 0s;
     }
+}
+html body.dashboard-body .dash-page-head .tagline {
+    font-family: "Manrope", sans-serif !important;
+    font-size: 10px !important;
+}
+/* Hover effect for all dashboard cards */
+html body .card {
+    transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+}
+
+html body .card:hover {
+    transform: translateY(-4px);
+    border-color: var(--secondary);
+    box-shadow: 0 14px 30px rgba(0, 0, 0, .12);
 }

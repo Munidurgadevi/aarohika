@@ -828,3 +828,142 @@ html[dir="rtl"] .ct-field textarea {
         grid-column: 1 / -1;
     }
 }
+/* anchor target for "Help Me Choose an Instructor" (sticky header offset) */
+.ct-form-card {
+    scroll-margin-top: 96px;
+}
+/* ===== Contact CTA ("Ready when you are"): smaller card + floating music notes ===== */
+.ct-cta-card {
+    padding: clamp(32px, 4.5vw, 54px) clamp(20px, 4vw, 56px);
+}
+
+.ct-cta-card h2 {
+    font-size: clamp(28px, 3.6vw, 44px);
+}
+
+.ct-cta-text {
+    margin-top: 14px;
+    font-size: 15px;
+    line-height: 1.65;
+}
+
+.ct-cta-actions {
+    margin-top: 24px;
+}
+
+/* three info cards: smaller, centred, text fits the card */
+.ct-cta-info {
+    max-width: 860px;
+    margin-inline: auto;
+    margin-top: clamp(24px, 3vw, 36px);
+    gap: 12px;
+}
+
+.ct-cta-info li {
+    gap: 12px;
+    padding: 12px 14px;
+    border-radius: 12px;
+}
+
+.ct-cta-ico {
+    flex: 0 0 38px;
+    height: 38px;
+}
+
+.ct-cta-ico svg {
+    width: 17px;
+    height: 17px;
+}
+
+.ct-cta-info span {
+    font-size: 11.5px;
+}
+
+.ct-cta-info strong {
+    font-size: 14px;
+    line-height: 1.3;
+}
+
+@media (max-width: 960px) {
+    .ct-cta-info {
+        max-width: 460px;
+    }
+}
+
+/* floating music symbols + note letters behind the content */
+.ct-cta-notes {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    overflow: hidden;
+    container-type: size;
+    pointer-events: none;
+    user-select: none;
+}
+
+.ct-cta-notes span {
+    position: absolute;
+    inset-block-end: -48px;
+    color: var(--gold-light);
+    font-family: var(--font-heading), Georgia, serif;
+    font-weight: 700;
+    line-height: 1;
+    opacity: 0;
+    animation: noteFloat var(--t, 12s) linear var(--d, 0s) infinite;
+    will-change: transform, opacity;
+}
+
+.ct-cta-notes span:nth-child(odd) {
+    color: var(--gold-light);
+}
+
+.ct-cta-notes span:nth-child(even) {
+    color: #faf6ec;
+}
+
+.ct-cta-notes span:nth-child(1)  { inset-inline-start: 4%;  font-size: 34px; --t: 13s; --d: -2s; }
+.ct-cta-notes span:nth-child(2)  { inset-inline-start: 12%; font-size: 24px; --t: 16s; --d: -9s; }
+.ct-cta-notes span:nth-child(3)  { inset-inline-start: 21%; font-size: 42px; --t: 14s; --d: -5s; }
+.ct-cta-notes span:nth-child(4)  { inset-inline-start: 30%; font-size: 22px; --t: 17s; --d: -12s; }
+.ct-cta-notes span:nth-child(5)  { inset-inline-start: 39%; font-size: 30px; --t: 12s; --d: -7s; }
+.ct-cta-notes span:nth-child(6)  { inset-inline-start: 47%; font-size: 26px; --t: 18s; --d: -3s; }
+.ct-cta-notes span:nth-child(7)  { inset-inline-start: 56%; font-size: 38px; --t: 15s; --d: -10s; }
+.ct-cta-notes span:nth-child(8)  { inset-inline-start: 65%; font-size: 24px; --t: 13s; --d: -1s; }
+.ct-cta-notes span:nth-child(9)  { inset-inline-start: 74%; font-size: 36px; --t: 16s; --d: -6s; }
+.ct-cta-notes span:nth-child(10) { inset-inline-start: 82%; font-size: 22px; --t: 14s; --d: -11s; }
+.ct-cta-notes span:nth-child(11) { inset-inline-start: 90%; font-size: 32px; --t: 17s; --d: -4s; }
+.ct-cta-notes span:nth-child(12) { inset-inline-start: 96%; font-size: 26px; --t: 12s; --d: -8s; }
+
+@keyframes noteFloat {
+    0% {
+        transform: translate(0, 0) rotate(-10deg);
+        opacity: 0;
+    }
+
+    10% {
+        opacity: .38;
+    }
+
+    30% {
+        transform: translate(14px, -32cqh) rotate(8deg);
+    }
+
+    55% {
+        transform: translate(-12px, -62cqh) rotate(-8deg);
+    }
+
+    80% {
+        opacity: .38;
+    }
+
+    100% {
+        transform: translate(10px, -112cqh) rotate(10deg);
+        opacity: 0;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .ct-cta-notes {
+        display: none;
+    }
+}

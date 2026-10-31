@@ -13,7 +13,7 @@
     <link rel="stylesheet" href="../css/contact.css">
     <link rel="icon" type="image/png" href="../css/image/lightmode.png" media="(prefers-color-scheme: light)">
     <link rel="icon" type="image/png" href="../css/image/darkmode.png" media="(prefers-color-scheme: dark)">
-    <script>try {var d = document.documentElement, t = localStorage.getItem("aarohika-theme"), r = localStorage.getItem("aarohika-dir"); if (t === "dark") d.classList.add("dark-mode"); if (r) d.dir = r} catch (e) { }</script>
+    <script>try { var d = document.documentElement, t = localStorage.getItem("aarohika-theme"), r = localStorage.getItem("aarohika-dir"); if (t === "dark") d.classList.add("dark-mode"); if (r) d.dir = r } catch (e) { }</script>
 </head>
 
 <body>
@@ -35,8 +35,9 @@
                                 data-lucide="check"></i></a><a class="dropdown-link" href="home2.html">Home 2<i
                                 data-lucide="check"></i></a></div>
                 </div><a class="nav-link" href="about.html">About</a>
-                <a class="nav-link" href="courses.html">Courses</a><a class="nav-link" href="instructors.html">Instructors</a><a class="nav-link active"
-                    href="contact.html" aria-current="page">Contact</a>
+                <a class="nav-link" href="courses.html">Courses</a><a class="nav-link"
+                    href="instructors.html">Instructors</a><a class="nav-link active" href="contact.html"
+                    aria-current="page">Contact</a>
                 <a class="nav-link" href="pricing.html">Pricing</a><a class="nav-link"
                     href="dashboard.html">Dashboard</a>
                 <div class="nav-auth-mobile"><a class="btn btn-outline" href="login.html">Login</a></div>
@@ -135,7 +136,7 @@
                     </a>
                 </div>
 
-                <div class="ct-form-card">
+                <div class="ct-form-card" id="send-message">
                     <h2>Send us a <span>message</span></h2>
                     <p>Fields marked as required help us reply faster.</p>
                     <form action="mailto:example@aarohika.com" method="post" enctype="text/plain">
@@ -235,8 +236,7 @@
                 </details>
                 <details>
                     <summary>Do I need my own instrument?</summary>
-                    <p>Not on day one. You can use the academy's instruments during the trial, and we will help you
-                        choose one when you are ready to practise at home.</p>
+                    <p>Use academy instruments during trial; we'll help you choose one for home practice.</p>
                 </details>
             </div>
         </section>
@@ -244,6 +244,10 @@
         <!-- ===== CTA ===== -->
         <section class="ct-cta" aria-labelledby="ctCta">
             <div class="ct-cta-card">
+                <div class="ct-cta-notes" aria-hidden="true">
+                    <span>&#9834;</span><span>A</span><span>&#9835;</span><span>C</span><span>&#9833;</span><span>E</span>
+                    <span>&#9836;</span><span>G</span><span>&#9837;</span><span>D</span><span>&#9839;</span><span>F</span>
+                </div>
                 <p class="ct-cta-eyebrow tagline"><span>Ready when you are</span></p>
                 <h2 id="ctCta">Let's Find Your <span>Perfect Instrument</span></h2>
                 <p class="ct-cta-text">Book a free trial class or reach us directly. We will listen to your goals and

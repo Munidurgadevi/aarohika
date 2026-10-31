@@ -1596,3 +1596,47 @@ html[dir="rtl"] .ab-diff-intro {
         line-height: 1.5;
     }
 }
+/* ===== Why choose Aarohika: cards fit their content (no extra empty space) ===== */
+.ab-diff-cards {
+    align-content: center;
+}
+
+.ab-diff-card {
+    padding: 26px 24px;
+}
+/* ===== CTA card: light panel in light mode, dark panel in dark mode ===== */
+html:not(.dark-mode) body .ab-cta-panel {
+    --heading-first: var(--primary-color);
+    --heading-second: var(--secondary-color);
+    --secondary: var(--secondary-color);
+    --btn-fill: var(--primary);
+    --btn-border: var(--primary);
+    --btn-text: var(--btn-fg);
+    --btn-fill-hover: var(--secondary-color);
+    --btn-text-hover: var(--secondary-contrast);
+    --btn-pair-text: var(--primary);
+    background: linear-gradient(135deg, var(--surface), color-mix(in srgb, var(--secondary-color) 14%, var(--surface)));
+    color: var(--text);
+}
+
+html:not(.dark-mode) body .ab-cta-panel h2 {
+    color: var(--primary-color);
+}
+
+html:not(.dark-mode) body .ab-cta-panel h2 span {
+    color: var(--secondary-color);
+}
+
+html:not(.dark-mode) body .ab-cta-panel p {
+    color: var(--text-soft);
+}
+
+html:not(.dark-mode) body .ab-cta-panel::before,
+html:not(.dark-mode) body .ab-cta-panel::after {
+    border-color: color-mix(in srgb, var(--secondary-color) 35%, transparent);
+    box-shadow: 0 0 0 30px color-mix(in srgb, var(--secondary-color) 7%, transparent);
+}
+
+.dark-mode .ab-cta-panel h2 {
+    color: var(--ivory);
+}
