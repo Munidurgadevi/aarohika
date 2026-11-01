@@ -44,7 +44,7 @@ body.dashboard-body {
     align-items: center;
     justify-content: space-between;
     padding: 0 26px;
-    background: var(--surface);
+    background: var(--bg);
     border-bottom: 1px solid var(--border);
     position: relative;
     z-index: 40;
@@ -332,7 +332,7 @@ body.dashboard-body {
 .dash-sidebar {
     width: var(--sidebar-w);
     flex: none;
-    background: var(--surface);
+    background: var(--bg);
     border-inline-end: 1px solid var(--border);
     display: flex;
     flex-direction: column;
@@ -5221,3 +5221,11 @@ html body .card:hover {
 }
 .ov2-hd .link-btn:hover { color: var(--secondary); }
 .ov2-hd .link-btn i { color: var(--secondary); }
+html body .profile-btn {
+    border: 1px solid color-mix(in srgb, var(--secondary) 40%, transparent) !important;
+    padding: 5px 12px 5px 5px !important;
+}
+
+html body .profile-btn:hover {
+    border-color: var(--secondary) !important;
+}
