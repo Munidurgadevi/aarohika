@@ -247,6 +247,7 @@ html[dir="rtl"] .cr-hero-media img {
 }
 
 .cr-hero-note {
+    display: none;
     position: absolute;
     z-index: 3;
     top: 22%;
@@ -715,6 +716,7 @@ html[dir="rtl"] .cr-cta-media::before {
 }
 
 @media (max-width: 900px) {
+
     /* rows: image paina, text kinda (zigzag off) */
     .cr-row,
     .cr-row.is-reverse {
@@ -834,17 +836,45 @@ html[dir="rtl"] .cr-cta-media::before {
     will-change: transform, opacity;
 }
 
-.cr-hero-media .cr-slide:nth-child(1) { animation-delay: 0s; }
-.cr-hero-media .cr-slide:nth-child(2) { animation-delay: 3s; }
-.cr-hero-media .cr-slide:nth-child(3) { animation-delay: 6s; }
-.cr-hero-media .cr-slide:nth-child(4) { animation-delay: 9s; }
+.cr-hero-media .cr-slide:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.cr-hero-media .cr-slide:nth-child(2) {
+    animation-delay: 3s;
+}
+
+.cr-hero-media .cr-slide:nth-child(3) {
+    animation-delay: 6s;
+}
+
+.cr-hero-media .cr-slide:nth-child(4) {
+    animation-delay: 9s;
+}
 
 @keyframes crSlide {
-    0%   { opacity: 0; transform: scale(1); }
-    4%   { opacity: 1; }
-    25%  { opacity: 1; }
-    29%  { opacity: 0; transform: scale(1.12); }
-    100% { opacity: 0; transform: scale(1.12); }
+    0% {
+        opacity: 0;
+        transform: scale(1);
+    }
+
+    4% {
+        opacity: 1;
+    }
+
+    25% {
+        opacity: 1;
+    }
+
+    29% {
+        opacity: 0;
+        transform: scale(1.12);
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(1.12);
+    }
 }
 
 /* RTL: flip the whole slideshow instead of each image (keeps zoom working) */
