@@ -23,6 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const panelMeta = {
     overview: { title: 'Overview', sub: 'Welcome back, Tedoshijika. Here is a quick look at your courses, classes and progress.' },
     courses: { title: 'My <span class="gold">Courses</span>', sub: 'All the courses you are enrolled in, with your lesson progress and tutors.' },
+    book: { title: 'Book a <span class="gold">Class</span>', sub: 'Pick a course, day and time. Your plan classes apply automatically.' },
     schedule: { title: 'Schedule', sub: 'Dates, timings and status of your upcoming and past classes.' },
     notes: { title: 'Progress <span class="gold">Notes</span>', sub: 'Skill levels, home practice and written feedback from your tutors.' },
     payments: { title: 'Fees & Payments', sub: 'Pay your fees, check what is due and download receipts.' },
@@ -282,5 +283,171 @@ document.addEventListener('DOMContentLoaded', () => {
     try { localStorage.setItem('aarohika-dir', dir); } catch (e) { }
     syncDirBtn();
   });
+
+
+  /* ===== Book a Class ===== */
+  (function () {
+    const daysEl = document.getElementById('bk-days');
+    if (!daysEl) return;
+    const slotsEl = document.getElementById('bk-slots');
+    const confirmBtn = document.getElementById('bk-confirm');
+    const planChk = document.getElementById('bk-plan');
+    const leftEl = document.getElementById('bk-left');
+    const tutorSel = document.getElementById('bk-tutor');
+    const fees = { Keyboard: 600, Vocals: 600, Guitar: 600, Drums: 700 };
+    const times = [8, 9, 10, 11, 12, 14, 15, 16, 17, 18, 19, 20];
+    const DN = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+    const MN = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+    const state = { course: 'Keyboard', dayIdx: 0, slot: null, planLeft: 7, mine: {} };
+    const base = new Date(); base.setHours(0, 0, 0, 0);
+    const days = Array.from({ length: 7 }, (_, i) => { const d = new Date(base); d.setDate(base.getDate() + i); return d; });
+    const label = h => (h % 12 || 12) + ':00 ' + (h >= 12 ? 'PM' : 'AM');
+    const key = () => [state.course, tutorSel.value, days[state.dayIdx].toDateString()].join('|');
+    // fixed pseudo-random "already booked" slots so the demo looks real
+    const taken = (h, di) => ((h * 7 + di * 5 + state.course.length * 3 + tutorSel.selectedIndex * 2) % 5) === 0;
+
+    function renderDays() {
+      daysEl.innerHTML = days.map((d, i) =>
+        `<button type="button" class="bk-day${i === state.dayIdx ? ' active' : ''}" data-i="${i}"><span>${DN[d.getDay()]}</span><b>${d.getDate()}</b><span>${MN[d.getMonth()]}</span></button>`).join('');
+    }
+    function renderSlots() {
+      const now = new Date();
+      const isToday = state.dayIdx === 0;
+      const mine = state.mine[key()] || [];
+      slotsEl.innerHTML = times.map(h => {
+        const past = isToday && h <= now.getHours();
+        const booked = past || taken(h, state.dayIdx) || mine.includes(h);
+        const cls = ['bk-slot', h >= 17 ? 'peak' : '', booked ? 'booked' : '', state.slot === h ? 'active' : '', mine.includes(h) ? 'mine' : ''].join(' ');
+        return `<button type="button" class="${cls}" data-h="${h}" ${booked ? 'disabled' : ''}>${label(h)}</button>`;
+      }).join('');
+    }
+    function renderSummary() {
+      const d = days[state.dayIdx];
+      document.getElementById('bk-s-course').textContent = state.course;
+      document.getElementById('bk-s-tutor').textContent = tutorSel.value;
+      document.getElementById('bk-s-date').textContent = DN[d.getDay()] + ', ' + d.getDate() + ' ' + MN[d.getMonth()];
+      document.getElementById('bk-s-time').textContent = state.slot == null ? 'Select a slot' : label(state.slot);
+      const fee = fees[state.course];
+      const usePlan = planChk.checked && state.planLeft > 0;
+      document.getElementById('bk-s-fee').textContent = state.slot == null ? '-' : '₹' + fee;
+      document.getElementById('bk-total').textContent = '₹' + (state.slot == null || usePlan ? 0 : fee);
+      leftEl.textContent = state.planLeft;
+      planChk.disabled = state.planLeft === 0;
+      confirmBtn.disabled = state.slot == null;
+    }
+    const all = () => { renderDays(); renderSlots(); renderSummary(); };
+
+    document.getElementById('bk-course').addEventListener('click', e => {
+      const b = e.target.closest('button[data-course]'); if (!b) return;
+      state.course = b.dataset.course; state.slot = null;
+      document.querySelectorAll('#bk-course button').forEach(x => x.classList.toggle('active', x === b));
+      all();
+    });
+    tutorSel.addEventListener('change', () => { state.slot = null; all(); });
+    daysEl.addEventListener('click', e => {
+      const b = e.target.closest('.bk-day'); if (!b) return;
+      state.dayIdx = +b.dataset.i; state.slot = null; all();
+    });
+    slotsEl.addEventListener('click', e => {
+      const b = e.target.closest('.bk-slot'); if (!b || b.disabled) return;
+      state.slot = +b.dataset.h; renderSlots(); renderSummary();
+    });
+    planChk.addEventListener('change', renderSummary);
+    confirmBtn.addEventListener('click', () => {
+      if (state.slot == null) return;
+      const k = key();
+      (state.mine[k] = state.mine[k] || []).push(state.slot);
+      if (planChk.checked && state.planLeft > 0) state.planLeft--;
+      showToast(state.course + ' class booked for ' + label(state.slot) + ' with ' + tutorSel.value + '.');
+      state.slot = null; all();
+    });
+    all();
+  })();
+
+
+  /* ===== Header search (Ctrl/Cmd + K) ===== */
+  (function () {
+    const input = document.getElementById('dash-search');
+    if (!input) return;
+    const map = [
+      ['overview', 'overview home dashboard'],
+      ['courses', 'course courses keyboard vocals guitar drums lesson'],
+      ['schedule', 'schedule class classes timetable date time'],
+      ['book', 'book booking slot reserve class'],
+      ['notes', 'progress notes feedback tutor practice'],
+      ['payments', 'fee fees payment payments receipt pay due'],
+      ['performances', 'performance performances recital score assessment'],
+      ['enroll', 'enroll enrol new course join'],
+      ['profile', 'profile account settings details']
+    ];
+    document.addEventListener('keydown', e => {
+      if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k') { e.preventDefault(); input.focus(); input.select(); }
+    });
+    input.addEventListener('keydown', e => {
+      if (e.key !== 'Enter') return;
+      const q = input.value.trim().toLowerCase();
+      if (!q) return;
+      const hit = map.find(([, words]) => words.split(' ').some(w => w.startsWith(q) || q.startsWith(w)));
+      if (hit) { openPanel(hit[0]); input.value = ''; input.blur(); }
+      else showToast('No section found for "' + input.value.trim() + '".');
+    });
+  })();
+
+
+  /* ===== Custom tutor dropdown (wraps the select, booking logic stays the same) ===== */
+  (function () {
+    const sel = document.getElementById('bk-tutor');
+    if (!sel) return;
+    sel.classList.add('bk-native');
+    const dd = document.createElement('div');
+    dd.className = 'bk-dd';
+    dd.innerHTML = '<button type="button" class="bk-dd-btn" aria-haspopup="listbox" aria-expanded="false"><span></span><i class="bi bi-chevron-down" aria-hidden="true"></i></button><ul class="bk-dd-list" role="listbox"></ul>';
+    sel.parentNode.insertBefore(dd, sel);
+    const btn = dd.querySelector('.bk-dd-btn');
+    const label = btn.querySelector('span');
+    const list = dd.querySelector('.bk-dd-list');
+    let focusIdx = sel.selectedIndex;
+
+    list.innerHTML = Array.from(sel.options).map((o, i) =>
+      '<li class="bk-dd-item" role="option" data-i="' + i + '"><span>' + o.textContent + '</span><i class="bi bi-check2" aria-hidden="true"></i></li>').join('');
+    const items = list.querySelectorAll('.bk-dd-item');
+
+    function paint() {
+      label.textContent = sel.value;
+      items.forEach((li, i) => {
+        li.classList.toggle('selected', i === sel.selectedIndex);
+        li.classList.toggle('focus', i === focusIdx);
+        li.setAttribute('aria-selected', i === sel.selectedIndex);
+      });
+    }
+    function setOpen(o) {
+      dd.classList.toggle('open', o);
+      btn.setAttribute('aria-expanded', o);
+      if (o) { focusIdx = sel.selectedIndex; paint(); }
+    }
+    function choose(i) {
+      sel.selectedIndex = i;
+      sel.dispatchEvent(new Event('change', { bubbles: true }));
+      paint(); setOpen(false); btn.focus();
+    }
+    btn.addEventListener('click', e => { e.stopPropagation(); setOpen(!dd.classList.contains('open')); });
+    list.addEventListener('click', e => {
+      e.stopPropagation();
+      const li = e.target.closest('.bk-dd-item'); if (li) choose(+li.dataset.i);
+    });
+    dd.addEventListener('keydown', e => {
+      const open = dd.classList.contains('open');
+      if (e.key === 'Escape') { setOpen(false); return; }
+      if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+        e.preventDefault();
+        if (!open) { setOpen(true); return; }
+        focusIdx = (focusIdx + (e.key === 'ArrowDown' ? 1 : -1) + items.length) % items.length; paint();
+      } else if ((e.key === 'Enter' || e.key === ' ') && open) {
+        e.preventDefault(); choose(focusIdx);
+      }
+    });
+    document.addEventListener('click', () => setOpen(false));
+    paint();
+  })();
 
 });

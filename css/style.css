@@ -1097,7 +1097,7 @@
     position: absolute;
     inset-block-start: 50%;
     inset-inline-end: 0;
-    transform: translateY(-50%);
+    transform: translateY(calc(-50% + 20px));
     display: flex;
     align-items: center;
     gap: 10px;

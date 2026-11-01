@@ -31,6 +31,15 @@
       </a>
     </div>
 
+    <div class="topbar-search-wrap">
+      <span class="topbar-welcome">Welcome back, <strong>Tedoshijika</strong></span>
+      <label class="topbar-search" for="dash-search">
+        <i class="bi bi-search" aria-hidden="true"></i>
+        <input id="dash-search" type="search" placeholder="Search courses, schedule, fees..." autocomplete="off" aria-label="Search dashboard">
+        <kbd>Ctrl K</kbd>
+      </label>
+    </div>
+
     <div class="topbar-right">
       <button class="icon-btn" id="dir-toggle" type="button" title="Switch to RTL" aria-label="Switch to RTL"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3 4 7l4 4"/><path d="M4 7h16"/><path d="m16 21 4-4-4-4"/><path d="M20 17H4"/></svg></button>
       <button class="icon-btn" id="theme-toggle" type="button" title="Switch to dark mode" aria-label="Switch to dark mode"><svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg><svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg></button>
@@ -125,6 +134,10 @@
         <button class="dash-nav-item" data-target="schedule">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3.5" y="5" width="17" height="15.5" rx="2"/><path d="M3.5 9.5h17M8 3v4M16 3v4M7.5 13.5h.01M12 13.5h.01M16.5 13.5h.01M7.5 17h.01M12 17h.01" stroke-linecap="round"/></svg>
           <span>Schedule</span>
+        </button>
+        <button class="dash-nav-item" data-target="book">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3.5" y="5" width="17" height="15.5" rx="2"/><path d="M3.5 9.5h17M8 3v4M16 3v4M12 12.5v5M9.5 15h5" stroke-linecap="round"/></svg>
+          <span>Book a Class</span>
         </button>
         <button class="dash-nav-item" data-target="notes">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M6 3.5h9l4 4V20a.5.5 0 01-.5.5h-12A.5.5 0 016 20z" stroke-linejoin="round"/><path d="M9 12h6M9 16h6" stroke-linecap="round"/></svg>
@@ -483,6 +496,44 @@
           <div class="card recording-card"><div class="recording-thumb"><button class="play-circle" data-title="Monthly Mini Recital – Keyboard" data-meta="Oct 10 · Vedha · Distinction"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></button><span class="rec-duration">4 min</span></div><div class="recording-body"><strong>Monthly Mini Recital – Keyboard</strong><span>Oct 10 · Vedha</span></div></div>
           <div class="card recording-card"><div class="recording-thumb"><button class="play-circle" data-title="Level 1 Assessment – Vocals" data-meta="Sep 26 · Ananya Das · Passed"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></button><span class="rec-duration">6 min</span></div><div class="recording-body"><strong>Level 1 Assessment – Vocals</strong><span>Sep 26 · Ananya Das</span></div></div>
           <div class="card recording-card"><div class="recording-thumb"><button class="play-circle" data-title="Rhythm Basics Test" data-meta="Aug 29 · Rohit Verma · Passed"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></button><span class="rec-duration">5 min</span></div><div class="recording-body"><strong>Rhythm Basics Test</strong><span>Aug 29 · Rohit Verma</span></div></div>
+        </div>
+      </section>
+
+      <!-- BOOK A CLASS -->
+      <section class="dash-panel" data-panel="book">
+        <div class="bk-layout">
+          <div class="card bk-main">
+            <div class="bk-top">
+              <div class="bk-seg" id="bk-course" role="tablist" aria-label="Course">
+                <button type="button" class="active" data-course="Keyboard">Keyboard</button>
+                <button type="button" data-course="Vocals">Vocals</button>
+                <button type="button" data-course="Guitar">Guitar</button>
+                <button type="button" data-course="Drums">Drums</button>
+              </div>
+              <select class="bk-select" id="bk-tutor" aria-label="Tutor">
+                <option>Vedha</option>
+                <option>Ananya</option>
+                <option>Rohan</option>
+              </select>
+            </div>
+            <div class="bk-days" id="bk-days"></div>
+            <div class="bk-slots" id="bk-slots"></div>
+            <p class="bk-legend"><span>Evening batches from 5 PM</span><span><s>Struck-through</s> = booked</span></p>
+          </div>
+
+          <aside class="card bk-sum">
+            <h2>Your booking</h2>
+            <dl>
+              <div><dt>Course</dt><dd id="bk-s-course">Keyboard</dd></div>
+              <div><dt>Tutor</dt><dd id="bk-s-tutor">Vedha</dd></div>
+              <div><dt>Date</dt><dd id="bk-s-date">-</dd></div>
+              <div><dt>Time</dt><dd id="bk-s-time">Select a slot</dd></div>
+              <div><dt>Class fee</dt><dd id="bk-s-fee">-</dd></div>
+            </dl>
+            <label class="bk-plan"><input type="checkbox" id="bk-plan" checked> <span>Use 1 plan class (<b id="bk-left">7</b> left)</span></label>
+            <div class="bk-total"><span>Total</span><strong id="bk-total">₹0</strong></div>
+            <button class="btn btn-solid bk-confirm" id="bk-confirm" type="button" disabled>Confirm booking</button>
+          </aside>
         </div>
       </section>
 

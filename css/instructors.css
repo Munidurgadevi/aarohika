@@ -2053,3 +2053,60 @@ html[dir="rtl"] .mentor-btn svg:last-child {
         animation: none;
     }
 }
+
+/* ---- Hero social proof (avatars + stars + line, like the reference) ---- */
+.hero-proof {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+.hero-proof-avatars {
+    display: flex;
+    flex: none;
+}
+.hero-proof-avatars img {
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--surface, #fff);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, .15);
+}
+.hero-proof-avatars img + img {
+    margin-inline-start: -14px;
+}
+.hero-proof-stars {
+    display: flex;
+    gap: 5px;
+    color: var(--secondary);
+}
+.hero-proof-stars svg {
+    width: 22px;
+    height: 22px;
+    fill: currentColor;
+}
+.hero-proof-text {
+    margin: 4px 0 0;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.3;
+    color: var(--text);
+}
+
+/* Instructors hero: original big heading, only the gaps are tightened so everything fits one screen */
+html body .home-hero h1 {
+    font-size: clamp(36px, min(5.6vw, 9.6svh), 68px) !important;
+    margin-bottom: 14px;
+}
+html body .home-hero .hero-description {
+    margin-bottom: 18px;
+}
+html body .home-hero .hero-actions {
+    margin-bottom: 20px;
+}
+@media (max-width: 560px) {
+    .hero-proof { flex-wrap: wrap; }
+    .hero-proof-avatars img { width: 46px; height: 46px; }
+    .hero-proof-stars svg { width: 19px; height: 19px; }
+    .hero-proof-text { font-size: 14px; }
+}
