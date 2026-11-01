@@ -967,3 +967,37 @@ html[dir="rtl"] .ct-field textarea {
         display: none;
     }
 }
+@media (min-width: 961px) {
+    .ct-layout {
+        grid-template-columns: fit-content(46%) minmax(0, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .ct-info {
+        grid-template-columns: fit-content(100%);
+        justify-content: start;
+    }
+}
+div.ct-card:hover .ct-icon {
+    background: var(--primary);
+    color: var(--btn-fg);
+}
+@media (min-width: 761px) {
+    .cx-tiles {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .cx-tile {
+        flex: 0 1 auto;
+    }
+}
+
+@media (max-width: 760px) {
+    .cx-tiles {
+        grid-template-columns: fit-content(100%);
+        justify-content: center;
+    }
+}

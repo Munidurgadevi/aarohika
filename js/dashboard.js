@@ -169,10 +169,23 @@ document.addEventListener('DOMContentLoaded', () => {
   const videoModal = document.getElementById('video-modal');
   const videoTitle = document.getElementById('video-modal-title');
   const videoMeta = document.getElementById('video-modal-meta');
+  const videoPoster = document.getElementById('video-modal-poster');
   document.querySelectorAll('.play-circle').forEach(btn => {
     btn.addEventListener('click', () => {
       videoTitle.textContent = btn.dataset.title || 'Recording';
       videoMeta.textContent = btn.dataset.meta || '';
+      // show the same poster image that is on the card (if there is one)
+      const cardImg = btn.closest('.recording-thumb')?.querySelector('img');
+      if (videoPoster) {
+        if (cardImg && cardImg.getAttribute('src')) {
+          videoPoster.src = cardImg.getAttribute('src');
+          videoPoster.alt = btn.dataset.title || '';
+          videoPoster.style.display = 'block';
+        } else {
+          videoPoster.removeAttribute('src');
+          videoPoster.style.display = 'none';
+        }
+      }
       videoModal.classList.add('open');
     });
   });

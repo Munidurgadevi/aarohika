@@ -1121,3 +1121,7 @@ html[dir="rtl"] .gt-cta-media::before {
         grid-template-columns: 1fr;
     }
 }
+.gt-note,
+.gt-head-note {
+    display: none !important;
+}

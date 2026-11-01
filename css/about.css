@@ -1640,3 +1640,17 @@ html:not(.dark-mode) body .ab-cta-panel::after {
 .dark-mode .ab-cta-panel h2 {
     color: var(--ivory);
 }
+html:not(.dark-mode) body .ab-hero,
+html:not(.dark-mode) body .ab-mission {
+    --ab-overlay: #2a1c12;
+    --ab-overlay-opacity: 25%;
+}
+
+html:not(.dark-mode) body .ab-hero::before,
+html:not(.dark-mode) body .ab-mission::before {
+    background: color-mix(in srgb, var(--ab-overlay) var(--ab-overlay-opacity), transparent) !important;
+}
+
+html:not(.dark-mode) body :is(.ab-hero, .ab-mission) :is(h1, h2, h3, p, blockquote, .ab-eyebrow) {
+    text-shadow: 0 2px 14px rgba(0, 0, 0, .55);
+}

@@ -5229,3 +5229,351 @@ html body .profile-btn {
 html body .profile-btn:hover {
     border-color: var(--secondary) !important;
 }
+:root {
+    --font-heading: "Playfair Display", serif !important;
+    --font-display: "Playfair Display", serif !important;
+    --font-body: "Manrope", sans-serif !important;
+    --font-family: "Manrope", sans-serif !important;
+}
+
+html body.dashboard-body {
+    font-family: "Manrope", sans-serif !important;
+}
+/* =====================================================================
+   MOBILE ALIGNMENT FIXES  (Galaxy S8+ 360x740 and other small phones)
+   Keep this block at the very END of the file so it wins the cascade.
+   ===================================================================== */
+@media (max-width: 480px) {
+
+    /* 0. Nothing may push the page wider than the screen */
+    html, body { overflow-x: hidden; }
+    .dash-app, .dash-main, .dash-panel, main { min-width: 0; max-width: 100%; }
+    .card { min-width: 0; max-width: 100%; box-sizing: border-box; }
+    .card h2, .card h3, .card p { overflow-wrap: break-word; }
+
+    /* 1. ENROLL / MY COURSES: cards were running off the right edge */
+    .cr-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 16px;
+        width: 100%;
+    }
+    .cr-card { padding: 16px; gap: 14px; width: 100%; box-sizing: border-box; }
+    .cr-top {
+        display: grid;
+        grid-template-columns: 44px minmax(0, 1fr);
+        column-gap: 12px;
+        row-gap: 10px;
+        align-items: start;
+    }
+    .cr-top > div { grid-column: 2; }
+    .cr-top h2 { font-size: 17px; line-height: 1.25; }
+    .cr-top .mc-status {          /* status pill goes under the title, not beside it */
+        grid-column: 2;
+        justify-self: start;
+    }
+    .cr-ic { width: 44px; height: 44px; }
+    .cr-facts li { display: flex; align-items: flex-start; gap: 8px; line-height: 1.4; }
+    .cr-facts i { margin: 2px 0 0; flex: none; }
+    .cr-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+    .cr-actions .btn {
+        width: 100%;
+        justify-content: center;
+        padding-inline: 8px;
+        white-space: nowrap;
+        font-size: 12px;
+    }
+
+    /* 2. HOME: action buttons were clipped ("GO TO MY COURSE") */
+    .ov2-actions { display: grid; grid-template-columns: 1fr; gap: 10px; padding: 16px 16px 0; }
+    .ov2-actions .btn {
+        width: 100%;
+        min-width: 0;
+        justify-content: center;
+        white-space: normal;
+        text-align: center;
+        line-height: 1.25;
+    }
+    .ov2-next { margin: 0 16px; }
+    .ov2-info { padding: 16px; }
+    .ov2-when { font-size: 20px; line-height: 1.25; }
+    .ov2-where { align-items: flex-start; }
+    .ov2-teacher { align-items: center; }
+    .ov2-list { margin: 0 16px; }
+    .ov2-list .mini-check-item { align-items: flex-start; gap: 10px; }
+    .ov2-list .mini-check-item .task-label { flex: 1 1 0; }
+    .ov2-list .mini-check-item .task-due { flex: none; white-space: nowrap; }
+
+    /* Quick links: equal-height tiles, text centred and not squeezed */
+    .ov2-qas { padding: 0 16px; gap: 8px; grid-auto-rows: 1fr; }
+    .ov2-qa {
+        justify-content: flex-start;
+        padding: 12px 4px;
+        font-size: 12px;
+        line-height: 1.25;
+        min-height: 92px;
+    }
+    .ov2-fee, .ov2-prog, .ov2-quote { padding-inline: 16px; }
+
+    /* 3. PROFILE: big empty gap in hero + squashed "Personal details" header */
+    .pf-hero {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 16px;
+        padding: 22px 16px;
+    }
+    .pf-id { flex: 0 0 auto; width: 100%; }      /* flex-basis:300px was making it 300px tall */
+    .pf-teacher { justify-content: center; }
+    .pf-editmain { width: 100%; margin: 0; align-self: stretch; }
+
+    .pn-hd {
+        display: grid;
+        grid-template-columns: 44px minmax(0, 1fr);
+        gap: 6px 12px;
+        align-items: center;
+        padding: 16px 16px 12px;
+    }
+    .pn-ic { width: 44px; height: 44px; }
+    .pn-hd > div { grid-column: 2; }
+    .pn-hd .btn { grid-column: 1 / -1; width: 100%; justify-self: stretch; }
+
+    /* Form rows: icon + field perfectly aligned, full width */
+    .pf-form { grid-template-columns: minmax(0, 1fr); padding-inline: 16px; gap: 14px; }
+    .pf-field {
+        display: grid;
+        grid-template-columns: 40px minmax(0, 1fr);
+        align-items: end;
+        gap: 10px;
+        width: 100%;
+    }
+    .pf-field .form-row { width: 100%; min-width: 0; }
+    .pf-field input, .pf-field select { width: 100%; box-sizing: border-box; }
+    .pf-field label { display: block; text-align: start; margin-bottom: 6px; }
+    .pf-tg { gap: 10px; align-items: flex-start; }
+    .pf-save { padding-inline: 16px; }
+    .pf-save .btn { width: 100%; }
+
+    /* 4. Shared: keep section headers on one tidy row */
+    .ov2-hd { gap: 10px; padding: 16px 16px 12px; }
+    .ov2-hd h2 { flex: 1 1 auto; font-size: 18px; }
+    .ov2-hd .link-btn { flex: none; font-size: 13px; }
+}
+
+/* extra-tight phones (<=360px: Galaxy S8+, S9, etc.) */
+@media (max-width: 360px) {
+    .dash-topbar { padding-inline: 8px; }
+    .cr-actions { grid-template-columns: 1fr; }
+    .ov2-qa { font-size: 11.5px; }
+}
+
+/* =====================================================================
+   MOBILE FIX 2: tables scroll sideways + icon/text info boxes
+   ===================================================================== */
+@media (max-width: 480px) {
+
+    /* Tables: keep real width, scroll horizontally inside the card */
+    .bl-tablewrap {
+        margin: 0 16px;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        overscroll-behavior-x: contain;
+        max-width: calc(100% - 32px);
+    }
+    .bl-table { min-width: 620px; width: 100%; }
+    .bl-table th,
+    .bl-table td {
+        padding: 12px 14px;
+        white-space: nowrap;          /* dates / amounts never break mid-word */
+        word-break: normal;
+        overflow-wrap: normal;
+    }
+    .bl-table td strong,
+    .bl-table td span { white-space: nowrap; }
+    .bl-table td:nth-child(2),
+    .bl-table td:nth-child(3) { white-space: normal; min-width: 130px; }   /* event / course names may wrap by word */
+
+    /* Info boxes: icon on the left, never shrinks, text beside it */
+    .mc-help,
+    .bl-secure {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        padding: 14px 16px;
+    }
+    .mc-help { margin-inline: 0; }
+    .mc-help > i,
+    .bl-secure > i {
+        flex: 0 0 auto;
+        width: 28px;
+        min-width: 28px;
+        text-align: center;
+        line-height: 1;
+        margin-top: 2px;
+    }
+    .mc-help > i { font-size: 26px; }
+    .bl-secure > i { font-size: 22px; }
+    .mc-help > div,
+    .bl-secure { min-width: 0; }
+    .mc-help > div { flex: 1 1 0; }
+    .mc-help p, .bl-secure { line-height: 1.5; }
+}
+
+/* =====================================================================
+   DESKTOP FIX (1920x1080 and other wide screens):
+   side-by-side cards must share the same top AND bottom edges.
+   ===================================================================== */
+@media (min-width: 1101px) {
+
+    /* Profile: Personal details + Notifications end at the same line */
+    .pf-grid { align-items: stretch; }
+    .pf-grid > .pn-card {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+    .pf-grid > .pn-card .pf-save { margin-top: auto; }
+    .pf-grid > .pn-card .pf-toggles {
+        flex: 1 1 auto;
+        grid-template-columns: minmax(0, 1fr);
+        grid-auto-rows: 1fr;           /* 4 toggle rows share the extra height evenly */
+        align-content: stretch;
+    }
+    .pf-grid > .pn-card .pf-tg { height: 100%; box-sizing: border-box; }
+
+    /* Book a Class: booking card + summary card same height */
+    .bk-layout { align-items: stretch; }
+    .bk-layout > .card { height: 100%; box-sizing: border-box; }
+    .bk-sum { display: flex; flex-direction: column; }
+    .bk-sum .bk-total { margin-top: auto; }
+    .bk-main { display: flex; flex-direction: column; }
+    .bk-main .bk-legend { margin-top: auto; }
+
+    /* Fees & Payments + Overview: both columns end on the same line */
+    .bl-grid, .ov2-grid { align-items: stretch; }
+    .bl-main, .bl-side, .ov2-col { height: 100%; }
+    .bl-main > .card:last-child,
+    .bl-side > .card:last-child,
+    .ov2-col > .card:last-child { flex: 1 1 auto; }
+}
+
+/* =====================================================================
+   MY COURSES (desktop / 1920x1080):
+   Keyboard + Vocals = two tall cards, "Rhythm Basics" and "Add a new
+   course" are stacked one under the other in the 3rd column, so there is
+   no empty space inside the short cards.
+   ===================================================================== */
+@media (min-width: 1101px) {
+    [data-panel="courses"] .cr-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        grid-auto-rows: auto;
+        align-items: stretch;
+        gap: 20px;
+    }
+    [data-panel="courses"] .cr-grid > .cr-card:nth-child(1) { grid-column: 1; grid-row: 1 / span 2; }
+    [data-panel="courses"] .cr-grid > .cr-card:nth-child(2) { grid-column: 2; grid-row: 1 / span 2; }
+    [data-panel="courses"] .cr-grid > .cr-card:nth-child(3) { grid-column: 3; grid-row: 1; }
+    [data-panel="courses"] .cr-grid > .cr-card:nth-child(4) { grid-column: 3; grid-row: 2; }
+
+    /* tall cards: spread content evenly, buttons stay at the bottom */
+    [data-panel="courses"] .cr-grid > .cr-card:nth-child(-n+2) { justify-content: space-between; }
+
+    /* stacked cards: tighter spacing so they stay compact */
+    [data-panel="courses"] .cr-grid > .cr-card:nth-child(n+3) { gap: 12px; padding: 18px 22px; }
+    [data-panel="courses"] .cr-grid > .cr-card:nth-child(n+3) .cr-actions { margin-top: 0; }
+}
+
+/* =====================================================================
+   NO EMPTY SPACE inside stretched cards (desktop)
+   Cards keep equal top/bottom edges, but the content grows to fill them.
+   ===================================================================== */
+@media (min-width: 1101px) {
+
+    /* --- Book a Class: days + time slots grow, legend sits right under them --- */
+    .bk-main { gap: 16px; }
+    .bk-main .bk-legend { margin-top: 0; }
+    .bk-main .bk-days {
+        flex: 1 1 auto;
+        grid-auto-rows: 1fr;
+    }
+    .bk-main .bk-day {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .bk-main .bk-slots {
+        flex: 1 1 auto;
+        grid-auto-rows: 1fr;
+        align-content: stretch;
+    }
+    .bk-main .bk-slot { display: flex; align-items: center; justify-content: center; }
+
+    /* --- Fees & Payments + Overview: last card in each column fills evenly --- */
+    .bl-main > .card:last-child,
+    .bl-side > .card:last-child,
+    .ov2-col > .card:last-child {
+        display: flex;
+        flex-direction: column;
+    }
+    .bl-main > .card:last-child .bl-rows,
+    .bl-side > .card:last-child .bl-rows {
+        flex: 1 1 auto;
+        display: flex;
+        flex-direction: column;
+    }
+    .bl-main > .card:last-child .bl-rows > li,
+    .bl-side > .card:last-child .bl-rows > li {
+        flex: 1 1 auto;
+        align-items: center;
+    }
+    .bl-side > .card:last-child .bl-secure,
+    .bl-main > .card:last-child .bl-secure { margin-top: 14px; }
+
+    /* Overview: fee reminder / bottom card content centred vertically */
+    .ov2-col > .card:last-child .ov2-fee,
+    .ov2-col > .card:last-child .ov2-list,
+    .ov2-col > .card:last-child .bl-rows {
+        flex: 1 1 auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+}
+
+/* =====================================================================
+   SPACING POLISH (desktop) - spread extra height evenly, no big gaps
+   ===================================================================== */
+@media (min-width: 1101px) {
+
+    /* My Courses: Keyboard + Vocals - extra height is shared between ALL gaps
+       (header / progress / facts / buttons) instead of one big hole */
+    [data-panel="courses"] .cr-grid > .cr-card:nth-child(-n+2) .cr-actions { margin-top: 0; }
+    [data-panel="courses"] .cr-grid > .cr-card:nth-child(-n+2) .cr-facts { padding-top: 18px; padding-bottom: 4px; }
+
+    /* Fees & Payments: taller table rows so the left column matches the right one naturally */
+    .bl-table th { padding-block: 15px; }
+    .bl-table td { padding-block: 20px; }
+
+    /* Preferred payment card (now last in the left column): content centred, not stuck to the top */
+    .bl-main > .card:last-child .bl-method { margin-block: auto; }
+}
+
+/* Video modal: show the poster image behind the play icon */
+.modal-video-frame { position: relative; overflow: hidden; }
+.modal-video-frame #video-modal-poster {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+.modal-video-frame::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    background: linear-gradient(180deg, rgba(14, 20, 32, .10) 0%, rgba(14, 20, 32, .45) 100%);
+    pointer-events: none;
+}
+.modal-video-frame svg { position: relative; z-index: 2; }
