@@ -5577,3 +5577,41 @@ html body.dashboard-body {
     pointer-events: none;
 }
 .modal-video-frame svg { position: relative; z-index: 2; }
+@media (min-width: 1101px) {
+    html body [data-panel="courses"] .cr-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-auto-rows: auto;
+        align-items: stretch;
+        gap: 20px;
+    }
+
+    html body [data-panel="courses"] .cr-grid > .cr-card:nth-child(n) {
+        grid-column: auto;
+        grid-row: auto;
+        justify-content: flex-start;
+        gap: 18px;
+        padding: 22px;
+    }
+
+    html body [data-panel="courses"] .cr-grid > .cr-card .cr-facts {
+        padding-top: 14px;
+        padding-bottom: 0;
+    }
+
+    html body [data-panel="courses"] .cr-grid > .cr-card .cr-actions {
+        margin-top: auto;
+    }
+}
+
+[data-panel="courses"] .cr-top {
+    flex-wrap: wrap;
+}
+
+[data-panel="courses"] .cr-top > div {
+    flex: 1 1 200px;
+}
+
+[data-panel="courses"] .cr-top h2 {
+    word-break: normal;
+    overflow-wrap: normal;
+}
