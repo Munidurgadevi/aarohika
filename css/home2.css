@@ -634,17 +634,6 @@
     --img: url("https://i.pinimg.com/1200x/62/0a/0b/620a0b2cf4f982de34e63943df86ed94.jpg");
 }
 
-/* touch screens have no hover, so the name is always visible there */
-@media (hover: none) {
-    .h2c-card::after {
-        opacity: 1;
-    }
-
-    .h2c-name {
-        opacity: 1;
-        transform: none;
-    }
-}
 
 @media (prefers-reduced-motion: reduce) {
 

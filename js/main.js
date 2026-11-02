@@ -533,3 +533,45 @@
         init();
     }
 })();
+(function () {
+    var cards = document.querySelectorAll(".h2c-card, .pr-track");
+    if (!cards.length) return;
+    var touch = window.matchMedia("(hover: none), (pointer: coarse)");
+    var lastType = "mouse";
+
+    document.addEventListener("pointerdown", function (e) {
+        lastType = e.pointerType || "mouse";
+    }, true);
+
+    function closeAll(except) {
+        cards.forEach(function (c) {
+            if (c !== except) c.classList.remove("is-open");
+        });
+    }
+
+    cards.forEach(function (card) {
+        card.addEventListener("pointerenter", function (e) {
+            if (e.pointerType !== "mouse") return;
+            closeAll(card);
+            card.classList.add("is-open");
+        });
+
+        card.addEventListener("pointerleave", function (e) {
+            if (e.pointerType !== "mouse") return;
+            card.classList.remove("is-open");
+        });
+
+        card.addEventListener("click", function (e) {
+            if (lastType === "mouse" && !touch.matches) return;
+            if (!card.classList.contains("is-open")) {
+                e.preventDefault();
+                closeAll(card);
+                card.classList.add("is-open");
+            }
+        });
+    });
+
+    document.addEventListener("click", function (e) {
+        if (!e.target.closest(".h2c-card, .pr-track")) closeAll();
+    });
+})();

@@ -1213,16 +1213,6 @@ html body .pr-track .btn {
     --btn-text: var(--primary-color);
 }
 
-@media (hover: none) {
-    html body .pr-track::before {
-        opacity: 1;
-    }
-
-    html body .pr-track > * {
-        opacity: 1;
-        transform: none;
-    }
-}
 html body .pr-cta-card {
     padding-block: 30px;
     padding-inline: clamp(22px, 5vw, 72px) 58%;
