@@ -2191,3 +2191,89 @@ html body .mentor-cta-actions .mentor-btn {
 html body .mentor-cta-actions .mentor-btn svg:last-child {
     display: none;
 }
+@media (max-width: 760px) {
+    .profile-modal {
+        display: block;
+        padding: 10px;
+        overscroll-behavior: contain;
+    }
+
+    .profile-dialog {
+        position: relative;
+        margin: 0 auto;
+        border-radius: 16px;
+    }
+
+    .pm-feature {
+        min-height: 240px;
+    }
+
+    .pm-feature img {
+        object-position: center 20%;
+    }
+
+    .pm-note {
+        display: none;
+    }
+
+    .pm-feature-text {
+        inset-inline: 16px;
+        bottom: 16px;
+    }
+
+    .pm-feature-text h3 {
+        font-size: 26px;
+    }
+
+    .pm-role {
+        margin-bottom: 6px;
+        font-size: 14px;
+    }
+
+    .pm-tagline {
+        font-size: 13px;
+        line-height: 1.5;
+    }
+
+    .pm-details {
+        padding: 14px 16px 18px;
+    }
+
+    .pm-head {
+        gap: 12px;
+    }
+
+    .pm-head h4 {
+        font-size: 18px;
+    }
+
+    .pm-close {
+        position: absolute;
+        top: 10px;
+        inset-inline-end: 10px;
+        z-index: 5;
+        width: 38px;
+        height: 38px;
+        background: rgba(250, 246, 236, .95);
+        color: #153427;
+    }
+
+    .pm-list>div {
+        padding: 10px 0;
+    }
+}
+
+@media (max-width: 380px) {
+    .profile-modal {
+        padding: 8px;
+    }
+
+    .pm-feature {
+        min-height: 210px;
+    }
+
+    .pm-head img {
+        width: 46px;
+        height: 46px;
+    }
+}
