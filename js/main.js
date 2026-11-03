@@ -148,7 +148,7 @@
             bg: "Example background information can be added here."
         },
         sahana: {
-            name: "Sahana Verma", role: "Vocals Instructor", img: "https://i.pinimg.com/736x/7f/72/8b/7f728be9bc0686854fea45e14d7ea3bf.jpg",
+            name: "Sahana Verma", role: "Vocals Instructor", img: "https://i.pinimg.com/736x/04/84/ba/0484babde26843e0009a7361b9ad95bc.jpg",
             tagline: "Healthy vocal techniques and expressive singing for every age.",
             bio: "Sahana focuses on voice care, breath control and confident stage presence for singers of all levels.",
             qual: "Example qualification details can be added here.",

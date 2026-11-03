@@ -5615,3 +5615,38 @@ html body.dashboard-body {
     word-break: normal;
     overflow-wrap: normal;
 }
+
+/* ===== Overview: Fee reminder fills the column down to the Upcoming performance card ===== */
+.ov2-col > .card:last-child .ov2-fee {
+    flex: 0 0 auto;
+    justify-content: flex-start;
+}
+
+.ov2-col > .card:last-child .ov2-fee-rows {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    margin-top: 12px;
+}
+
+.ov2-col > .card:last-child .ov2-fee-rows li {
+    flex: 1 1 auto;
+}
+
+.ov2-col > .card:last-child .ov2-fee-rows li {
+    padding-block: 10px;
+}
+
+/* Overview: when a column's last card is stretched, spread the extra height over its rows
+   (no empty gap between the heading and the first row, or under the last row) */
+.ov2-col > .card:last-child .bl-rows {
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.ov2-col > .card:last-child .bl-rows li {
+    flex: 1 1 auto;
+}

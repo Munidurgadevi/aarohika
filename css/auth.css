@@ -706,3 +706,8 @@ html[dir="rtl"] .auth-foot svg {
 html[dir="rtl"] .rtl-flip {
     transform: scaleX(-1);
 }
+.auth-meta,
+.auth-check.terms,
+.auth-divider {
+    margin-block: 6px;
+}

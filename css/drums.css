@@ -1125,3 +1125,32 @@ html[dir="rtl"] .gt-cta-media::before {
 .gt-head-note {
     display: none !important;
 }
+
+.gt-section > .container + .container {
+    margin-top: 112px;
+}
+
+@media (max-width: 760px) {
+    .gt-section > .container + .container {
+        margin-top: 84px;
+    }
+}
+
+html body .gt-instructor-media {
+    position: relative;
+    overflow: hidden;
+    line-height: 0;
+    background: transparent;
+}
+
+html body .gt-instructor-media img {
+    position: absolute;
+    inset: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    max-width: none;
+    margin: 0;
+    object-fit: cover;
+    object-position: center 20%;
+}

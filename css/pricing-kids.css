@@ -41,7 +41,7 @@
 }
 
 .pr-kids .pr-plan.featured {
-    border-color: var(--secondary);
+    border-color: var(--primary);
 }
 
 .pr-kids .pr-plan.featured .pr-list svg {
@@ -173,4 +173,29 @@
         gap: 10px;
         margin-bottom: 14px;
     }
+}
+
+/* ===== What Your Child Gets: icon and heading in one row, text below ===== */
+.pr-kids .pr-feature {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    align-items: center;
+    column-gap: 14px;
+    row-gap: 14px;
+}
+
+.pr-kids .pr-feature > div {
+    display: contents;
+}
+
+.pr-kids .pr-feature h3 {
+    grid-column: 2;
+    grid-row: 1;
+    margin: 0;
+}
+
+.pr-kids .pr-feature p {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    margin: 0;
 }

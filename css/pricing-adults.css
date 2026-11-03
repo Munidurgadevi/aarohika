@@ -34,16 +34,6 @@
     box-shadow: var(--shadow);
 }
 
-.pr-level:not(:last-child)::after {
-    content: "";
-    position: absolute;
-    inset-block-start: 51px;
-    inset-inline-start: calc(100% + 1px);
-    width: 20px;
-    height: 2px;
-    background: var(--secondary);
-}
-
 .pr-level-step {
     width: 42px;
     height: 42px;
@@ -186,4 +176,36 @@
     .pr-adults-arches .ar2 {
         margin-top: 24px;
     }
+}
+
+/* ===== Start Where You Are: number and heading in one row, text below ===== */
+.pr-level {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    align-items: center;
+    column-gap: 14px;
+}
+
+.pr-level-step {
+    margin-bottom: 0;
+}
+
+.pr-level h3 {
+    margin: 0;
+}
+
+.pr-level p,
+.pr-level .pr-chips {
+    grid-column: 1 / -1;
+}
+
+.pr-level p {
+    margin-top: 16px;
+}
+
+/* no connector lines between the level cards */
+.pr-level::after,
+.pr-level:not(:last-child)::after {
+    content: none !important;
+    display: none !important;
 }

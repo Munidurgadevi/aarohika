@@ -2110,3 +2110,84 @@ html body .home-hero .hero-actions {
     .hero-proof-stars svg { width: 19px; height: 19px; }
     .hero-proof-text { font-size: 14px; }
 }
+
+/* ===== Instructor cards: image flush with the card border (zooms inside its frame), one button ===== */
+html body .instructor-card {
+    padding: 0 12px 12px;
+    overflow: hidden;
+}
+
+html body .instructor-photo {
+    margin: 0 -12px;
+    overflow: hidden;
+}
+
+html body .instructor-photo img {
+    display: block;
+    width: 100%;
+    max-width: none;
+    margin: 0;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: 0;
+}
+
+.instructor-actions {
+    grid-template-columns: 1fr;
+}
+
+html body .mentor-cta-card {
+    display: block;
+    min-height: 340px;
+    padding: clamp(28px, 4vw, 52px);
+    border-radius: 28px;
+}
+
+html body .mentor-cta-copy {
+    max-width: 760px;
+}
+
+html body .mentor-cta-copy .tagline {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 14px;
+    color: var(--gold-light) !important;
+}
+
+html body .mentor-cta-copy h2 {
+    margin: 0 0 12px;
+    color: #faf6ec;
+    font-family: var(--font-heading, var(--font-family));
+    font-weight: 700;
+    letter-spacing: -.03em;
+    text-align: left;
+}
+
+html body .mentor-cta-copy h2 span {
+    display: block;
+    color: var(--gold-light);
+}
+
+html body .mentor-cta-copy p {
+    max-width: 520px;
+    margin: 0 0 26px;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+html body .mentor-cta-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    min-width: 0;
+}
+
+html body .mentor-cta-actions .mentor-btn {
+    width: auto;
+    min-height: 48px;
+    padding: 12px 22px;
+}
+
+html body .mentor-cta-actions .mentor-btn svg:last-child {
+    display: none;
+}

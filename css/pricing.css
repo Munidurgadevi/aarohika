@@ -1230,7 +1230,7 @@ html body .pr-cta-card .pr-cta-eyebrow {
 }
 
 html body .pr-cta-card .pr-cta-eyebrow::before {
-    display: none !important;
+    display: block !important;
 }
 
 html body .pr-cta-card h2 {
@@ -1343,4 +1343,43 @@ html[dir="rtl"] body .pr-cta-card::after {
     html[dir="rtl"] body .pr-cta-card::after {
         clip-path: polygon(0 0, 100% 18%, 100% 100%, 0 100%);
     }
+}
+
+/* ===== Plan cards: only the middle (featured) card has a primary border;
+   first and last buttons use the secondary-border button style ===== */
+html body .pr-plan.featured,
+html body .pr-plan.featured:hover {
+    border: 1px solid var(--primary) !important;
+}
+
+.pr-plan .pr-btn-outline {
+    --btn-fill: transparent;
+    --btn-border: var(--secondary);
+    --btn-text: var(--primary);
+}
+
+/* hover: the extra ring around the middle card must stay primary too (global hover uses secondary) */
+html body .pr-plan.featured:hover {
+    border-color: var(--primary) !important;
+    box-shadow: 0 18px 38px rgba(0, 0, 0, .14), 0 0 0 1px var(--primary);
+}
+
+html body .pr-hero .pr-switch {
+    border-radius: 14px;
+}
+
+html body .pr-hero .pr-switch a {
+    min-height: 44px;
+    padding: 0 20px;
+    border-radius: 10px;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: .06em;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+html body .pr-hero .pr-switch a svg {
+    width: 16px;
+    height: 16px;
 }

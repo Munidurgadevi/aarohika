@@ -1777,7 +1777,7 @@ html[dir="rtl"] .hero-image-caption {
    ===================================================================== */
 
 /* ---- 1. All cards: secondary border + smooth hover ---- */
-html body :is(.gt-card, .ab-diff-card, .ab-cta-panel, .batches-card, .course-card, .cr-card,
+html body :is(.gt-card, .ab-diff-card, .ab-step, .ab-cta-panel, .batches-card, .course-card, .cr-card,
     .cs-card, .faq-item, .h2c-card, .h2m-card, .h2p-panel, .h2t-card, .inst-item,
     .instructor-card, .learn-card, .lg-card, .lg-item, .mentor-cta-card, .perf-card,
     .pr-cta-card, .pr-plan, .showcase-panel, .why-card) {
@@ -1786,7 +1786,7 @@ html body :is(.gt-card, .ab-diff-card, .ab-cta-panel, .batches-card, .course-car
         background-color .35s ease, color .35s ease;
 }
 
-html body :is(.gt-card, .ab-diff-card, .ab-cta-panel, .course-card, .cr-card, .cs-card,
+html body :is(.gt-card, .ab-diff-card, .ab-step, .ab-cta-panel, .course-card, .cr-card, .cs-card,
     .faq-item, .h2c-card, .h2m-card, .h2p-panel, .h2t-card, .inst-item,
     .instructor-card, .learn-card, .lg-card, .lg-item, .mentor-cta-card,
     .perf-card, .pr-cta-card, .pr-plan, .showcase-panel, .why-card):hover {
@@ -1830,7 +1830,7 @@ html body :is(.gt-age-media, .gt-instructor-media, .gt-cta-media, .gt-circle-dis
 
 @media (prefers-reduced-motion: reduce) {
 
-    html body :is(.gt-card, .ab-diff-card, .course-card, .cr-card, .faq-item, .h2c-card, .h2m-card,
+    html body :is(.gt-card, .ab-diff-card, .ab-step, .course-card, .cr-card, .faq-item, .h2c-card, .h2m-card,
         .h2t-card, .inst-item, .instructor-card, .learn-card, .lg-card, .lg-item, .perf-card,
         .pr-plan, .why-card) {
         transition: none;
@@ -2032,4 +2032,10 @@ html body :is(.ab-value, .ct-card, .cx-tile, .ct-faq details, .ct-cta-info li,
 /* Reduce bottom space of CTA sections on all pages */
 html body :is(.cta-section, .h2x-section, .ab-cta, .ct-cta, .cr-cta-section, .gt-cta-section, .mentor-cta, .pr-cta) {
     padding-bottom: 24px;
+}
+
+/* ===== All pages: no horizontal scrollbar at the bottom (entrance animations slide in from the side) ===== */
+html,
+body {
+    overflow-x: clip;
 }
