@@ -1325,6 +1325,7 @@ main.home-hero .hero-visual {
         scroll-behavior: auto !important;
     }
 }
+
 .inst-point:hover h3,
 .h2j-step:hover h3 {
     color: var(--secondary);

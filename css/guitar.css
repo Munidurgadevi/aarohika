@@ -856,6 +856,7 @@ html[dir="rtl"] .gt-cta-media::before {
 }
 
 @media (max-width: 900px) {
+
     .gt-skills-split,
     .gt-instructor,
     .gt-cta {
@@ -1023,17 +1024,31 @@ html[dir="rtl"] .gt-cta-media::before {
 }
 
 @keyframes gtFloat {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-12px); }
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
 }
 
 @keyframes gtZoom {
-    from { transform: scale(1); }
-    to { transform: scale(1.08); }
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.08);
+    }
 }
 
 @keyframes gtSpin {
-    to { transform: rotate(360deg); }
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 .gt-hero.gt-hero--left .gt-note {
@@ -1042,6 +1057,7 @@ html[dir="rtl"] .gt-cta-media::before {
 }
 
 @media (max-width: 860px) {
+
     .gt-hero .gt-hero-inner,
     .gt-hero.gt-hero--left .gt-hero-inner {
         grid-template-columns: minmax(0, 1fr);
@@ -1062,12 +1078,14 @@ html[dir="rtl"] .gt-cta-media::before {
 }
 
 @media (prefers-reduced-motion: reduce) {
+
     .gt-circle,
     .gt-circle-disc img,
     .gt-circle-ring {
         animation: none;
     }
 }
+
 /* ===== Tablet (iPad Mini 768px): level cards in one row + instructor photo shown properly ===== */
 @media (min-width: 601px) and (max-width: 900px) {
 
@@ -1121,17 +1139,18 @@ html[dir="rtl"] .gt-cta-media::before {
         grid-template-columns: 1fr;
     }
 }
+
 .gt-note,
 .gt-head-note {
     display: none !important;
 }
 
-.gt-section > .container + .container {
+.gt-section>.container+.container {
     margin-top: 112px;
 }
 
 @media (max-width: 760px) {
-    .gt-section > .container + .container {
+    .gt-section>.container+.container {
         margin-top: 84px;
     }
 }

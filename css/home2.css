@@ -1727,8 +1727,10 @@
 .back-to-top {
     display: none !important;
 }
+
 /* ===== Tablet (iPad Mini 768px): testimonials + teachers stay 3 in a row ===== */
 @media (min-width: 601px) and (max-width: 1000px) {
+
     .h2t-grid,
     .h2m-grid {
         grid-template-columns: repeat(3, minmax(0, 1fr));

@@ -1,632 +1,1212 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Student Dashboard | Aarohika Music Academy</title>
-<meta name="description" content="View your courses, schedule, progress notes, fees and performances at Aarohika Music Academy.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-<link rel="stylesheet" href="../css/global.css?v=4">
-<link rel="stylesheet" href="../css/dashboard.css?v=5">
-<link rel="icon" type="image/png" href="../css/image/lightmode.png" media="(prefers-color-scheme: light)">
-<link rel="icon" type="image/png" href="../css/image/darkmode.png" media="(prefers-color-scheme: dark)">
-<script>try{var d=document.documentElement,t=localStorage.getItem("aarohika-theme"),r=localStorage.getItem("aarohika-dir");if(t==="dark")d.classList.add("dark-mode");if(r)d.dir=r}catch(e){}</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Dashboard | Aarohika Music Academy</title>
+  <meta name="description"
+    content="View your courses, schedule, progress notes, fees and performances at Aarohika Music Academy.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:wght@500;600;700;800&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="../css/global.css?v=4">
+  <link rel="stylesheet" href="../css/dashboard.css?v=5">
+  <link rel="icon" type="image/png" href="../css/image/lightmode.png" media="(prefers-color-scheme: light)">
+  <link rel="icon" type="image/png" href="../css/image/darkmode.png" media="(prefers-color-scheme: dark)">
+  <script>try { var d = document.documentElement, t = localStorage.getItem("aarohika-theme"), r = localStorage.getItem("aarohika-dir"); if (t === "dark") d.classList.add("dark-mode"); if (r) d.dir = r } catch (e) { }</script>
 </head>
+
 <body class="dashboard-body">
 
-<div class="dash-app">
+  <div class="dash-app">
 
-  
-  <header class="dash-topbar">
-    <div class="topbar-left">
-      <button class="icon-btn sidebar-toggle" id="sidebar-toggle" aria-label="Open navigation">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 6h18M3 12h18M3 18h18" stroke-linecap="round"/></svg>
-      </button>
-      <a class="brand dash-brand" href="home1.html" aria-label="Aarohika home">
-        <span class="brand-badge"><svg viewBox="0 0 48 48" aria-hidden="true"><rect width="48" height="48" rx="12" fill="var(--logo-bg)"/><path d="M20 32V14l13-3v18" stroke="var(--logo-stroke)" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/><circle cx="16" cy="32" r="5" fill="var(--logo-ball)"/><circle cx="29" cy="29" r="5" fill="var(--logo-ball)"/></svg></span>
-        <span class="brand-text"><span class="brand-title"><span class="aaroh">Aaroh</span><span class="ika">ika</span></span><span class="brand-sub">Music Academy</span></span>
-      </a>
-    </div>
 
-    <div class="topbar-search-wrap">
-      <span class="topbar-welcome">Welcome back, <strong>Tedoshijika</strong></span>
-      <label class="topbar-search" for="dash-search">
-        <i class="bi bi-search" aria-hidden="true"></i>
-        <input id="dash-search" type="search" placeholder="Search courses, schedule, fees..." autocomplete="off" aria-label="Search dashboard">
-        <kbd>Ctrl K</kbd>
-      </label>
-    </div>
-
-    <div class="topbar-right">
-      <button class="icon-btn" id="dir-toggle" type="button" title="Switch to RTL" aria-label="Switch to RTL"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M8 3 4 7l4 4"/><path d="M4 7h16"/><path d="m16 21 4-4-4-4"/><path d="M20 17H4"/></svg></button>
-      <button class="icon-btn" id="theme-toggle" type="button" title="Switch to dark mode" aria-label="Switch to dark mode"><svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg><svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg></button>
-
-      <div class="notif-wrap">
-        <button class="icon-btn notif-btn" id="notif-btn" aria-haspopup="true" aria-expanded="false" aria-label="Notifications">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M6 10a6 6 0 1112 0c0 3.4.8 5.4 1.7 6.6.3.4 0 1-.5 1H4.8c-.5 0-.8-.6-.5-1C5.2 15.4 6 13.4 6 10z" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 20a2 2 0 004 0" stroke-linecap="round"/></svg>
-          <span class="notif-badge" id="notif-badge">4</span>
+    <header class="dash-topbar">
+      <div class="topbar-left">
+        <button class="icon-btn sidebar-toggle" id="sidebar-toggle" aria-label="Open navigation">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+            <path d="M3 6h18M3 12h18M3 18h18" stroke-linecap="round" />
+          </svg>
         </button>
-        <div class="notif-dropdown" id="notif-dropdown">
-          <div class="dropdown-head">
-            <h4>Notifications</h4>
-            <button class="text-link" id="mark-read">Mark all read</button>
-          </div>
-          <ul class="notif-list" id="notif-list">
-            <li class="notif-item unread">
-              <span class="notif-dot"></span>
-              <img class="notif-ava" src="https://i.pinimg.com/736x/ea/47/70/ea4770dd47b14faf997ca0a6cdf4195c.jpg" referrerpolicy="no-referrer" alt="Tedoshijika">
-              <div><p>New batches are open for enrolment. Add another course to your learning.</p><span>Today, 9:30 AM</span><button class="text-link" type="button" data-target="enroll">Enroll now</button></div>
-            </li>
-            <li class="notif-item unread">
-              <span class="notif-dot"></span>
-              <img class="notif-ava" src="https://i.pinimg.com/736x/d4/a8/96/d4a896e861ec8f5e1bb9012fc7df6dcd.jpg" referrerpolicy="no-referrer" alt="Vedha">
-              <div><p>Vedha added a new practice clip to My Courses.</p><span>Today, 10:15 AM</span></div>
-            </li>
-            <li class="notif-item unread">
-              <span class="notif-dot"></span>
-              <div><p>Your October fees are due by Oct 31.</p><span>Wed, 28 Oct</span></div>
-            </li>
-            <li class="notif-item unread">
-              <span class="notif-dot"></span>
-              <div><p>Annual Recital on Dec 12: rehearsal dates will be shared soon.</p><span>Tue, 27 Oct</span></div>
-            </li>
-            <li class="notif-item">
-              <span class="notif-dot"></span>
-              <div><p>Your Thursday 6:00 PM class is confirmed for next week.</p><span>Sun, 25 Oct</span></div>
-            </li>
-          </ul>
-          <div class="dropdown-foot"><a href="#" id="view-all-notifs">View all</a></div>
-        </div>
+        <a class="brand dash-brand" href="home1.html" aria-label="Aarohika home">
+          <span class="brand-badge"><svg viewBox="0 0 48 48" aria-hidden="true">
+              <rect width="48" height="48" rx="12" fill="var(--logo-bg)" />
+              <path d="M20 32V14l13-3v18" stroke="var(--logo-stroke)" stroke-width="3" fill="none"
+                stroke-linecap="round" stroke-linejoin="round" />
+              <circle cx="16" cy="32" r="5" fill="var(--logo-ball)" />
+              <circle cx="29" cy="29" r="5" fill="var(--logo-ball)" />
+            </svg></span>
+          <span class="brand-text"><span class="brand-title"><span class="aaroh">Aaroh</span><span
+                class="ika">ika</span></span><span class="brand-sub">Music Academy</span></span>
+        </a>
       </div>
 
-      <div class="profile-wrap">
-        <button class="profile-btn" id="profile-btn" aria-haspopup="true" aria-expanded="false">
-          <img class="avatar" src="https://i.pinimg.com/736x/ea/47/70/ea4770dd47b14faf997ca0a6cdf4195c.jpg" referrerpolicy="no-referrer" alt="Tedoshijika">
-          <span class="profile-name">Tedoshijika</span>
-          <svg class="caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round"/></svg>
-        </button>
-        <div class="profile-dropdown" id="profile-dropdown">
-          <div class="profile-dropdown-head">
-            <img class="avatar lg" src="https://i.pinimg.com/736x/ea/47/70/ea4770dd47b14faf997ca0a6cdf4195c.jpg" referrerpolicy="no-referrer" alt="Tedoshijika">
-            <div><strong>Tedoshijika</strong><small>Keyboard &amp; Vocals</small></div>
-          </div>
-          <button class="profile-link" data-target="profile">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="8" r="3.4"/><path d="M5 20c1.4-3.6 4.2-5.4 7-5.4S18.6 16.4 20 20" stroke-linecap="round"/></svg>
-            My profile
-          </button>
-          <button class="profile-link" id="profile-notifs" type="button">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M6 10a6 6 0 1112 0c0 3.4.8 5.4 1.7 6.6.3.4 0 1-.5 1H4.8c-.5 0-.8-.6-.5-1C5.2 15.4 6 13.4 6 10z" stroke-linecap="round" stroke-linejoin="round"/><path d="M10 20a2 2 0 004 0" stroke-linecap="round"/></svg>
-            Notifications
-          </button>
-          <button class="profile-link" data-target="payments">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 10h18"/></svg>
-            Fees &amp; Payments
-          </button>
-          <button class="profile-link" data-target="enroll">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="9" cy="8" r="3.4"/><path d="M3 20c1-3.4 3.4-5.4 6-5.4s5 2 6 5.4" stroke-linecap="round"/><path d="M19 8v6M16 11h6" stroke-linecap="round"/></svg>
-            Enroll
-          </button>
-          <button class="profile-link logout-link" id="profile-logout">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4" stroke-linecap="round" stroke-linejoin="round"/><path d="M16 17l5-5-5-5M21 12H9" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            Log out
-          </button>
-        </div>
-      </div>
-    </div>
-  </header>
-
-  <div class="dash-body">
-
-    
-    <aside class="dash-sidebar" id="dash-sidebar">
-      <nav class="dash-nav" aria-label="Dashboard sections">
-        <button class="dash-nav-item active" data-target="overview">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3.5" y="3.5" width="7.5" height="7.5" rx="1.5"/><rect x="13" y="3.5" width="7.5" height="7.5" rx="1.5"/><rect x="3.5" y="13" width="7.5" height="7.5" rx="1.5"/><rect x="13" y="13" width="7.5" height="7.5" rx="1.5"/></svg>
-          <span>Overview</span>
-        </button>
-        <button class="dash-nav-item" data-target="courses">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M4 5.5A1.5 1.5 0 015.5 4H20v15H5.5A1.5 1.5 0 004 20.5z" stroke-linejoin="round"/><path d="M4 20.5A1.5 1.5 0 005.5 22H20M9 8h6" stroke-linecap="round"/></svg>
-          <span>My Courses</span>
-        </button>
-        <button class="dash-nav-item" data-target="schedule">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3.5" y="5" width="17" height="15.5" rx="2"/><path d="M3.5 9.5h17M8 3v4M16 3v4M7.5 13.5h.01M12 13.5h.01M16.5 13.5h.01M7.5 17h.01M12 17h.01" stroke-linecap="round"/></svg>
-          <span>Schedule</span>
-        </button>
-        <button class="dash-nav-item" data-target="book">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3.5" y="5" width="17" height="15.5" rx="2"/><path d="M3.5 9.5h17M8 3v4M16 3v4M12 12.5v5M9.5 15h5" stroke-linecap="round"/></svg>
-          <span>Book a Class</span>
-        </button>
-        <button class="dash-nav-item" data-target="notes">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M6 3.5h9l4 4V20a.5.5 0 01-.5.5h-12A.5.5 0 016 20z" stroke-linejoin="round"/><path d="M9 12h6M9 16h6" stroke-linecap="round"/></svg>
-          <span>Progress Notes</span>
-        </button>
-        <button class="dash-nav-item" data-target="payments">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 10h18M7 15h4" stroke-linecap="round"/></svg>
-          <span>Fees &amp; Payments</span>
-        </button>
-        <button class="dash-nav-item" data-target="performances">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M8 4h8v5a4 4 0 01-8 0z" stroke-linejoin="round"/><path d="M8 6H5v1.5A3 3 0 008 10.5M16 6h3v1.5a3 3 0 01-3 3M12 13v4M8.5 20h7" stroke-linecap="round"/></svg>
-          <span>Performances</span>
-        </button>
-        <button class="dash-nav-item" data-target="enroll">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="9" cy="8" r="3.4"/><path d="M3 20c1-3.4 3.4-5.4 6-5.4s5 2 6 5.4" stroke-linecap="round"/><path d="M19 8v6M16 11h6" stroke-linecap="round"/></svg>
-          <span>Enroll</span>
-        </button>
-        <button class="dash-nav-item" data-target="profile">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="8" r="3.4"/><path d="M5 20c1.4-3.6 4.2-5.4 7-5.4S18.6 16.4 20 20" stroke-linecap="round"/></svg>
-          <span>Profile</span>
-        </button>
-      </nav>
-      <div class="sidebar-footer">
-        <button class="dash-nav-item logout-item" id="sidebar-logout">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4" stroke-linecap="round" stroke-linejoin="round"/><path d="M16 17l5-5-5-5M21 12H9" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          <span>Log out</span>
-        </button>
-      </div>
-    </aside>
-    <div class="sidebar-scrim" id="sidebar-scrim"></div>
-
-    
-    <main class="dash-main" id="dash-main">
-      <div class="dash-page-head">
-        <span class="eyebrow tagline" id="page-eyebrow">Student Dashboard</span>
-        <h1 id="page-title">Overview</h1>
-        <p id="page-sub">Welcome back, Tedoshijika. Here is a quick look at your courses, classes and progress.</p>
+      <div class="topbar-search-wrap">
+        <span class="topbar-welcome">Welcome back, <strong>Tedoshijika</strong></span>
+        <label class="topbar-search" for="dash-search">
+          <i class="bi bi-search" aria-hidden="true"></i>
+          <input id="dash-search" type="search" placeholder="Search courses, schedule, fees..." autocomplete="off"
+            aria-label="Search dashboard">
+          <kbd>Ctrl K</kbd>
+        </label>
       </div>
 
-      <!-- OVERVIEW -->
-      <section class="dash-panel active" data-panel="overview">
-        <div class="ov2-metrics">
-          <div class="card ov2-metric">
-            <span class="ov2-mic green"><i class="bi bi-journal-richtext"></i></span>
-            <div class="ov2-mtxt"><span class="lbl">Active courses</span><strong>2</strong><span class="sub">Keyboard &amp; <em>Vocals</em></span></div>
-            <button class="ov2-go" type="button" data-target="courses" aria-label="Open My Courses"><i class="bi bi-arrow-right"></i></button>
-            <i class="bi bi-music-note-beamed ov2-deco" aria-hidden="true"></i>
-          </div>
-          <div class="card ov2-metric">
-            <span class="ov2-mic gold"><i class="bi bi-calendar3"></i></span>
-            <div class="ov2-mtxt"><span class="lbl">Next class</span><strong>Thu, 6:00 PM</strong><span class="sub">tutor: <em>Vedha</em></span></div>
-            <button class="ov2-go" type="button" data-target="schedule" aria-label="Open Schedule"><i class="bi bi-arrow-right"></i></button>
-            <i class="bi bi-music-note-beamed ov2-deco" aria-hidden="true"></i>
-          </div>
-          <div class="card ov2-metric">
-            <span class="ov2-mic green"><i class="bi bi-bullseye"></i></span>
-            <div class="ov2-mtxt"><span class="lbl">Attendance</span><strong>92%</strong><span class="sub">across 12 classes</span></div>
-            <button class="ov2-go" type="button" data-target="performances" aria-label="Open Performances"><i class="bi bi-arrow-right"></i></button>
-            <i class="bi bi-music-note-beamed ov2-deco" aria-hidden="true"></i>
-          </div>
-          <div class="card ov2-metric">
-            <span class="ov2-mic gold"><i class="bi bi-wallet2"></i></span>
-            <div class="ov2-mtxt"><span class="lbl">Fees due</span><strong>₹2,400</strong><span class="sub">last date <em>Oct 31</em></span></div>
-            <button class="ov2-go" type="button" data-target="payments" aria-label="Open Fees &amp; Payments"><i class="bi bi-arrow-right"></i></button>
-            <i class="bi bi-music-note-beamed ov2-deco" aria-hidden="true"></i>
+      <div class="topbar-right">
+        <button class="icon-btn" id="dir-toggle" type="button" title="Switch to RTL" aria-label="Switch to RTL"><svg
+            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M8 3 4 7l4 4" />
+            <path d="M4 7h16" />
+            <path d="m16 21 4-4-4-4" />
+            <path d="M20 17H4" />
+          </svg></button>
+        <button class="icon-btn" id="theme-toggle" type="button" title="Switch to dark mode"
+          aria-label="Switch to dark mode"><svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"
+            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+            aria-hidden="true">
+            <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />
+          </svg><svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="12" r="4" />
+            <path d="M12 2v2" />
+            <path d="M12 20v2" />
+            <path d="m4.93 4.93 1.41 1.41" />
+            <path d="m17.66 17.66 1.41 1.41" />
+            <path d="M2 12h2" />
+            <path d="M20 12h2" />
+            <path d="m6.34 17.66-1.41 1.41" />
+            <path d="m19.07 4.93-1.41 1.41" />
+          </svg></button>
+
+        <div class="notif-wrap">
+          <button class="icon-btn notif-btn" id="notif-btn" aria-haspopup="true" aria-expanded="false"
+            aria-label="Notifications">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+              <path d="M6 10a6 6 0 1112 0c0 3.4.8 5.4 1.7 6.6.3.4 0 1-.5 1H4.8c-.5 0-.8-.6-.5-1C5.2 15.4 6 13.4 6 10z"
+                stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M10 20a2 2 0 004 0" stroke-linecap="round" />
+            </svg>
+            <span class="notif-badge" id="notif-badge">4</span>
+          </button>
+          <div class="notif-dropdown" id="notif-dropdown">
+            <div class="dropdown-head">
+              <h4>Notifications</h4>
+              <button class="text-link" id="mark-read">Mark all read</button>
+            </div>
+            <ul class="notif-list" id="notif-list">
+              <li class="notif-item unread">
+                <span class="notif-dot"></span>
+                <img class="notif-ava" src="https://i.pinimg.com/736x/ea/47/70/ea4770dd47b14faf997ca0a6cdf4195c.jpg"
+                  referrerpolicy="no-referrer" alt="Tedoshijika">
+                <div>
+                  <p>New batches are open for enrolment. Add another course to your learning.</p><span>Today, 9:30
+                    AM</span><button class="text-link" type="button" data-target="enroll">Enroll now</button>
+                </div>
+              </li>
+              <li class="notif-item unread">
+                <span class="notif-dot"></span>
+                <img class="notif-ava" src="https://i.pinimg.com/736x/d4/a8/96/d4a896e861ec8f5e1bb9012fc7df6dcd.jpg"
+                  referrerpolicy="no-referrer" alt="Vedha">
+                <div>
+                  <p>Vedha added a new practice clip to My Courses.</p><span>Today, 10:15 AM</span>
+                </div>
+              </li>
+              <li class="notif-item unread">
+                <span class="notif-dot"></span>
+                <div>
+                  <p>Your October fees are due by Oct 31.</p><span>Wed, 28 Oct</span>
+                </div>
+              </li>
+              <li class="notif-item unread">
+                <span class="notif-dot"></span>
+                <div>
+                  <p>Annual Recital on Dec 12: rehearsal dates will be shared soon.</p><span>Tue, 27 Oct</span>
+                </div>
+              </li>
+              <li class="notif-item">
+                <span class="notif-dot"></span>
+                <div>
+                  <p>Your Thursday 6:00 PM class is confirmed for next week.</p><span>Sun, 25 Oct</span>
+                </div>
+              </li>
+            </ul>
+            <div class="dropdown-foot"><a href="#" id="view-all-notifs">View all</a></div>
           </div>
         </div>
 
-        <div class="ov2-grid">
-          <div class="ov2-col">
-            <div class="card ov2-card">
-              <div class="ov2-hd"><i class="bi bi-calendar3 ov2-hi"></i><h2>Upcoming class</h2><button class="link-btn" data-target="schedule">Full schedule <i class="bi bi-chevron-right"></i></button></div>
-              <div class="ov2-next">
-                <div class="ov2-info">
-                  <div class="ov2-tags"><span class="ov2-pill">Beginner Keyboard</span><span class="badge ov2-ok">Confirmed</span></div>
-                  <div class="ov2-when">Thursday, Oct 29 · 6:00 PM</div>
-                  <div class="ov2-where"><i class="bi bi-geo-alt-fill"></i>Aarohika Studio, 12 Harmony Street, Music District</div>
-                  <div class="ov2-teacher">
-                    <img class="avatar" src="https://i.pinimg.com/736x/d4/a8/96/d4a896e861ec8f5e1bb9012fc7df6dcd.jpg" referrerpolicy="no-referrer" alt="Vedha">
-                    <div><strong>Vedha</strong><span>XDZY Grade 12 holder · 12 years of teaching</span></div>
+        <div class="profile-wrap">
+          <button class="profile-btn" id="profile-btn" aria-haspopup="true" aria-expanded="false">
+            <img class="avatar" src="https://i.pinimg.com/736x/ea/47/70/ea4770dd47b14faf997ca0a6cdf4195c.jpg"
+              referrerpolicy="no-referrer" alt="Tedoshijika">
+            <span class="profile-name">Tedoshijika</span>
+            <svg class="caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M6 9l6 6 6-6" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </button>
+          <div class="profile-dropdown" id="profile-dropdown">
+            <div class="profile-dropdown-head">
+              <img class="avatar lg" src="https://i.pinimg.com/736x/ea/47/70/ea4770dd47b14faf997ca0a6cdf4195c.jpg"
+                referrerpolicy="no-referrer" alt="Tedoshijika">
+              <div><strong>Tedoshijika</strong><small>Keyboard &amp; Vocals</small></div>
+            </div>
+            <button class="profile-link" data-target="profile">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+                <circle cx="12" cy="8" r="3.4" />
+                <path d="M5 20c1.4-3.6 4.2-5.4 7-5.4S18.6 16.4 20 20" stroke-linecap="round" />
+              </svg>
+              My profile
+            </button>
+            <button class="profile-link" id="profile-notifs" type="button">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+                <path d="M6 10a6 6 0 1112 0c0 3.4.8 5.4 1.7 6.6.3.4 0 1-.5 1H4.8c-.5 0-.8-.6-.5-1C5.2 15.4 6 13.4 6 10z"
+                  stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M10 20a2 2 0 004 0" stroke-linecap="round" />
+              </svg>
+              Notifications
+            </button>
+            <button class="profile-link" data-target="payments">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+                <rect x="3" y="5" width="18" height="14" rx="2" />
+                <path d="M3 10h18" />
+              </svg>
+              Fees &amp; Payments
+            </button>
+            <button class="profile-link" data-target="enroll">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+                <circle cx="9" cy="8" r="3.4" />
+                <path d="M3 20c1-3.4 3.4-5.4 6-5.4s5 2 6 5.4" stroke-linecap="round" />
+                <path d="M19 8v6M16 11h6" stroke-linecap="round" />
+              </svg>
+              Enroll
+            </button>
+            <button class="profile-link logout-link" id="profile-logout">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+                <path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M16 17l5-5-5-5M21 12H9" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+              Log out
+            </button>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="dash-body">
+
+
+      <aside class="dash-sidebar" id="dash-sidebar">
+        <nav class="dash-nav" aria-label="Dashboard sections">
+          <button class="dash-nav-item active" data-target="overview">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+              <rect x="3.5" y="3.5" width="7.5" height="7.5" rx="1.5" />
+              <rect x="13" y="3.5" width="7.5" height="7.5" rx="1.5" />
+              <rect x="3.5" y="13" width="7.5" height="7.5" rx="1.5" />
+              <rect x="13" y="13" width="7.5" height="7.5" rx="1.5" />
+            </svg>
+            <span>Overview</span>
+          </button>
+          <button class="dash-nav-item" data-target="courses">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+              <path d="M4 5.5A1.5 1.5 0 015.5 4H20v15H5.5A1.5 1.5 0 004 20.5z" stroke-linejoin="round" />
+              <path d="M4 20.5A1.5 1.5 0 005.5 22H20M9 8h6" stroke-linecap="round" />
+            </svg>
+            <span>My Courses</span>
+          </button>
+          <button class="dash-nav-item" data-target="schedule">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+              <rect x="3.5" y="5" width="17" height="15.5" rx="2" />
+              <path d="M3.5 9.5h17M8 3v4M16 3v4M7.5 13.5h.01M12 13.5h.01M16.5 13.5h.01M7.5 17h.01M12 17h.01"
+                stroke-linecap="round" />
+            </svg>
+            <span>Schedule</span>
+          </button>
+          <button class="dash-nav-item" data-target="book">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+              <rect x="3.5" y="5" width="17" height="15.5" rx="2" />
+              <path d="M3.5 9.5h17M8 3v4M16 3v4M12 12.5v5M9.5 15h5" stroke-linecap="round" />
+            </svg>
+            <span>Book a Class</span>
+          </button>
+          <button class="dash-nav-item" data-target="notes">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+              <path d="M6 3.5h9l4 4V20a.5.5 0 01-.5.5h-12A.5.5 0 016 20z" stroke-linejoin="round" />
+              <path d="M9 12h6M9 16h6" stroke-linecap="round" />
+            </svg>
+            <span>Progress Notes</span>
+          </button>
+          <button class="dash-nav-item" data-target="payments">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+              <rect x="3" y="5" width="18" height="14" rx="2" />
+              <path d="M3 10h18M7 15h4" stroke-linecap="round" />
+            </svg>
+            <span>Fees &amp; Payments</span>
+          </button>
+          <button class="dash-nav-item" data-target="performances">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+              <path d="M8 4h8v5a4 4 0 01-8 0z" stroke-linejoin="round" />
+              <path d="M8 6H5v1.5A3 3 0 008 10.5M16 6h3v1.5a3 3 0 01-3 3M12 13v4M8.5 20h7" stroke-linecap="round" />
+            </svg>
+            <span>Performances</span>
+          </button>
+          <button class="dash-nav-item" data-target="enroll">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+              <circle cx="9" cy="8" r="3.4" />
+              <path d="M3 20c1-3.4 3.4-5.4 6-5.4s5 2 6 5.4" stroke-linecap="round" />
+              <path d="M19 8v6M16 11h6" stroke-linecap="round" />
+            </svg>
+            <span>Enroll</span>
+          </button>
+          <button class="dash-nav-item" data-target="profile">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+              <circle cx="12" cy="8" r="3.4" />
+              <path d="M5 20c1.4-3.6 4.2-5.4 7-5.4S18.6 16.4 20 20" stroke-linecap="round" />
+            </svg>
+            <span>Profile</span>
+          </button>
+        </nav>
+        <div class="sidebar-footer">
+          <button class="dash-nav-item logout-item" id="sidebar-logout">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7">
+              <path d="M9 21H5a2 2 0 01-2-2V5a2 2 0 012-2h4" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M16 17l5-5-5-5M21 12H9" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            <span>Log out</span>
+          </button>
+        </div>
+      </aside>
+      <div class="sidebar-scrim" id="sidebar-scrim"></div>
+
+
+      <main class="dash-main" id="dash-main">
+        <div class="dash-page-head">
+          <span class="eyebrow tagline" id="page-eyebrow">Student Dashboard</span>
+          <h1 id="page-title">Overview</h1>
+          <p id="page-sub">Welcome back, Tedoshijika. Here is a quick look at your courses, classes and progress.</p>
+        </div>
+
+        <!-- OVERVIEW -->
+        <section class="dash-panel active" data-panel="overview">
+          <div class="ov2-metrics">
+            <div class="card ov2-metric">
+              <span class="ov2-mic green"><i class="bi bi-journal-richtext"></i></span>
+              <div class="ov2-mtxt"><span class="lbl">Active courses</span><strong>2</strong><span class="sub">Keyboard
+                  &amp; <em>Vocals</em></span></div>
+              <button class="ov2-go" type="button" data-target="courses" aria-label="Open My Courses"><i
+                  class="bi bi-arrow-right"></i></button>
+              <i class="bi bi-music-note-beamed ov2-deco" aria-hidden="true"></i>
+            </div>
+            <div class="card ov2-metric">
+              <span class="ov2-mic gold"><i class="bi bi-calendar3"></i></span>
+              <div class="ov2-mtxt"><span class="lbl">Next class</span><strong>Thu, 6:00 PM</strong><span
+                  class="sub">tutor: <em>Vedha</em></span></div>
+              <button class="ov2-go" type="button" data-target="schedule" aria-label="Open Schedule"><i
+                  class="bi bi-arrow-right"></i></button>
+              <i class="bi bi-music-note-beamed ov2-deco" aria-hidden="true"></i>
+            </div>
+            <div class="card ov2-metric">
+              <span class="ov2-mic green"><i class="bi bi-bullseye"></i></span>
+              <div class="ov2-mtxt"><span class="lbl">Attendance</span><strong>92%</strong><span class="sub">across 12
+                  classes</span></div>
+              <button class="ov2-go" type="button" data-target="performances" aria-label="Open Performances"><i
+                  class="bi bi-arrow-right"></i></button>
+              <i class="bi bi-music-note-beamed ov2-deco" aria-hidden="true"></i>
+            </div>
+            <div class="card ov2-metric">
+              <span class="ov2-mic gold"><i class="bi bi-wallet2"></i></span>
+              <div class="ov2-mtxt"><span class="lbl">Fees due</span><strong>₹2,400</strong><span class="sub">last date
+                  <em>Oct 31</em></span></div>
+              <button class="ov2-go" type="button" data-target="payments" aria-label="Open Fees &amp; Payments"><i
+                  class="bi bi-arrow-right"></i></button>
+              <i class="bi bi-music-note-beamed ov2-deco" aria-hidden="true"></i>
+            </div>
+          </div>
+
+          <div class="ov2-grid">
+            <div class="ov2-col">
+              <div class="card ov2-card">
+                <div class="ov2-hd"><i class="bi bi-calendar3 ov2-hi"></i>
+                  <h2>Upcoming class</h2><button class="link-btn" data-target="schedule">Full schedule <i
+                      class="bi bi-chevron-right"></i></button>
+                </div>
+                <div class="ov2-next">
+                  <div class="ov2-info">
+                    <div class="ov2-tags"><span class="ov2-pill">Beginner Keyboard</span><span
+                        class="badge ov2-ok">Confirmed</span></div>
+                    <div class="ov2-when">Thursday, Oct 29 · 6:00 PM</div>
+                    <div class="ov2-where"><i class="bi bi-geo-alt-fill"></i>Aarohika Studio, 12 Harmony Street, Music
+                      District</div>
+                    <div class="ov2-teacher">
+                      <img class="avatar" src="https://i.pinimg.com/736x/d4/a8/96/d4a896e861ec8f5e1bb9012fc7df6dcd.jpg"
+                        referrerpolicy="no-referrer" alt="Vedha">
+                      <div><strong>Vedha</strong><span>XDZY Grade 12 holder · 12 years of teaching</span></div>
+                    </div>
+                  </div>
+                  <div class="ov2-photo"><img src="../css/image/piano.jpg" alt="" onerror="this.remove()"></div>
+                </div>
+                <div class="ov2-actions">
+                  <button class="btn btn-solid" data-target="courses"><i class="bi bi-journal-richtext"></i>Go to My
+                    Courses</button>
+                  <button class="btn btn-outline" data-target="schedule"><i class="bi bi-calendar-event"></i>View
+                    schedule</button>
+                </div>
+              </div>
+
+              <div class="card ov2-card">
+                <div class="ov2-hd"><i class="bi bi-clipboard-check ov2-hi"></i>
+                  <h2>Practice checklist</h2><button class="link-btn" data-target="notes">All notes <i
+                      class="bi bi-chevron-right"></i></button>
+                </div>
+                <div class="ov2-list">
+                  <div class="mini-check-list" id="mini-check-list">
+                    <div class="mini-check-item done" data-id="a1"><span class="chk"><svg viewBox="0 0 24 24"
+                          fill="none" stroke="currentColor" stroke-width="3">
+                          <path d="M4 12l5 5 11-11" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg></span><span class="task-label">Chord loop C – G – Am – F, ten rounds</span><span
+                        class="task-due">Done</span></div>
+                    <div class="mini-check-item" data-id="a2"><span class="chk"><svg viewBox="0 0 24 24" fill="none"
+                          stroke="currentColor" stroke-width="3">
+                          <path d="M4 12l5 5 11-11" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg></span><span class="task-label">Twinkle Twinkle melody, both hands</span><span
+                        class="task-due">Due Fri</span></div>
+                    <div class="mini-check-item" data-id="a3"><span class="chk"><svg viewBox="0 0 24 24" fill="none"
+                          stroke="currentColor" stroke-width="3">
+                          <path d="M4 12l5 5 11-11" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg></span><span class="task-label">Note-names worksheet</span><span class="task-due">Due
+                        Wed</span></div>
+                    <div class="mini-check-item" data-id="a4"><span class="chk"><svg viewBox="0 0 24 24" fill="none"
+                          stroke="currentColor" stroke-width="3">
+                          <path d="M4 12l5 5 11-11" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg></span><span class="task-label">Vocal warm-up: 5 minutes daily</span><span
+                        class="task-due">Due Sat</span></div>
                   </div>
                 </div>
-                <div class="ov2-photo"><img src="../css/image/piano.jpg" alt="" onerror="this.remove()"></div>
               </div>
-              <div class="ov2-actions">
-                <button class="btn btn-solid" data-target="courses"><i class="bi bi-journal-richtext"></i>Go to My Courses</button>
-                <button class="btn btn-outline" data-target="schedule"><i class="bi bi-calendar-event"></i>View schedule</button>
+              <div class="card ov2-card">
+                <div class="ov2-hd"><i class="bi bi-trophy ov2-hi"></i>
+                  <h2>Upcoming performance</h2><button class="link-btn" data-target="performances">Performances <i
+                      class="bi bi-chevron-right"></i></button>
+                </div>
+                <ul class="bl-rows">
+                  <li><i class="bi bi-calendar-event"></i><span>Annual Recital · Keyboard</span><strong>Sat, Dec
+                      12</strong></li>
+                  <li><i class="bi bi-people"></i><span>Rehearsal dates</span><strong>To be shared soon</strong></li>
+                  <li><i class="bi bi-award"></i><span>Last result · Mini Recital</span><strong>86% Distinction</strong>
+                  </li>
+                </ul>
               </div>
             </div>
 
-            <div class="card ov2-card">
-              <div class="ov2-hd"><i class="bi bi-clipboard-check ov2-hi"></i><h2>Practice checklist</h2><button class="link-btn" data-target="notes">All notes <i class="bi bi-chevron-right"></i></button></div>
-              <div class="ov2-list"><div class="mini-check-list" id="mini-check-list">
-                <div class="mini-check-item done" data-id="a1"><span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M4 12l5 5 11-11" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="task-label">Chord loop C – G – Am – F, ten rounds</span><span class="task-due">Done</span></div>
-                <div class="mini-check-item" data-id="a2"><span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M4 12l5 5 11-11" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="task-label">Twinkle Twinkle melody, both hands</span><span class="task-due">Due Fri</span></div>
-                <div class="mini-check-item" data-id="a3"><span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M4 12l5 5 11-11" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="task-label">Note-names worksheet</span><span class="task-due">Due Wed</span></div>
-                <div class="mini-check-item" data-id="a4"><span class="chk"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M4 12l5 5 11-11" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span class="task-label">Vocal warm-up: 5 minutes daily</span><span class="task-due">Due Sat</span></div>
-              </div></div>
+            <div class="ov2-col">
+              <div class="card ov2-card">
+                <div class="ov2-hd"><i class="bi bi-chat-left-text ov2-hi"></i>
+                  <h2>Latest tutor note</h2><button class="link-btn" data-target="notes">Read all <i
+                      class="bi bi-chevron-right"></i></button>
+                </div>
+                <div class="ov2-quote">
+                  <span class="ov2-qm" aria-hidden="true">“</span>
+                  <div>
+                    <p class="note-quote">Your chord changes are getting smoother. Next class we will add a simple bass
+                      pattern, so keep the chord loop going at home.</p>
+                    <div class="ov2-by"><img class="avatar"
+                        src="https://i.pinimg.com/736x/d4/a8/96/d4a896e861ec8f5e1bb9012fc7df6dcd.jpg"
+                        referrerpolicy="no-referrer" alt="Vedha"><strong>Vedha</strong><span>· Oct 22</span></div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card ov2-card">
+                <div class="ov2-hd"><i class="bi bi-graph-up ov2-hi"></i>
+                  <h2>Course progress</h2><button class="link-btn" data-target="courses">Details <i
+                      class="bi bi-chevron-right"></i></button>
+                </div>
+                <div class="ov2-prog">
+                  <div class="ov2-ring" style="--p:68"><span>68%</span></div>
+                  <div class="ov2-ptxt"><strong>On track</strong>
+                    <p>You have finished 17 of 25 lessons across your two courses.</p>
+                  </div>
+                  <div class="ov2-bars" aria-hidden="true"><i style="height:30%"></i><i style="height:45%"></i><i
+                      style="height:62%"></i><i class="on" style="height:80%"></i><i class="on" style="height:100%"></i>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card ov2-card">
+                <div class="ov2-hd"><i class="bi bi-lightning-charge-fill ov2-hi"></i>
+                  <h2>Quick links</h2>
+                </div>
+                <div class="ov2-qas">
+                  <button type="button" class="ov2-qa" data-target="notes"><i
+                      class="bi bi-file-earmark-text"></i>Progress</button>
+                  <button type="button" class="ov2-qa" data-target="performances"><i
+                      class="bi bi-award"></i>Performances</button>
+                  <button type="button" class="ov2-qa" data-target="payments"><i class="bi bi-wallet2"></i>Pay
+                    fees</button>
+                </div>
+              </div>
+
+              <div class="card ov2-card">
+                <div class="ov2-hd"><i class="bi bi-wallet2 ov2-hi"></i>
+                  <h2>Fee reminder</h2><button class="link-btn" data-target="payments">Pay now <i
+                      class="bi bi-chevron-right"></i></button>
+                </div>
+                <div class="ov2-fee">
+                  <span class="ov2-flbl">October fees (4 classes)</span>
+                  <div class="ov2-amt" id="ov-fee-amt">₹2,400</div>
+                  <p id="ov-fee-sub">Pay by UPI, card or net banking. Last date Oct 31.</p>
+                </div>
+                <ul class="bl-rows ov2-fee-rows">
+                  <li><i class="bi bi-check-circle"></i><span>Last payment</span><strong>₹2,400 · Sep 18</strong></li>
+                  <li><i class="bi bi-credit-card-2-front"></i><span>Preferred method</span><strong>UPI</strong></li>
+                  <li><i class="bi bi-bell"></i><span>Next fee cycle</span><strong>November, Nov 30</strong></li>
+                </ul>
+              </div>
             </div>
-            <div class="card ov2-card">
-              <div class="ov2-hd"><i class="bi bi-trophy ov2-hi"></i><h2>Upcoming performance</h2><button class="link-btn" data-target="performances">Performances <i class="bi bi-chevron-right"></i></button></div>
-              <ul class="bl-rows">
-                <li><i class="bi bi-calendar-event"></i><span>Annual Recital · Keyboard</span><strong>Sat, Dec 12</strong></li>
-                <li><i class="bi bi-people"></i><span>Rehearsal dates</span><strong>To be shared soon</strong></li>
-                <li><i class="bi bi-award"></i><span>Last result · Mini Recital</span><strong>86% Distinction</strong></li>
+          </div>
+        </section>
+
+        <!-- MY COURSES -->
+        <section class="dash-panel" data-panel="courses">
+          <div class="cr-grid">
+            <div class="card cr-card">
+              <div class="cr-top"><span class="cr-ic"><i class="bi bi-music-note-list"></i></span>
+                <div>
+                  <h2>Keyboard – Beginner</h2><span class="cr-meta">Tutor: Vedha · Thursdays, 6:00 PM</span>
+                </div><span class="mc-status st-ok">In progress</span>
+              </div>
+              <div class="cr-prog">
+                <div class="cr-prog-row"><span>Course progress</span><strong>72%</strong></div>
+                <div class="pg-bar green"><i style="width:72%"></i></div><small>18 of 25 lessons completed</small>
+              </div>
+              <ul class="cr-facts">
+                <li><i class="bi bi-clock"></i>1 hour per class</li>
+                <li><i class="bi bi-calendar-check"></i>Started Jul 2026</li>
+                <li><i class="bi bi-trophy"></i>Next: Bass pattern basics</li>
               </ul>
+              <div class="cr-actions"><button class="btn btn-solid btn-xs" data-target="schedule"><i
+                    class="bi bi-calendar3"></i>View classes</button><button class="btn btn-outline btn-xs"
+                  data-target="notes"><i class="bi bi-journal-text"></i>Progress notes</button></div>
+            </div>
+            <div class="card cr-card">
+              <div class="cr-top"><span class="cr-ic gold"><i class="bi bi-mic"></i></span>
+                <div>
+                  <h2>Vocals – Foundation</h2><span class="cr-meta">Tutor: Ananya Das · Saturdays, 11:00 AM</span>
+                </div><span class="mc-status st-ok">In progress</span>
+              </div>
+              <div class="cr-prog">
+                <div class="cr-prog-row"><span>Course progress</span><strong>56%</strong></div>
+                <div class="pg-bar gold"><i style="width:56%"></i></div><small>14 of 25 lessons completed</small>
+              </div>
+              <ul class="cr-facts">
+                <li><i class="bi bi-clock"></i>1 hour per class</li>
+                <li><i class="bi bi-calendar-check"></i>Started Aug 2026</li>
+                <li><i class="bi bi-trophy"></i>Next: Breath control</li>
+              </ul>
+              <div class="cr-actions"><button class="btn btn-solid btn-xs" data-target="schedule"><i
+                    class="bi bi-calendar3"></i>View classes</button><button class="btn btn-outline btn-xs"
+                  data-target="notes"><i class="bi bi-journal-text"></i>Progress notes</button></div>
+            </div>
+            <div class="card cr-card cr-done">
+              <div class="cr-top"><span class="cr-ic"><i class="bi bi-vinyl"></i></span>
+                <div>
+                  <h2>Rhythm Basics</h2><span class="cr-meta">Tutor: Rohit Verma · Completed Sep 2026</span>
+                </div><span class="mc-status st-ok">Completed</span>
+              </div>
+              <div class="cr-prog">
+                <div class="cr-prog-row"><span>Course progress</span><strong>100%</strong></div>
+                <div class="pg-bar green"><i style="width:100%"></i></div><small>10 of 10 lessons completed</small>
+              </div>
+              <div class="cr-actions"><button class="btn btn-outline btn-xs" data-target="performances"><i
+                    class="bi bi-award"></i>See results</button></div>
+            </div>
+            <div class="card cr-card cr-add">
+              <div class="cr-top"><span class="cr-ic gold"><i class="bi bi-plus-lg"></i></span>
+                <div>
+                  <h2>Add a new course</h2><span class="cr-meta">Guitar, Drums and more are open for enrolment</span>
+                </div>
+              </div>
+              <ul class="cr-facts">
+                <li><i class="bi bi-clock"></i>1 hour per class</li>
+                <li><i class="bi bi-calendar-check"></i>New batches start Nov 2026</li>
+                <li><i class="bi bi-people"></i>Small batches with friendly tutors</li>
+              </ul>
+              <div class="cr-actions"><button class="btn btn-solid btn-xs" type="button" data-target="enroll"><i
+                    class="bi bi-plus-circle"></i>Enroll now</button></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- SCHEDULE -->
+        <section class="dash-panel" data-panel="schedule">
+          <div class="mc-tabs">
+            <button class="tab-btn active" data-tab="upcoming"><i class="bi bi-calendar3"></i>Upcoming <span
+                class="mc-count" id="mc-count">3</span></button>
+            <button class="tab-btn" data-tab="past"><i class="bi bi-clock"></i>Past classes</button>
+          </div>
+          <div class="mc-list" id="schedule-upcoming">
+            <div class="card mc-row">
+              <div class="mc-date"><strong>29</strong><span>OCT</span><em>Thu</em></div>
+              <span class="mc-thumb"><i class="bi bi-music-note-list"></i></span>
+              <div class="mc-info"><strong>Keyboard · Vedha</strong>
+                <div class="mc-meta"><span><i class="bi bi-clock"></i>6:00 PM – 7:00 PM</span><span><i
+                      class="bi bi-geo-alt"></i>Aarohika Studio</span><span><i class="bi bi-people"></i>Beginner
+                    batch</span></div>
+              </div>
+              <span class="mc-status st-ok">Confirmed</span>
+              <div class="mc-actions"><button class="btn btn-danger btn-xs mc-cancel"><i class="bi bi-x-lg"></i>Cancel
+                  class</button></div>
+            </div>
+            <div class="card mc-row">
+              <div class="mc-date"><strong>31</strong><span>OCT</span><em>Sat</em></div>
+              <span class="mc-thumb"><i class="bi bi-mic"></i></span>
+              <div class="mc-info"><strong>Vocals · Ananya Das</strong>
+                <div class="mc-meta"><span><i class="bi bi-clock"></i>11:00 AM – 12:00 PM</span><span><i
+                      class="bi bi-geo-alt"></i>Aarohika Studio</span><span><i class="bi bi-people"></i>Foundation
+                    batch</span></div>
+              </div>
+              <span class="mc-status st-ok">Confirmed</span>
+              <div class="mc-actions"><button class="btn btn-danger btn-xs mc-cancel"><i class="bi bi-x-lg"></i>Cancel
+                  class</button></div>
+            </div>
+            <div class="card mc-row">
+              <div class="mc-date"><strong>5</strong><span>NOV</span><em>Thu</em></div>
+              <span class="mc-thumb"><i class="bi bi-music-note-list"></i></span>
+              <div class="mc-info"><strong>Keyboard · Vedha</strong>
+                <div class="mc-meta"><span><i class="bi bi-clock"></i>6:00 PM – 7:00 PM</span><span><i
+                      class="bi bi-geo-alt"></i>Aarohika Studio</span><span><i class="bi bi-people"></i>Beginner
+                    batch</span></div>
+              </div>
+              <span class="mc-status st-wait">To be confirmed</span>
+              <div class="mc-actions"><button class="btn btn-danger btn-xs mc-cancel"><i class="bi bi-x-lg"></i>Cancel
+                  class</button></div>
+            </div>
+          </div>
+          <div class="mc-list" id="schedule-past" style="display:none;">
+            <div class="card mc-row">
+              <div class="mc-date"><strong>22</strong><span>OCT</span><em>Thu</em></div>
+              <span class="mc-thumb"><i class="bi bi-music-note-list"></i></span>
+              <div class="mc-info"><strong>Keyboard · Vedha</strong>
+                <div class="mc-meta"><span><i class="bi bi-clock"></i>6:00 PM – 7:00 PM</span><span><i
+                      class="bi bi-geo-alt"></i>Aarohika Studio</span></div>
+              </div>
+              <span class="mc-status st-ok">Attended</span>
+              <div class="mc-actions"><button class="btn btn-outline btn-xs" data-target="notes"><i
+                    class="bi bi-journal-text"></i>View note</button></div>
+            </div>
+            <div class="card mc-row">
+              <div class="mc-date"><strong>17</strong><span>OCT</span><em>Sat</em></div>
+              <span class="mc-thumb"><i class="bi bi-mic"></i></span>
+              <div class="mc-info"><strong>Vocals · Ananya Das</strong>
+                <div class="mc-meta"><span><i class="bi bi-clock"></i>11:00 AM – 12:00 PM</span><span><i
+                      class="bi bi-geo-alt"></i>Aarohika Studio</span></div>
+              </div>
+              <span class="mc-status st-ok">Attended</span>
+              <div class="mc-actions"><button class="btn btn-outline btn-xs" data-target="notes"><i
+                    class="bi bi-journal-text"></i>View note</button></div>
+            </div>
+            <div class="card mc-row">
+              <div class="mc-date"><strong>15</strong><span>OCT</span><em>Thu</em></div>
+              <span class="mc-thumb"><i class="bi bi-music-note-list"></i></span>
+              <div class="mc-info"><strong>Keyboard · Vedha</strong>
+                <div class="mc-meta"><span><i class="bi bi-clock"></i>6:00 PM – 7:00 PM</span><span><i
+                      class="bi bi-geo-alt"></i>Aarohika Studio</span></div>
+              </div>
+              <span class="mc-status st-ok">Attended</span>
+              <div class="mc-actions"><button class="btn btn-outline btn-xs" data-target="notes"><i
+                    class="bi bi-journal-text"></i>View note</button></div>
+            </div>
+            <div class="card mc-row">
+              <div class="mc-date"><strong>1</strong><span>OCT</span><em>Thu</em></div>
+              <span class="mc-thumb"><i class="bi bi-music-note-list"></i></span>
+              <div class="mc-info"><strong>Keyboard · Vedha</strong>
+                <div class="mc-meta"><span><i class="bi bi-clock"></i>6:00 PM – 7:00 PM</span><span><i
+                      class="bi bi-geo-alt"></i>Aarohika Studio</span></div>
+              </div>
+              <span class="mc-status st-rust">Missed</span>
+              <div class="mc-actions"><button class="btn btn-outline btn-xs" data-target="notes"><i
+                    class="bi bi-journal-text"></i>View note</button></div>
+            </div>
+          </div>
+          <div class="mc-help"><i class="bi bi-calendar2-check"></i>
+            <div><strong>Need to cancel a class?</strong>
+              <p>Classes can be cancelled up to two hours before the start time. After that, the class is counted as
+                attended.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- PROGRESS NOTES -->
+        <section class="dash-panel" data-panel="notes">
+          <div class="card pg-card">
+            <div class="pg-hd"><i class="bi bi-bar-chart-line pg-hi"></i>
+              <h2>Skill levels</h2><span class="pg-hint">Updated after every class</span>
+            </div>
+            <div class="pg-skills">
+              <div class="pg-skill"><span class="pg-sic green"><i class="bi bi-hand-index-thumb"></i></span>
+                <div class="pg-sbody"><span class="pg-sname">Hand coordination</span><strong>72%</strong>
+                  <div class="pg-bar green"><i style="width:72%"></i></div>
+                </div>
+              </div>
+              <div class="pg-skill"><span class="pg-sic gold"><i class="bi bi-music-note-beamed"></i></span>
+                <div class="pg-sbody"><span class="pg-sname">Rhythm &amp; timing</span><strong>65%</strong>
+                  <div class="pg-bar gold"><i style="width:65%"></i></div>
+                </div>
+              </div>
+              <div class="pg-skill"><span class="pg-sic green"><i class="bi bi-book"></i></span>
+                <div class="pg-sbody"><span class="pg-sname">Reading notation</span><strong>58%</strong>
+                  <div class="pg-bar green"><i style="width:58%"></i></div>
+                </div>
+              </div>
+              <div class="pg-skill"><span class="pg-sic gold"><i class="bi bi-mic"></i></span>
+                <div class="pg-sbody"><span class="pg-sname">Voice control</span><strong>61%</strong>
+                  <div class="pg-bar gold"><i style="width:61%"></i></div>
+                </div>
+              </div>
             </div>
           </div>
 
-          <div class="ov2-col">
-            <div class="card ov2-card">
-              <div class="ov2-hd"><i class="bi bi-chat-left-text ov2-hi"></i><h2>Latest tutor note</h2><button class="link-btn" data-target="notes">Read all <i class="bi bi-chevron-right"></i></button></div>
-              <div class="ov2-quote">
-                <span class="ov2-qm" aria-hidden="true">“</span>
-                <div>
-                  <p class="note-quote">Your chord changes are getting smoother. Next class we will add a simple bass pattern, so keep the chord loop going at home.</p>
-                  <div class="ov2-by"><img class="avatar" src="https://i.pinimg.com/736x/d4/a8/96/d4a896e861ec8f5e1bb9012fc7df6dcd.jpg" referrerpolicy="no-referrer" alt="Vedha"><strong>Vedha</strong><span>· Oct 22</span></div>
+          <div class="pg-grid">
+            <div class="card pg-card">
+              <div class="pg-hd"><i class="bi bi-clipboard-check pg-hi"></i>
+                <h2>Home practice</h2><span class="pg-count"><span id="assignment-count">1/3 complete</span><i
+                    class="pg-ring" id="pg-ring"></i></span>
+              </div>
+              <div class="pg-tasks" id="assignment-list">
+                <div class="pg-task done" data-id="p1"><span class="chk"><i class="bi bi-check-lg"></i></span>
+                  <div class="pg-tbody"><strong>Chord loop: C – G – Am – F</strong>
+                    <p>Play the four chords in order for ten rounds, changing smoothly without looking at your fingers.
+                    </p>
+                  </div><span class="pg-state"><span class="pg-pill ok"><i
+                        class="bi bi-check-circle-fill"></i>Done</span><span class="pg-pill due"><i
+                        class="bi bi-clock"></i>Daily</span></span>
+                </div>
+                <div class="pg-task" data-id="p2"><span class="chk"><i class="bi bi-check-lg"></i></span>
+                  <div class="pg-tbody"><strong>Twinkle Twinkle, both hands</strong>
+                    <p>Right hand plays the tune, left hand holds one note per bar. Slow down until no note is missed.
+                    </p>
+                  </div><span class="pg-state"><span class="pg-pill ok"><i
+                        class="bi bi-check-circle-fill"></i>Done</span><span class="pg-pill due"><i
+                        class="bi bi-clock"></i>Due Fri</span></span>
+                </div>
+                <div class="pg-task" data-id="p3"><span class="chk"><i class="bi bi-check-lg"></i></span>
+                  <div class="pg-tbody"><strong>Vocal warm-up routine</strong>
+                    <p>Five minutes of humming and sirens every day before you start singing.</p>
+                  </div><span class="pg-state"><span class="pg-pill ok"><i
+                        class="bi bi-check-circle-fill"></i>Done</span><span class="pg-pill due"><i
+                        class="bi bi-clock"></i>Due Sat</span></span>
                 </div>
               </div>
             </div>
 
-            <div class="card ov2-card">
-              <div class="ov2-hd"><i class="bi bi-graph-up ov2-hi"></i><h2>Course progress</h2><button class="link-btn" data-target="courses">Details <i class="bi bi-chevron-right"></i></button></div>
-              <div class="ov2-prog">
-                <div class="ov2-ring" style="--p:68"><span>68%</span></div>
-                <div class="ov2-ptxt"><strong>On track</strong><p>You have finished 17 of 25 lessons across your two courses.</p></div>
-                <div class="ov2-bars" aria-hidden="true"><i style="height:30%"></i><i style="height:45%"></i><i style="height:62%"></i><i class="on" style="height:80%"></i><i class="on" style="height:100%"></i></div>
+            <div class="card pg-card">
+              <div class="pg-hd"><i class="bi bi-chat-square-text pg-hi"></i>
+                <h2>Tutor notes</h2>
+              </div>
+              <div class="pg-notes">
+                <div class="pg-note"><strong class="pg-date">Oct 22</strong>
+                  <div>
+                    <p>Your chord changes are getting smoother. Next class we will add a simple bass pattern, so keep
+                      the chord loop going at home.</p><span class="pg-by">Vedha · Keyboard, class 14</span>
+                  </div>
+                </div>
+                <div class="pg-note"><strong class="pg-date">Oct 17</strong>
+                  <div>
+                    <p>Good breath support in the long notes. Try to keep your shoulders relaxed while you sing the
+                      higher phrases.</p><span class="pg-by">Ananya Das · Vocals, class 9</span>
+                  </div>
+                </div>
+                <div class="pg-note"><strong class="pg-date">Oct 15</strong>
+                  <div>
+                    <p>Sit a little closer to the keys and keep your elbows level with the keyboard to avoid shoulder
+                      strain.</p><span class="pg-by">Vedha · Keyboard, class 13</span>
+                  </div>
+                </div>
               </div>
             </div>
+          </div>
 
-            <div class="card ov2-card">
-              <div class="ov2-hd"><i class="bi bi-lightning-charge-fill ov2-hi"></i><h2>Quick links</h2></div>
-              <div class="ov2-qas">
-                <button type="button" class="ov2-qa" data-target="notes"><i class="bi bi-file-earmark-text"></i>Progress</button>
-                <button type="button" class="ov2-qa" data-target="performances"><i class="bi bi-award"></i>Performances</button>
-                <button type="button" class="ov2-qa" data-target="payments"><i class="bi bi-wallet2"></i>Pay fees</button>
+          <div class="pg-focus">
+            <span class="pg-fic"><i class="bi bi-bullseye"></i></span>
+            <div><span class="pg-flbl">Current goal</span>
+              <h3>Smooth chord changes.</h3>
+              <p>Move between chords without pausing and let each chord ring before you change.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- FEES & PAYMENTS -->
+        <section class="dash-panel" data-panel="payments">
+          <div class="bl-due" id="due-card">
+            <span class="bl-dic"><i class="bi bi-calendar3"></i></span>
+            <div class="bl-dmain">
+              <span class="bl-dlbl">October fees (4 classes)</span>
+              <div class="bl-damt" id="due-amt">₹2,400 due</div>
+              <div class="bl-dmeta"><span><i class="bi bi-calendar3"></i><span id="due-sub">Last date Oct
+                    31</span></span><span class="bl-sep"></span><span><i class="bi bi-credit-card-2-front"></i>Pay by
+                  UPI, card or net banking</span></div>
+            </div>
+            <button class="btn btn-gold" id="pay-now-btn"><i class="bi bi-credit-card-2-front"></i>Pay October fees <i
+                class="bi bi-arrow-right"></i></button>
+          </div>
+
+          <div class="bl-grid">
+            <div class="bl-main">
+              <div class="card pn-card">
+                <div class="pn-hd"><span class="pn-ic"><i class="bi bi-file-earmark-text"></i></span>
+                  <div>
+                    <h2>Payment history</h2>
+                    <p>All your payments to Aarohika, latest first.</p>
+                  </div>
+                </div>
+                <div class="bl-tablewrap">
+                  <table class="bl-table">
+                    <thead>
+                      <tr>
+                        <th>Date</th>
+                        <th>For</th>
+                        <th>Amount</th>
+                        <th>Status</th>
+                        <th>Receipt</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><strong>Sep 18, 2026</strong><span>Friday</span></td>
+                        <td>September (4 classes)</td>
+                        <td>₹2,400</td>
+                        <td><span class="mc-status st-ok">Paid</span></td>
+                        <td><a href="#" class="bl-rcpt"><i class="bi bi-file-earmark-text"></i>Download</a></td>
+                      </tr>
+                      <tr>
+                        <td><strong>Aug 14, 2026</strong><span>Friday</span></td>
+                        <td>August (4 classes)</td>
+                        <td>₹2,400</td>
+                        <td><span class="mc-status st-ok">Paid</span></td>
+                        <td><a href="#" class="bl-rcpt"><i class="bi bi-file-earmark-text"></i>Download</a></td>
+                      </tr>
+                      <tr>
+                        <td><strong>Jul 15, 2026</strong><span>Wednesday</span></td>
+                        <td>July (4 classes)</td>
+                        <td>₹2,400</td>
+                        <td><span class="mc-status st-ok">Paid</span></td>
+                        <td><a href="#" class="bl-rcpt"><i class="bi bi-file-earmark-text"></i>Download</a></td>
+                      </tr>
+                      <tr>
+                        <td><strong>Jun 12, 2026</strong><span>Friday</span></td>
+                        <td>June (5 classes)</td>
+                        <td>₹3,000</td>
+                        <td><span class="mc-status st-ok">Paid</span></td>
+                        <td><a href="#" class="bl-rcpt"><i class="bi bi-file-earmark-text"></i>Download</a></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div class="card pn-card">
+                <div class="pn-hd"><span class="pn-ic"><i class="bi bi-credit-card-2-front"></i></span>
+                  <div>
+                    <h2>Preferred payment method</h2>
+                    <p>Shown first when you pay.</p>
+                  </div>
+                </div>
+                <div class="bl-method"><span class="bl-upi">UPI</span>
+                  <div><strong>UPI · tedoshijika@okhdfcbank</strong><span class="bl-default">Default</span></div><button
+                    class="btn btn-outline btn-xs" id="bl-manage">Change</button>
+                </div>
               </div>
             </div>
-
-            <div class="card ov2-card">
-              <div class="ov2-hd"><i class="bi bi-wallet2 ov2-hi"></i><h2>Fee reminder</h2><button class="link-btn" data-target="payments">Pay now <i class="bi bi-chevron-right"></i></button></div>
-              <div class="ov2-fee">
-                <span class="ov2-flbl">October fees (4 classes)</span>
-                <div class="ov2-amt" id="ov-fee-amt">₹2,400</div>
-                <p id="ov-fee-sub">Pay by UPI, card or net banking. Last date Oct 31.</p>
+            <div class="bl-side">
+              <div class="card pn-card">
+                <div class="pn-hd"><span class="pn-ic"><i class="bi bi-pie-chart"></i></span>
+                  <div>
+                    <h2>Fee details</h2>
+                    <p>How your monthly fee is calculated.</p>
+                  </div>
+                </div>
+                <ul class="bl-rows">
+                  <li><i class="bi bi-coin"></i><span>Monthly fee</span><strong>₹2,400</strong></li>
+                  <li><i class="bi bi-calendar3"></i><span>Classes per month</span><strong>4 classes</strong></li>
+                  <li><i class="bi bi-credit-card-2-front"></i><span>Payment modes</span><strong>UPI, card, net
+                      banking</strong></li>
+                </ul>
+                <div class="bl-secure"><i class="bi bi-shield-check"></i>Your card and UPI details are encrypted and
+                  never stored on this page.</div>
               </div>
-              <ul class="bl-rows ov2-fee-rows">
-                <li><i class="bi bi-check-circle"></i><span>Last payment</span><strong>₹2,400 · Sep 18</strong></li>
-                <li><i class="bi bi-credit-card-2-front"></i><span>Preferred method</span><strong>UPI</strong></li>
-                <li><i class="bi bi-bell"></i><span>Next fee cycle</span><strong>November, Nov 30</strong></li>
+              <div class="card pn-card">
+                <div class="pn-hd"><span class="pn-ic"><i class="bi bi-receipt"></i></span>
+                  <div>
+                    <h2>Payment summary</h2>
+                    <p>A quick look at what you have paid this year.</p>
+                  </div>
+                </div>
+                <ul class="bl-rows">
+                  <li><i class="bi bi-coin"></i><span>Total paid in 2026</span><strong>₹10,200</strong></li>
+                  <li><i class="bi bi-check-circle"></i><span>Payments made</span><strong>4 payments</strong></li>
+                  <li><i class="bi bi-calendar3"></i><span>Next fee cycle</span><strong>November, last date Nov
+                      30</strong></li>
+                </ul>
+                <div class="bl-secure"><i class="bi bi-bell"></i>We send a reminder three days before every due date.
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- PERFORMANCES -->
+        <section class="dash-panel" data-panel="performances">
+          <div class="ov2-metrics">
+            <div class="card ov2-metric"><span class="ov2-mic green"><i class="bi bi-award"></i></span>
+              <div class="ov2-mtxt"><span class="lbl">Performances</span><strong>3</strong><span class="sub">completed
+                  this year</span></div><i class="bi bi-music-note-beamed ov2-deco" aria-hidden="true"></i>
+            </div>
+            <div class="card ov2-metric"><span class="ov2-mic gold"><i class="bi bi-star-fill"></i></span>
+              <div class="ov2-mtxt"><span class="lbl">Average score</span><strong>84%</strong><span class="sub">across
+                  all events</span></div><i class="bi bi-music-note-beamed ov2-deco" aria-hidden="true"></i>
+            </div>
+            <div class="card ov2-metric"><span class="ov2-mic green"><i class="bi bi-mortarboard"></i></span>
+              <div class="ov2-mtxt"><span class="lbl">Next event</span><strong>Dec 12</strong><span class="sub">Annual
+                  Recital</span></div><i class="bi bi-music-note-beamed ov2-deco" aria-hidden="true"></i>
+            </div>
+          </div>
+
+          <div class="card pn-card">
+            <div class="pn-hd"><span class="pn-ic"><i class="bi bi-trophy"></i></span>
+              <div>
+                <h2>Recitals &amp; assessments</h2>
+                <p>Your results from stage performances and level tests.</p>
+              </div>
+            </div>
+            <div class="bl-tablewrap">
+              <table class="bl-table">
+                <thead>
+                  <tr>
+                    <th>Date</th>
+                    <th>Event</th>
+                    <th>Course</th>
+                    <th>Score</th>
+                    <th>Result</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>Oct 10, 2026</strong><span>Saturday</span></td>
+                    <td>Monthly Mini Recital</td>
+                    <td>Keyboard</td>
+                    <td>86%</td>
+                    <td><span class="mc-status st-ok">Distinction</span></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Sep 26, 2026</strong><span>Saturday</span></td>
+                    <td>Level 1 Assessment</td>
+                    <td>Vocals</td>
+                    <td>82%</td>
+                    <td><span class="mc-status st-ok">Passed</span></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Aug 29, 2026</strong><span>Saturday</span></td>
+                    <td>Rhythm Basics Test</td>
+                    <td>Rhythm</td>
+                    <td>84%</td>
+                    <td><span class="mc-status st-ok">Passed</span></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Dec 12, 2026</strong><span>Saturday</span></td>
+                    <td>Annual Recital</td>
+                    <td>Keyboard</td>
+                    <td>–</td>
+                    <td><span class="mc-status st-wait">Upcoming</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="recordings-grid pf-rec">
+            <div class="card recording-card">
+              <div class="recording-thumb"><img
+                  src="https://i.pinimg.com/1200x/55/5a/56/555a56c69deaada6f6649010d64612fb.jpg"
+                  alt="Monthly Mini Recital – Keyboard" loading="lazy" onerror="this.remove()"><button
+                  class="play-circle" data-title="Monthly Mini Recital – Keyboard"
+                  data-meta="Oct 10 · Vedha · Distinction"><svg viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M8 5v14l11-7z" />
+                  </svg></button><span class="rec-duration">4 min</span></div>
+              <div class="recording-body"><strong>Monthly Mini Recital – Keyboard</strong><span>Oct 10 · Vedha</span>
+              </div>
+            </div>
+            <div class="card recording-card">
+              <div class="recording-thumb"><img
+                  src="https://i.pinimg.com/736x/7a/a3/7a/7aa37a6e1a97bdcc95ba8abc00686180.jpg"
+                  alt="Level 1 Assessment – Vocals" loading="lazy" onerror="this.remove()"><button class="play-circle"
+                  data-title="Level 1 Assessment – Vocals" data-meta="Sep 26 · Ananya Das · Passed"><svg
+                    viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M8 5v14l11-7z" />
+                  </svg></button><span class="rec-duration">6 min</span></div>
+              <div class="recording-body"><strong>Level 1 Assessment – Vocals</strong><span>Sep 26 · Ananya Das</span>
+              </div>
+            </div>
+            <div class="card recording-card">
+              <div class="recording-thumb"><img src="https://i.ibb.co/8D8dFyRX/music-teacher-student-lesson.jpg"
+                  alt="Rhythm Basics Test" loading="lazy" onerror="this.remove()"><button class="play-circle"
+                  data-title="Rhythm Basics Test" data-meta="Aug 29 · Rohit Verma · Passed"><svg viewBox="0 0 24 24"
+                    fill="currentColor">
+                    <path d="M8 5v14l11-7z" />
+                  </svg></button><span class="rec-duration">5 min</span></div>
+              <div class="recording-body"><strong>Rhythm Basics Test</strong><span>Aug 29 · Rohit Verma</span></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- BOOK A CLASS -->
+        <section class="dash-panel" data-panel="book">
+          <div class="bk-layout">
+            <div class="card bk-main">
+              <div class="bk-top">
+                <div class="bk-seg" id="bk-course" role="tablist" aria-label="Course">
+                  <button type="button" class="active" data-course="Keyboard">Keyboard</button>
+                  <button type="button" data-course="Vocals">Vocals</button>
+                  <button type="button" data-course="Guitar">Guitar</button>
+                  <button type="button" data-course="Drums">Drums</button>
+                </div>
+                <select class="bk-select" id="bk-tutor" aria-label="Tutor">
+                  <option>Vedha</option>
+                  <option>Ananya</option>
+                  <option>Rohan</option>
+                </select>
+              </div>
+              <div class="bk-days" id="bk-days"></div>
+              <div class="bk-slots" id="bk-slots"></div>
+              <p class="bk-legend"><span>Evening batches from 5 PM</span><span><s>Struck-through</s> = booked</span></p>
+            </div>
+
+            <aside class="card bk-sum">
+              <h2>Your booking</h2>
+              <dl>
+                <div>
+                  <dt>Course</dt>
+                  <dd id="bk-s-course">Keyboard</dd>
+                </div>
+                <div>
+                  <dt>Tutor</dt>
+                  <dd id="bk-s-tutor">Vedha</dd>
+                </div>
+                <div>
+                  <dt>Date</dt>
+                  <dd id="bk-s-date">-</dd>
+                </div>
+                <div>
+                  <dt>Time</dt>
+                  <dd id="bk-s-time">Select a slot</dd>
+                </div>
+                <div>
+                  <dt>Class fee</dt>
+                  <dd id="bk-s-fee">-</dd>
+                </div>
+              </dl>
+              <label class="bk-plan"><input type="checkbox" id="bk-plan" checked> <span>Use 1 plan class (<b
+                    id="bk-left">7</b> left)</span></label>
+              <div class="bk-total"><span>Total</span><strong id="bk-total">₹0</strong></div>
+              <button class="btn btn-solid bk-confirm" id="bk-confirm" type="button" disabled>Confirm booking</button>
+            </aside>
+          </div>
+        </section>
+
+        <!-- ENROLL -->
+        <section class="dash-panel" data-panel="enroll">
+          <div class="cr-grid">
+            <div class="card cr-card">
+              <div class="cr-top"><span class="cr-ic"><i class="bi bi-music-note-beamed"></i></span>
+                <div>
+                  <h2>Guitar – Beginner</h2><span class="cr-meta">Acoustic and electric guitar basics</span>
+                </div><span class="mc-status st-ok">Seats open</span>
+              </div>
+              <ul class="cr-facts">
+                <li><i class="bi bi-clock"></i>1 hour per class</li>
+                <li><i class="bi bi-calendar-check"></i>Next batch starts Nov 2026</li>
+                <li><i class="bi bi-currency-rupee"></i>₹2,400 per month · 4 classes</li>
               </ul>
+              <div class="cr-actions"><button class="btn btn-solid btn-xs" type="button"
+                  data-enroll="Guitar – Beginner"><i class="bi bi-plus-circle"></i>Enroll</button><button
+                  class="btn btn-outline btn-xs" type="button" data-target="schedule"><i
+                    class="bi bi-calendar3"></i>View timings</button></div>
+            </div>
+            <div class="card cr-card">
+              <div class="cr-top"><span class="cr-ic gold"><i class="bi bi-vinyl"></i></span>
+                <div>
+                  <h2>Drums – Beginner</h2><span class="cr-meta">Rhythm, grip and basic beats</span>
+                </div><span class="mc-status st-ok">Seats open</span>
+              </div>
+              <ul class="cr-facts">
+                <li><i class="bi bi-clock"></i>1 hour per class</li>
+                <li><i class="bi bi-calendar-check"></i>Next batch starts Nov 2026</li>
+                <li><i class="bi bi-currency-rupee"></i>₹2,400 per month · 4 classes</li>
+              </ul>
+              <div class="cr-actions"><button class="btn btn-solid btn-xs" type="button"
+                  data-enroll="Drums – Beginner"><i class="bi bi-plus-circle"></i>Enroll</button><button
+                  class="btn btn-outline btn-xs" type="button" data-target="schedule"><i
+                    class="bi bi-calendar3"></i>View timings</button></div>
+            </div>
+            <div class="card cr-card">
+              <div class="cr-top"><span class="cr-ic"><i class="bi bi-music-note-list"></i></span>
+                <div>
+                  <h2>Keyboard – Intermediate</h2><span class="cr-meta">Chords, bass patterns and songs</span>
+                </div><span class="mc-status st-ok">Seats open</span>
+              </div>
+              <ul class="cr-facts">
+                <li><i class="bi bi-clock"></i>1 hour per class</li>
+                <li><i class="bi bi-calendar-check"></i>Continue after Beginner</li>
+                <li><i class="bi bi-currency-rupee"></i>₹2,400 per month · 4 classes</li>
+              </ul>
+              <div class="cr-actions"><button class="btn btn-solid btn-xs" type="button"
+                  data-enroll="Keyboard – Intermediate"><i class="bi bi-plus-circle"></i>Enroll</button><button
+                  class="btn btn-outline btn-xs" type="button" data-target="schedule"><i
+                    class="bi bi-calendar3"></i>View timings</button></div>
+            </div>
+            <div class="card cr-card">
+              <div class="cr-top"><span class="cr-ic gold"><i class="bi bi-mic"></i></span>
+                <div>
+                  <h2>Vocals – Intermediate</h2><span class="cr-meta">Breath control, pitch and stage voice</span>
+                </div><span class="mc-status st-ok">Seats open</span>
+              </div>
+              <ul class="cr-facts">
+                <li><i class="bi bi-clock"></i>1 hour per class</li>
+                <li><i class="bi bi-calendar-check"></i>Continue after Foundation</li>
+                <li><i class="bi bi-currency-rupee"></i>₹2,400 per month · 4 classes</li>
+              </ul>
+              <div class="cr-actions"><button class="btn btn-solid btn-xs" type="button"
+                  data-enroll="Vocals – Intermediate"><i class="bi bi-plus-circle"></i>Enroll</button><button
+                  class="btn btn-outline btn-xs" type="button" data-target="schedule"><i
+                    class="bi bi-calendar3"></i>View timings</button></div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <!-- MY COURSES -->
-      <section class="dash-panel" data-panel="courses">
-        <div class="cr-grid">
-          <div class="card cr-card">
-            <div class="cr-top"><span class="cr-ic"><i class="bi bi-music-note-list"></i></span><div><h2>Keyboard – Beginner</h2><span class="cr-meta">Tutor: Vedha · Thursdays, 6:00 PM</span></div><span class="mc-status st-ok">In progress</span></div>
-            <div class="cr-prog"><div class="cr-prog-row"><span>Course progress</span><strong>72%</strong></div><div class="pg-bar green"><i style="width:72%"></i></div><small>18 of 25 lessons completed</small></div>
-            <ul class="cr-facts"><li><i class="bi bi-clock"></i>1 hour per class</li><li><i class="bi bi-calendar-check"></i>Started Jul 2026</li><li><i class="bi bi-trophy"></i>Next: Bass pattern basics</li></ul>
-            <div class="cr-actions"><button class="btn btn-solid btn-xs" data-target="schedule"><i class="bi bi-calendar3"></i>View classes</button><button class="btn btn-outline btn-xs" data-target="notes"><i class="bi bi-journal-text"></i>Progress notes</button></div>
-          </div>
-          <div class="card cr-card">
-            <div class="cr-top"><span class="cr-ic gold"><i class="bi bi-mic"></i></span><div><h2>Vocals – Foundation</h2><span class="cr-meta">Tutor: Ananya Das · Saturdays, 11:00 AM</span></div><span class="mc-status st-ok">In progress</span></div>
-            <div class="cr-prog"><div class="cr-prog-row"><span>Course progress</span><strong>56%</strong></div><div class="pg-bar gold"><i style="width:56%"></i></div><small>14 of 25 lessons completed</small></div>
-            <ul class="cr-facts"><li><i class="bi bi-clock"></i>1 hour per class</li><li><i class="bi bi-calendar-check"></i>Started Aug 2026</li><li><i class="bi bi-trophy"></i>Next: Breath control</li></ul>
-            <div class="cr-actions"><button class="btn btn-solid btn-xs" data-target="schedule"><i class="bi bi-calendar3"></i>View classes</button><button class="btn btn-outline btn-xs" data-target="notes"><i class="bi bi-journal-text"></i>Progress notes</button></div>
-          </div>
-          <div class="card cr-card cr-done">
-            <div class="cr-top"><span class="cr-ic"><i class="bi bi-vinyl"></i></span><div><h2>Rhythm Basics</h2><span class="cr-meta">Tutor: Rohit Verma · Completed Sep 2026</span></div><span class="mc-status st-ok">Completed</span></div>
-            <div class="cr-prog"><div class="cr-prog-row"><span>Course progress</span><strong>100%</strong></div><div class="pg-bar green"><i style="width:100%"></i></div><small>10 of 10 lessons completed</small></div>
-            <div class="cr-actions"><button class="btn btn-outline btn-xs" data-target="performances"><i class="bi bi-award"></i>See results</button></div>
-          </div>
-          <div class="card cr-card cr-add">
-            <div class="cr-top"><span class="cr-ic gold"><i class="bi bi-plus-lg"></i></span><div><h2>Add a new course</h2><span class="cr-meta">Guitar, Drums and more are open for enrolment</span></div></div>
-            <ul class="cr-facts"><li><i class="bi bi-clock"></i>1 hour per class</li><li><i class="bi bi-calendar-check"></i>New batches start Nov 2026</li><li><i class="bi bi-people"></i>Small batches with friendly tutors</li></ul>
-            <div class="cr-actions"><button class="btn btn-solid btn-xs" type="button" data-target="enroll"><i class="bi bi-plus-circle"></i>Enroll now</button></div>
-          </div>
-        </div>
-      </section>
-
-      <!-- SCHEDULE -->
-      <section class="dash-panel" data-panel="schedule">
-        <div class="mc-tabs">
-          <button class="tab-btn active" data-tab="upcoming"><i class="bi bi-calendar3"></i>Upcoming <span class="mc-count" id="mc-count">3</span></button>
-          <button class="tab-btn" data-tab="past"><i class="bi bi-clock"></i>Past classes</button>
-        </div>
-        <div class="mc-list" id="schedule-upcoming">
-          <div class="card mc-row">
-            <div class="mc-date"><strong>29</strong><span>OCT</span><em>Thu</em></div>
-            <span class="mc-thumb"><i class="bi bi-music-note-list"></i></span>
-            <div class="mc-info"><strong>Keyboard · Vedha</strong><div class="mc-meta"><span><i class="bi bi-clock"></i>6:00 PM – 7:00 PM</span><span><i class="bi bi-geo-alt"></i>Aarohika Studio</span><span><i class="bi bi-people"></i>Beginner batch</span></div></div>
-            <span class="mc-status st-ok">Confirmed</span>
-            <div class="mc-actions"><button class="btn btn-danger btn-xs mc-cancel"><i class="bi bi-x-lg"></i>Cancel class</button></div>
-          </div>
-          <div class="card mc-row">
-            <div class="mc-date"><strong>31</strong><span>OCT</span><em>Sat</em></div>
-            <span class="mc-thumb"><i class="bi bi-mic"></i></span>
-            <div class="mc-info"><strong>Vocals · Ananya Das</strong><div class="mc-meta"><span><i class="bi bi-clock"></i>11:00 AM – 12:00 PM</span><span><i class="bi bi-geo-alt"></i>Aarohika Studio</span><span><i class="bi bi-people"></i>Foundation batch</span></div></div>
-            <span class="mc-status st-ok">Confirmed</span>
-            <div class="mc-actions"><button class="btn btn-danger btn-xs mc-cancel"><i class="bi bi-x-lg"></i>Cancel class</button></div>
-          </div>
-          <div class="card mc-row">
-            <div class="mc-date"><strong>5</strong><span>NOV</span><em>Thu</em></div>
-            <span class="mc-thumb"><i class="bi bi-music-note-list"></i></span>
-            <div class="mc-info"><strong>Keyboard · Vedha</strong><div class="mc-meta"><span><i class="bi bi-clock"></i>6:00 PM – 7:00 PM</span><span><i class="bi bi-geo-alt"></i>Aarohika Studio</span><span><i class="bi bi-people"></i>Beginner batch</span></div></div>
-            <span class="mc-status st-wait">To be confirmed</span>
-            <div class="mc-actions"><button class="btn btn-danger btn-xs mc-cancel"><i class="bi bi-x-lg"></i>Cancel class</button></div>
-          </div>
-        </div>
-        <div class="mc-list" id="schedule-past" style="display:none;">
-          <div class="card mc-row">
-            <div class="mc-date"><strong>22</strong><span>OCT</span><em>Thu</em></div>
-            <span class="mc-thumb"><i class="bi bi-music-note-list"></i></span>
-            <div class="mc-info"><strong>Keyboard · Vedha</strong><div class="mc-meta"><span><i class="bi bi-clock"></i>6:00 PM – 7:00 PM</span><span><i class="bi bi-geo-alt"></i>Aarohika Studio</span></div></div>
-            <span class="mc-status st-ok">Attended</span>
-            <div class="mc-actions"><button class="btn btn-outline btn-xs" data-target="notes"><i class="bi bi-journal-text"></i>View note</button></div>
-          </div>
-          <div class="card mc-row">
-            <div class="mc-date"><strong>17</strong><span>OCT</span><em>Sat</em></div>
-            <span class="mc-thumb"><i class="bi bi-mic"></i></span>
-            <div class="mc-info"><strong>Vocals · Ananya Das</strong><div class="mc-meta"><span><i class="bi bi-clock"></i>11:00 AM – 12:00 PM</span><span><i class="bi bi-geo-alt"></i>Aarohika Studio</span></div></div>
-            <span class="mc-status st-ok">Attended</span>
-            <div class="mc-actions"><button class="btn btn-outline btn-xs" data-target="notes"><i class="bi bi-journal-text"></i>View note</button></div>
-          </div>
-          <div class="card mc-row">
-            <div class="mc-date"><strong>15</strong><span>OCT</span><em>Thu</em></div>
-            <span class="mc-thumb"><i class="bi bi-music-note-list"></i></span>
-            <div class="mc-info"><strong>Keyboard · Vedha</strong><div class="mc-meta"><span><i class="bi bi-clock"></i>6:00 PM – 7:00 PM</span><span><i class="bi bi-geo-alt"></i>Aarohika Studio</span></div></div>
-            <span class="mc-status st-ok">Attended</span>
-            <div class="mc-actions"><button class="btn btn-outline btn-xs" data-target="notes"><i class="bi bi-journal-text"></i>View note</button></div>
-          </div>
-          <div class="card mc-row">
-            <div class="mc-date"><strong>1</strong><span>OCT</span><em>Thu</em></div>
-            <span class="mc-thumb"><i class="bi bi-music-note-list"></i></span>
-            <div class="mc-info"><strong>Keyboard · Vedha</strong><div class="mc-meta"><span><i class="bi bi-clock"></i>6:00 PM – 7:00 PM</span><span><i class="bi bi-geo-alt"></i>Aarohika Studio</span></div></div>
-            <span class="mc-status st-rust">Missed</span>
-            <div class="mc-actions"><button class="btn btn-outline btn-xs" data-target="notes"><i class="bi bi-journal-text"></i>View note</button></div>
-          </div>
-        </div>
-        <div class="mc-help"><i class="bi bi-calendar2-check"></i><div><strong>Need to cancel a class?</strong><p>Classes can be cancelled up to two hours before the start time. After that, the class is counted as attended.</p></div></div>
-      </section>
-
-      <!-- PROGRESS NOTES -->
-      <section class="dash-panel" data-panel="notes">
-        <div class="card pg-card">
-          <div class="pg-hd"><i class="bi bi-bar-chart-line pg-hi"></i><h2>Skill levels</h2><span class="pg-hint">Updated after every class</span></div>
-          <div class="pg-skills">
-            <div class="pg-skill"><span class="pg-sic green"><i class="bi bi-hand-index-thumb"></i></span><div class="pg-sbody"><span class="pg-sname">Hand coordination</span><strong>72%</strong><div class="pg-bar green"><i style="width:72%"></i></div></div></div>
-            <div class="pg-skill"><span class="pg-sic gold"><i class="bi bi-music-note-beamed"></i></span><div class="pg-sbody"><span class="pg-sname">Rhythm &amp; timing</span><strong>65%</strong><div class="pg-bar gold"><i style="width:65%"></i></div></div></div>
-            <div class="pg-skill"><span class="pg-sic green"><i class="bi bi-book"></i></span><div class="pg-sbody"><span class="pg-sname">Reading notation</span><strong>58%</strong><div class="pg-bar green"><i style="width:58%"></i></div></div></div>
-            <div class="pg-skill"><span class="pg-sic gold"><i class="bi bi-mic"></i></span><div class="pg-sbody"><span class="pg-sname">Voice control</span><strong>61%</strong><div class="pg-bar gold"><i style="width:61%"></i></div></div></div>
-          </div>
-        </div>
-
-        <div class="pg-grid">
-          <div class="card pg-card">
-            <div class="pg-hd"><i class="bi bi-clipboard-check pg-hi"></i><h2>Home practice</h2><span class="pg-count"><span id="assignment-count">1/3 complete</span><i class="pg-ring" id="pg-ring"></i></span></div>
-            <div class="pg-tasks" id="assignment-list">
-              <div class="pg-task done" data-id="p1"><span class="chk"><i class="bi bi-check-lg"></i></span><div class="pg-tbody"><strong>Chord loop: C – G – Am – F</strong><p>Play the four chords in order for ten rounds, changing smoothly without looking at your fingers.</p></div><span class="pg-state"><span class="pg-pill ok"><i class="bi bi-check-circle-fill"></i>Done</span><span class="pg-pill due"><i class="bi bi-clock"></i>Daily</span></span></div>
-              <div class="pg-task" data-id="p2"><span class="chk"><i class="bi bi-check-lg"></i></span><div class="pg-tbody"><strong>Twinkle Twinkle, both hands</strong><p>Right hand plays the tune, left hand holds one note per bar. Slow down until no note is missed.</p></div><span class="pg-state"><span class="pg-pill ok"><i class="bi bi-check-circle-fill"></i>Done</span><span class="pg-pill due"><i class="bi bi-clock"></i>Due Fri</span></span></div>
-              <div class="pg-task" data-id="p3"><span class="chk"><i class="bi bi-check-lg"></i></span><div class="pg-tbody"><strong>Vocal warm-up routine</strong><p>Five minutes of humming and sirens every day before you start singing.</p></div><span class="pg-state"><span class="pg-pill ok"><i class="bi bi-check-circle-fill"></i>Done</span><span class="pg-pill due"><i class="bi bi-clock"></i>Due Sat</span></span></div>
+        <!-- PROFILE -->
+        <section class="dash-panel" data-panel="profile">
+          <div class="card pf-hero">
+            <div class="pf-ava"><img class="avatar"
+                src="https://i.pinimg.com/736x/ea/47/70/ea4770dd47b14faf997ca0a6cdf4195c.jpg"
+                referrerpolicy="no-referrer" alt="Tedoshijika"><span class="pf-cam" aria-hidden="true"><i
+                  class="bi bi-camera-fill"></i></span></div>
+            <div class="pf-id">
+              <h2>Tedoshijika</h2>
+              <span class="pf-chip"><i class="bi bi-music-note-list"></i>Keyboard &amp; Vocals student</span>
+              <p>Member since Jul 2026 · Beginner level</p>
+              <div class="pf-teacher"><img class="avatar"
+                  src="https://i.pinimg.com/736x/d4/a8/96/d4a896e861ec8f5e1bb9012fc7df6dcd.jpg"
+                  referrerpolicy="no-referrer" alt="Vedha">
+                <div><small>Main tutor</small><strong>Vedha</strong><span>Keyboard</span></div>
+              </div>
             </div>
+            <button class="btn btn-solid pf-editmain" type="button" data-edit><i class="bi bi-pencil"></i>Edit
+              profile</button>
           </div>
 
-          <div class="card pg-card">
-            <div class="pg-hd"><i class="bi bi-chat-square-text pg-hi"></i><h2>Tutor notes</h2></div>
-            <div class="pg-notes">
-              <div class="pg-note"><strong class="pg-date">Oct 22</strong><div><p>Your chord changes are getting smoother. Next class we will add a simple bass pattern, so keep the chord loop going at home.</p><span class="pg-by">Vedha · Keyboard, class 14</span></div></div>
-              <div class="pg-note"><strong class="pg-date">Oct 17</strong><div><p>Good breath support in the long notes. Try to keep your shoulders relaxed while you sing the higher phrases.</p><span class="pg-by">Ananya Das · Vocals, class 9</span></div></div>
-              <div class="pg-note"><strong class="pg-date">Oct 15</strong><div><p>Sit a little closer to the keys and keep your elbows level with the keyboard to avoid shoulder strain.</p><span class="pg-by">Vedha · Keyboard, class 13</span></div></div>
-            </div>
-          </div>
-        </div>
-
-        <div class="pg-focus">
-          <span class="pg-fic"><i class="bi bi-bullseye"></i></span>
-          <div><span class="pg-flbl">Current goal</span><h3>Smooth chord changes.</h3><p>Move between chords without pausing and let each chord ring before you change.</p></div>
-        </div>
-      </section>
-
-      <!-- FEES & PAYMENTS -->
-      <section class="dash-panel" data-panel="payments">
-        <div class="bl-due" id="due-card">
-          <span class="bl-dic"><i class="bi bi-calendar3"></i></span>
-          <div class="bl-dmain">
-            <span class="bl-dlbl">October fees (4 classes)</span>
-            <div class="bl-damt" id="due-amt">₹2,400 due</div>
-            <div class="bl-dmeta"><span><i class="bi bi-calendar3"></i><span id="due-sub">Last date Oct 31</span></span><span class="bl-sep"></span><span><i class="bi bi-credit-card-2-front"></i>Pay by UPI, card or net banking</span></div>
-          </div>
-          <button class="btn btn-gold" id="pay-now-btn"><i class="bi bi-credit-card-2-front"></i>Pay October fees <i class="bi bi-arrow-right"></i></button>
-        </div>
-
-        <div class="bl-grid">
-          <div class="bl-main">
-          <div class="card pn-card">
-            <div class="pn-hd"><span class="pn-ic"><i class="bi bi-file-earmark-text"></i></span><div><h2>Payment history</h2><p>All your payments to Aarohika, latest first.</p></div></div>
-            <div class="bl-tablewrap"><table class="bl-table">
-              <thead><tr><th>Date</th><th>For</th><th>Amount</th><th>Status</th><th>Receipt</th></tr></thead>
-              <tbody>
-                <tr><td><strong>Sep 18, 2026</strong><span>Friday</span></td><td>September (4 classes)</td><td>₹2,400</td><td><span class="mc-status st-ok">Paid</span></td><td><a href="#" class="bl-rcpt"><i class="bi bi-file-earmark-text"></i>Download</a></td></tr>
-                <tr><td><strong>Aug 14, 2026</strong><span>Friday</span></td><td>August (4 classes)</td><td>₹2,400</td><td><span class="mc-status st-ok">Paid</span></td><td><a href="#" class="bl-rcpt"><i class="bi bi-file-earmark-text"></i>Download</a></td></tr>
-                <tr><td><strong>Jul 15, 2026</strong><span>Wednesday</span></td><td>July (4 classes)</td><td>₹2,400</td><td><span class="mc-status st-ok">Paid</span></td><td><a href="#" class="bl-rcpt"><i class="bi bi-file-earmark-text"></i>Download</a></td></tr>
-                <tr><td><strong>Jun 12, 2026</strong><span>Friday</span></td><td>June (5 classes)</td><td>₹3,000</td><td><span class="mc-status st-ok">Paid</span></td><td><a href="#" class="bl-rcpt"><i class="bi bi-file-earmark-text"></i>Download</a></td></tr>
-              </tbody>
-            </table></div>
-          </div>
-          <div class="card pn-card">
-              <div class="pn-hd"><span class="pn-ic"><i class="bi bi-credit-card-2-front"></i></span><div><h2>Preferred payment method</h2><p>Shown first when you pay.</p></div></div>
-              <div class="bl-method"><span class="bl-upi">UPI</span><div><strong>UPI · tedoshijika@okhdfcbank</strong><span class="bl-default">Default</span></div><button class="btn btn-outline btn-xs" id="bl-manage">Change</button></div>
-            </div>
-          </div>
-          <div class="bl-side">
+          <div class="pf-grid">
             <div class="card pn-card">
-              <div class="pn-hd"><span class="pn-ic"><i class="bi bi-pie-chart"></i></span><div><h2>Fee details</h2><p>How your monthly fee is calculated.</p></div></div>
-              <ul class="bl-rows">
-                <li><i class="bi bi-coin"></i><span>Monthly fee</span><strong>₹2,400</strong></li>
-                <li><i class="bi bi-calendar3"></i><span>Classes per month</span><strong>4 classes</strong></li>
-                <li><i class="bi bi-credit-card-2-front"></i><span>Payment modes</span><strong>UPI, card, net banking</strong></li>
-              </ul>
-              <div class="bl-secure"><i class="bi bi-shield-check"></i>Your card and UPI details are encrypted and never stored on this page.</div>
-            </div>
-            <div class="card pn-card">
-              <div class="pn-hd"><span class="pn-ic"><i class="bi bi-receipt"></i></span><div><h2>Payment summary</h2><p>A quick look at what you have paid this year.</p></div></div>
-              <ul class="bl-rows">
-                <li><i class="bi bi-coin"></i><span>Total paid in 2026</span><strong>₹10,200</strong></li>
-                <li><i class="bi bi-check-circle"></i><span>Payments made</span><strong>4 payments</strong></li>
-                <li><i class="bi bi-calendar3"></i><span>Next fee cycle</span><strong>November, last date Nov 30</strong></li>
-              </ul>
-              <div class="bl-secure"><i class="bi bi-bell"></i>We send a reminder three days before every due date.</div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- PERFORMANCES -->
-      <section class="dash-panel" data-panel="performances">
-        <div class="ov2-metrics">
-          <div class="card ov2-metric"><span class="ov2-mic green"><i class="bi bi-award"></i></span><div class="ov2-mtxt"><span class="lbl">Performances</span><strong>3</strong><span class="sub">completed this year</span></div><i class="bi bi-music-note-beamed ov2-deco" aria-hidden="true"></i></div>
-          <div class="card ov2-metric"><span class="ov2-mic gold"><i class="bi bi-star-fill"></i></span><div class="ov2-mtxt"><span class="lbl">Average score</span><strong>84%</strong><span class="sub">across all events</span></div><i class="bi bi-music-note-beamed ov2-deco" aria-hidden="true"></i></div>
-          <div class="card ov2-metric"><span class="ov2-mic green"><i class="bi bi-mortarboard"></i></span><div class="ov2-mtxt"><span class="lbl">Next event</span><strong>Dec 12</strong><span class="sub">Annual Recital</span></div><i class="bi bi-music-note-beamed ov2-deco" aria-hidden="true"></i></div>
-        </div>
-
-        <div class="card pn-card">
-          <div class="pn-hd"><span class="pn-ic"><i class="bi bi-trophy"></i></span><div><h2>Recitals &amp; assessments</h2><p>Your results from stage performances and level tests.</p></div></div>
-          <div class="bl-tablewrap"><table class="bl-table">
-            <thead><tr><th>Date</th><th>Event</th><th>Course</th><th>Score</th><th>Result</th></tr></thead>
-            <tbody>
-              <tr><td><strong>Oct 10, 2026</strong><span>Saturday</span></td><td>Monthly Mini Recital</td><td>Keyboard</td><td>86%</td><td><span class="mc-status st-ok">Distinction</span></td></tr>
-              <tr><td><strong>Sep 26, 2026</strong><span>Saturday</span></td><td>Level 1 Assessment</td><td>Vocals</td><td>82%</td><td><span class="mc-status st-ok">Passed</span></td></tr>
-              <tr><td><strong>Aug 29, 2026</strong><span>Saturday</span></td><td>Rhythm Basics Test</td><td>Rhythm</td><td>84%</td><td><span class="mc-status st-ok">Passed</span></td></tr>
-              <tr><td><strong>Dec 12, 2026</strong><span>Saturday</span></td><td>Annual Recital</td><td>Keyboard</td><td>–</td><td><span class="mc-status st-wait">Upcoming</span></td></tr>
-            </tbody>
-          </table></div>
-        </div>
-
-        <div class="recordings-grid pf-rec">
-          <div class="card recording-card"><div class="recording-thumb"><img src="https://i.pinimg.com/1200x/55/5a/56/555a56c69deaada6f6649010d64612fb.jpg" alt="Monthly Mini Recital – Keyboard" loading="lazy" onerror="this.remove()"><button class="play-circle" data-title="Monthly Mini Recital – Keyboard" data-meta="Oct 10 · Vedha · Distinction"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></button><span class="rec-duration">4 min</span></div><div class="recording-body"><strong>Monthly Mini Recital – Keyboard</strong><span>Oct 10 · Vedha</span></div></div>
-          <div class="card recording-card"><div class="recording-thumb"><img src="https://i.pinimg.com/736x/7a/a3/7a/7aa37a6e1a97bdcc95ba8abc00686180.jpg" alt="Level 1 Assessment – Vocals" loading="lazy" onerror="this.remove()"><button class="play-circle" data-title="Level 1 Assessment – Vocals" data-meta="Sep 26 · Ananya Das · Passed"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></button><span class="rec-duration">6 min</span></div><div class="recording-body"><strong>Level 1 Assessment – Vocals</strong><span>Sep 26 · Ananya Das</span></div></div>
-          <div class="card recording-card"><div class="recording-thumb"><img src="https://i.ibb.co/8D8dFyRX/music-teacher-student-lesson.jpg" alt="Rhythm Basics Test" loading="lazy" onerror="this.remove()"><button class="play-circle" data-title="Rhythm Basics Test" data-meta="Aug 29 · Rohit Verma · Passed"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></button><span class="rec-duration">5 min</span></div><div class="recording-body"><strong>Rhythm Basics Test</strong><span>Aug 29 · Rohit Verma</span></div></div>
-        </div>
-      </section>
-
-      <!-- BOOK A CLASS -->
-      <section class="dash-panel" data-panel="book">
-        <div class="bk-layout">
-          <div class="card bk-main">
-            <div class="bk-top">
-              <div class="bk-seg" id="bk-course" role="tablist" aria-label="Course">
-                <button type="button" class="active" data-course="Keyboard">Keyboard</button>
-                <button type="button" data-course="Vocals">Vocals</button>
-                <button type="button" data-course="Guitar">Guitar</button>
-                <button type="button" data-course="Drums">Drums</button>
+              <div class="pn-hd"><span class="pn-ic"><i class="bi bi-person"></i></span>
+                <div>
+                  <h2>Personal details</h2>
+                  <p>Keep these up to date so reminders and receipts reach you.</p>
+                </div><button class="btn btn-outline btn-xs" type="button" data-edit><i
+                    class="bi bi-pencil"></i>Edit</button>
               </div>
-              <select class="bk-select" id="bk-tutor" aria-label="Tutor">
-                <option>Vedha</option>
-                <option>Ananya</option>
-                <option>Rohan</option>
-              </select>
+              <form class="pf-form" id="profile-form">
+                <div class="pf-field"><span class="pf-fic"><i class="bi bi-person"></i></span>
+                  <div class="form-row"><label for="pf-name">Student name</label><input id="pf-name" type="text"
+                      value="Tedoshijika" disabled></div>
+                </div>
+                <div class="pf-field"><span class="pf-fic"><i class="bi bi-people"></i></span>
+                  <div class="form-row"><label for="pf-parent">Parent / guardian</label><input id="pf-parent"
+                      type="text" value="Dorinka" disabled></div>
+                </div>
+                <div class="pf-field"><span class="pf-fic"><i class="bi bi-telephone"></i></span>
+                  <div class="form-row"><label for="pf-phone">Phone</label><input id="pf-phone" type="tel"
+                      value="+91 90000 12345" disabled></div>
+                </div>
+                <div class="pf-field"><span class="pf-fic"><i class="bi bi-envelope"></i></span>
+                  <div class="form-row"><label for="pf-email">Email</label><input id="pf-email" type="email"
+                      value="dorinka@example.com" disabled></div>
+                </div>
+                <div class="pf-field full"><span class="pf-fic"><i class="bi bi-geo-alt"></i></span>
+                  <div class="form-row"><label for="pf-address">Address</label><input id="pf-address" type="text"
+                      value="2, Sundance Colony, Banjara Hills, Hyderabad" disabled></div>
+                </div>
+                <div class="pf-field"><span class="pf-fic"><i class="bi bi-music-note-list"></i></span>
+                  <div class="form-row"><label for="pf-instrument">Main course</label><select id="pf-instrument"
+                      disabled>
+                      <option>Keyboard</option>
+                      <option>Guitar</option>
+                      <option>Vocals</option>
+                      <option>Drums</option>
+                    </select></div>
+                </div>
+                <div class="pf-field"><span class="pf-fic"><i class="bi bi-calendar3"></i></span>
+                  <div class="form-row"><label for="pf-plan">Classes per week</label><select id="pf-plan" disabled>
+                      <option>One class</option>
+                      <option>Two classes</option>
+                    </select></div>
+                </div>
+              </form>
+              <div class="pf-save"><button class="btn btn-solid" id="save-profile-btn" type="button"
+                  style="display:none;">Save changes</button></div>
             </div>
-            <div class="bk-days" id="bk-days"></div>
-            <div class="bk-slots" id="bk-slots"></div>
-            <p class="bk-legend"><span>Evening batches from 5 PM</span><span><s>Struck-through</s> = booked</span></p>
-          </div>
 
-          <aside class="card bk-sum">
-            <h2>Your booking</h2>
-            <dl>
-              <div><dt>Course</dt><dd id="bk-s-course">Keyboard</dd></div>
-              <div><dt>Tutor</dt><dd id="bk-s-tutor">Vedha</dd></div>
-              <div><dt>Date</dt><dd id="bk-s-date">-</dd></div>
-              <div><dt>Time</dt><dd id="bk-s-time">Select a slot</dd></div>
-              <div><dt>Class fee</dt><dd id="bk-s-fee">-</dd></div>
-            </dl>
-            <label class="bk-plan"><input type="checkbox" id="bk-plan" checked> <span>Use 1 plan class (<b id="bk-left">7</b> left)</span></label>
-            <div class="bk-total"><span>Total</span><strong id="bk-total">₹0</strong></div>
-            <button class="btn btn-solid bk-confirm" id="bk-confirm" type="button" disabled>Confirm booking</button>
-          </aside>
-        </div>
-      </section>
-
-      <!-- ENROLL -->
-      <section class="dash-panel" data-panel="enroll">
-        <div class="cr-grid">
-          <div class="card cr-card">
-            <div class="cr-top"><span class="cr-ic"><i class="bi bi-music-note-beamed"></i></span><div><h2>Guitar – Beginner</h2><span class="cr-meta">Acoustic and electric guitar basics</span></div><span class="mc-status st-ok">Seats open</span></div>
-            <ul class="cr-facts"><li><i class="bi bi-clock"></i>1 hour per class</li><li><i class="bi bi-calendar-check"></i>Next batch starts Nov 2026</li><li><i class="bi bi-currency-rupee"></i>₹2,400 per month · 4 classes</li></ul>
-            <div class="cr-actions"><button class="btn btn-solid btn-xs" type="button" data-enroll="Guitar – Beginner"><i class="bi bi-plus-circle"></i>Enroll</button><button class="btn btn-outline btn-xs" type="button" data-target="schedule"><i class="bi bi-calendar3"></i>View timings</button></div>
-          </div>
-          <div class="card cr-card">
-            <div class="cr-top"><span class="cr-ic gold"><i class="bi bi-vinyl"></i></span><div><h2>Drums – Beginner</h2><span class="cr-meta">Rhythm, grip and basic beats</span></div><span class="mc-status st-ok">Seats open</span></div>
-            <ul class="cr-facts"><li><i class="bi bi-clock"></i>1 hour per class</li><li><i class="bi bi-calendar-check"></i>Next batch starts Nov 2026</li><li><i class="bi bi-currency-rupee"></i>₹2,400 per month · 4 classes</li></ul>
-            <div class="cr-actions"><button class="btn btn-solid btn-xs" type="button" data-enroll="Drums – Beginner"><i class="bi bi-plus-circle"></i>Enroll</button><button class="btn btn-outline btn-xs" type="button" data-target="schedule"><i class="bi bi-calendar3"></i>View timings</button></div>
-          </div>
-          <div class="card cr-card">
-            <div class="cr-top"><span class="cr-ic"><i class="bi bi-music-note-list"></i></span><div><h2>Keyboard – Intermediate</h2><span class="cr-meta">Chords, bass patterns and songs</span></div><span class="mc-status st-ok">Seats open</span></div>
-            <ul class="cr-facts"><li><i class="bi bi-clock"></i>1 hour per class</li><li><i class="bi bi-calendar-check"></i>Continue after Beginner</li><li><i class="bi bi-currency-rupee"></i>₹2,400 per month · 4 classes</li></ul>
-            <div class="cr-actions"><button class="btn btn-solid btn-xs" type="button" data-enroll="Keyboard – Intermediate"><i class="bi bi-plus-circle"></i>Enroll</button><button class="btn btn-outline btn-xs" type="button" data-target="schedule"><i class="bi bi-calendar3"></i>View timings</button></div>
-          </div>
-          <div class="card cr-card">
-            <div class="cr-top"><span class="cr-ic gold"><i class="bi bi-mic"></i></span><div><h2>Vocals – Intermediate</h2><span class="cr-meta">Breath control, pitch and stage voice</span></div><span class="mc-status st-ok">Seats open</span></div>
-            <ul class="cr-facts"><li><i class="bi bi-clock"></i>1 hour per class</li><li><i class="bi bi-calendar-check"></i>Continue after Foundation</li><li><i class="bi bi-currency-rupee"></i>₹2,400 per month · 4 classes</li></ul>
-            <div class="cr-actions"><button class="btn btn-solid btn-xs" type="button" data-enroll="Vocals – Intermediate"><i class="bi bi-plus-circle"></i>Enroll</button><button class="btn btn-outline btn-xs" type="button" data-target="schedule"><i class="bi bi-calendar3"></i>View timings</button></div>
-          </div>
-        </div>
-      </section>
-
-      <!-- PROFILE -->
-      <section class="dash-panel" data-panel="profile">
-        <div class="card pf-hero">
-          <div class="pf-ava"><img class="avatar" src="https://i.pinimg.com/736x/ea/47/70/ea4770dd47b14faf997ca0a6cdf4195c.jpg" referrerpolicy="no-referrer" alt="Tedoshijika"><span class="pf-cam" aria-hidden="true"><i class="bi bi-camera-fill"></i></span></div>
-          <div class="pf-id">
-            <h2>Tedoshijika</h2>
-            <span class="pf-chip"><i class="bi bi-music-note-list"></i>Keyboard &amp; Vocals student</span>
-            <p>Member since Jul 2026 · Beginner level</p>
-            <div class="pf-teacher"><img class="avatar" src="https://i.pinimg.com/736x/d4/a8/96/d4a896e861ec8f5e1bb9012fc7df6dcd.jpg" referrerpolicy="no-referrer" alt="Vedha"><div><small>Main tutor</small><strong>Vedha</strong><span>Keyboard</span></div></div>
-          </div>
-          <button class="btn btn-solid pf-editmain" type="button" data-edit><i class="bi bi-pencil"></i>Edit profile</button>
-        </div>
-
-        <div class="pf-grid">
-          <div class="card pn-card">
-            <div class="pn-hd"><span class="pn-ic"><i class="bi bi-person"></i></span><div><h2>Personal details</h2><p>Keep these up to date so reminders and receipts reach you.</p></div><button class="btn btn-outline btn-xs" type="button" data-edit><i class="bi bi-pencil"></i>Edit</button></div>
-            <form class="pf-form" id="profile-form">
-              <div class="pf-field"><span class="pf-fic"><i class="bi bi-person"></i></span><div class="form-row"><label for="pf-name">Student name</label><input id="pf-name" type="text" value="Tedoshijika" disabled></div></div>
-              <div class="pf-field"><span class="pf-fic"><i class="bi bi-people"></i></span><div class="form-row"><label for="pf-parent">Parent / guardian</label><input id="pf-parent" type="text" value="Dorinka" disabled></div></div>
-              <div class="pf-field"><span class="pf-fic"><i class="bi bi-telephone"></i></span><div class="form-row"><label for="pf-phone">Phone</label><input id="pf-phone" type="tel" value="+91 90000 12345" disabled></div></div>
-              <div class="pf-field"><span class="pf-fic"><i class="bi bi-envelope"></i></span><div class="form-row"><label for="pf-email">Email</label><input id="pf-email" type="email" value="dorinka@example.com" disabled></div></div>
-              <div class="pf-field full"><span class="pf-fic"><i class="bi bi-geo-alt"></i></span><div class="form-row"><label for="pf-address">Address</label><input id="pf-address" type="text" value="2, Sundance Colony, Banjara Hills, Hyderabad" disabled></div></div>
-              <div class="pf-field"><span class="pf-fic"><i class="bi bi-music-note-list"></i></span><div class="form-row"><label for="pf-instrument">Main course</label><select id="pf-instrument" disabled><option>Keyboard</option><option>Guitar</option><option>Vocals</option><option>Drums</option></select></div></div>
-              <div class="pf-field"><span class="pf-fic"><i class="bi bi-calendar3"></i></span><div class="form-row"><label for="pf-plan">Classes per week</label><select id="pf-plan" disabled><option>One class</option><option>Two classes</option></select></div></div>
-            </form>
-            <div class="pf-save"><button class="btn btn-solid" id="save-profile-btn" type="button" style="display:none;">Save changes</button></div>
-          </div>
-
-          <div class="card pn-card">
-            <div class="pn-hd"><span class="pn-ic"><i class="bi bi-bell"></i></span><div><h2>Notifications</h2><p>Choose which reminders you want to receive.</p></div></div>
-            <div class="pf-toggles">
-              <div class="pf-tg"><span class="pf-fic"><i class="bi bi-calendar-check"></i></span><div><strong>Class reminders</strong><span>Get a reminder two hours before every class.</span></div><label class="switch"><input type="checkbox" checked><span class="track"></span></label></div>
-              <div class="pf-tg"><span class="pf-fic"><i class="bi bi-whatsapp"></i></span><div><strong>WhatsApp updates</strong><span>Receive tutor notes and performance updates on WhatsApp.</span></div><label class="switch"><input type="checkbox" checked><span class="track"></span></label></div>
-              <div class="pf-tg"><span class="pf-fic"><i class="bi bi-credit-card"></i></span><div><strong>Fee reminders</strong><span>Get an email three days before the fee due date.</span></div><label class="switch"><input type="checkbox"><span class="track"></span></label></div>
-              <div class="pf-tg"><span class="pf-fic"><i class="bi bi-trophy"></i></span><div><strong>Recital &amp; result alerts</strong><span>Get notified about recitals, rehearsals and assessment results.</span></div><label class="switch"><input type="checkbox" checked><span class="track"></span></label></div>
+            <div class="card pn-card">
+              <div class="pn-hd"><span class="pn-ic"><i class="bi bi-bell"></i></span>
+                <div>
+                  <h2>Notifications</h2>
+                  <p>Choose which reminders you want to receive.</p>
+                </div>
+              </div>
+              <div class="pf-toggles">
+                <div class="pf-tg"><span class="pf-fic"><i class="bi bi-calendar-check"></i></span>
+                  <div><strong>Class reminders</strong><span>Get a reminder two hours before every class.</span></div>
+                  <label class="switch"><input type="checkbox" checked><span class="track"></span></label>
+                </div>
+                <div class="pf-tg"><span class="pf-fic"><i class="bi bi-whatsapp"></i></span>
+                  <div><strong>WhatsApp updates</strong><span>Receive tutor notes and performance updates on
+                      WhatsApp.</span></div><label class="switch"><input type="checkbox" checked><span
+                      class="track"></span></label>
+                </div>
+                <div class="pf-tg"><span class="pf-fic"><i class="bi bi-credit-card"></i></span>
+                  <div><strong>Fee reminders</strong><span>Get an email three days before the fee due date.</span></div>
+                  <label class="switch"><input type="checkbox"><span class="track"></span></label>
+                </div>
+                <div class="pf-tg"><span class="pf-fic"><i class="bi bi-trophy"></i></span>
+                  <div><strong>Recital &amp; result alerts</strong><span>Get notified about recitals, rehearsals and
+                      assessment results.</span></div><label class="switch"><input type="checkbox" checked><span
+                      class="track"></span></label>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
 
-    </main>
-  </div>
-</div>
-
-
-<div class="modal-overlay" id="video-modal">
-  <div class="modal-box">
-    <button class="modal-close" id="video-modal-close" aria-label="Close">&times;</button>
-    <div class="modal-video-frame">
-      <img id="video-modal-poster" alt="" style="display:none" onerror="this.style.display='none'">
-      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+      </main>
     </div>
-    <h3 id="video-modal-title">Recording</h3>
-    <p id="video-modal-meta"></p>
   </div>
-</div>
 
-<div class="toast" id="toast"></div>
 
-<script src="../js/dashboard.js?v=5"></script>
+  <div class="modal-overlay" id="video-modal">
+    <div class="modal-box">
+      <button class="modal-close" id="video-modal-close" aria-label="Close">&times;</button>
+      <div class="modal-video-frame">
+        <img id="video-modal-poster" alt="" style="display:none" onerror="this.style.display='none'">
+        <svg viewBox="0 0 24 24" fill="currentColor">
+          <path d="M8 5v14l11-7z" />
+        </svg>
+      </div>
+      <h3 id="video-modal-title">Recording</h3>
+      <p id="video-modal-meta"></p>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="../js/dashboard.js?v=5"></script>
 </body>
+
 </html>

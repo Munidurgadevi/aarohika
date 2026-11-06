@@ -304,7 +304,7 @@
     grid-row: 1;
 }
 
-.why-content > :not(.why-eyebrow) {
+.why-content> :not(.why-eyebrow) {
     grid-column: 2;
     min-width: 0;
 }
@@ -521,7 +521,7 @@
     }
 
     .why-eyebrow,
-    .why-content > :not(.why-eyebrow) {
+    .why-content> :not(.why-eyebrow) {
         grid-column: auto;
         grid-row: auto;
     }
@@ -2126,6 +2126,7 @@ html[dir="rtl"] .cta-photo {
 .cta-photo {
     overflow: hidden;
 }
+
 /* ===== Home 1: small-screen fixes (Galaxy S8+ 360px etc.) ===== */
 
 /* hero photo: keep a clear gap below the highlights, no overlap */

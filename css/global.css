@@ -646,6 +646,7 @@ html.dark-mode .icon-moon {
     color: var(--dark-bg);
     stroke: var(--dark-bg);
 }
+
 .footer-socials svg {
     width: 17px;
     height: 17px;
@@ -1390,7 +1391,7 @@ html[dir="rtl"] .crumbs svg {
    1. One font family   2. Logo + title name   3. Taglines (line - text - line)
    4. Headings (primary + secondary)   5. Buttons (every button = Login button)
    ========================================================================== */
-   /* ==========================================================================
+/* ==========================================================================
    SECTION RULES (hero, header, footer kakunda migilina sections)
    Heading = max 58px (screen taggite smooth ga taggutundi), Tagline = 12px
    ========================================================================== */
@@ -1399,13 +1400,11 @@ html[dir="rtl"] .crumbs svg {
     --section-tagline-size: 12px;
 }
 
-html body :is(
-    .ab-title, .ct-title, .cr-title, .gt-title, .pr-title,
+html body :is(.ab-title, .ct-title, .cr-title, .gt-title, .pr-title,
     .courses-title, .why-title, .perf-title, .inst-title, .faq-title, .cta-title,
     .h2c-title, .h2j-title, .h2p-title, .h2t-title, .h2x-title,
     .sec-head h2, .mentor-cta-copy h2,
-    .ab-cta-panel h2, .ct-cta-card h2, .cr-cta-copy h2, .gt-cta h2, .pr-cta-card h2
-) {
+    .ab-cta-panel h2, .ct-cta-card h2, .cr-cta-copy h2, .gt-cta h2, .pr-cta-card h2) {
     font-size: var(--section-title-size) !important;
     line-height: 1.15 !important;
     text-wrap: balance;
@@ -1415,6 +1414,7 @@ html body :is(
 html body .tagline {
     font-size: var(--section-tagline-size) !important;
 }
+
 .back-to-top {
     display: none !important;
 }
@@ -2009,6 +2009,7 @@ select.cs-native {
     opacity: .5;
     cursor: not-allowed;
 }
+
 html body .ab-story-media {
     overflow: visible;
 }
@@ -2016,6 +2017,7 @@ html body .ab-story-media {
 html body .ab-story-media:hover img {
     scale: 1;
 }
+
 html body :is(.ab-value, .ct-card, .cx-tile, .ct-faq details, .ct-cta-info li,
     .pr-offer, .pr-track, .pr-feature, .pr-faq details) {
     border-color: var(--secondary-color) !important;
@@ -2029,6 +2031,7 @@ html body :is(.ab-value, .ct-card, .cx-tile, .ct-faq details, .ct-cta-info li,
     border-color: var(--secondary-color) !important;
     box-shadow: 0 18px 38px rgba(0, 0, 0, .14), 0 0 0 1px var(--secondary-color);
 }
+
 /* Reduce bottom space of CTA sections on all pages */
 html body :is(.cta-section, .h2x-section, .ab-cta, .ct-cta, .cr-cta-section, .gt-cta-section, .mentor-cta, .pr-cta) {
     padding-bottom: 24px;

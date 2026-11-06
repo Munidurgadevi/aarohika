@@ -1772,6 +1772,7 @@ body {
         padding: 20px;
     }
 }
+
 /* ===== Tablet (iPad Mini 768px): batches stay as a proper table, one row per batch ===== */
 @media (min-width: 601px) and (max-width: 900px) {
     .batches-table {
@@ -1868,6 +1869,7 @@ body {
         height: 24px;
     }
 }
+
 /* ===== Hero background image (25% opacity, follows light / dark mode) ===== */
 .home-hero {
     --hero-bg-image: url("https://i.pinimg.com/1200x/3c/5c/f4/3c5cf45790df7a19791d2de0e6262dab.jpg");
@@ -1901,6 +1903,7 @@ body {
     opacity: var(--hero-bg-opacity);
     filter: brightness(.75) saturate(.9);
 }
+
 /* ===== Mentor CTA card: full background image (zoom in / out), text above buttons, 4cm high ===== */
 .mentor-cta-card {
     --cta-card-height: 4cm;
@@ -2060,10 +2063,12 @@ html[dir="rtl"] .mentor-btn svg:last-child {
     align-items: center;
     gap: 16px;
 }
+
 .hero-proof-avatars {
     display: flex;
     flex: none;
 }
+
 .hero-proof-avatars img {
     width: 54px;
     height: 54px;
@@ -2072,19 +2077,23 @@ html[dir="rtl"] .mentor-btn svg:last-child {
     border: 3px solid var(--surface, #fff);
     box-shadow: 0 4px 10px rgba(0, 0, 0, .15);
 }
-.hero-proof-avatars img + img {
+
+.hero-proof-avatars img+img {
     margin-inline-start: -14px;
 }
+
 .hero-proof-stars {
     display: flex;
     gap: 5px;
     color: var(--secondary);
 }
+
 .hero-proof-stars svg {
     width: 22px;
     height: 22px;
     fill: currentColor;
 }
+
 .hero-proof-text {
     margin: 4px 0 0;
     font-size: 16px;
@@ -2098,17 +2107,33 @@ html body .home-hero h1 {
     font-size: clamp(36px, min(5.6vw, 9.6svh), 68px) !important;
     margin-bottom: 14px;
 }
+
 html body .home-hero .hero-description {
     margin-bottom: 18px;
 }
+
 html body .home-hero .hero-actions {
     margin-bottom: 20px;
 }
+
 @media (max-width: 560px) {
-    .hero-proof { flex-wrap: wrap; }
-    .hero-proof-avatars img { width: 46px; height: 46px; }
-    .hero-proof-stars svg { width: 19px; height: 19px; }
-    .hero-proof-text { font-size: 14px; }
+    .hero-proof {
+        flex-wrap: wrap;
+    }
+
+    .hero-proof-avatars img {
+        width: 46px;
+        height: 46px;
+    }
+
+    .hero-proof-stars svg {
+        width: 19px;
+        height: 19px;
+    }
+
+    .hero-proof-text {
+        font-size: 14px;
+    }
 }
 
 /* ===== Instructor cards: image flush with the card border (zooms inside its frame), one button ===== */
@@ -2191,6 +2216,7 @@ html body .mentor-cta-actions .mentor-btn {
 html body .mentor-cta-actions .mentor-btn svg:last-child {
     display: none;
 }
+
 @media (max-width: 760px) {
     .profile-modal {
         display: block;

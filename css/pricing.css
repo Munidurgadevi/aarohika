@@ -950,6 +950,7 @@ html[dir="rtl"] .pr-hero-media::before {
 }
 
 @media (max-width: 560px) {
+
     .pr-offers,
     .pr-features {
         grid-template-columns: minmax(0, 1fr);
@@ -1131,6 +1132,7 @@ html[dir="rtl"] .pr-hero-media::before {
 }
 
 @media (min-width: 901px) {
+
     /* image size follows the available screen height */
     .pr-hero .pr-hero-media {
         width: min(100%, 380px, max(240px, calc((100vh - var(--header-height) - 150px) * .95)));
@@ -1142,6 +1144,7 @@ html[dir="rtl"] .pr-hero-media::before {
         width: min(100%, 260px);
     }
 }
+
 html body .pr-track {
     position: relative;
     isolation: isolate;
@@ -1170,23 +1173,31 @@ html body .pr-track::before {
     transition: opacity .45s ease;
 }
 
-html body .pr-track > * {
+html body .pr-track>* {
     opacity: 0;
     transform: translateY(18px);
     transition: opacity .45s ease, transform .45s ease;
 }
 
-html body .pr-track > :nth-child(2) { transition-delay: .06s; }
-html body .pr-track > :nth-child(3) { transition-delay: .12s; }
-html body .pr-track > :nth-child(4) { transition-delay: .18s; }
+html body .pr-track> :nth-child(2) {
+    transition-delay: .06s;
+}
+
+html body .pr-track> :nth-child(3) {
+    transition-delay: .12s;
+}
+
+html body .pr-track> :nth-child(4) {
+    transition-delay: .18s;
+}
 
 html body .pr-track:hover::before,
 html body .pr-track:focus-within::before {
     opacity: 1;
 }
 
-html body .pr-track:hover > *,
-html body .pr-track:focus-within > * {
+html body .pr-track:hover>*,
+html body .pr-track:focus-within>* {
     opacity: 1;
     transform: none;
 }
@@ -1220,7 +1231,7 @@ html body .pr-cta-card {
     text-align: start;
 }
 
-html body .pr-cta-card > * {
+html body .pr-cta-card>* {
     position: relative;
     max-width: none;
 }
@@ -1305,7 +1316,7 @@ html[dir="rtl"] body .pr-cta-card::after {
         text-align: center;
     }
 
-    html body .pr-cta-card > * {
+    html body .pr-cta-card>* {
         margin-inline: auto;
     }
 

@@ -114,10 +114,25 @@
     display: block;
 }
 
-.pr-kids-collage .kc1 { border-radius: 28px 28px 28px 80px; transform: rotate(-3deg); }
-.pr-kids-collage .kc2 { border-radius: 28px 80px 28px 28px; transform: translateY(24px) rotate(2deg); }
-.pr-kids-collage .kc3 { border-radius: 28px 28px 80px 28px; transform: translateY(-8px) rotate(2deg); }
-.pr-kids-collage .kc4 { border-radius: 80px 28px 28px 28px; transform: translateY(16px) rotate(-2deg); }
+.pr-kids-collage .kc1 {
+    border-radius: 28px 28px 28px 80px;
+    transform: rotate(-3deg);
+}
+
+.pr-kids-collage .kc2 {
+    border-radius: 28px 80px 28px 28px;
+    transform: translateY(24px) rotate(2deg);
+}
+
+.pr-kids-collage .kc3 {
+    border-radius: 28px 28px 80px 28px;
+    transform: translateY(-8px) rotate(2deg);
+}
+
+.pr-kids-collage .kc4 {
+    border-radius: 80px 28px 28px 28px;
+    transform: translateY(16px) rotate(-2deg);
+}
 
 @media (max-width: 700px) {
     .pr-kids-grid {
@@ -184,7 +199,7 @@
     row-gap: 14px;
 }
 
-.pr-kids .pr-feature > div {
+.pr-kids .pr-feature>div {
     display: contents;
 }
 

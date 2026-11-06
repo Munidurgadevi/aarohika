@@ -653,8 +653,13 @@ html[dir="rtl"] .ab-diff-card::after {
     animation: ab-jr-ring 6s ease-in-out infinite;
 }
 
-.ab-jr-ring:nth-child(2) { animation-delay: -2s; }
-.ab-jr-ring:nth-child(3) { animation-delay: -4s; }
+.ab-jr-ring:nth-child(2) {
+    animation-delay: -2s;
+}
+
+.ab-jr-ring:nth-child(3) {
+    animation-delay: -4s;
+}
 
 /* ----- shared instrument styling ----- */
 .ab-jr-inst {
@@ -755,16 +760,26 @@ html[dir="rtl"] .ab-diff-card::after {
     animation: ab-jr-inote 4.2s ease-out infinite;
 }
 
-.ab-jr-inote:nth-of-type(2) { animation-delay: 1.4s; }
-.ab-jr-inote:nth-of-type(3) { animation-delay: 2.8s; }
+.ab-jr-inote:nth-of-type(2) {
+    animation-delay: 1.4s;
+}
+
+.ab-jr-inote:nth-of-type(3) {
+    animation-delay: 2.8s;
+}
 
 .ab-jr-inst.is-on .ab-jr-inote {
     animation-name: ab-jr-inote-hot;
     animation-duration: 2.4s;
 }
 
-.ab-jr-inst.is-on .ab-jr-inote:nth-of-type(2) { animation-delay: .8s; }
-.ab-jr-inst.is-on .ab-jr-inote:nth-of-type(3) { animation-delay: 1.6s; }
+.ab-jr-inst.is-on .ab-jr-inote:nth-of-type(2) {
+    animation-delay: .8s;
+}
+
+.ab-jr-inst.is-on .ab-jr-inote:nth-of-type(3) {
+    animation-delay: 1.6s;
+}
 
 /* guitar: strum + sound-hole pulse */
 .ab-jr-string {
@@ -774,11 +789,25 @@ html[dir="rtl"] .ab-diff-card::after {
     animation: ab-jr-strum 3.6s ease-out infinite;
 }
 
-.ab-jr-string:nth-of-type(2) { animation-delay: .04s; }
-.ab-jr-string:nth-of-type(3) { animation-delay: .08s; }
-.ab-jr-string:nth-of-type(4) { animation-delay: .12s; }
-.ab-jr-string:nth-of-type(5) { animation-delay: .16s; }
-.ab-jr-string:nth-of-type(6) { animation-delay: .2s; }
+.ab-jr-string:nth-of-type(2) {
+    animation-delay: .04s;
+}
+
+.ab-jr-string:nth-of-type(3) {
+    animation-delay: .08s;
+}
+
+.ab-jr-string:nth-of-type(4) {
+    animation-delay: .12s;
+}
+
+.ab-jr-string:nth-of-type(5) {
+    animation-delay: .16s;
+}
+
+.ab-jr-string:nth-of-type(6) {
+    animation-delay: .2s;
+}
 
 .ab-jr-pulse {
     fill: none;
@@ -865,8 +894,13 @@ html[dir="rtl"] .ab-diff-card::after {
     animation: ab-jr-kick 1.2s ease-out infinite;
 }
 
-.ab-jr-tom-a { animation: ab-jr-tomhit 1.2s ease-out infinite; }
-.ab-jr-tom-b { animation: ab-jr-tomhit 1.2s ease-out .6s infinite; }
+.ab-jr-tom-a {
+    animation: ab-jr-tomhit 1.2s ease-out infinite;
+}
+
+.ab-jr-tom-b {
+    animation: ab-jr-tomhit 1.2s ease-out .6s infinite;
+}
 
 .ab-jr-stick line {
     stroke: var(--jr-ink);
@@ -967,12 +1001,35 @@ html[dir="rtl"] .ab-diff-card::after {
     animation: ab-jr-eq 1.2s ease-in-out infinite;
 }
 
-.ab-jr-eq i:nth-child(2) { animation-delay: -.3s; animation-duration: 1.0s; }
-.ab-jr-eq i:nth-child(3) { animation-delay: -.7s; animation-duration: 1.4s; }
-.ab-jr-eq i:nth-child(4) { animation-delay: -.1s; animation-duration: .9s; }
-.ab-jr-eq i:nth-child(5) { animation-delay: -.5s; animation-duration: 1.3s; }
-.ab-jr-eq i:nth-child(6) { animation-delay: -.9s; animation-duration: 1.1s; }
-.ab-jr-eq i:nth-child(7) { animation-delay: -.2s; animation-duration: 1.5s; }
+.ab-jr-eq i:nth-child(2) {
+    animation-delay: -.3s;
+    animation-duration: 1.0s;
+}
+
+.ab-jr-eq i:nth-child(3) {
+    animation-delay: -.7s;
+    animation-duration: 1.4s;
+}
+
+.ab-jr-eq i:nth-child(4) {
+    animation-delay: -.1s;
+    animation-duration: .9s;
+}
+
+.ab-jr-eq i:nth-child(5) {
+    animation-delay: -.5s;
+    animation-duration: 1.3s;
+}
+
+.ab-jr-eq i:nth-child(6) {
+    animation-delay: -.9s;
+    animation-duration: 1.1s;
+}
+
+.ab-jr-eq i:nth-child(7) {
+    animation-delay: -.2s;
+    animation-duration: 1.5s;
+}
 
 .ab-journey.is-hovering .ab-jr-eq i {
     animation-duration: .65s;
@@ -1001,11 +1058,25 @@ html[dir="rtl"] .ab-diff-card::after {
     align-items: center;
 }
 
-.ab-jr-step:nth-child(1) { --i: 0; }
-.ab-jr-step:nth-child(2) { --i: 1; }
-.ab-jr-step:nth-child(3) { --i: 2; }
-.ab-jr-step:nth-child(4) { --i: 3; }
-.ab-jr-step:nth-child(5) { --i: 4; }
+.ab-jr-step:nth-child(1) {
+    --i: 0;
+}
+
+.ab-jr-step:nth-child(2) {
+    --i: 1;
+}
+
+.ab-jr-step:nth-child(3) {
+    --i: 2;
+}
+
+.ab-jr-step:nth-child(4) {
+    --i: 3;
+}
+
+.ab-jr-step:nth-child(5) {
+    --i: 4;
+}
 
 .ab-jr-step {
     --shift: 8px;
@@ -1161,100 +1232,257 @@ html[dir="rtl"] .ab-jr-step {
 
 /* ---------- Keyframes ---------- */
 @keyframes ab-jr-rise {
-    from { opacity: 0; transform: translateY(34px); }
+    from {
+        opacity: 0;
+        transform: translateY(34px);
+    }
 }
 
 @keyframes ab-jr-pop {
-    from { opacity: 0; transform: translateY(20px) scale(.96); }
+    from {
+        opacity: 0;
+        transform: translateY(20px) scale(.96);
+    }
 }
 
 @keyframes ab-jr-inst-in {
-    from { opacity: 0; transform: translateY(24px) scale(.88); }
+    from {
+        opacity: 0;
+        transform: translateY(24px) scale(.88);
+    }
 }
 
 @keyframes ab-jr-ring {
-    0%, 100% { transform: scale(.94); stroke-opacity: .08; }
-    50% { transform: scale(1.04); stroke-opacity: .2; }
+
+    0%,
+    100% {
+        transform: scale(.94);
+        stroke-opacity: .08;
+    }
+
+    50% {
+        transform: scale(1.04);
+        stroke-opacity: .2;
+    }
 }
 
 @keyframes ab-jr-spin {
-    to { transform: rotate(360deg); }
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 @keyframes ab-jr-inote {
-    0% { transform: translateY(0) rotate(0); opacity: 0; }
-    20% { opacity: .6; }
-    100% { transform: translateY(-58px) rotate(16deg); opacity: 0; }
+    0% {
+        transform: translateY(0) rotate(0);
+        opacity: 0;
+    }
+
+    20% {
+        opacity: .6;
+    }
+
+    100% {
+        transform: translateY(-58px) rotate(16deg);
+        opacity: 0;
+    }
 }
 
 @keyframes ab-jr-inote-hot {
-    0% { transform: translateY(0) rotate(0); opacity: 0; }
-    20% { opacity: 1; }
-    100% { transform: translateY(-64px) rotate(18deg); opacity: 0; }
+    0% {
+        transform: translateY(0) rotate(0);
+        opacity: 0;
+    }
+
+    20% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(-64px) rotate(18deg);
+        opacity: 0;
+    }
 }
 
 @keyframes ab-jr-strum {
-    0%, 20%, 100% { transform: translateX(0); }
-    2% { transform: translateX(1.3px); }
-    4% { transform: translateX(-1.3px); }
-    6% { transform: translateX(1px); }
-    8% { transform: translateX(-.8px); }
-    10% { transform: translateX(.6px); }
-    13% { transform: translateX(-.4px); }
-    16% { transform: translateX(.2px); }
+
+    0%,
+    20%,
+    100% {
+        transform: translateX(0);
+    }
+
+    2% {
+        transform: translateX(1.3px);
+    }
+
+    4% {
+        transform: translateX(-1.3px);
+    }
+
+    6% {
+        transform: translateX(1px);
+    }
+
+    8% {
+        transform: translateX(-.8px);
+    }
+
+    10% {
+        transform: translateX(.6px);
+    }
+
+    13% {
+        transform: translateX(-.4px);
+    }
+
+    16% {
+        transform: translateX(.2px);
+    }
 }
 
 @keyframes ab-jr-pulse {
-    0% { transform: scale(1); opacity: .8; }
-    35%, 100% { transform: scale(2.3); opacity: 0; }
+    0% {
+        transform: scale(1);
+        opacity: .8;
+    }
+
+    35%,
+    100% {
+        transform: scale(2.3);
+        opacity: 0;
+    }
 }
 
 @keyframes ab-jr-key {
-    0%, 30%, 100% { transform: translateY(0); fill: color-mix(in srgb, var(--jr-ink) 92%, transparent); }
-    38%, 58% { transform: translateY(2.5px); fill: var(--jr-gold); }
+
+    0%,
+    30%,
+    100% {
+        transform: translateY(0);
+        fill: color-mix(in srgb, var(--jr-ink) 92%, transparent);
+    }
+
+    38%,
+    58% {
+        transform: translateY(2.5px);
+        fill: var(--jr-gold);
+    }
 }
 
 @keyframes ab-jr-wave {
-    0%, 100% { opacity: 0; }
-    35% { opacity: .9; }
-    65% { opacity: 0; }
+
+    0%,
+    100% {
+        opacity: 0;
+    }
+
+    35% {
+        opacity: .9;
+    }
+
+    65% {
+        opacity: 0;
+    }
 }
 
 @keyframes ab-jr-sing {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.05); }
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.05);
+    }
 }
 
 @keyframes ab-jr-stick-a {
-    0%, 45%, 100% { transform: rotate(-14deg); }
-    25% { transform: rotate(0); }
+
+    0%,
+    45%,
+    100% {
+        transform: rotate(-14deg);
+    }
+
+    25% {
+        transform: rotate(0);
+    }
 }
 
 @keyframes ab-jr-stick-b {
-    0%, 45%, 100% { transform: rotate(14deg); }
-    25% { transform: rotate(0); }
+
+    0%,
+    45%,
+    100% {
+        transform: rotate(14deg);
+    }
+
+    25% {
+        transform: rotate(0);
+    }
 }
 
 @keyframes ab-jr-tomhit {
-    0%, 20%, 50%, 100% { fill: color-mix(in srgb, var(--jr-gold) 30%, var(--jr-deep)); }
-    26% { fill: var(--jr-gold); }
+
+    0%,
+    20%,
+    50%,
+    100% {
+        fill: color-mix(in srgb, var(--jr-gold) 30%, var(--jr-deep));
+    }
+
+    26% {
+        fill: var(--jr-gold);
+    }
 }
 
 @keyframes ab-jr-cym {
-    0%, 16%, 100% { transform: rotate(0); }
-    3% { transform: rotate(-7deg); }
-    7% { transform: rotate(5deg); }
-    11% { transform: rotate(-3deg); }
+
+    0%,
+    16%,
+    100% {
+        transform: rotate(0);
+    }
+
+    3% {
+        transform: rotate(-7deg);
+    }
+
+    7% {
+        transform: rotate(5deg);
+    }
+
+    11% {
+        transform: rotate(-3deg);
+    }
 }
 
 @keyframes ab-jr-kick {
-    0%, 50% { transform: scale(1.05); }
-    15%, 65%, 100% { transform: scale(1); }
+
+    0%,
+    50% {
+        transform: scale(1.05);
+    }
+
+    15%,
+    65%,
+    100% {
+        transform: scale(1);
+    }
 }
 
 @keyframes ab-jr-eq {
-    0%, 100% { transform: scaleY(.25); }
-    50% { transform: scaleY(1); }
+
+    0%,
+    100% {
+        transform: scaleY(.25);
+    }
+
+    50% {
+        transform: scaleY(1);
+    }
 }
 
 /* ---------- Responsive ---------- */
@@ -1320,6 +1548,7 @@ html[dir="rtl"] .ab-jr-step {
 }
 
 @media (prefers-reduced-motion: reduce) {
+
     .ab-journey *,
     .ab-journey *::before,
     .ab-journey *::after {
@@ -1564,6 +1793,7 @@ html[dir="rtl"] .ab-diff-intro {
 .back-to-top {
     display: none !important;
 }
+
 /* ===== Tablet (iPad Mini 768px): cards stay in a single row ===== */
 @media (min-width: 601px) and (max-width: 1000px) {
 
@@ -1603,6 +1833,7 @@ html[dir="rtl"] .ab-diff-intro {
         line-height: 1.5;
     }
 }
+
 /* ===== Why choose Aarohika: cards fit their content (no extra empty space) ===== */
 .ab-diff-cards {
     align-content: center;
@@ -1611,6 +1842,7 @@ html[dir="rtl"] .ab-diff-intro {
 .ab-diff-card {
     padding: 26px 24px;
 }
+
 /* ===== CTA card: light panel in light mode, dark panel in dark mode ===== */
 html:not(.dark-mode) body .ab-cta-panel {
     --heading-first: var(--primary-color);
@@ -1647,6 +1879,7 @@ html:not(.dark-mode) body .ab-cta-panel::after {
 .dark-mode .ab-cta-panel h2 {
     color: var(--ivory);
 }
+
 html:not(.dark-mode) body .ab-hero,
 html:not(.dark-mode) body .ab-mission {
     --ab-overlay: #2a1c12;

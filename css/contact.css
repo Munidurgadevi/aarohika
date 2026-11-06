@@ -810,6 +810,7 @@ html[dir="rtl"] .ct-field textarea {
         transition: none;
     }
 }
+
 /* ===== Tablet (iPad Mini 768px): info cards 2 per row, last card full width ===== */
 @media (min-width: 601px) and (max-width: 960px) {
     .ct-info {
@@ -824,14 +825,16 @@ html[dir="rtl"] .ct-field textarea {
         gap: 14px;
     }
 
-    .ct-info > :last-child:nth-child(odd) {
+    .ct-info> :last-child:nth-child(odd) {
         grid-column: 1 / -1;
     }
 }
+
 /* anchor target for "Help Me Choose an Instructor" (sticky header offset) */
 .ct-form-card {
     scroll-margin-top: 96px;
 }
+
 /* ===== Contact CTA ("Ready when you are"): smaller card + floating music notes ===== */
 .ct-cta-card {
     padding: clamp(32px, 4.5vw, 54px) clamp(20px, 4vw, 56px);
@@ -921,18 +924,89 @@ html[dir="rtl"] .ct-field textarea {
     color: #faf6ec;
 }
 
-.ct-cta-notes span:nth-child(1)  { inset-inline-start: 4%;  font-size: 34px; --t: 13s; --d: -2s; }
-.ct-cta-notes span:nth-child(2)  { inset-inline-start: 12%; font-size: 24px; --t: 16s; --d: -9s; }
-.ct-cta-notes span:nth-child(3)  { inset-inline-start: 21%; font-size: 42px; --t: 14s; --d: -5s; }
-.ct-cta-notes span:nth-child(4)  { inset-inline-start: 30%; font-size: 22px; --t: 17s; --d: -12s; }
-.ct-cta-notes span:nth-child(5)  { inset-inline-start: 39%; font-size: 30px; --t: 12s; --d: -7s; }
-.ct-cta-notes span:nth-child(6)  { inset-inline-start: 47%; font-size: 26px; --t: 18s; --d: -3s; }
-.ct-cta-notes span:nth-child(7)  { inset-inline-start: 56%; font-size: 38px; --t: 15s; --d: -10s; }
-.ct-cta-notes span:nth-child(8)  { inset-inline-start: 65%; font-size: 24px; --t: 13s; --d: -1s; }
-.ct-cta-notes span:nth-child(9)  { inset-inline-start: 74%; font-size: 36px; --t: 16s; --d: -6s; }
-.ct-cta-notes span:nth-child(10) { inset-inline-start: 82%; font-size: 22px; --t: 14s; --d: -11s; }
-.ct-cta-notes span:nth-child(11) { inset-inline-start: 90%; font-size: 32px; --t: 17s; --d: -4s; }
-.ct-cta-notes span:nth-child(12) { inset-inline-start: 96%; font-size: 26px; --t: 12s; --d: -8s; }
+.ct-cta-notes span:nth-child(1) {
+    inset-inline-start: 4%;
+    font-size: 34px;
+    --t: 13s;
+    --d: -2s;
+}
+
+.ct-cta-notes span:nth-child(2) {
+    inset-inline-start: 12%;
+    font-size: 24px;
+    --t: 16s;
+    --d: -9s;
+}
+
+.ct-cta-notes span:nth-child(3) {
+    inset-inline-start: 21%;
+    font-size: 42px;
+    --t: 14s;
+    --d: -5s;
+}
+
+.ct-cta-notes span:nth-child(4) {
+    inset-inline-start: 30%;
+    font-size: 22px;
+    --t: 17s;
+    --d: -12s;
+}
+
+.ct-cta-notes span:nth-child(5) {
+    inset-inline-start: 39%;
+    font-size: 30px;
+    --t: 12s;
+    --d: -7s;
+}
+
+.ct-cta-notes span:nth-child(6) {
+    inset-inline-start: 47%;
+    font-size: 26px;
+    --t: 18s;
+    --d: -3s;
+}
+
+.ct-cta-notes span:nth-child(7) {
+    inset-inline-start: 56%;
+    font-size: 38px;
+    --t: 15s;
+    --d: -10s;
+}
+
+.ct-cta-notes span:nth-child(8) {
+    inset-inline-start: 65%;
+    font-size: 24px;
+    --t: 13s;
+    --d: -1s;
+}
+
+.ct-cta-notes span:nth-child(9) {
+    inset-inline-start: 74%;
+    font-size: 36px;
+    --t: 16s;
+    --d: -6s;
+}
+
+.ct-cta-notes span:nth-child(10) {
+    inset-inline-start: 82%;
+    font-size: 22px;
+    --t: 14s;
+    --d: -11s;
+}
+
+.ct-cta-notes span:nth-child(11) {
+    inset-inline-start: 90%;
+    font-size: 32px;
+    --t: 17s;
+    --d: -4s;
+}
+
+.ct-cta-notes span:nth-child(12) {
+    inset-inline-start: 96%;
+    font-size: 26px;
+    --t: 12s;
+    --d: -8s;
+}
 
 @keyframes noteFloat {
     0% {
@@ -967,6 +1041,7 @@ html[dir="rtl"] .ct-field textarea {
         display: none;
     }
 }
+
 @media (min-width: 961px) {
     .ct-layout {
         grid-template-columns: fit-content(46%) minmax(0, 1fr);
@@ -979,10 +1054,12 @@ html[dir="rtl"] .ct-field textarea {
         justify-content: start;
     }
 }
+
 div.ct-card:hover .ct-icon {
     background: var(--primary);
     color: var(--btn-fg);
 }
+
 @media (min-width: 761px) {
     .cx-tiles {
         display: flex;
@@ -1001,6 +1078,7 @@ div.ct-card:hover .ct-icon {
         justify-content: center;
     }
 }
+
 @media (min-width: 601px) and (max-width: 960px) {
     .ct-layout {
         grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
@@ -1011,7 +1089,7 @@ div.ct-card:hover .ct-icon {
         grid-template-columns: 1fr;
     }
 
-    .ct-info > :last-child:nth-child(odd) {
+    .ct-info> :last-child:nth-child(odd) {
         grid-column: auto;
     }
 

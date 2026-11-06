@@ -4828,6 +4828,7 @@ img.avatar {
         grid-template-columns: 1fr;
     }
 }
+
 /* Remove the decorative lines above/below the page eyebrow (dashboard only) */
 html body .dash-page-head .tagline::before,
 html body .dash-page-head .tagline::after,
@@ -4874,14 +4875,15 @@ html body .dash-page-head .eyebrow::after {
     border-color: var(--gold);
     background: transparent;
 }
+
 .ov2-grid,
 .bl-grid {
     align-items: stretch;
 }
 
-.ov2-col > .card:last-child,
-.bl-main > .card:last-child,
-.bl-side > .card:last-child {
+.ov2-col>.card:last-child,
+.bl-main>.card:last-child,
+.bl-side>.card:last-child {
     flex: 1;
 }
 
@@ -4890,6 +4892,7 @@ html body .dash-page-head .eyebrow::after {
     html body .dash-topbar .brand-text {
         gap: 1px;
     }
+
     html body .dash-topbar .brand-sub {
         display: block !important;
         font-size: 7.5px;
@@ -4910,15 +4913,18 @@ html.dir-switching .sidebar-scrim {
         visibility: hidden;
         transition: transform .22s ease, visibility 0s linear .22s;
     }
+
     .dash-sidebar.open {
         visibility: visible;
         transition: transform .22s ease, visibility 0s;
     }
 }
+
 html body.dashboard-body .dash-page-head .tagline {
     font-family: "Manrope", sans-serif !important;
     font-size: 10px !important;
 }
+
 /* Hover effect for all dashboard cards */
 html body .card {
     transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
@@ -4934,7 +4940,10 @@ html body .card:hover {
    Header welcome + search  |  Book a Class panel
    (appended block - nothing above was changed)
    ===================================================== */
-.dash-topbar .topbar-left { flex: 0 0 auto; }
+.dash-topbar .topbar-left {
+    flex: 0 0 auto;
+}
+
 .topbar-search-wrap {
     flex: 1 1 auto;
     min-width: 0;
@@ -4943,13 +4952,18 @@ html body .card:hover {
     gap: 22px;
     margin: 0 24px;
 }
+
 .topbar-welcome {
     margin-inline-start: 110px;
     white-space: nowrap;
     font-size: 14px;
     color: var(--muted-color);
 }
-.topbar-welcome strong { color: var(--text-color); }
+
+.topbar-welcome strong {
+    color: var(--text-color);
+}
+
 .topbar-search {
     flex: 1 1 auto;
     max-width: 440px;
@@ -4964,10 +4978,12 @@ html body .card:hover {
     color: var(--muted-color);
     transition: border-color .2s ease, box-shadow .2s ease;
 }
+
 .topbar-search:focus-within {
     border-color: var(--secondary);
     box-shadow: 0 0 0 3px var(--secondary-soft);
 }
+
 .topbar-search input {
     flex: 1;
     min-width: 0;
@@ -4978,7 +4994,11 @@ html body .card:hover {
     font-size: 14px;
     color: var(--text-color);
 }
-.topbar-search input::placeholder { color: var(--muted-color); }
+
+.topbar-search input::placeholder {
+    color: var(--muted-color);
+}
+
 .topbar-search kbd {
     font: inherit;
     font-size: 11px;
@@ -4990,9 +5010,32 @@ html body .card:hover {
     color: var(--muted-color);
     white-space: nowrap;
 }
-@media (max-width: 1180px) { .topbar-welcome { display: none; } }
-@media (max-width: 900px) { .topbar-search kbd { display: none; } .topbar-search-wrap { margin: 0 12px; } }
-@media (max-width: 640px) { .topbar-search-wrap { display: none; } .dash-topbar .topbar-left { flex: 1 1 auto; } }
+
+@media (max-width: 1180px) {
+    .topbar-welcome {
+        display: none;
+    }
+}
+
+@media (max-width: 900px) {
+    .topbar-search kbd {
+        display: none;
+    }
+
+    .topbar-search-wrap {
+        margin: 0 12px;
+    }
+}
+
+@media (max-width: 640px) {
+    .topbar-search-wrap {
+        display: none;
+    }
+
+    .dash-topbar .topbar-left {
+        flex: 1 1 auto;
+    }
+}
 
 /* ---- Book a Class ---- */
 .bk-layout {
@@ -5001,8 +5044,19 @@ html body .card:hover {
     gap: 22px;
     align-items: start;
 }
-.bk-main, .bk-sum { padding: 22px; }
-.bk-top { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 18px; }
+
+.bk-main,
+.bk-sum {
+    padding: 22px;
+}
+
+.bk-top {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 18px;
+}
+
 .bk-seg {
     display: inline-flex;
     flex-wrap: wrap;
@@ -5012,6 +5066,7 @@ html body .card:hover {
     border-radius: 999px;
     background: var(--light-bg);
 }
+
 .bk-seg button {
     border: 0;
     background: transparent;
@@ -5024,7 +5079,12 @@ html body .card:hover {
     cursor: pointer;
     transition: background .2s ease, color .2s ease;
 }
-.bk-seg button.active { background: var(--primary); color: var(--primary-contrast); }
+
+.bk-seg button.active {
+    background: var(--primary);
+    color: var(--primary-contrast);
+}
+
 .bk-select {
     font: inherit;
     font-size: 14px;
@@ -5037,12 +5097,14 @@ html body .card:hover {
     height: 48px;
     cursor: pointer;
 }
+
 .bk-days {
     display: grid;
     grid-template-columns: repeat(7, minmax(0, 1fr));
     gap: 10px;
     margin-bottom: 18px;
 }
+
 .bk-day {
     display: flex;
     flex-direction: column;
@@ -5058,15 +5120,33 @@ html body .card:hover {
     cursor: pointer;
     transition: all .2s ease;
 }
-.bk-day b { font-size: 22px; color: var(--text-color); line-height: 1.2; }
-.bk-day:hover { border-color: var(--secondary); }
-.bk-day.active { background: var(--primary); border-color: var(--primary); color: var(--primary-contrast); }
-.bk-day.active b { color: var(--primary-contrast); }
+
+.bk-day b {
+    font-size: 22px;
+    color: var(--text-color);
+    line-height: 1.2;
+}
+
+.bk-day:hover {
+    border-color: var(--secondary);
+}
+
+.bk-day.active {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: var(--primary-contrast);
+}
+
+.bk-day.active b {
+    color: var(--primary-contrast);
+}
+
 .bk-slots {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(112px, 1fr));
     gap: 10px;
 }
+
 .bk-slot {
     padding: 12px 6px;
     border: 1px solid var(--border-color);
@@ -5079,16 +5159,37 @@ html body .card:hover {
     cursor: pointer;
     transition: all .2s ease;
 }
-.bk-slot:hover:not(:disabled) { border-color: var(--secondary); background: var(--secondary-soft); }
-.bk-slot.peak:not(.booked) { border-color: var(--secondary); }
-.bk-slot.active { background: var(--primary); border-color: var(--primary); color: var(--primary-contrast); }
+
+.bk-slot:hover:not(:disabled) {
+    border-color: var(--secondary);
+    background: var(--secondary-soft);
+}
+
+.bk-slot.peak:not(.booked) {
+    border-color: var(--secondary);
+}
+
+.bk-slot.active {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: var(--primary-contrast);
+}
+
 .bk-slot.booked {
     text-decoration: line-through;
     opacity: .45;
     cursor: not-allowed;
     background: var(--light-bg);
 }
-.bk-slot.mine { text-decoration: none; opacity: 1; background: var(--secondary-soft); border-color: var(--secondary); color: var(--secondary); }
+
+.bk-slot.mine {
+    text-decoration: none;
+    opacity: 1;
+    background: var(--secondary-soft);
+    border-color: var(--secondary);
+    color: var(--secondary);
+}
+
 .bk-legend {
     display: flex;
     flex-wrap: wrap;
@@ -5097,9 +5198,17 @@ html body .card:hover {
     font-size: 12.5px;
     color: var(--muted-color);
 }
-.bk-sum h2 { margin: 0 0 8px; font-size: 20px; }
-.bk-sum dl { margin: 0; }
-.bk-sum dl > div {
+
+.bk-sum h2 {
+    margin: 0 0 8px;
+    font-size: 20px;
+}
+
+.bk-sum dl {
+    margin: 0;
+}
+
+.bk-sum dl>div {
     display: flex;
     justify-content: space-between;
     gap: 12px;
@@ -5107,8 +5216,17 @@ html body .card:hover {
     border-bottom: 1px dashed var(--border-color);
     font-size: 14px;
 }
-.bk-sum dt { color: var(--muted-color); }
-.bk-sum dd { margin: 0; font-weight: 700; text-align: end; }
+
+.bk-sum dt {
+    color: var(--muted-color);
+}
+
+.bk-sum dd {
+    margin: 0;
+    font-weight: 700;
+    text-align: end;
+}
+
 .bk-plan {
     display: flex;
     align-items: center;
@@ -5118,7 +5236,13 @@ html body .card:hover {
     font-weight: 600;
     cursor: pointer;
 }
-.bk-plan input { width: 18px; height: 18px; accent-color: var(--primary); }
+
+.bk-plan input {
+    width: 18px;
+    height: 18px;
+    accent-color: var(--primary);
+}
+
 .bk-total {
     display: flex;
     justify-content: space-between;
@@ -5126,19 +5250,54 @@ html body .card:hover {
     padding: 12px 0 16px;
     border-top: 1px dashed var(--border-color);
 }
-.bk-total strong { font-size: 30px; color: var(--primary); }
-.bk-confirm { width: 100%; justify-content: center; }
-.bk-confirm:disabled { opacity: .55; cursor: not-allowed; transform: none; }
-@media (max-width: 1100px) { .bk-layout { grid-template-columns: 1fr; } }
+
+.bk-total strong {
+    font-size: 30px;
+    color: var(--primary);
+}
+
+.bk-confirm {
+    width: 100%;
+    justify-content: center;
+}
+
+.bk-confirm:disabled {
+    opacity: .55;
+    cursor: not-allowed;
+    transform: none;
+}
+
+@media (max-width: 1100px) {
+    .bk-layout {
+        grid-template-columns: 1fr;
+    }
+}
+
 @media (max-width: 560px) {
-    .bk-days { gap: 6px; }
-    .bk-day b { font-size: 18px; }
-    .bk-main, .bk-sum { padding: 16px; }
+    .bk-days {
+        gap: 6px;
+    }
+
+    .bk-day b {
+        font-size: 18px;
+    }
+
+    .bk-main,
+    .bk-sum {
+        padding: 16px;
+    }
 }
 
 /* ---- Custom tutor dropdown (replaces the plain browser list) ---- */
-.bk-select.bk-native { display: none; }
-.bk-dd { position: relative; min-width: 190px; }
+.bk-select.bk-native {
+    display: none;
+}
+
+.bk-dd {
+    position: relative;
+    min-width: 190px;
+}
+
 .bk-dd-btn {
     width: 100%;
     height: 48px;
@@ -5157,15 +5316,28 @@ html body .card:hover {
     cursor: pointer;
     transition: border-color .2s ease, box-shadow .2s ease;
 }
-.bk-dd-btn:hover { border-color: var(--secondary); }
+
+.bk-dd-btn:hover {
+    border-color: var(--secondary);
+}
+
 .bk-dd.open .bk-dd-btn,
 .bk-dd-btn:focus-visible {
     outline: 0;
     border-color: var(--secondary);
     box-shadow: 0 0 0 3px var(--secondary-soft);
 }
-.bk-dd-btn i { font-size: 12px; color: var(--muted-color); transition: transform .2s ease; }
-.bk-dd.open .bk-dd-btn i { transform: rotate(180deg); }
+
+.bk-dd-btn i {
+    font-size: 12px;
+    color: var(--muted-color);
+    transition: transform .2s ease;
+}
+
+.bk-dd.open .bk-dd-btn i {
+    transform: rotate(180deg);
+}
+
 .bk-dd-list {
     position: absolute;
     z-index: 30;
@@ -5184,12 +5356,14 @@ html body .card:hover {
     transform: translateY(-6px);
     transition: opacity .18s ease, transform .18s ease, visibility 0s linear .18s;
 }
+
 .bk-dd.open .bk-dd-list {
     opacity: 1;
     visibility: visible;
     transform: none;
     transition: opacity .18s ease, transform .18s ease, visibility 0s;
 }
+
 .bk-dd-item {
     display: flex;
     align-items: center;
@@ -5202,11 +5376,26 @@ html body .card:hover {
     color: var(--text-color);
     cursor: pointer;
 }
-.bk-dd-item i { font-size: 14px; color: var(--primary); opacity: 0; }
+
+.bk-dd-item i {
+    font-size: 14px;
+    color: var(--primary);
+    opacity: 0;
+}
+
 .bk-dd-item:hover,
-.bk-dd-item.focus { background: var(--secondary-soft); }
-.bk-dd-item.selected { background: var(--primary-soft); color: var(--primary); }
-.bk-dd-item.selected i { opacity: 1; }
+.bk-dd-item.focus {
+    background: var(--secondary-soft);
+}
+
+.bk-dd-item.selected {
+    background: var(--primary-soft);
+    color: var(--primary);
+}
+
+.bk-dd-item.selected i {
+    opacity: 1;
+}
 
 /* ---- Overview card header links ("Full schedule >" etc.): no browser-default grey button box ---- */
 .ov2-hd .link-btn {
@@ -5219,8 +5408,15 @@ html body .card:hover {
     cursor: pointer;
     transition: color .2s ease;
 }
-.ov2-hd .link-btn:hover { color: var(--secondary); }
-.ov2-hd .link-btn i { color: var(--secondary); }
+
+.ov2-hd .link-btn:hover {
+    color: var(--secondary);
+}
+
+.ov2-hd .link-btn i {
+    color: var(--secondary);
+}
+
 html body .profile-btn {
     border: 1px solid color-mix(in srgb, var(--secondary) 40%, transparent) !important;
     padding: 5px 12px 5px 5px !important;
@@ -5229,6 +5425,7 @@ html body .profile-btn {
 html body .profile-btn:hover {
     border-color: var(--secondary) !important;
 }
+
 :root {
     --font-heading: "Playfair Display", serif !important;
     --font-display: "Playfair Display", serif !important;
@@ -5239,6 +5436,7 @@ html body .profile-btn:hover {
 html body.dashboard-body {
     font-family: "Manrope", sans-serif !important;
 }
+
 /* =====================================================================
    MOBILE ALIGNMENT FIXES  (Galaxy S8+ 360x740 and other small phones)
    Keep this block at the very END of the file so it wins the cascade.
@@ -5246,10 +5444,30 @@ html body.dashboard-body {
 @media (max-width: 480px) {
 
     /* 0. Nothing may push the page wider than the screen */
-    html, body { overflow-x: hidden; }
-    .dash-app, .dash-main, .dash-panel, main { min-width: 0; max-width: 100%; }
-    .card { min-width: 0; max-width: 100%; box-sizing: border-box; }
-    .card h2, .card h3, .card p { overflow-wrap: break-word; }
+    html,
+    body {
+        overflow-x: hidden;
+    }
+
+    .dash-app,
+    .dash-main,
+    .dash-panel,
+    main {
+        min-width: 0;
+        max-width: 100%;
+    }
+
+    .card {
+        min-width: 0;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+
+    .card h2,
+    .card h3,
+    .card p {
+        overflow-wrap: break-word;
+    }
 
     /* 1. ENROLL / MY COURSES: cards were running off the right edge */
     .cr-grid {
@@ -5257,7 +5475,14 @@ html body.dashboard-body {
         gap: 16px;
         width: 100%;
     }
-    .cr-card { padding: 16px; gap: 14px; width: 100%; box-sizing: border-box; }
+
+    .cr-card {
+        padding: 16px;
+        gap: 14px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
     .cr-top {
         display: grid;
         grid-template-columns: 44px minmax(0, 1fr);
@@ -5265,16 +5490,45 @@ html body.dashboard-body {
         row-gap: 10px;
         align-items: start;
     }
-    .cr-top > div { grid-column: 2; }
-    .cr-top h2 { font-size: 17px; line-height: 1.25; }
-    .cr-top .mc-status {          /* status pill goes under the title, not beside it */
+
+    .cr-top>div {
+        grid-column: 2;
+    }
+
+    .cr-top h2 {
+        font-size: 17px;
+        line-height: 1.25;
+    }
+
+    .cr-top .mc-status {
+        /* status pill goes under the title, not beside it */
         grid-column: 2;
         justify-self: start;
     }
-    .cr-ic { width: 44px; height: 44px; }
-    .cr-facts li { display: flex; align-items: flex-start; gap: 8px; line-height: 1.4; }
-    .cr-facts i { margin: 2px 0 0; flex: none; }
-    .cr-actions { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+
+    .cr-ic {
+        width: 44px;
+        height: 44px;
+    }
+
+    .cr-facts li {
+        display: flex;
+        align-items: flex-start;
+        gap: 8px;
+        line-height: 1.4;
+    }
+
+    .cr-facts i {
+        margin: 2px 0 0;
+        flex: none;
+    }
+
+    .cr-actions {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+
     .cr-actions .btn {
         width: 100%;
         justify-content: center;
@@ -5284,7 +5538,13 @@ html body.dashboard-body {
     }
 
     /* 2. HOME: action buttons were clipped ("GO TO MY COURSE") */
-    .ov2-actions { display: grid; grid-template-columns: 1fr; gap: 10px; padding: 16px 16px 0; }
+    .ov2-actions {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 10px;
+        padding: 16px 16px 0;
+    }
+
     .ov2-actions .btn {
         width: 100%;
         min-width: 0;
@@ -5293,18 +5553,53 @@ html body.dashboard-body {
         text-align: center;
         line-height: 1.25;
     }
-    .ov2-next { margin: 0 16px; }
-    .ov2-info { padding: 16px; }
-    .ov2-when { font-size: 20px; line-height: 1.25; }
-    .ov2-where { align-items: flex-start; }
-    .ov2-teacher { align-items: center; }
-    .ov2-list { margin: 0 16px; }
-    .ov2-list .mini-check-item { align-items: flex-start; gap: 10px; }
-    .ov2-list .mini-check-item .task-label { flex: 1 1 0; }
-    .ov2-list .mini-check-item .task-due { flex: none; white-space: nowrap; }
+
+    .ov2-next {
+        margin: 0 16px;
+    }
+
+    .ov2-info {
+        padding: 16px;
+    }
+
+    .ov2-when {
+        font-size: 20px;
+        line-height: 1.25;
+    }
+
+    .ov2-where {
+        align-items: flex-start;
+    }
+
+    .ov2-teacher {
+        align-items: center;
+    }
+
+    .ov2-list {
+        margin: 0 16px;
+    }
+
+    .ov2-list .mini-check-item {
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .ov2-list .mini-check-item .task-label {
+        flex: 1 1 0;
+    }
+
+    .ov2-list .mini-check-item .task-due {
+        flex: none;
+        white-space: nowrap;
+    }
 
     /* Quick links: equal-height tiles, text centred and not squeezed */
-    .ov2-qas { padding: 0 16px; gap: 8px; grid-auto-rows: 1fr; }
+    .ov2-qas {
+        padding: 0 16px;
+        gap: 8px;
+        grid-auto-rows: 1fr;
+    }
+
     .ov2-qa {
         justify-content: flex-start;
         padding: 12px 4px;
@@ -5312,7 +5607,12 @@ html body.dashboard-body {
         line-height: 1.25;
         min-height: 92px;
     }
-    .ov2-fee, .ov2-prog, .ov2-quote { padding-inline: 16px; }
+
+    .ov2-fee,
+    .ov2-prog,
+    .ov2-quote {
+        padding-inline: 16px;
+    }
 
     /* 3. PROFILE: big empty gap in hero + squashed "Personal details" header */
     .pf-hero {
@@ -5322,9 +5622,22 @@ html body.dashboard-body {
         gap: 16px;
         padding: 22px 16px;
     }
-    .pf-id { flex: 0 0 auto; width: 100%; }      /* flex-basis:300px was making it 300px tall */
-    .pf-teacher { justify-content: center; }
-    .pf-editmain { width: 100%; margin: 0; align-self: stretch; }
+
+    .pf-id {
+        flex: 0 0 auto;
+        width: 100%;
+    }
+
+    /* flex-basis:300px was making it 300px tall */
+    .pf-teacher {
+        justify-content: center;
+    }
+
+    .pf-editmain {
+        width: 100%;
+        margin: 0;
+        align-self: stretch;
+    }
 
     .pn-hd {
         display: grid;
@@ -5333,12 +5646,29 @@ html body.dashboard-body {
         align-items: center;
         padding: 16px 16px 12px;
     }
-    .pn-ic { width: 44px; height: 44px; }
-    .pn-hd > div { grid-column: 2; }
-    .pn-hd .btn { grid-column: 1 / -1; width: 100%; justify-self: stretch; }
+
+    .pn-ic {
+        width: 44px;
+        height: 44px;
+    }
+
+    .pn-hd>div {
+        grid-column: 2;
+    }
+
+    .pn-hd .btn {
+        grid-column: 1 / -1;
+        width: 100%;
+        justify-self: stretch;
+    }
 
     /* Form rows: icon + field perfectly aligned, full width */
-    .pf-form { grid-template-columns: minmax(0, 1fr); padding-inline: 16px; gap: 14px; }
+    .pf-form {
+        grid-template-columns: minmax(0, 1fr);
+        padding-inline: 16px;
+        gap: 14px;
+    }
+
     .pf-field {
         display: grid;
         grid-template-columns: 40px minmax(0, 1fr);
@@ -5346,24 +5676,67 @@ html body.dashboard-body {
         gap: 10px;
         width: 100%;
     }
-    .pf-field .form-row { width: 100%; min-width: 0; }
-    .pf-field input, .pf-field select { width: 100%; box-sizing: border-box; }
-    .pf-field label { display: block; text-align: start; margin-bottom: 6px; }
-    .pf-tg { gap: 10px; align-items: flex-start; }
-    .pf-save { padding-inline: 16px; }
-    .pf-save .btn { width: 100%; }
+
+    .pf-field .form-row {
+        width: 100%;
+        min-width: 0;
+    }
+
+    .pf-field input,
+    .pf-field select {
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .pf-field label {
+        display: block;
+        text-align: start;
+        margin-bottom: 6px;
+    }
+
+    .pf-tg {
+        gap: 10px;
+        align-items: flex-start;
+    }
+
+    .pf-save {
+        padding-inline: 16px;
+    }
+
+    .pf-save .btn {
+        width: 100%;
+    }
 
     /* 4. Shared: keep section headers on one tidy row */
-    .ov2-hd { gap: 10px; padding: 16px 16px 12px; }
-    .ov2-hd h2 { flex: 1 1 auto; font-size: 18px; }
-    .ov2-hd .link-btn { flex: none; font-size: 13px; }
+    .ov2-hd {
+        gap: 10px;
+        padding: 16px 16px 12px;
+    }
+
+    .ov2-hd h2 {
+        flex: 1 1 auto;
+        font-size: 18px;
+    }
+
+    .ov2-hd .link-btn {
+        flex: none;
+        font-size: 13px;
+    }
 }
 
 /* extra-tight phones (<=360px: Galaxy S8+, S9, etc.) */
 @media (max-width: 360px) {
-    .dash-topbar { padding-inline: 8px; }
-    .cr-actions { grid-template-columns: 1fr; }
-    .ov2-qa { font-size: 11.5px; }
+    .dash-topbar {
+        padding-inline: 8px;
+    }
+
+    .cr-actions {
+        grid-template-columns: 1fr;
+    }
+
+    .ov2-qa {
+        font-size: 11.5px;
+    }
 }
 
 /* =====================================================================
@@ -5379,18 +5752,33 @@ html body.dashboard-body {
         overscroll-behavior-x: contain;
         max-width: calc(100% - 32px);
     }
-    .bl-table { min-width: 620px; width: 100%; }
+
+    .bl-table {
+        min-width: 620px;
+        width: 100%;
+    }
+
     .bl-table th,
     .bl-table td {
         padding: 12px 14px;
-        white-space: nowrap;          /* dates / amounts never break mid-word */
+        white-space: nowrap;
+        /* dates / amounts never break mid-word */
         word-break: normal;
         overflow-wrap: normal;
     }
+
     .bl-table td strong,
-    .bl-table td span { white-space: nowrap; }
+    .bl-table td span {
+        white-space: nowrap;
+    }
+
     .bl-table td:nth-child(2),
-    .bl-table td:nth-child(3) { white-space: normal; min-width: 130px; }   /* event / course names may wrap by word */
+    .bl-table td:nth-child(3) {
+        white-space: normal;
+        min-width: 130px;
+    }
+
+    /* event / course names may wrap by word */
 
     /* Info boxes: icon on the left, never shrinks, text beside it */
     .mc-help,
@@ -5400,9 +5788,13 @@ html body.dashboard-body {
         gap: 12px;
         padding: 14px 16px;
     }
-    .mc-help { margin-inline: 0; }
-    .mc-help > i,
-    .bl-secure > i {
+
+    .mc-help {
+        margin-inline: 0;
+    }
+
+    .mc-help>i,
+    .bl-secure>i {
         flex: 0 0 auto;
         width: 28px;
         min-width: 28px;
@@ -5410,12 +5802,28 @@ html body.dashboard-body {
         line-height: 1;
         margin-top: 2px;
     }
-    .mc-help > i { font-size: 26px; }
-    .bl-secure > i { font-size: 22px; }
-    .mc-help > div,
-    .bl-secure { min-width: 0; }
-    .mc-help > div { flex: 1 1 0; }
-    .mc-help p, .bl-secure { line-height: 1.5; }
+
+    .mc-help>i {
+        font-size: 26px;
+    }
+
+    .bl-secure>i {
+        font-size: 22px;
+    }
+
+    .mc-help>div,
+    .bl-secure {
+        min-width: 0;
+    }
+
+    .mc-help>div {
+        flex: 1 1 0;
+    }
+
+    .mc-help p,
+    .bl-secure {
+        line-height: 1.5;
+    }
 }
 
 /* =====================================================================
@@ -5425,35 +5833,78 @@ html body.dashboard-body {
 @media (min-width: 1101px) {
 
     /* Profile: Personal details + Notifications end at the same line */
-    .pf-grid { align-items: stretch; }
-    .pf-grid > .pn-card {
+    .pf-grid {
+        align-items: stretch;
+    }
+
+    .pf-grid>.pn-card {
         display: flex;
         flex-direction: column;
         height: 100%;
     }
-    .pf-grid > .pn-card .pf-save { margin-top: auto; }
-    .pf-grid > .pn-card .pf-toggles {
+
+    .pf-grid>.pn-card .pf-save {
+        margin-top: auto;
+    }
+
+    .pf-grid>.pn-card .pf-toggles {
         flex: 1 1 auto;
         grid-template-columns: minmax(0, 1fr);
-        grid-auto-rows: 1fr;           /* 4 toggle rows share the extra height evenly */
+        grid-auto-rows: 1fr;
+        /* 4 toggle rows share the extra height evenly */
         align-content: stretch;
     }
-    .pf-grid > .pn-card .pf-tg { height: 100%; box-sizing: border-box; }
+
+    .pf-grid>.pn-card .pf-tg {
+        height: 100%;
+        box-sizing: border-box;
+    }
 
     /* Book a Class: booking card + summary card same height */
-    .bk-layout { align-items: stretch; }
-    .bk-layout > .card { height: 100%; box-sizing: border-box; }
-    .bk-sum { display: flex; flex-direction: column; }
-    .bk-sum .bk-total { margin-top: auto; }
-    .bk-main { display: flex; flex-direction: column; }
-    .bk-main .bk-legend { margin-top: auto; }
+    .bk-layout {
+        align-items: stretch;
+    }
+
+    .bk-layout>.card {
+        height: 100%;
+        box-sizing: border-box;
+    }
+
+    .bk-sum {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .bk-sum .bk-total {
+        margin-top: auto;
+    }
+
+    .bk-main {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .bk-main .bk-legend {
+        margin-top: auto;
+    }
 
     /* Fees & Payments + Overview: both columns end on the same line */
-    .bl-grid, .ov2-grid { align-items: stretch; }
-    .bl-main, .bl-side, .ov2-col { height: 100%; }
-    .bl-main > .card:last-child,
-    .bl-side > .card:last-child,
-    .ov2-col > .card:last-child { flex: 1 1 auto; }
+    .bl-grid,
+    .ov2-grid {
+        align-items: stretch;
+    }
+
+    .bl-main,
+    .bl-side,
+    .ov2-col {
+        height: 100%;
+    }
+
+    .bl-main>.card:last-child,
+    .bl-side>.card:last-child,
+    .ov2-col>.card:last-child {
+        flex: 1 1 auto;
+    }
 }
 
 /* =====================================================================
@@ -5469,17 +5920,41 @@ html body.dashboard-body {
         align-items: stretch;
         gap: 20px;
     }
-    [data-panel="courses"] .cr-grid > .cr-card:nth-child(1) { grid-column: 1; grid-row: 1 / span 2; }
-    [data-panel="courses"] .cr-grid > .cr-card:nth-child(2) { grid-column: 2; grid-row: 1 / span 2; }
-    [data-panel="courses"] .cr-grid > .cr-card:nth-child(3) { grid-column: 3; grid-row: 1; }
-    [data-panel="courses"] .cr-grid > .cr-card:nth-child(4) { grid-column: 3; grid-row: 2; }
+
+    [data-panel="courses"] .cr-grid>.cr-card:nth-child(1) {
+        grid-column: 1;
+        grid-row: 1 / span 2;
+    }
+
+    [data-panel="courses"] .cr-grid>.cr-card:nth-child(2) {
+        grid-column: 2;
+        grid-row: 1 / span 2;
+    }
+
+    [data-panel="courses"] .cr-grid>.cr-card:nth-child(3) {
+        grid-column: 3;
+        grid-row: 1;
+    }
+
+    [data-panel="courses"] .cr-grid>.cr-card:nth-child(4) {
+        grid-column: 3;
+        grid-row: 2;
+    }
 
     /* tall cards: spread content evenly, buttons stay at the bottom */
-    [data-panel="courses"] .cr-grid > .cr-card:nth-child(-n+2) { justify-content: space-between; }
+    [data-panel="courses"] .cr-grid>.cr-card:nth-child(-n+2) {
+        justify-content: space-between;
+    }
 
     /* stacked cards: tighter spacing so they stay compact */
-    [data-panel="courses"] .cr-grid > .cr-card:nth-child(n+3) { gap: 12px; padding: 18px 22px; }
-    [data-panel="courses"] .cr-grid > .cr-card:nth-child(n+3) .cr-actions { margin-top: 0; }
+    [data-panel="courses"] .cr-grid>.cr-card:nth-child(n+3) {
+        gap: 12px;
+        padding: 18px 22px;
+    }
+
+    [data-panel="courses"] .cr-grid>.cr-card:nth-child(n+3) .cr-actions {
+        margin-top: 0;
+    }
 }
 
 /* =====================================================================
@@ -5489,50 +5964,68 @@ html body.dashboard-body {
 @media (min-width: 1101px) {
 
     /* --- Book a Class: days + time slots grow, legend sits right under them --- */
-    .bk-main { gap: 16px; }
-    .bk-main .bk-legend { margin-top: 0; }
+    .bk-main {
+        gap: 16px;
+    }
+
+    .bk-main .bk-legend {
+        margin-top: 0;
+    }
+
     .bk-main .bk-days {
         flex: 1 1 auto;
         grid-auto-rows: 1fr;
     }
+
     .bk-main .bk-day {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
     }
+
     .bk-main .bk-slots {
         flex: 1 1 auto;
         grid-auto-rows: 1fr;
         align-content: stretch;
     }
-    .bk-main .bk-slot { display: flex; align-items: center; justify-content: center; }
+
+    .bk-main .bk-slot {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 
     /* --- Fees & Payments + Overview: last card in each column fills evenly --- */
-    .bl-main > .card:last-child,
-    .bl-side > .card:last-child,
-    .ov2-col > .card:last-child {
+    .bl-main>.card:last-child,
+    .bl-side>.card:last-child,
+    .ov2-col>.card:last-child {
         display: flex;
         flex-direction: column;
     }
-    .bl-main > .card:last-child .bl-rows,
-    .bl-side > .card:last-child .bl-rows {
+
+    .bl-main>.card:last-child .bl-rows,
+    .bl-side>.card:last-child .bl-rows {
         flex: 1 1 auto;
         display: flex;
         flex-direction: column;
     }
-    .bl-main > .card:last-child .bl-rows > li,
-    .bl-side > .card:last-child .bl-rows > li {
+
+    .bl-main>.card:last-child .bl-rows>li,
+    .bl-side>.card:last-child .bl-rows>li {
         flex: 1 1 auto;
         align-items: center;
     }
-    .bl-side > .card:last-child .bl-secure,
-    .bl-main > .card:last-child .bl-secure { margin-top: 14px; }
+
+    .bl-side>.card:last-child .bl-secure,
+    .bl-main>.card:last-child .bl-secure {
+        margin-top: 14px;
+    }
 
     /* Overview: fee reminder / bottom card content centred vertically */
-    .ov2-col > .card:last-child .ov2-fee,
-    .ov2-col > .card:last-child .ov2-list,
-    .ov2-col > .card:last-child .bl-rows {
+    .ov2-col>.card:last-child .ov2-fee,
+    .ov2-col>.card:last-child .ov2-list,
+    .ov2-col>.card:last-child .bl-rows {
         flex: 1 1 auto;
         display: flex;
         flex-direction: column;
@@ -5547,19 +6040,36 @@ html body.dashboard-body {
 
     /* My Courses: Keyboard + Vocals - extra height is shared between ALL gaps
        (header / progress / facts / buttons) instead of one big hole */
-    [data-panel="courses"] .cr-grid > .cr-card:nth-child(-n+2) .cr-actions { margin-top: 0; }
-    [data-panel="courses"] .cr-grid > .cr-card:nth-child(-n+2) .cr-facts { padding-top: 18px; padding-bottom: 4px; }
+    [data-panel="courses"] .cr-grid>.cr-card:nth-child(-n+2) .cr-actions {
+        margin-top: 0;
+    }
+
+    [data-panel="courses"] .cr-grid>.cr-card:nth-child(-n+2) .cr-facts {
+        padding-top: 18px;
+        padding-bottom: 4px;
+    }
 
     /* Fees & Payments: taller table rows so the left column matches the right one naturally */
-    .bl-table th { padding-block: 15px; }
-    .bl-table td { padding-block: 20px; }
+    .bl-table th {
+        padding-block: 15px;
+    }
+
+    .bl-table td {
+        padding-block: 20px;
+    }
 
     /* Preferred payment card (now last in the left column): content centred, not stuck to the top */
-    .bl-main > .card:last-child .bl-method { margin-block: auto; }
+    .bl-main>.card:last-child .bl-method {
+        margin-block: auto;
+    }
 }
 
 /* Video modal: show the poster image behind the play icon */
-.modal-video-frame { position: relative; overflow: hidden; }
+.modal-video-frame {
+    position: relative;
+    overflow: hidden;
+}
+
 .modal-video-frame #video-modal-poster {
     position: absolute;
     inset: 0;
@@ -5568,6 +6078,7 @@ html body.dashboard-body {
     object-fit: cover;
     z-index: 0;
 }
+
 .modal-video-frame::after {
     content: "";
     position: absolute;
@@ -5576,7 +6087,12 @@ html body.dashboard-body {
     background: linear-gradient(180deg, rgba(14, 20, 32, .10) 0%, rgba(14, 20, 32, .45) 100%);
     pointer-events: none;
 }
-.modal-video-frame svg { position: relative; z-index: 2; }
+
+.modal-video-frame svg {
+    position: relative;
+    z-index: 2;
+}
+
 @media (min-width: 1101px) {
     html body [data-panel="courses"] .cr-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -5585,7 +6101,7 @@ html body.dashboard-body {
         gap: 20px;
     }
 
-    html body [data-panel="courses"] .cr-grid > .cr-card:nth-child(n) {
+    html body [data-panel="courses"] .cr-grid>.cr-card:nth-child(n) {
         grid-column: auto;
         grid-row: auto;
         justify-content: flex-start;
@@ -5593,12 +6109,12 @@ html body.dashboard-body {
         padding: 22px;
     }
 
-    html body [data-panel="courses"] .cr-grid > .cr-card .cr-facts {
+    html body [data-panel="courses"] .cr-grid>.cr-card .cr-facts {
         padding-top: 14px;
         padding-bottom: 0;
     }
 
-    html body [data-panel="courses"] .cr-grid > .cr-card .cr-actions {
+    html body [data-panel="courses"] .cr-grid>.cr-card .cr-actions {
         margin-top: auto;
     }
 }
@@ -5607,7 +6123,7 @@ html body.dashboard-body {
     flex-wrap: wrap;
 }
 
-[data-panel="courses"] .cr-top > div {
+[data-panel="courses"] .cr-top>div {
     flex: 1 1 200px;
 }
 
@@ -5617,12 +6133,12 @@ html body.dashboard-body {
 }
 
 /* ===== Overview: Fee reminder fills the column down to the Upcoming performance card ===== */
-.ov2-col > .card:last-child .ov2-fee {
+.ov2-col>.card:last-child .ov2-fee {
     flex: 0 0 auto;
     justify-content: flex-start;
 }
 
-.ov2-col > .card:last-child .ov2-fee-rows {
+.ov2-col>.card:last-child .ov2-fee-rows {
     flex: 1 1 auto;
     display: flex;
     flex-direction: column;
@@ -5630,23 +6146,23 @@ html body.dashboard-body {
     margin-top: 12px;
 }
 
-.ov2-col > .card:last-child .ov2-fee-rows li {
+.ov2-col>.card:last-child .ov2-fee-rows li {
     flex: 1 1 auto;
 }
 
-.ov2-col > .card:last-child .ov2-fee-rows li {
+.ov2-col>.card:last-child .ov2-fee-rows li {
     padding-block: 10px;
 }
 
 /* Overview: when a column's last card is stretched, spread the extra height over its rows
    (no empty gap between the heading and the first row, or under the last row) */
-.ov2-col > .card:last-child .bl-rows {
+.ov2-col>.card:last-child .bl-rows {
     flex: 1 1 auto;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
 }
 
-.ov2-col > .card:last-child .bl-rows li {
+.ov2-col>.card:last-child .bl-rows li {
     flex: 1 1 auto;
 }
