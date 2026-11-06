@@ -1001,3 +1001,21 @@ div.ct-card:hover .ct-icon {
         justify-content: center;
     }
 }
+@media (min-width: 601px) and (max-width: 960px) {
+    .ct-layout {
+        grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
+        gap: 18px;
+    }
+
+    .ct-info {
+        grid-template-columns: 1fr;
+    }
+
+    .ct-info > :last-child:nth-child(odd) {
+        grid-column: auto;
+    }
+
+    .ct-grid {
+        grid-template-columns: 1fr;
+    }
+}
