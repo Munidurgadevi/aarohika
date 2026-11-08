@@ -1,10 +1,3 @@
-/* ==========================================================
-   courses.css  —  Courses page styles
-   Base: ../css/global.css (variables, .btn, .container, dark-mode)
-   Load order:  global.css  ->  courses.css
-   Classes "cr-" prefix tho, anni pages tho clash avvadu.
-   ========================================================== */
-
 .cr-section {
     position: relative;
     padding-block: 36px 76px;
@@ -12,7 +5,6 @@
     color: var(--text);
 }
 
-/* ---------- Shared: eyebrow / titles ---------- */
 .cr-eyebrow {
     display: inline-flex;
     align-items: center;
@@ -64,7 +56,6 @@
     line-height: 1.7;
 }
 
-/* ---------- Buttons ---------- */
 .cr-btn-primary {
     background: var(--primary);
     color: var(--btn-fg);
@@ -97,9 +88,6 @@ html[dir="rtl"] .cr-btn-arrow svg {
     transform: scaleX(-1);
 }
 
-/* ==========================================================
-   0 · Hero (image right, text left, guitar page hero laage)
-   ========================================================== */
 .cr-hero {
     position: relative;
     overflow: hidden;
@@ -268,7 +256,6 @@ html[dir="rtl"] .cr-hero-note svg {
     transform: scaleX(-1);
 }
 
-/* course rows: jump links ki header kinda padau avvakunda */
 .cr-row {
     scroll-margin-top: 100px;
 }
@@ -277,9 +264,6 @@ html[dir="rtl"] .cr-hero-note svg {
     scroll-margin-top: 80px;
 }
 
-/* ==========================================================
-   1 · Course rows (zigzag: image left/text right, then image right/text left)
-   ========================================================== */
 .cr-rows {
     display: grid;
     gap: 32px;
@@ -302,7 +286,6 @@ html[dir="rtl"] .cr-hero-note svg {
     transform: translateY(-3px);
 }
 
-/* Image side */
 .cr-row-media {
     position: relative;
     min-height: 380px;
@@ -316,7 +299,6 @@ html[dir="rtl"] .cr-hero-note svg {
     object-fit: cover;
 }
 
-/* image edge text loki fade avtundi */
 .cr-row-media::after {
     content: "";
     position: absolute;
@@ -338,7 +320,6 @@ html[dir="rtl"] .cr-hero-note svg {
     letter-spacing: .08em;
 }
 
-/* Text side */
 .cr-row-copy {
     display: flex;
     flex-direction: column;
@@ -402,7 +383,6 @@ html[dir="rtl"] .cr-hero-note svg {
     padding-inline: 22px;
 }
 
-/* Zigzag: even rows lo image right side, text left side */
 .cr-row.is-reverse .cr-row-media {
     order: 2;
 }
@@ -416,7 +396,6 @@ html[dir="rtl"] .cr-hero-note svg {
     inset-inline-end: 20px;
 }
 
-/* RTL lo fade direction flip */
 html[dir="rtl"] .cr-row-media::after {
     background: linear-gradient(to left, transparent 55%, var(--surface) 100%);
 }
@@ -429,9 +408,6 @@ html[dir="rtl"] .cr-row.is-reverse .cr-row-media::after {
     filter: brightness(.85);
 }
 
-/* ==========================================================
-   2 · Music for Every Age, Inspiration for Every Soul
-   ========================================================== */
 .cr-cards {
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -456,7 +432,6 @@ html[dir="rtl"] .cr-row.is-reverse .cr-row-media::after {
     border-color: color-mix(in srgb, var(--secondary) 55%, var(--border));
 }
 
-/* big faded number */
 .cr-card::after {
     content: attr(data-num);
     position: absolute;
@@ -533,9 +508,6 @@ html[dir="rtl"] .cr-card-link:hover svg {
     transform: scaleX(-1) translateX(4px);
 }
 
-/* ==========================================================
-   3 · CTA (dark banner)
-   ========================================================== */
 .cr-cta-section {
     padding-block: 24px 72px;
 }
@@ -659,9 +631,6 @@ html[dir="rtl"] .cr-cta-media::before {
     filter: brightness(.85);
 }
 
-/* ==========================================================
-   Responsive
-   ========================================================== */
 @media (max-width: 1100px) {
     .cr-cards {
         grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -717,7 +686,6 @@ html[dir="rtl"] .cr-cta-media::before {
 
 @media (max-width: 900px) {
 
-    /* rows: image paina, text kinda (zigzag off) */
     .cr-row,
     .cr-row.is-reverse {
         grid-template-columns: 1fr;
@@ -816,10 +784,6 @@ html[dir="rtl"] .cr-cta-media::before {
     }
 }
 
-/* ==========================================================
-   Hero slideshow: 4 images, 3s each, zoom motion, auto change
-   (pure CSS, 12s loop = 4 x 3s)
-   ========================================================== */
 .cr-slides {
     position: absolute;
     inset: 0;
@@ -877,7 +841,6 @@ html[dir="rtl"] .cr-cta-media::before {
     }
 }
 
-/* RTL: flip the whole slideshow instead of each image (keeps zoom working) */
 html[dir="rtl"] .cr-slides {
     transform: scaleX(-1);
 }

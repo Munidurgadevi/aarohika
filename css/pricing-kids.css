@@ -1,9 +1,3 @@
-/* =====================================================================
-   Aarohika Music Academy: Kids pricing extras
-   Load AFTER global.css and pricing.css.
-   ===================================================================== */
-
-/* soft floating notes in the hero, like the home page */
 .pr-kids .pr-hero-note {
     position: absolute;
     z-index: -1;
@@ -35,7 +29,6 @@
     transform: rotate(-6deg);
 }
 
-/* friendlier, rounder cards for the kids page */
 .pr-kids .pr-plan {
     border-radius: 24px;
 }
@@ -82,7 +75,6 @@
     }
 }
 
-/* ---------- hero: text left, 2x2 playful photo collage right ---------- */
 .pr-kids-grid {
     display: grid;
     grid-template-columns: minmax(0, 1.05fr) minmax(0, .95fr);
@@ -145,8 +137,6 @@
     }
 }
 
-
-/* hero on normal background: recolour notes + collage frames */
 .pr-kids .pr-hero-note {
     color: var(--secondary-color);
     opacity: .4;
@@ -157,8 +147,6 @@
     box-shadow: var(--shadow);
 }
 
-
-/* compact kids hero collage */
 .pr-kids-collage .kc {
     aspect-ratio: 1 / .92;
 }
@@ -190,7 +178,6 @@
     }
 }
 
-/* ===== What Your Child Gets: icon and heading in one row, text below ===== */
 .pr-kids .pr-feature {
     display: grid;
     grid-template-columns: auto minmax(0, 1fr);

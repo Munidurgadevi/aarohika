@@ -1112,7 +1112,6 @@
     }
 }
 
-/* ===== Showcase hero (multi-card cluster with 3D tilt) — colours come from global.css tokens ===== */
 .showcase-hero {
     position: relative;
     overflow: hidden;
@@ -1146,7 +1145,6 @@
     padding-block: 56px 64px;
 }
 
-/* stage = size container; every size inside scales with --u (1u = 1px at 760px wide) */
 .showcase-stage {
     --rx: 0deg;
     --ry: 0deg;
@@ -1179,7 +1177,6 @@ html[dir="rtl"] .showcase-stage {
     transition: transform .3s ease-out;
 }
 
-/* ---------- generic card ---------- */
 .sc {
     position: absolute;
     border-radius: calc(var(--u) * 24);
@@ -1219,7 +1216,6 @@ html[dir="rtl"] .showcase-stage {
     filter: brightness(.82) saturate(.95);
 }
 
-/* ---------- main card ---------- */
 .sc-main {
     left: 0;
     top: 3%;
@@ -1228,7 +1224,6 @@ html[dir="rtl"] .showcase-stage {
     transform: translateZ(0) translate(calc(var(--px) * var(--u) * -6), calc(var(--py) * var(--u) * -4));
 }
 
-/* ---------- stacked cards behind the main one ---------- */
 .showcase-stack {
     position: absolute;
     inset: 0;
@@ -1248,7 +1243,6 @@ html[dir="rtl"] .showcase-stage {
     transform: translateZ(calc(var(--u) * -52)) translate(calc(var(--dir) * var(--u) * 58), calc(var(--u) * 24)) rotate(calc(var(--dir) * 11deg));
 }
 
-/* ---------- main card: chips + panel ---------- */
 .showcase-chips {
     position: absolute;
     top: calc(var(--u) * 16);
@@ -1426,8 +1420,6 @@ html[dir="rtl"] .panel-btn svg {
     }
 }
 
-
-/* ---------- card inside the original hero ---------- */
 .home-hero .hero-visual {
     min-height: 0;
     height: auto;
@@ -1466,7 +1458,6 @@ html[dir="rtl"] .panel-btn svg {
     }
 }
 
-/* ===== Batches table: no scrolling, fits the page ===== */
 .batches-table-wrap {
     overflow: visible;
 }
@@ -1549,10 +1540,8 @@ html[dir="rtl"] .panel-btn svg {
     }
 }
 
-/* ===== Find Your Instructor: fit the page, no sideways scroll ===== */
 html,
 body {
-    /* clip (not hidden) so the sticky header keeps working */
     overflow-x: clip;
 }
 
@@ -1611,8 +1600,6 @@ body {
     }
 }
 
-/* ===== Shared section head: tagline (——— TEXT ———) -> heading -> one line =====
-   .tagline comes from global.css (lines either side, no numbers). */
 .sec-head {
     max-width: 820px;
     margin: 0 auto 40px;
@@ -1640,7 +1627,6 @@ body {
     line-height: 1.6;
 }
 
-/* Same vertical rhythm for every section after the hero */
 .find-instructor {
     padding-block: 72px 24px;
 }
@@ -1659,14 +1645,12 @@ body {
     text-align: center;
 }
 
-/* Batches: filter sits above the table inside the card */
 .batches-toolbar {
     display: flex;
     justify-content: flex-end;
     margin-bottom: 14px;
 }
 
-/* Kids / Adults: image on top, content below */
 .learn-card {
     grid-template-columns: 1fr;
     gap: 0;
@@ -1684,7 +1668,6 @@ body {
     padding: 24px;
 }
 
-/* Mentor CTA: card = image + buttons (text moved to the section head) */
 .mentor-cta-card {
     grid-template-columns: 1.1fr 1fr;
     gap: 0;
@@ -1773,7 +1756,6 @@ body {
     }
 }
 
-/* ===== Tablet (iPad Mini 768px): batches stay as a proper table, one row per batch ===== */
 @media (min-width: 601px) and (max-width: 900px) {
     .batches-table {
         display: table;
@@ -1870,7 +1852,6 @@ body {
     }
 }
 
-/* ===== Hero background image (25% opacity, follows light / dark mode) ===== */
 .home-hero {
     --hero-bg-image: url("https://i.pinimg.com/1200x/3c/5c/f4/3c5cf45790df7a19791d2de0e6262dab.jpg");
     --hero-bg-opacity: .25;
@@ -1888,7 +1869,6 @@ body {
     pointer-events: none;
 }
 
-/* soft fade into the page colour at the bottom edge (uses the theme background) */
 .home-hero::after {
     content: "";
     position: absolute;
@@ -1898,13 +1878,11 @@ body {
     pointer-events: none;
 }
 
-/* dark mode: same 25%, image slightly dimmed so it sits on the dark background */
 .dark-mode .home-hero::before {
     opacity: var(--hero-bg-opacity);
     filter: brightness(.75) saturate(.9);
 }
 
-/* ===== Mentor CTA card: full background image (zoom in / out), text above buttons, 4cm high ===== */
 .mentor-cta-card {
     --cta-card-height: 4cm;
     position: relative;
@@ -1918,7 +1896,6 @@ body {
     overflow: hidden;
 }
 
-/* image fills the whole card, sits behind the text */
 .mentor-cta-visual {
     position: absolute;
     inset: 0;
@@ -1940,7 +1917,6 @@ body {
     will-change: transform;
 }
 
-/* dark wash: strongest behind the text (start side), lighter towards the end */
 .mentor-cta-visual::before {
     content: "";
     position: absolute;
@@ -1971,7 +1947,6 @@ html[dir="rtl"].dark-mode .mentor-cta-visual::before {
     }
 }
 
-/* text above the buttons */
 .mentor-cta-copy {
     grid-column: 1;
     position: relative;
@@ -2008,7 +1983,6 @@ html[dir="rtl"].dark-mode .mentor-cta-visual::before {
     gap: 12px;
 }
 
-/* chevron points the right way in RTL */
 html[dir="rtl"] .mentor-btn svg:last-child {
     transform: scaleX(-1);
 }
@@ -2029,7 +2003,6 @@ html[dir="rtl"] .mentor-btn svg:last-child {
         height: auto;
     }
 
-    /* stacked layout: even wash over the whole image so the text stays readable */
     .mentor-cta-visual::before,
     html[dir="rtl"] .mentor-cta-visual::before {
         background: linear-gradient(180deg, rgba(21, 52, 39, .9), rgba(21, 52, 39, .78));
@@ -2040,7 +2013,6 @@ html[dir="rtl"] .mentor-btn svg:last-child {
         background: linear-gradient(180deg, rgba(8, 16, 12, .92), rgba(8, 16, 12, .8));
     }
 
-    /* buttons stay inside the card: long labels wrap instead of overflowing */
     html body .mentor-cta-actions .mentor-btn {
         width: 100%;
         min-width: 0;
@@ -2057,7 +2029,6 @@ html[dir="rtl"] .mentor-btn svg:last-child {
     }
 }
 
-/* ---- Hero social proof (avatars + stars + line, like the reference) ---- */
 .hero-proof {
     display: flex;
     align-items: center;
@@ -2102,7 +2073,6 @@ html[dir="rtl"] .mentor-btn svg:last-child {
     color: var(--text);
 }
 
-/* Instructors hero: original big heading, only the gaps are tightened so everything fits one screen */
 html body .home-hero h1 {
     font-size: clamp(36px, min(5.6vw, 9.6svh), 68px) !important;
     margin-bottom: 14px;
@@ -2136,7 +2106,6 @@ html body .home-hero .hero-actions {
     }
 }
 
-/* ===== Instructor cards: image flush with the card border (zooms inside its frame), one button ===== */
 html body .instructor-card {
     padding: 0 12px 12px;
     overflow: hidden;

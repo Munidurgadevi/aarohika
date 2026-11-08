@@ -1,23 +1,9 @@
-/* ==========================================================
-   Home 2: Hero section + music marquee
-   Typography, sizes, widths and colours come from global.css
-   (.home-hero, .hero-copy, .hero-eyebrow, h1, .hero-description,
-   .hero-actions) exactly like Home 1. This file only adds:
-   the background photo, the page-coloured fade, the typed line
-   and the marquee strip.
-   ========================================================== */
-
 :root {
     --h2-marquee-h: 52px;
 }
 
-/* ---------- Hero (extra layers only) ---------- */
 .h2-hero {
-    /* LTR image */
     --h2-img-ltr: url("https://i.ibb.co/KxbjKtw3/Sunlit-Harmony-Music-Studio.png");
-    /* RTL image: want a different photo in RTL? uncomment and set it
-       --h2-img-rtl: url("../css/image/home2-rtl.jpg");
-       --h2-rtl-flip: 1;                                                */
 
     --h2-fade: linear-gradient(to right,
             color-mix(in srgb, var(--bg) 98%, transparent) 0%,
@@ -29,7 +15,6 @@
     isolation: isolate;
     display: flex;
     align-items: center;
-    /* hero + marquee = one screen (--h2-header-h is measured by JS) */
     min-height: max(440px, calc(100svh - var(--h2-header-h, var(--header-height, 76px)) - var(--h2-marquee-h)));
 }
 
@@ -37,7 +22,6 @@
     padding-block: 20px;
 }
 
-/* compact spacing (font sizes stay exactly like Home 1) so hero + strip fit one screen */
 .h2-hero .home-hero-inner {
     width: min(var(--container-width), calc(100% - (var(--page-padding) * 2)));
     min-height: 0;
@@ -52,7 +36,6 @@
     margin-bottom: 0;
 }
 
-/* photo layer */
 .h2-hero::after {
     content: "";
     position: absolute;
@@ -67,7 +50,6 @@
     transform: scaleX(var(--h2-rtl-flip, -1));
 }
 
-/* page-coloured fade on the text side (+ soft dim in dark mode) */
 .h2-hero::before {
     content: "";
     position: absolute;
@@ -90,15 +72,12 @@
     transform: scaleX(-1);
 }
 
-/* typed line: sits on its own line under "Learn Music", same colour as Home 1's gold line */
 .h2-typed {
     display: block;
 }
 
-/* ---------- Music marquee (animated label strip) ---------- */
 .h2-marquee {
     position: sticky;
-    /* safety: stays at the bottom edge of the screen while the hero is in view */
     bottom: 0;
     z-index: 5;
     height: var(--h2-marquee-h);
@@ -110,11 +89,9 @@
     overflow: hidden;
 }
 
-/* soft fade at both ends */
 .h2-marquee-viewport {
     width: 100%;
     direction: ltr;
-    /* track always starts at the left edge, also in RTL */
     overflow: hidden;
     -webkit-mask-image: linear-gradient(to right, transparent 0, #000 6%, #000 94%, transparent 100%);
     mask-image: linear-gradient(to right, transparent 0, #000 6%, #000 94%, transparent 100%);
@@ -125,7 +102,6 @@
     align-items: center;
     width: max-content;
     direction: ltr;
-    /* keeps the loop maths the same in RTL */
     animation: h2-marquee 40s linear infinite;
     will-change: transform;
 }
@@ -137,8 +113,6 @@
 [dir="rtl"] .h2-marquee-track {
     animation-direction: reverse;
 }
-
-/* scrolls the other way in RTL */
 
 .h2-marquee-group {
     display: flex;
@@ -192,8 +166,6 @@
     }
 }
 
-
-/* ---------- Responsive ---------- */
 @media (max-width: 1000px) {
     .h2-hero {
         --h2-fade: linear-gradient(to right,
@@ -230,13 +202,6 @@
     }
 }
 
-
-/* ==========================================================
-   Home 2: "Start Your Music Journey" (steps)
-   Fonts, sizes, weights and colours follow the Home 1 sections
-   (eyebrow 13px/800, Georgia title, text-soft description,
-   Georgia 700 step titles) and global.css variables.
-   ========================================================== */
 .h2j-section {
     position: relative;
     overflow: hidden;
@@ -254,7 +219,6 @@
     margin-inline: auto;
 }
 
-/* ----- photo: a normal image card ----- */
 .h2j-photo {
     position: relative;
     overflow: hidden;
@@ -283,7 +247,6 @@
     filter: brightness(.88);
 }
 
-/* ----- content ----- */
 .h2j-content {
     min-width: 0;
     align-self: center;
@@ -333,7 +296,6 @@
     line-height: 1.75;
 }
 
-/* ----- steps ----- */
 .h2j-steps {
     list-style: none;
     display: grid;
@@ -347,7 +309,6 @@
     gap: 18px;
 }
 
-/* line joining the numbered circles */
 .h2j-step:not(:last-child)::after {
     content: "";
     position: absolute;
@@ -392,7 +353,6 @@
     line-height: 1.5;
 }
 
-/* ----- responsive ----- */
 @media (max-width: 900px) {
     .h2j-inner {
         grid-template-columns: 1fr;
@@ -423,12 +383,6 @@
     }
 }
 
-
-/* ==========================================================
-   Home 2: Instruments (image cards, name shows only on hover)
-   Click a card -> opens that course page.
-   Fonts / sizes / colours follow the Home 1 courses section.
-   ========================================================== */
 .h2c-section {
     background: var(--bg);
     color: var(--text);
@@ -488,14 +442,12 @@
     color: var(--text);
 }
 
-/* ----- grid ----- */
 .h2c-grid {
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 20px;
 }
 
-/* ----- card ----- */
 .h2c-card {
     position: relative;
     isolation: isolate;
@@ -520,7 +472,6 @@
     outline-offset: 3px;
 }
 
-/* shows through only if the photo is missing */
 .h2c-fallback {
     position: absolute;
     inset: 0;
@@ -549,7 +500,6 @@
     transform: scale(1.08);
 }
 
-/* dark green fade, appears on hover */
 .h2c-card::after {
     content: "";
     position: absolute;
@@ -568,7 +518,6 @@
     opacity: 1;
 }
 
-/* name: hidden until hover */
 .h2c-name {
     position: absolute;
     inset-inline: 20px;
@@ -617,7 +566,6 @@
     transform: scaleX(-1);
 }
 
-/* photos (add yours in css/image/) */
 .h2c-card.guitar {
     --img: url("https://i.pinimg.com/736x/84/07/29/840729a184f48baf93479911a0c2a8bb.jpg");
 }
@@ -634,7 +582,6 @@
     --img: url("https://i.pinimg.com/1200x/62/0a/0b/620a0b2cf4f982de34e63943df86ed94.jpg");
 }
 
-
 @media (prefers-reduced-motion: reduce) {
 
     .h2c-card,
@@ -645,7 +592,6 @@
     }
 }
 
-/* ----- responsive ----- */
 @media (max-width: 1000px) {
     .h2c-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -687,12 +633,6 @@
     }
 }
 
-/* ==========================================================
-   Home 2: Learning paths (tabs) / Testimonials / CTA
-   Same fonts, sizes, weights and colours as Home 1.
-   ========================================================== */
-
-/* ---------- shared heading ---------- */
 .h2p-section,
 .h2t-section {
     background: var(--bg);
@@ -768,7 +708,6 @@
     line-height: 1.75;
 }
 
-/* ---------- 1) Learning paths: Kids / Adults switch ---------- */
 .h2p-switch {
     position: relative;
     display: flex;
@@ -1161,7 +1100,6 @@
     transform: scaleX(-1);
 }
 
-/* ---------- 2) Testimonials ---------- */
 .h2t-grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -1273,7 +1211,6 @@
     letter-spacing: .04em;
 }
 
-/* ---------- 2b) Meet our teachers ---------- */
 .h2t-section.h2m-section {
     padding-top: 0;
 }
@@ -1403,7 +1340,6 @@
     overflow: hidden;
 }
 
-/* ---------- 3) CTA: text + normal image ---------- */
 .h2x-section {
     background: var(--bg);
     padding-block: 24px 72px;
@@ -1534,7 +1470,6 @@
     transform: translateY(-1px);
 }
 
-/* ---------- Responsive (S8+ 360, iPad mini 768/1024, Nest Hub 1024x600, 1920x1080) ---------- */
 @media (min-width: 1700px) {
 
     .h2p-section,
@@ -1723,12 +1658,10 @@
     }
 }
 
-/* Home 2: no back-to-top button */
 .back-to-top {
     display: none !important;
 }
 
-/* ===== Tablet (iPad Mini 768px): testimonials + teachers stay 3 in a row ===== */
 @media (min-width: 601px) and (max-width: 1000px) {
 
     .h2t-grid,

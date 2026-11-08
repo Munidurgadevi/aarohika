@@ -160,7 +160,6 @@
     <section class="h2j-section" aria-labelledby="h2j-title">
         <div class="h2j-inner">
             <div class="h2j-photo">
-                <!-- replace src with your own photo -->
                 <img src="https://i.pinimg.com/736x/bb/15/0b/bb150bb3d00ae320911d45b49b16d6c1.jpg"
                     alt="A sunlit music studio with guitar, piano and drums" loading="lazy" decoding="async">
             </div>
@@ -198,7 +197,6 @@
             </div>
         </div>
     </section>
-    <!-- ===== Music for Every Age (Kids / Adults switch) ===== -->
     <section class="h2p-section" aria-labelledby="h2p-title">
         <div class="h2p-inner">
             <div class="h2p-head">
@@ -217,7 +215,6 @@
 
             <div class="h2p-panel" role="tabpanel" id="h2p-kids" aria-labelledby="h2p-tab-kids">
                 <div class="h2p-media">
-                    <!-- replace src with your own kids photo -->
                     <img src="https://i.pinimg.com/736x/d1/64/27/d164278d88f31c263f93b0dd3a0768ef.jpg"
                         alt="A young student playing the keyboard with headphones" loading="lazy" decoding="async">
                     <div class="h2p-chip"><i data-lucide="sparkles"></i>
@@ -271,7 +268,6 @@
 
             <div class="h2p-panel" role="tabpanel" id="h2p-adults" aria-labelledby="h2p-tab-adults" hidden>
                 <div class="h2p-media">
-                    <!-- replace src with your own adults photo -->
                     <img src="https://i.pinimg.com/1200x/c2/01/a2/c201a24f5540261f8863c5b706dbea24.jpg"
                         alt="An adult student performing on stage" loading="lazy" decoding="async">
                     <div class="h2p-chip"><i data-lucide="coffee"></i>
@@ -325,7 +321,6 @@
         </div>
     </section>
 
-    <!-- ===== Testimonials (replace sample text and photos with real ones) ===== -->
     <section class="h2t-section" aria-labelledby="h2t-title">
         <div class="h2t-inner">
             <div class="h2t-head">
@@ -378,7 +373,6 @@
         </div>
     </section>
 
-    <!-- ===== Meet our teachers (replace names, photos and bios with real ones) ===== -->
     <section class="h2t-section h2m-section" aria-labelledby="h2m-title">
         <div class="h2t-inner">
             <div class="h2t-head">
@@ -435,7 +429,6 @@
         </div>
     </section>
 
-    <!-- ===== CTA: text + image ===== -->
     <section class="h2x-section" aria-labelledby="h2x-title">
         <div class="h2x-inner">
             <div class="h2x-copy">
@@ -450,7 +443,6 @@
                 </div>
             </div>
             <div class="h2x-media">
-                <!-- replace src with your own photo -->
                 <img src="https://i.pinimg.com/1200x/d0/3b/dd/d03bddee0bde83ebac1c385789542c28.jpg"
                     alt="A student enjoying a music class at Aarohika Music Academy" loading="lazy" decoding="async">
             </div>
@@ -530,7 +522,6 @@
     <script src="../js/main.js?v=4"></script>
     <script>
         (function () {
-            /* 1) measure the real header height so hero + strip always fit one screen */
             function setHeaderH() {
                 var hd = document.querySelector(".site-header");
                 if (hd) document.documentElement.style.setProperty("--h2-header-h", hd.offsetHeight + "px");
@@ -539,17 +530,14 @@
             window.addEventListener("resize", setHeaderH);
             window.addEventListener("load", setHeaderH);
 
-            /* 2) typing animation: type -> hold 2s -> next text */
             var el = document.querySelector(".h2-typed-text");
             if (!el) return;
             var words = ["Live Your Passion", "Find Your Rhythm", "Create Your Sound"];
-            if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return; // keep first text, no animation
+            if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
 
             var w = 0, c = words[0].length;
             var TYPE = 85, HOLD = 2000;
 
-            // type the current word; when finished hold 2s, then jump straight to the
-            // first letter of the next word (never an empty line, so no gap and no caret)
             function tick() {
                 var word = words[w];
                 if (c < word.length) {
@@ -563,12 +551,10 @@
                 setTimeout(tick, TYPE);
             }
 
-            // first text is already shown: hold 2s, then start the cycle
             setTimeout(tick, HOLD);
         })();
     </script>
     <script>
-        /* Music for Every Age: Kids / Adults tab switch */
         (function () {
             var sw = document.querySelector(".h2p-switch");
             if (!sw) return;
@@ -591,7 +577,7 @@
                     if (on) {
                         panel.hidden = false;
                         panel.classList.remove("is-in");
-                        void panel.offsetWidth; /* restart animation */
+                        void panel.offsetWidth;
                         panel.classList.add("is-in");
                     } else {
                         panel.hidden = true;
@@ -617,14 +603,11 @@
                 });
             });
 
-            /* first position without sliding in from 0 */
             pill.style.transition = "none";
             select(current);
             void pill.offsetWidth;
             pill.style.transition = "";
 
-            /* keep pill aligned when layout / fonts / direction change */
-            /* re-align pill when LTR / RTL is toggled */
             new MutationObserver(function () {
                 pill.style.transition = "none";
                 movePill(current);

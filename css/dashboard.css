@@ -29,7 +29,6 @@ body.dashboard-body {
     overflow: hidden;
 }
 
-
 .dash-app {
     display: flex;
     flex-direction: column;
@@ -204,7 +203,6 @@ body.dashboard-body {
     color: var(--gold);
 }
 
-
 .profile-btn {
     display: flex;
     align-items: center;
@@ -321,13 +319,11 @@ body.dashboard-body {
     color: var(--rust);
 }
 
-
 .dash-body {
     flex: 1;
     display: flex;
     min-height: 0;
 }
-
 
 .dash-sidebar {
     width: var(--sidebar-w);
@@ -415,7 +411,6 @@ body.dashboard-body {
     display: none;
 }
 
-
 .dash-main {
     flex: 1;
     overflow-y: auto;
@@ -469,7 +464,6 @@ body.dashboard-body {
         transform: none;
     }
 }
-
 
 .card {
     background: var(--surface);
@@ -593,7 +587,6 @@ body.dashboard-body {
     font-size: 12.5px;
     border-radius: var(--radius);
 }
-
 
 .upcoming-card {
     display: flex;
@@ -742,7 +735,6 @@ body.dashboard-body {
     color: var(--text-soft);
     flex: none;
 }
-
 
 .filter-bar {
     display: flex;
@@ -903,7 +895,6 @@ body.dashboard-body {
     font-size: 18px;
 }
 
-
 .tab-row {
     display: flex;
     gap: 6px;
@@ -991,7 +982,6 @@ body.dashboard-body {
     gap: 8px;
     flex: none;
 }
-
 
 .skills-grid {
     display: grid;
@@ -1167,7 +1157,6 @@ body.dashboard-body {
     font-weight: 600;
 }
 
-
 .recordings-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -1271,7 +1260,6 @@ html.dark-mode .recording-thumb {
     font-size: 12px;
     color: var(--text-soft);
 }
-
 
 .due-card {
     display: flex;
@@ -1393,7 +1381,6 @@ html.dark-mode .recording-thumb {
 .pay-table a:hover {
     color: var(--gold-hover);
 }
-
 
 .profile-grid {
     display: grid;
@@ -1527,7 +1514,6 @@ html.dark-mode .recording-thumb {
     transform: translateX(-18px);
 }
 
-
 .modal-overlay {
     position: fixed;
     inset: 0;
@@ -1632,7 +1618,6 @@ html.dark-mode .recording-thumb {
 [dir="rtl"] .toast.show {
     transform: translateX(50%) translateY(0);
 }
-
 
 @media (max-width: 1180px) {
     .metrics-row {
@@ -1751,8 +1736,6 @@ html.dark-mode .recording-thumb {
         width: 100%;
     }
 
-    /* Brand + topbar cluster: shrink first, hide subtitle next, so RTL/theme
-     buttons never overlap the wordmark */
     .topbar-left {
         gap: 10px;
     }
@@ -1786,7 +1769,6 @@ html.dark-mode .recording-thumb {
 
 @media (max-width: 360px) {}
 
-/* ---- Aarohika additions (global.css colours, fonts) ---- */
 .dash-app h1,
 .dash-app h2,
 .dash-app h3,
@@ -1921,7 +1903,6 @@ html.dark-mode .recording-thumb {
     }
 }
 
-/* ---- Sidebar: soft rail with gold marker ---- */
 .side-student {
     display: flex;
     align-items: center;
@@ -1977,7 +1958,6 @@ html.dark-mode .recording-thumb {
     background: var(--secondary);
 }
 
-/* ---- Overview: staff-line banner + one divided strip ---- */
 .btn-gold {
     background: var(--secondary);
     color: var(--secondary-contrast);
@@ -2148,7 +2128,6 @@ html.dark-mode .recording-thumb {
     }
 }
 
-/* Bootstrap Icons in header buttons + profile photo */
 .icon-btn .bi {
     font-size: 18px;
     line-height: 1;
@@ -2161,7 +2140,6 @@ img.avatar {
     background: var(--ink);
 }
 
-/* ---- Overview (matches the Overview mockup) ---- */
 .ov2-metrics {
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -2646,7 +2624,6 @@ img.avatar {
     }
 }
 
-/* ---- Join a batch (matches the Batch Selection mockup) ---- */
 .dash-main[data-active="book"] .dash-page-head {
     position: relative;
 }
@@ -3112,7 +3089,6 @@ img.avatar {
     }
 }
 
-/* ---- Batch grid: stacked, readable slot cards ---- */
 .bt-board {
     margin-top: 22px;
     padding: 22px;
@@ -3224,7 +3200,6 @@ img.avatar {
     }
 }
 
-/* ---- Batch slots: one clean, even card style ---- */
 .bt-sechd {
     flex-wrap: wrap;
 }
@@ -3399,7 +3374,6 @@ img.avatar {
     background: var(--gold-soft);
 }
 
-/* ---- Practice & Growth (matches the Practice mockup) ---- */
 .pg-card {
     padding: 0 0 20px;
     border-radius: var(--radius-lg);
@@ -3775,7 +3749,6 @@ img.avatar {
     }
 }
 
-/* ---- Shared panel pieces ---- */
 .pn-card {
     padding: 0 0 20px;
     border-radius: var(--radius-lg);
@@ -3899,7 +3872,6 @@ img.avatar {
     background: var(--gold);
 }
 
-/* ---- My Classes ---- */
 .mc-tabs {
     display: flex;
     gap: 10px;
@@ -4078,7 +4050,6 @@ img.avatar {
     font-size: 13.5px;
 }
 
-/* ---- Fees & Billing ---- */
 .bl-due {
     position: relative;
     overflow: hidden;
@@ -4324,7 +4295,6 @@ img.avatar {
     font-size: 20px;
 }
 
-/* ---- Profile ---- */
 .pf-hero {
     display: flex;
     align-items: center;
@@ -4596,7 +4566,6 @@ img.avatar {
     }
 }
 
-/* ---- Profile: roomy personal information form ---- */
 .pf-grid {
     grid-template-columns: 1fr;
 }
@@ -4710,7 +4679,6 @@ img.avatar {
     }
 }
 
-/* ===== My Courses ===== */
 .cr-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
@@ -4809,7 +4777,6 @@ img.avatar {
     opacity: .85;
 }
 
-/* ===== Performances ===== */
 [data-panel="performances"] .ov2-metrics {
     grid-template-columns: repeat(3, 1fr);
     margin-bottom: 20px;
@@ -4829,7 +4796,6 @@ img.avatar {
     }
 }
 
-/* Remove the decorative lines above/below the page eyebrow (dashboard only) */
 html body .dash-page-head .tagline::before,
 html body .dash-page-head .tagline::after,
 html body .dash-page-head .eyebrow::before,
@@ -4838,7 +4804,6 @@ html body .dash-page-head .eyebrow::after {
     display: none !important;
 }
 
-/* ---- Notification photos + Enroll ---- */
 .notif-ava {
     width: 34px;
     height: 34px;
@@ -4856,8 +4821,6 @@ html body .dash-page-head .eyebrow::after {
     font-weight: 700;
 }
 
-
-/* ---- Cards added in empty spaces ---- */
 .bl-main {
     display: flex;
     flex-direction: column;
@@ -4887,7 +4850,6 @@ html body .dash-page-head .eyebrow::after {
     flex: 1;
 }
 
-/* Mobile (Galaxy S8+ 360px etc.): keep "Music Academy" tagline under the logo title */
 @media (max-width:480px) {
     html body .dash-topbar .brand-text {
         gap: 1px;
@@ -4901,8 +4863,6 @@ html body .dash-page-head .eyebrow::after {
     }
 }
 
-
-/* LTR <-> RTL switch: no sliding animation, and a closed sidebar stays hidden */
 html.dir-switching .dash-sidebar,
 html.dir-switching .sidebar-scrim {
     transition: none !important;
@@ -4925,7 +4885,6 @@ html body.dashboard-body .dash-page-head .tagline {
     font-size: 10px !important;
 }
 
-/* Hover effect for all dashboard cards */
 html body .card {
     transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
 }
@@ -4936,10 +4895,6 @@ html body .card:hover {
     box-shadow: 0 14px 30px rgba(0, 0, 0, .12);
 }
 
-/* =====================================================
-   Header welcome + search  |  Book a Class panel
-   (appended block - nothing above was changed)
-   ===================================================== */
 .dash-topbar .topbar-left {
     flex: 0 0 auto;
 }
@@ -5037,7 +4992,6 @@ html body .card:hover {
     }
 }
 
-/* ---- Book a Class ---- */
 .bk-layout {
     display: grid;
     grid-template-columns: minmax(0, 1fr) 340px;
@@ -5288,7 +5242,6 @@ html body .card:hover {
     }
 }
 
-/* ---- Custom tutor dropdown (replaces the plain browser list) ---- */
 .bk-select.bk-native {
     display: none;
 }
@@ -5397,7 +5350,6 @@ html body .card:hover {
     opacity: 1;
 }
 
-/* ---- Overview card header links ("Full schedule >" etc.): no browser-default grey button box ---- */
 .ov2-hd .link-btn {
     background: transparent;
     border: 0;
@@ -5437,13 +5389,8 @@ html body.dashboard-body {
     font-family: "Manrope", sans-serif !important;
 }
 
-/* =====================================================================
-   MOBILE ALIGNMENT FIXES  (Galaxy S8+ 360x740 and other small phones)
-   Keep this block at the very END of the file so it wins the cascade.
-   ===================================================================== */
 @media (max-width: 480px) {
 
-    /* 0. Nothing may push the page wider than the screen */
     html,
     body {
         overflow-x: hidden;
@@ -5469,7 +5416,6 @@ html body.dashboard-body {
         overflow-wrap: break-word;
     }
 
-    /* 1. ENROLL / MY COURSES: cards were running off the right edge */
     .cr-grid {
         grid-template-columns: minmax(0, 1fr);
         gap: 16px;
@@ -5501,7 +5447,6 @@ html body.dashboard-body {
     }
 
     .cr-top .mc-status {
-        /* status pill goes under the title, not beside it */
         grid-column: 2;
         justify-self: start;
     }
@@ -5537,7 +5482,6 @@ html body.dashboard-body {
         font-size: 12px;
     }
 
-    /* 2. HOME: action buttons were clipped ("GO TO MY COURSE") */
     .ov2-actions {
         display: grid;
         grid-template-columns: 1fr;
@@ -5593,7 +5537,6 @@ html body.dashboard-body {
         white-space: nowrap;
     }
 
-    /* Quick links: equal-height tiles, text centred and not squeezed */
     .ov2-qas {
         padding: 0 16px;
         gap: 8px;
@@ -5614,7 +5557,6 @@ html body.dashboard-body {
         padding-inline: 16px;
     }
 
-    /* 3. PROFILE: big empty gap in hero + squashed "Personal details" header */
     .pf-hero {
         display: flex;
         flex-direction: column;
@@ -5628,7 +5570,6 @@ html body.dashboard-body {
         width: 100%;
     }
 
-    /* flex-basis:300px was making it 300px tall */
     .pf-teacher {
         justify-content: center;
     }
@@ -5662,7 +5603,6 @@ html body.dashboard-body {
         justify-self: stretch;
     }
 
-    /* Form rows: icon + field perfectly aligned, full width */
     .pf-form {
         grid-template-columns: minmax(0, 1fr);
         padding-inline: 16px;
@@ -5707,7 +5647,6 @@ html body.dashboard-body {
         width: 100%;
     }
 
-    /* 4. Shared: keep section headers on one tidy row */
     .ov2-hd {
         gap: 10px;
         padding: 16px 16px 12px;
@@ -5724,7 +5663,6 @@ html body.dashboard-body {
     }
 }
 
-/* extra-tight phones (<=360px: Galaxy S8+, S9, etc.) */
 @media (max-width: 360px) {
     .dash-topbar {
         padding-inline: 8px;
@@ -5739,12 +5677,8 @@ html body.dashboard-body {
     }
 }
 
-/* =====================================================================
-   MOBILE FIX 2: tables scroll sideways + icon/text info boxes
-   ===================================================================== */
 @media (max-width: 480px) {
 
-    /* Tables: keep real width, scroll horizontally inside the card */
     .bl-tablewrap {
         margin: 0 16px;
         overflow-x: auto;
@@ -5762,7 +5696,6 @@ html body.dashboard-body {
     .bl-table td {
         padding: 12px 14px;
         white-space: nowrap;
-        /* dates / amounts never break mid-word */
         word-break: normal;
         overflow-wrap: normal;
     }
@@ -5778,9 +5711,6 @@ html body.dashboard-body {
         min-width: 130px;
     }
 
-    /* event / course names may wrap by word */
-
-    /* Info boxes: icon on the left, never shrinks, text beside it */
     .mc-help,
     .bl-secure {
         display: flex;
@@ -5826,13 +5756,8 @@ html body.dashboard-body {
     }
 }
 
-/* =====================================================================
-   DESKTOP FIX (1920x1080 and other wide screens):
-   side-by-side cards must share the same top AND bottom edges.
-   ===================================================================== */
 @media (min-width: 1101px) {
 
-    /* Profile: Personal details + Notifications end at the same line */
     .pf-grid {
         align-items: stretch;
     }
@@ -5851,7 +5776,6 @@ html body.dashboard-body {
         flex: 1 1 auto;
         grid-template-columns: minmax(0, 1fr);
         grid-auto-rows: 1fr;
-        /* 4 toggle rows share the extra height evenly */
         align-content: stretch;
     }
 
@@ -5860,7 +5784,6 @@ html body.dashboard-body {
         box-sizing: border-box;
     }
 
-    /* Book a Class: booking card + summary card same height */
     .bk-layout {
         align-items: stretch;
     }
@@ -5888,7 +5811,6 @@ html body.dashboard-body {
         margin-top: auto;
     }
 
-    /* Fees & Payments + Overview: both columns end on the same line */
     .bl-grid,
     .ov2-grid {
         align-items: stretch;
@@ -5907,12 +5829,6 @@ html body.dashboard-body {
     }
 }
 
-/* =====================================================================
-   MY COURSES (desktop / 1920x1080):
-   Keyboard + Vocals = two tall cards, "Rhythm Basics" and "Add a new
-   course" are stacked one under the other in the 3rd column, so there is
-   no empty space inside the short cards.
-   ===================================================================== */
 @media (min-width: 1101px) {
     [data-panel="courses"] .cr-grid {
         grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -5941,12 +5857,10 @@ html body.dashboard-body {
         grid-row: 2;
     }
 
-    /* tall cards: spread content evenly, buttons stay at the bottom */
     [data-panel="courses"] .cr-grid>.cr-card:nth-child(-n+2) {
         justify-content: space-between;
     }
 
-    /* stacked cards: tighter spacing so they stay compact */
     [data-panel="courses"] .cr-grid>.cr-card:nth-child(n+3) {
         gap: 12px;
         padding: 18px 22px;
@@ -5957,13 +5871,8 @@ html body.dashboard-body {
     }
 }
 
-/* =====================================================================
-   NO EMPTY SPACE inside stretched cards (desktop)
-   Cards keep equal top/bottom edges, but the content grows to fill them.
-   ===================================================================== */
 @media (min-width: 1101px) {
 
-    /* --- Book a Class: days + time slots grow, legend sits right under them --- */
     .bk-main {
         gap: 16px;
     }
@@ -5996,7 +5905,6 @@ html body.dashboard-body {
         justify-content: center;
     }
 
-    /* --- Fees & Payments + Overview: last card in each column fills evenly --- */
     .bl-main>.card:last-child,
     .bl-side>.card:last-child,
     .ov2-col>.card:last-child {
@@ -6022,7 +5930,6 @@ html body.dashboard-body {
         margin-top: 14px;
     }
 
-    /* Overview: fee reminder / bottom card content centred vertically */
     .ov2-col>.card:last-child .ov2-fee,
     .ov2-col>.card:last-child .ov2-list,
     .ov2-col>.card:last-child .bl-rows {
@@ -6033,13 +5940,8 @@ html body.dashboard-body {
     }
 }
 
-/* =====================================================================
-   SPACING POLISH (desktop) - spread extra height evenly, no big gaps
-   ===================================================================== */
 @media (min-width: 1101px) {
 
-    /* My Courses: Keyboard + Vocals - extra height is shared between ALL gaps
-       (header / progress / facts / buttons) instead of one big hole */
     [data-panel="courses"] .cr-grid>.cr-card:nth-child(-n+2) .cr-actions {
         margin-top: 0;
     }
@@ -6049,7 +5951,6 @@ html body.dashboard-body {
         padding-bottom: 4px;
     }
 
-    /* Fees & Payments: taller table rows so the left column matches the right one naturally */
     .bl-table th {
         padding-block: 15px;
     }
@@ -6058,13 +5959,11 @@ html body.dashboard-body {
         padding-block: 20px;
     }
 
-    /* Preferred payment card (now last in the left column): content centred, not stuck to the top */
     .bl-main>.card:last-child .bl-method {
         margin-block: auto;
     }
 }
 
-/* Video modal: show the poster image behind the play icon */
 .modal-video-frame {
     position: relative;
     overflow: hidden;
@@ -6132,7 +6031,6 @@ html body.dashboard-body {
     overflow-wrap: normal;
 }
 
-/* ===== Overview: Fee reminder fills the column down to the Upcoming performance card ===== */
 .ov2-col>.card:last-child .ov2-fee {
     flex: 0 0 auto;
     justify-content: flex-start;
@@ -6154,8 +6052,6 @@ html body.dashboard-body {
     padding-block: 10px;
 }
 
-/* Overview: when a column's last card is stretched, spread the extra height over its rows
-   (no empty gap between the heading and the first row, or under the last row) */
 .ov2-col>.card:last-child .bl-rows {
     flex: 1 1 auto;
     display: flex;

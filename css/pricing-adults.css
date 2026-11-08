@@ -1,9 +1,3 @@
-/* =====================================================================
-   Aarohika Music Academy: Adults pricing extras
-   Load AFTER global.css and pricing.css.
-   ===================================================================== */
-
-/* quieter, more compact look for the adults page */
 .pr-adults .pr-plan {
     border-radius: 14px;
 }
@@ -17,7 +11,6 @@
     pointer-events: none;
 }
 
-/* learning levels */
 .pr-levels {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -90,7 +83,6 @@
     }
 }
 
-/* ---------- hero: text left, two staggered arch photos right ---------- */
 .pr-adults-grid {
     display: grid;
     grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr);
@@ -139,8 +131,6 @@
     }
 }
 
-
-/* hero on normal background: soft music-staff lines + arch frames */
 .pr-adults .pr-hero::before {
     background: repeating-linear-gradient(0deg, transparent 0 34px, var(--primary-light) 34px 35px);
 }
@@ -150,8 +140,6 @@
     box-shadow: var(--shadow);
 }
 
-
-/* compact adults hero arches */
 .pr-adults-arches .ar {
     aspect-ratio: 3 / 3.9;
 }
@@ -178,7 +166,6 @@
     }
 }
 
-/* ===== Start Where You Are: number and heading in one row, text below ===== */
 .pr-level {
     display: grid;
     grid-template-columns: auto minmax(0, 1fr);
@@ -203,7 +190,6 @@
     margin-top: 16px;
 }
 
-/* no connector lines between the level cards */
 .pr-level::after,
 .pr-level:not(:last-child)::after {
     content: none !important;

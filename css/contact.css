@@ -1,9 +1,3 @@
-/* =====================================================================
-   Aarohika Music Academy: Contact page
-   Needs: global.css (tokens, header, footer, .btn). Load this AFTER it.
-   ===================================================================== */
-
-/* ---------- shared bits ---------- */
 .ct-eyebrow {
     display: inline-flex;
     align-items: center;
@@ -79,7 +73,6 @@ html[dir="rtl"] .ct-link svg {
     transform: scaleX(-1);
 }
 
-/* phone numbers and emails keep their direction in RTL */
 .cx-tile strong,
 .ct-card strong,
 .ct-cta-info strong {
@@ -87,7 +80,6 @@ html[dir="rtl"] .ct-link svg {
     unicode-bidi: isolate;
 }
 
-/* ---------- hero ---------- */
 .cx {
     --cx-image: url("https://i.pinimg.com/736x/97/59/b2/9759b2e9a39ab1570150225b0d887b78.jpg");
     position: relative;
@@ -233,7 +225,6 @@ a.cx-tile:hover {
     }
 }
 
-/* ---------- section scaffolding ---------- */
 .ct-section {
     width: min(var(--container-width), calc(100% - (var(--page-padding) * 2)));
     margin-inline: auto;
@@ -266,7 +257,6 @@ a.cx-tile:hover {
     line-height: 1.7;
 }
 
-/* ---------- info cards + form ---------- */
 .ct-layout {
     display: grid;
     grid-template-columns: minmax(0, .85fr) minmax(0, 1.15fr);
@@ -451,7 +441,6 @@ html[dir="rtl"] .ct-field textarea {
     font-size: inherit;
 }
 
-/* ---------- map ---------- */
 .ct-map {
     position: relative;
     overflow: hidden;
@@ -500,7 +489,6 @@ html[dir="rtl"] .ct-field textarea {
     line-height: 1.6;
 }
 
-/* ---------- FAQ ---------- */
 .ct-faq {
     max-width: 860px;
     margin-inline: auto;
@@ -560,8 +548,6 @@ html[dir="rtl"] .ct-field textarea {
     font-size: 14px;
     line-height: 1.7;
 }
-
-/* ---------- CTA ---------- */
 .ct-cta {
     width: min(var(--container-width), calc(100% - (var(--page-padding) * 2)));
     margin-inline: auto;
@@ -730,7 +716,6 @@ html[dir="rtl"] .ct-field textarea {
     color: var(--gold-light);
 }
 
-/* ---------- responsive ---------- */
 @media (max-width: 960px) {
     .ct-layout {
         grid-template-columns: 1fr;
@@ -811,7 +796,6 @@ html[dir="rtl"] .ct-field textarea {
     }
 }
 
-/* ===== Tablet (iPad Mini 768px): info cards 2 per row, last card full width ===== */
 @media (min-width: 601px) and (max-width: 960px) {
     .ct-info {
         grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -830,12 +814,10 @@ html[dir="rtl"] .ct-field textarea {
     }
 }
 
-/* anchor target for "Help Me Choose an Instructor" (sticky header offset) */
 .ct-form-card {
     scroll-margin-top: 96px;
 }
 
-/* ===== Contact CTA ("Ready when you are"): smaller card + floating music notes ===== */
 .ct-cta-card {
     padding: clamp(32px, 4.5vw, 54px) clamp(20px, 4vw, 56px);
 }
@@ -854,7 +836,6 @@ html[dir="rtl"] .ct-field textarea {
     margin-top: 24px;
 }
 
-/* three info cards: smaller, centred, text fits the card */
 .ct-cta-info {
     max-width: 860px;
     margin-inline: auto;
@@ -893,7 +874,6 @@ html[dir="rtl"] .ct-field textarea {
     }
 }
 
-/* floating music symbols + note letters behind the content */
 .ct-cta-notes {
     position: absolute;
     inset: 0;

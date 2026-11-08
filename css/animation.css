@@ -212,7 +212,6 @@
     }
 }
 
-/* titles that slide in from a side while un-blurring */
 @keyframes aniBlurLeft {
     from {
         opacity: 0;
@@ -241,25 +240,6 @@
     }
 }
 
-/* =====================================================================
-   AAROHIKA - animations (CSS ONLY, no JS)
-   Rule: every block comes IN FROM THE SIDE IT SITS ON
-         (left column -> from the left, right column -> from the right,
-          centered blocks -> from below).
-   Header & footer are intentionally NOT touched.
-   Link in every html page AFTER the page's own css:
-     <link rel="stylesheet" href="../css/animation.css">
-   ===================================================================== */
-
-/* =====================================================================
-   0. SCROLL-ANIMATION FIX
-   A scroll animation follows the NEAREST ancestor that can scroll.
-   "overflow: hidden" turns a section / card into such an ancestor, so the
-   animation followed that box (which never scrolls) and was already
-   "finished" the moment the page loaded -> nothing animated.
-   "overflow: clip" looks exactly the same but is not a scroll container,
-   so the animation follows the real page scroll again.
-   ===================================================================== */
 body :is(.courses-section, .why-section, .perf-section, .inst-section, .faq-section, .cta-inner,
     .h2j-section, .h2x-inner, .h2m-card, .h2m-photo,
     .ab-diff-card, .ab-step, .ab-cta-panel,
@@ -270,14 +250,11 @@ body :is(.courses-section, .why-section, .perf-section, .inst-section, .faq-sect
     overflow: clip !important;
 }
 
-/* these are plain block boxes: keep their old "contains margins" behaviour */
 body :is(.courses-section, .why-section, .perf-section, .inst-section, .faq-section,
     .h2j-section, .ab-diff-card, .cr-row-media, .ct-map, .ct-cta-card, .pr-cta-card) {
     display: flow-root;
 }
 
-/* ---------- 1. page-load entrances (top of every page) ---------- */
-/* home1 / home2 / instructors hero: text + list come from the LEFT, picture from the RIGHT */
 .home-hero .hero-copy>* {
     animation: aniFadeLeft .9s var(--ani-ease-out) both;
 }
@@ -340,7 +317,6 @@ main.home-hero .hero-visual {
     animation: aniFadeLeft .9s var(--ani-ease-out) 1.2s both;
 }
 
-/* about hero (centered -> from below) */
 .ab-hero-content>* {
     animation: aniFadeUp .9s var(--ani-ease-out) both;
 }
@@ -363,8 +339,6 @@ main.home-hero .hero-visual {
 .ab-hero-content> :nth-child(4) {
     animation-delay: .85s;
 }
-
-/* courses hero */
 .cr-hero-copy>* {
     animation: aniFadeLeft .9s var(--ani-ease-out) both;
 }
@@ -399,7 +373,6 @@ main.home-hero .hero-visual {
     animation: aniFadeRight 1.2s var(--ani-ease-out) .5s both;
 }
 
-/* guitar / keyboard: copy left, picture right.  drums / vocals (gt-hero--left): copy right, picture left */
 .gt-hero-copy>* {
     animation: aniFadeLeft .9s var(--ani-ease-out) both;
 }
@@ -467,8 +440,6 @@ main.home-hero .hero-visual {
 .gt-hero--left .gt-hero-media {
     animation: aniFadeLeft 1.2s var(--ani-ease-out) .5s both;
 }
-
-/* pricing heroes */
 .pr-hero-copy>* {
     animation: aniFadeRight .9s var(--ani-ease-out) both;
 }
@@ -571,7 +542,6 @@ main.home-hero .hero-visual {
     animation: aniFadeRight 1.2s var(--ani-ease-out) .5s both;
 }
 
-/* login / register */
 .auth-card>* {
     animation: aniFadeUp .9s var(--ani-ease-out) both;
 }
@@ -592,8 +562,6 @@ main.home-hero .hero-visual {
 .auth-card> :nth-child(4) {
     animation-delay: .75s;
 }
-
-/* privacy / terms */
 .lg-head>* {
     animation: aniFadeUp .9s var(--ani-ease-out) .2s both;
 }
@@ -616,7 +584,6 @@ main.home-hero .hero-visual {
     animation: aniFadeRight .9s var(--ani-ease-out) .6s both;
 }
 
-/* 404 + coming soon */
 .nf-code,
 .cs-badge {
     animation: aniPop .9s var(--ani-ease-out) .25s both;
@@ -661,7 +628,6 @@ main.home-hero .hero-visual {
     animation: aniFadeUp .9s var(--ani-ease-out) 1.2s both;
 }
 
-/* dashboard: every time a panel is opened its content animates in (pure CSS) */
 .dash-panel.active {
     animation: aniFade .5s ease both;
 }
@@ -693,11 +659,7 @@ main.home-hero .hero-visual {
 .dash-panel.active> :nth-child(n+6) {
     animation-delay: .55s;
 }
-
-/* ---------- 2. scroll-driven reveals (only where supported) ---------- */
 @supports (animation-timeline: view()) {
-
-    /* ===== centered section headings -> from below ===== */
     .courses-head,
     .perf-head,
     .h2c-head,
@@ -744,7 +706,6 @@ main.home-hero .hero-visual {
         animation-range: entry 0% entry 75%;
     }
 
-    /* ===== LEFT column: text + list rows come from the LEFT ===== */
     .inst-content> :not(.inst-points),
     .faq-copy>*,
     .cta-copy>*,
@@ -865,8 +826,6 @@ main.home-hero .hero-visual {
         animation-timeline: view();
         animation-range: entry 0% entry 75%;
     }
-
-    /* ===== RIGHT column: text + list rows come from the RIGHT ===== */
     .why-content> :not(.why-features):not(.why-stats),
     .h2j-content> :not(.h2j-steps) {
         animation: aniFadeRight linear both;
@@ -988,7 +947,6 @@ main.home-hero .hero-visual {
         animation-range: entry 0% entry 70%;
     }
 
-    /* ===== 2-card rows: first card from the left, second from the right ===== */
     .learn-for-grid> :nth-child(odd) {
         animation: aniFadeLeft linear both;
         animation-timeline: view();
@@ -1025,7 +983,6 @@ main.home-hero .hero-visual {
         animation-range: entry 0% entry 75%;
     }
 
-    /* ===== card grids (centered) -> from below, staggered ===== */
     .courses-grid>*,
     .h2c-grid>*,
     .h2t-grid>*,
@@ -1121,8 +1078,6 @@ main.home-hero .hero-visual {
         animation-timeline: view();
         animation-range: entry 0% entry 80%;
     }
-
-    /* ===== images ===== */
     .course-img,
     .ab-step-img,
     .learn-card-img,
@@ -1143,8 +1098,6 @@ main.home-hero .hero-visual {
         animation-timeline: view();
         animation-range: entry 0% entry 75%;
     }
-
-    /* ===== banners, CTAs, forms, notes ===== */
     .ct-cta-card,
     .ct-map-card,
     .ct-map,
@@ -1175,8 +1128,6 @@ main.home-hero .hero-visual {
         animation-timeline: view();
         animation-range: entry 0% entry 80%;
     }
-
-    /* ===== small icons / numbers / badges pop in ===== */
     .course-icon,
     .why-icon,
     .inst-point-icon,
@@ -1215,9 +1166,6 @@ main.home-hero .hero-visual {
     }
 }
 
-/* ---------- 3a. click a step (home2 "How it works") -> it slides one step toward the
-   inline-END side: right in LTR, left in RTL (uses --ani-dir, flips with dir="rtl").
-   Pure CSS: the <li> has tabindex="0", so :focus = clicked / selected. Click elsewhere to release. ---------- */
 .h2j-step {
     cursor: pointer;
     outline: none;
@@ -1250,9 +1198,6 @@ main.home-hero .hero-visual {
     border-radius: 14px;
 }
 
-/* ---------- 3b. click a row -> title turns the SECONDARY colour (like hover) and the
-   round logo/number badge turns BLACK.  Works for home1 "Our Instructors" list and
-   home2 "How it works" steps.  Pure CSS (:focus on the <li tabindex="0">). ---------- */
 .inst-point {
     cursor: pointer;
     outline: none;
@@ -1291,7 +1236,6 @@ main.home-hero .hero-visual {
     box-shadow: 0 0 0 5px color-mix(in srgb, var(--secondary) 25%, transparent);
 }
 
-/* ---------- 3. hover polish (CSS only) ---------- */
 .course-img,
 .ab-step-img,
 .learn-card-img img {

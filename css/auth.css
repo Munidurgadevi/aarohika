@@ -1,9 +1,3 @@
-/* =====================================================================
-   Aarohika Music Academy: Login + Register (shared)
-   Load AFTER global.css. Single-screen layout: no scroll on normal
-   desktop/laptop heights (scroll only returns on very small screens).
-   ===================================================================== */
-
 .auth-body {
     --auth-gap: clamp(6px, 1.4vh, 14px);
     --auth-input-h: clamp(38px, 5.4vh, 50px);
@@ -12,13 +6,10 @@
     overflow: hidden;
 }
 
-/* lock the viewport itself so the page never scrolls or shifts */
 html:has(.auth-body) {
     height: 100%;
     overflow: hidden;
 }
-
-/* ---------- decorative background ---------- */
 .auth-bg {
     position: fixed;
     inset: 0;
@@ -273,7 +264,6 @@ html:has(.auth-body) {
     }
 }
 
-/* ---------- top-right tools ---------- */
 .auth-tools {
     position: fixed;
     inset-block-start: 20px;
@@ -300,7 +290,6 @@ html:has(.auth-body) {
     outline-offset: 3px;
 }
 
-/* ---------- card ---------- */
 .auth-page {
     position: relative;
     z-index: 1;
@@ -351,7 +340,6 @@ html:has(.auth-body) {
     letter-spacing: -.01em;
 }
 
-/* login uses the caps gold heading from the reference */
 .auth-title.caps {
     color: var(--secondary);
     font-family: var(--font-body);
@@ -368,7 +356,6 @@ html:has(.auth-body) {
     line-height: 1.55;
 }
 
-/* ---------- form ---------- */
 .auth-form {
     display: flex;
     flex-direction: column;
@@ -633,8 +620,6 @@ html[dir="rtl"] .auth-foot svg {
     width: 15px;
     height: 15px;
 }
-
-/* ---------- smaller screens: compress so everything stays on one screen ---------- */
 @media (max-height: 800px) {
     .auth-card {
         padding-block: 18px;
@@ -697,7 +682,6 @@ html[dir="rtl"] .auth-foot svg {
     }
 }
 
-/* only on very short screens (e.g. phone in landscape) let it scroll so nothing is unreachable */
 @media (max-height: 500px) {
 
     html:has(.auth-body),
@@ -765,7 +749,6 @@ html[dir="rtl"] .auth-foot svg {
     }
 }
 
-/* Bootstrap Icons (inline SVG sprite) */
 .bi {
     width: 1em;
     height: 1em;

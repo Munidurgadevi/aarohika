@@ -16,11 +16,9 @@
     --muted-color: #5c6b62;
     --black: #000000;
     --box-shadow: 0 10px 30px rgba(21, 52, 39, 0.08);
-    /* ===== FONTS: change fonts ONLY here, every page follows ===== */
     --font-heading: "Playfair Display", serif;
     --font-body: "Manrope", sans-serif;
     --font-family: var(--font-body);
-    /* old name, kept so nothing breaks */
     --fw-normal: 400;
     --fw-medium: 500;
     --fw-bold: 600;
@@ -488,7 +486,6 @@ html.dark-mode .icon-moon {
     background: var(--primary-light);
 }
 
-/* Header Login button: primary background, hover lo secondary */
 .header-auth .btn-outline,
 .nav-auth-mobile .btn-outline {
     background: var(--primary);
@@ -882,7 +879,6 @@ html[dir="rtl"] .crumbs svg {
         position: absolute;
         top: var(--header-height);
         inset-inline: 0;
-        /* cover the whole screen below the header */
         height: calc(100vh - var(--header-height));
         height: calc(100dvh - var(--header-height));
         max-height: none;
@@ -945,8 +941,6 @@ html[dir="rtl"] .crumbs svg {
     .nav-dropdown.open .nav-dropdown-menu {
         display: block;
     }
-
-
 
     .nav-auth-mobile {
         display: flex;
@@ -1047,7 +1041,6 @@ html[dir="rtl"] .crumbs svg {
     color: #62b58c;
 }
 
-/* Home 1 hero section */
 .home-hero {
     overflow: hidden;
     background: var(--bg);
@@ -1125,7 +1118,6 @@ html[dir="rtl"] .crumbs svg {
     margin-bottom: 30px;
 }
 
-/* Hero CTAs exactly match the filled Login button in the navbar (same size, colors, hover). */
 .hero-actions .hero-button {
     background: var(--primary);
     color: var(--btn-fg);
@@ -1385,16 +1377,6 @@ html[dir="rtl"] .crumbs svg {
     }
 }
 
-
-/* ==========================================================================
-   AAROHIKA UNIFIED DESIGN RULES  (loaded on every page - keep this block last)
-   1. One font family   2. Logo + title name   3. Taglines (line - text - line)
-   4. Headings (primary + secondary)   5. Buttons (every button = Login button)
-   ========================================================================== */
-/* ==========================================================================
-   SECTION RULES (hero, header, footer kakunda migilina sections)
-   Heading = max 58px (screen taggite smooth ga taggutundi), Tagline = 12px
-   ========================================================================== */
 :root {
     --section-title-size: clamp(28px, 19px + 3.25vw, 58px);
     --section-tagline-size: 12px;
@@ -1419,13 +1401,10 @@ html body .tagline {
     display: none !important;
 }
 
-/* Dark panels (hero / CTA cards on dark green). Text and buttons switch to
-   light/gold tokens here so everything stays readable. */
 html body :is(.ab-hero, .ab-mission, .ab-cta-panel, .cta-section, .ct-cta-card, .cr-cta, .gt-cta, .mentor-cta-card, .pr-cta-card, .course-card) {
     --heading-first: var(--court-text);
     --heading-second: var(--gold-light);
     --secondary: var(--gold-light);
-    /* normal = PRIMARY fill (thin light edge so it shows on the dark panel), hover = SECONDARY */
     --btn-fill: var(--primary);
     --btn-border: var(--court-line);
     --btn-text: var(--btn-fg);
@@ -1434,7 +1413,6 @@ html body :is(.ab-hero, .ab-mission, .ab-cta-panel, .cta-section, .ct-cta-card, 
     --btn-pair-text: var(--court-text);
 }
 
-/* panel filled with the primary colour (legal pages "Questions?" card) */
 html body .lg-contact {
     --btn-fill: var(--btn-fg);
     --btn-border: var(--btn-fg);
@@ -1442,7 +1420,6 @@ html body .lg-contact {
     --btn-pair-text: var(--btn-fg);
 }
 
-/* ---- 1. One font family for the whole application ----------------------- */
 html body input,
 html body select,
 html body textarea,
@@ -1451,7 +1428,6 @@ html body optgroup {
     font-family: inherit;
 }
 
-/* ---- 2. Logo + title name: same font and same weight on every page ------- */
 html body .brand-title,
 html body .brand-title .aaroh,
 html body .brand-title .ika {
@@ -1466,7 +1442,6 @@ html body .brand-sub {
     font-style: normal !important;
 }
 
-/* ---- 3. Taglines:  ——— TEXT ———   (no icon) ----------------------------- */
 html body .tagline {
     align-items: center;
     gap: 12px;
@@ -1519,8 +1494,6 @@ html body .tagline:is(.lg-eyebrow, .auth-kicker) {
     }
 }
 
-/* ---- 4. Headings: first part = primary colour, highlighted part = secondary.
-        Same rule in light and dark mode (the theme tokens switch automatically). */
 html body {
     --heading-first: var(--primary-color);
     --heading-second: var(--secondary-color);
@@ -1540,14 +1513,6 @@ html body:not(.dashboard-body) :is(h1, h2) :is(span, em):not(.lg-num) {
     font-style: normal !important;
 }
 
-/* ---- 5. BUTTONS (same format as the reference global.css) -----------------
-   * ONE button alone            = PRIMARY button  (primary background, white text)
-   * Hover (every button)        = SECONDARY colour background
-   * TWO buttons side by side    = first one PRIMARY, second one SECONDARY-BORDER
-                                   (transparent, secondary colour border)
-   * Hover is the same on both, only colours below are used - no per-page colours.
-   Change colours in :root (--primary / --secondary), not here.
-   --------------------------------------------------------------------------- */
 html body :is(.btn, .course-btn, .batch-btn, .panel-btn, .mentor-btn, .auth-submit, .pg-btn) {
     min-height: 44px !important;
     display: inline-flex !important;
@@ -1573,14 +1538,12 @@ html body :is(.btn, .course-btn, .batch-btn, .panel-btn, .mentor-btn, .auth-subm
     transition: background-color .25s ease, color .25s ease, transform .25s ease, border-color .25s ease;
 }
 
-/* two buttons next to each other: the 2nd one gets the secondary border style */
 html body :is(.btn, .course-btn, .batch-btn, .panel-btn, .mentor-btn, .auth-submit, .pg-btn)+ :is(.btn, .course-btn, .batch-btn, .panel-btn, .mentor-btn, .auth-submit, .pg-btn):not(.btn-danger) {
     --btn-fill: transparent;
     --btn-border: var(--secondary);
     --btn-text: var(--btn-pair-text, var(--primary));
 }
 
-/* hover: identical for every button -> secondary colour */
 html body :is(.btn, .course-btn, .batch-btn, .panel-btn, .mentor-btn, .auth-submit, .pg-btn):is(:hover, :focus-visible) {
     background: var(--btn-fill-hover, var(--secondary)) !important;
     border-color: var(--btn-fill-hover, var(--secondary)) !important;
@@ -1601,13 +1564,11 @@ html body :is(.btn, .course-btn, .batch-btn, .panel-btn, .mentor-btn, .auth-subm
     transform: none;
 }
 
-/* compact variant used inside dashboard tables: same look, just a little shorter */
 html body .btn.btn-xs {
     min-height: 36px !important;
     padding: 0 14px !important;
 }
 
-/* destructive action keeps its warning red, everything else identical */
 html body .btn.btn-danger {
     --btn-fill: #b3261e;
     --btn-border: #b3261e;
@@ -1616,33 +1577,15 @@ html body .btn.btn-danger {
     --btn-text-hover: #ffffff;
 }
 
-
-/* ==========================================================================
-   HERO RULES  (loaded on every page - keep this block last)
-   Hero sections only (home 1, home 2, about, courses, instructors, contact,
-   pricing + kids + adults, guitar / keyboard / vocals / drums), plus the title
-   block of the 404, coming-soon and legal pages.
-
-   1. Heading  (h1)        68px
-   2. Tagline              12px
-   3. Paragraph            16px
-   4. Fits the screen      hero = one screen below the header, content centred,
-                           image / visual scales with the screen height
-   Change a number here and every hero follows.
-   ========================================================================== */
 :root {
     --hero-h1-size: 68px;
     --hero-tagline-size: 12px;
     --hero-text-size: 16px;
-    /* vertical breathing room inside a hero (grows / shrinks with screen height) */
     --hero-pad-y: clamp(20px, 4.5svh, 52px);
-    /* one screen = viewport minus header (capped so huge monitors do not get a giant empty hero) */
     --hero-min-h: min(calc(100svh - var(--header-height)), 1000px);
-    /* height available for the hero image / visual */
     --hero-media-h: clamp(340px, calc(100svh - var(--header-height) - (var(--hero-pad-y) * 2)), 760px);
 }
 
-/* stacked layouts (tablet / phone): image must not take the whole screen */
 @media (max-width: 900px) {
     :root {
         --hero-media-h: clamp(260px, 48svh, 420px);
@@ -1650,27 +1593,20 @@ html body .btn.btn-danger {
     }
 }
 
-/* ---- 1 · 2 · 3  Typography ---------------------------------------------- */
-/* h1: 68px on desktop; scales down smoothly (never wider than the screen) below ~1215px */
 html body :is(.home-hero, .ab-hero, .cr-hero, .gt-hero, .pr-hero, .cx, .nf-main, .cs-main, .lg-head) h1 {
     font-size: clamp(36px, 5.6vw, var(--hero-h1-size)) !important;
     text-wrap: balance;
 }
 
-/* tagline (line - TEXT - line) */
 html body :is(.home-hero, .ab-hero, .cr-hero, .gt-hero, .pr-hero, .cx, .lg-head) .tagline {
     font-size: var(--hero-tagline-size) !important;
 }
 
-/* paragraph under the heading */
 html body :is(.home-hero, .ab-hero, .cr-hero, .gt-hero, .pr-hero, .cx, .nf-main, .cs-main, .lg-head) :is(.hero-description, .cr-hero-desc, .gt-hero-desc, .cx-text, .nf-lead, .cs-lead, .lg-intro,
     .ab-hero-content > p, .pr-hero-copy > p, .pr-kids-copy > p, .pr-adults-copy > p):not(.tagline) {
     font-size: var(--hero-text-size) !important;
 }
 
-/* ---- 4 · Fit the screen -------------------------------------------------- */
-/* hero = one screen; content sits in the middle (home 2 keeps its own
-   "hero + marquee strip = one screen" height from home2.css) */
 html body :is(.home-hero:not(.h2-hero), .cr-hero, .gt-hero, .pr-hero) {
     min-height: var(--hero-min-h);
     display: flex;
@@ -1690,7 +1626,6 @@ html body .cx {
     min-height: var(--hero-min-h);
 }
 
-/* inner wrappers: no fixed minimum heights, spacing follows the screen height */
 html body :is(.home-hero, .cr-hero, .gt-hero) :is(.home-hero-inner, .cr-hero-inner, .gt-hero-inner) {
     min-height: 0;
     padding-block: var(--hero-pad-y);
@@ -1700,7 +1635,6 @@ html body .pr-hero {
     padding-block: var(--hero-pad-y);
 }
 
-/* home 1 / instructors: photo height follows the screen */
 html body .home-hero .hero-visual {
     min-height: 0;
 }
@@ -1710,17 +1644,14 @@ html body .home-hero .hero-student-image {
     min-height: 0;
 }
 
-/* instructors: the stacked-card showcase scales with the screen height */
 html body .home-hero .showcase-stage {
     width: min(100%, 560px, max(300px, calc(var(--hero-media-h) / 1.02)));
 }
 
-/* guitar / keyboard / vocals / drums: circle photo */
 html body .gt-hero .gt-circle {
     width: min(100%, 600px, max(240px, calc(var(--hero-media-h) - 30px)));
 }
 
-/* pricing: blob photo, kids collage, adults arches */
 html body .pr-hero .pr-hero-media {
     width: min(100%, 520px, max(260px, calc(var(--hero-media-h) / 1.05)));
 }
@@ -1735,7 +1666,6 @@ html body .pr-hero .pr-hero-media {
     }
 }
 
-/* ===== RTL: mirror the home hero visual (image shape, backdrop, notes, caption) ===== */
 html[dir="rtl"] .hero-visual-backdrop {
     inset: 5% 0 0 -7%;
     border-radius: 10px 48% 48% 10px;
@@ -1769,14 +1699,6 @@ html[dir="rtl"] .hero-image-caption {
     }
 }
 
-/* =====================================================================
-   CARDS: secondary border by default + hover lift/shadow, images zoom
-   Paste at the END of global.css. Colours come from :root (--secondary).
-   Uses the standalone `translate` / `scale` properties, so it never
-   clashes with any existing `transform` on a page.
-   ===================================================================== */
-
-/* ---- 1. All cards: secondary border + smooth hover ---- */
 html body :is(.gt-card, .ab-diff-card, .ab-step, .ab-cta-panel, .batches-card, .course-card, .cr-card,
     .cs-card, .faq-item, .h2c-card, .h2m-card, .h2p-panel, .h2t-card, .inst-item,
     .instructor-card, .learn-card, .lg-card, .lg-item, .mentor-cta-card, .perf-card,
@@ -1795,12 +1717,10 @@ html body :is(.gt-card, .ab-diff-card, .ab-step, .ab-cta-panel, .course-card, .c
     box-shadow: 0 18px 38px rgba(0, 0, 0, .14), 0 0 0 1px var(--secondary);
 }
 
-/* big table/list card: border + soft shadow only (no lift) */
 html body .batches-card:hover {
     box-shadow: 0 14px 30px rgba(0, 0, 0, .1), 0 0 0 1px var(--secondary);
 }
 
-/* ---- 2. Image frames: clip the zoom inside the frame ---- */
 html body :is(.gt-age-media, .gt-instructor-media, .gt-cta-media, .gt-circle-disc,
     .ab-shot, .ab-step, .ab-story-media, .ab-diff-media, .cr-row-media, .cr-cta-media,
     .inst-thumb, .inst-main, .h2m-photo, .h2p-media, .h2x-media, .h2j-photo,
@@ -1809,7 +1729,6 @@ html body :is(.gt-age-media, .gt-instructor-media, .gt-cta-media, .gt-circle-dis
     overflow: hidden;
 }
 
-/* ---- 3. Image zoom on hover (card or frame) ---- */
 html body :is(.gt-age-media, .gt-instructor-media, .gt-cta-media, .gt-circle-disc,
     .ab-shot, .ab-step, .ab-story-media, .ab-diff-media, .cr-row-media, .cr-cta-media,
     .inst-thumb, .inst-main, .h2m-photo, .h2p-media, .h2x-media, .h2j-photo,
@@ -1841,7 +1760,6 @@ html body :is(.gt-age-media, .gt-instructor-media, .gt-cta-media, .gt-circle-dis
     }
 }
 
-/* Instructors: remove square card border, make gold border follow the image shape */
 html body .inst-item,
 html body .inst-item:hover {
     border: 0 !important;
@@ -1849,24 +1767,20 @@ html body .inst-item:hover {
     translate: none;
 }
 
-/* gold border on the rounded image itself (keeps your 5px light ring) */
 html body .inst-thumb {
     box-shadow: 0 0 0 1.5px var(--secondary), var(--shadow);
     transition: transform .3s ease, translate .35s ease, box-shadow .35s ease;
 }
 
-/* optional: lift effect on the round image instead of the square box */
 html body .inst-item:hover .inst-thumb {
     translate: 0 -6px;
     box-shadow: 0 0 0 1.5px var(--secondary), 0 18px 38px rgba(0, 0, 0, .14);
 }
 
-/* lock page scroll while the full-screen menu is open */
 html.menu-open {
     overflow: hidden;
 }
 
-/* Full-screen mobile / tablet menu (override-proof) */
 @media (max-width: 1100px) {
     html body .site-header .main-nav {
         height: calc(100vh - var(--header-height)) !important;
@@ -1880,7 +1794,6 @@ html.menu-open {
     }
 }
 
-/* ===== Footer: 2 columns on tablets (iPad Mini) on every page ===== */
 @media (min-width: 601px) and (max-width: 1100px) {
     .footer-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1888,7 +1801,6 @@ html.menu-open {
     }
 }
 
-/* ===== Custom form dropdowns (contact + trial): always stay inside the screen ===== */
 select.cs-native {
     position: absolute !important;
     width: 1px !important;
@@ -2032,12 +1944,10 @@ html body :is(.ab-value, .ct-card, .cx-tile, .ct-faq details, .ct-cta-info li,
     box-shadow: 0 18px 38px rgba(0, 0, 0, .14), 0 0 0 1px var(--secondary-color);
 }
 
-/* Reduce bottom space of CTA sections on all pages */
 html body :is(.cta-section, .h2x-section, .ab-cta, .ct-cta, .cr-cta-section, .gt-cta-section, .mentor-cta, .pr-cta) {
     padding-bottom: 24px;
 }
 
-/* ===== All pages: no horizontal scrollbar at the bottom (entrance animations slide in from the side) ===== */
 html,
 body {
     overflow-x: clip;

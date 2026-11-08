@@ -169,7 +169,6 @@
                 try { localStorage.setItem(key, value); } catch (e) { }
             }
 
-            // Theme toggle (same storage key as the rest of the site)
             var themeBtn = document.getElementById("themeToggle");
             if (themeBtn) {
                 themeBtn.addEventListener("click", function () {
@@ -178,7 +177,6 @@
                 });
             }
 
-            // RTL / LTR toggle
             var dirBtn = document.getElementById("dirToggle");
             var dirLabel = document.getElementById("dirLabel");
             function syncDir() {
@@ -193,7 +191,6 @@
             }
             syncDir();
 
-            // Show / hide password
             document.querySelectorAll(".auth-eye").forEach(function (btn) {
                 btn.addEventListener("click", function () {
                     var input = btn.parentElement.querySelector("input");
@@ -205,7 +202,6 @@
                 });
             });
 
-            // Form handling (demo: connect to your backend where marked)
             var form = document.querySelector(".auth-form");
             if (form) {
                 var pass = form.querySelector("#password");
@@ -219,7 +215,6 @@
                 }
                 form.addEventListener("submit", function (e) {
                     e.preventDefault();
-                    // TODO: send form data to your server here, then redirect on success
                     window.location.href = form.getAttribute("data-next") || "home1.html";
                 });
             }
